@@ -1,0 +1,13 @@
+node_modules
+.DS_Store
+dist
+*.local
+yarn-error.log*
+out/
+tsconfig.tsbuildinfo
+.vscode
+package-lock.json
+packages/web-tg/stats.html
+packages/web-mobile/stats.html
+packages/web/stats.html
+volarPlugins/*.js

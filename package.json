@@ -1,0 +1,29 @@
+{
+  "name": "tg",
+  "version": "0.0.0",
+  "description": "tg前台",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@volar-plugins/prettyhtml": "latest"
+  },
+  "scripts": {
+    "setup": "yarn"
+  },
+  "resolutions": {
+    "@vue/runtime-core": "3.2.33",
+    "@vue/runtime-dom": "3.2.33"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/h5frontend/tg_web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/h5frontend/tg_web/issues"
+  },
+  "homepage": "https://gitlab.com/h5frontend/tg_web#readme"
+}
