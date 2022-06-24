@@ -19,22 +19,19 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@us/web/*": [
+      "@tg/stores/*": [
+        "packages/stores/src/*"
+      ],      
+      "@tg/api/*": [
+        "packages/api/src/*"
+      ],            
+      "@tg/web/*": [
         "packages/web/src/*"
       ],
-      "@us/web-mobile/*": [
+      "@tg/web-mobile/*": [
         "packages/web-mobile/src/*"
       ],
-      "@us/web-tg/*": [
-        "packages/web-tg/src/*"
-      ],
-      "@us/proto/*": [
-        "packages/proto/src/*"
-      ],
-      "@us/locales/*": [
-        "packages/locales/src/*"
-      ],
-      "@us/*": [
+      "@tg/*": [
         "packages/*/src"
       ],
       "/*": [
