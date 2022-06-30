@@ -1,0 +1,11 @@
+{
+  "name": "@tg/stores",
+  "version": "0.0.0",
+  "main": "out/index.js",
+  "dependencies": {
+    "@vueuse/core": "latest",
+    "pinia": "latest",
+    "vue": "latest",
+    "sha1": "^1.1.1"
+  }
+}
