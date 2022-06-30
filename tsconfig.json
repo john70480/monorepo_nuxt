@@ -1,10 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
+    "lib": ["ESNext", "DOM"],
     "allowSyntheticDefaultImports": true,
     "module": "ESNext",
     "moduleResolution": "node",
@@ -19,33 +16,38 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@tg/stores/*": [
-        "packages/stores/src/*"
-      ],      
-      "@tg/api/*": [
-        "packages/api/src/*"
-      ],            
-      "@tg/web/*": [
-        "packages/web/src/*"
-      ],
-      "@tg/web-mobile/*": [
-        "packages/web-mobile/src/*"
-      ],
-      "@tg/*": [
-        "packages/*/src"
-      ],
-      "/*": [
-        "packages/web/*"
-      ],
+      // "@tg/web/*"
+      "~~": ["."],
+      "~~/*": ["./*"],
+      "@@": ["."],
+      "@@/*": ["./*"],
+      "~": ["."],
+      "~/*": ["./*"],
+      "@": ["."],
+      "@/*": ["./*"],
+      "assets": ["assets"],
+      "public": ["public"],
+      "#app": ["./node_modules/nuxt/dist/app"],
+      "#app/*": ["./node_modules/nuxt/dist/app/*"],
+      "vue-demi": ["./node_modules/nuxt/dist/app/compat/vue-demi"],
+      "pinia": ["pinia/dist/pinia"],
+      "#head": ["./node_modules/nuxt/dist/head/runtime"],
+      "#head/*": ["./node_modules/nuxt/dist/head/runtime/*"],
+      "#components": [".nuxt/components"],
+      "#imports": [".nuxt/imports"],
+      "#build": [".nuxt"],
+      "#build/*": [".nuxt/*"],
+      // "@tg/web/*"
+      "@tg/shared/*": ["packages/shared/src/*"],
+      "@tg/stores/*": ["packages/stores/src/*"],
+      "@tg/api/*": ["packages/api/src/*"],
+      "@tg/web/*": ["packages/web/*"],
+      "@tg/web-mobile/*": ["packages/web-mobile/src/*"],
+      "@tg/*": ["packages/*/src"],
+      "/*": ["packages/web/*"]
     },
-    "types": [
-      "vite/client",
-      "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client",
-    ],
+    "types": ["vite/client", "vite-plugin-pages/client", "vite-plugin-vue-layouts/client", "vite-plugin-vue-component-preview/client"]
   },
-  "include": [
-    "packages/*/src",
-    "env.d.ts"
-  ],
+  "extends": "./packages/web/.nuxt/tsconfig.json",
+  "include": ["packages/web", "packages/*/src", "env.d.ts"]
 }

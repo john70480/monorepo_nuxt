@@ -10,7 +10,9 @@
     "@volar-plugins/prettyhtml": "latest"
   },
   "scripts": {
-    "setup": "yarn"
+    "setup": "yarn",
+    "web-dev": "cd packages/web && nuxt dev",
+    "web-dev-mobile": "cd packages/web-mobile && vite"
   },
   "resolutions": {
     "@vue/runtime-core": "3.2.33",
