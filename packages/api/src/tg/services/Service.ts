@@ -9,7 +9,7 @@ import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 
 export class Service {
 
-    constructor(public readonly httpRequest: BaseHttpRequest) {}
+    constructor(public readonly httpRequest: BaseHttpRequest) { }
 
     /**
      * 取得會員歷史帳務
@@ -1805,7 +1805,7 @@ export class Service {
         uuid,
         username = 'Pc891',
         ticket = 0,
-        username = 'Pc891',
+        // username = 'Pc891',
         lang,
         category,
         platformCode,
@@ -4441,7 +4441,7 @@ export class Service {
         ticket = 120298108,
         username = 'P9586',
         platform = 'Web_1.0',
-        username = 'PYDNA',
+        // username = 'PYDNA',
         setvalue = '1',
     }: {
         /**
@@ -4522,7 +4522,7 @@ export class Service {
         ticket = 120298108,
         username = 'P9586',
         platform = 'Web_1.0',
-        username = 'PYDNA',
+        // username = 'PYDNA',
         setvalue = '1',
         type = '2',
     }: {

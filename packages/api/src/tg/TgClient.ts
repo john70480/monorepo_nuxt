@@ -5,21 +5,37 @@ import type { BaseHttpRequest } from './core/BaseHttpRequest';
 import type { OpenAPIConfig } from './core/OpenAPI';
 import { AxiosHttpRequest } from './core/AxiosHttpRequest';
 
+import axios from 'axios';
+import * as AES from '../aes';
 import { Service } from './services/Service';
 import { IpService } from './services/IpService';
+import { v4 as uuidv4 } from "uuid";
+import { Base64 } from 'js-base64';
+import type {
+    SetEncryptionParams,
+} from '../types';
 
+import { usePlatform } from '@tg/stores/src/platform';
 type HttpRequestConstructor = new (config: OpenAPIConfig) => BaseHttpRequest;
 
 export class TgClient {
 
-    public readonly : Service;
+    public readonly tg: Service;
     public readonly ip: IpService;
 
     public readonly request: BaseHttpRequest;
 
+    public encryptUserId: string | undefined = ''
+
+    public encrypt: Promise<{
+        key?: string,
+        iv?: string,
+        token?: string,
+    } | undefined> = undefined;
+
     constructor(config?: Partial<OpenAPIConfig>, HttpRequest: HttpRequestConstructor = AxiosHttpRequest) {
         this.request = new HttpRequest({
-            BASE: config?.BASE ?? 'https://tstgendev.tg7777.net/relayApi',
+            BASE: config?.BASE ?? 'https://tstgen.tg7777.net/relayApi',
             VERSION: config?.VERSION ?? '0.5.83',
             WITH_CREDENTIALS: config?.WITH_CREDENTIALS ?? false,
             CREDENTIALS: config?.CREDENTIALS ?? 'include',
@@ -29,9 +45,31 @@ export class TgClient {
             HEADERS: config?.HEADERS,
             ENCODE_PATH: config?.ENCODE_PATH,
         });
-
-        this. = new Service(this.request);
+        this.tg = new Service(this.request);
         this.ip = new IpService(this.request);
     }
+
+    public async getEncrypt() {
+        const key = uuidv4().replace(/-/g, "");
+        const iv = uuidv4().replace(/-/g, "").substring(0, 16);
+        const params: SetEncryptionParams = {
+            iv: Base64.encode(iv),
+            key: Base64.encode(key),
+            userId: this.encryptUserId,
+        };
+
+        const data = await this.tg.apiOthersSetEncryption({ formData: params });
+        if (data.StatusCode === '0' && data.Payload) {
+            console.log('apiOthersSetEncryption', data);
+
+            const { aesIv, aesKey, token } = data.Payload;
+            usePlatform().encrypt = {
+                key: aesKey,
+                iv: aesIv,
+                token: token,
+            };
+        }
+    }
+
 }
 

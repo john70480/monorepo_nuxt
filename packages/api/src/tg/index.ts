@@ -9,11 +9,11 @@ export { CancelablePromise, CancelError } from './core/CancelablePromise';
 export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
 
-export type {  } from './models/';
-export type {  } from './models/';
-export type {  } from './models/';
-export type {  } from './models/';
-export type {  } from './models/';
+export type { } from './models/';
+export type { } from './models/';
+export type { } from './models/';
+export type { } from './models/';
+export type { } from './models/';
 export type { thirdPartyCategory } from './models/thirdPartyCategory';
 export type { thirdPartyType } from './models/thirdPartyType';
 export type { US_ } from './models/US_';
