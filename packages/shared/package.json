@@ -1,0 +1,5 @@
+{
+  "name": "@tg/shared",
+  "version": "0.0.0",
+  "main": "out/index.js"
+}
