@@ -25,12 +25,6 @@ export class TgClient {
 
     public encryptUserId: string | undefined = ''
 
-    public encrypt: Promise<{
-        key?: string,
-        iv?: string,
-        token?: string,
-    }> | undefined = undefined;
-
     constructor(config?: Partial<OpenAPIConfig>, HttpRequest: HttpRequestConstructor = AxiosHttpRequest) {
         this.request = new HttpRequest({
             BASE: config?.BASE ?? 'https://tstgen.tg7777.net/relayApi',
