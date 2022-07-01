@@ -11,6 +11,7 @@
   },
   "scripts": {
     "setup": "yarn",
+    "api-update": "cd packages/api && yarn run update",
     "web-dev": "cd packages/web && nuxt dev",
     "web-dev-mobile": "cd packages/web-mobile && vite"
   },

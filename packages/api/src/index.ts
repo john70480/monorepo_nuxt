@@ -1,5 +1,5 @@
 // import * as http from './http';
-import { TgClient } from './tg/index';
+import { TgClient } from './tgClient';
 import { usePlatform } from '@tg/stores/src/platform';
 import { useSession } from '@tg/stores/src/session';
 

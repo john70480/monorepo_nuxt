@@ -1,19 +1,17 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { BaseHttpRequest } from './core/BaseHttpRequest';
-import type { OpenAPIConfig } from './core/OpenAPI';
-import { AxiosHttpRequest } from './core/AxiosHttpRequest';
+import type { BaseHttpRequest } from './tg/core/BaseHttpRequest';
+import type { OpenAPIConfig } from './tg/core/OpenAPI';
+import { AxiosHttpRequest } from './tg/core/AxiosHttpRequest';
 
-import axios from 'axios';
-import * as AES from '../aes';
-import { Service } from './services/Service';
-import { IpService } from './services/IpService';
+import { Service } from './tg/services/Service';
+import { IpService } from './tg/services/IpService';
 import { v4 as uuidv4 } from "uuid";
 import { Base64 } from 'js-base64';
 import type {
     SetEncryptionParams,
-} from '../types';
+} from './types';
 
 import { usePlatform } from '@tg/stores/src/platform';
 type HttpRequestConstructor = new (config: OpenAPIConfig) => BaseHttpRequest;
@@ -31,7 +29,7 @@ export class TgClient {
         key?: string,
         iv?: string,
         token?: string,
-    } | undefined> = undefined;
+    }> | undefined = undefined;
 
     constructor(config?: Partial<OpenAPIConfig>, HttpRequest: HttpRequestConstructor = AxiosHttpRequest) {
         this.request = new HttpRequest({

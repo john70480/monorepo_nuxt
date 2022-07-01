@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "out/index.js",
   "scripts": {
-    "tg": "openapi -i https://doc.tg6666.net/docs -o ./tg --useOptions --name TgClient --client axios "
+    "update": "openapi -i https://doc.tg6666.net/docs -o ./src/tg --useOptions  --name client --request ./src/tg/tg-request.ts --client axios "
   },
   "dependencies": {
     "axios": "latest",
