@@ -18,7 +18,7 @@ export default defineNuxtConfig({
 		resolve: {
 			alias: {
 				'@tg/web': '@tg/web/',
-				'@tg/web-mobile': '@tg/web-mobile/src',
+				'@tg/web-mobile': '@tg/web-mobile',
 				'@tg/shared': '@tg/shared/src',
 				'@tg/utils': '@tg/utils/src',
 				'@tg/api': '@tg/api/src',

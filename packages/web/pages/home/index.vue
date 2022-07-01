@@ -27,9 +27,8 @@
 <script setup lang="ts">
 import { usePlatform } from '@tg/stores/src/platform';
 import { useSession } from '@tg/stores/src/session';
-import { ref } from 'vue';
 import { useNuxtApp } from '#app'
-import { definePageMeta } from '#imports';
+import { definePageMeta, ref } from '#imports';
 
 const api = useNuxtApp().$api()
 const platform = usePlatform();

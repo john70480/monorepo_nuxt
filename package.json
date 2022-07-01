@@ -13,7 +13,8 @@
     "setup": "yarn",
     "api-update": "cd packages/api && yarn run update",
     "web-dev": "cd packages/web && nuxt dev",
-    "web-dev-mobile": "cd packages/web-mobile && vite"
+    "web-dev-mobile": "cd packages/web-mobile && nuxt dev",
+    "web-dev-test": "cd packages/web-test && vite"
   },
   "resolutions": {
     "@vue/runtime-core": "3.2.33",
