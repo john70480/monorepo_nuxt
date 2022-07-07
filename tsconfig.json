@@ -48,6 +48,6 @@
     },
     "types": ["vite/client", "vite-plugin-pages/client", "vite-plugin-vue-layouts/client", "vite-plugin-vue-component-preview/client"]
   },
-  "extends": "packages/web/.nuxt/tsconfig.json",
+  "extends": "./packages/web/.nuxt/tsconfig.json",
   "include": ["packages/web", "packages/web-mobile", "packages/*/src", "env.d.ts", "packages/web/.nuxt/nuxt.d.ts"]
 }

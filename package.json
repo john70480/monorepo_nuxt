@@ -12,7 +12,9 @@
   "scripts": {
     "setup": "yarn",
     "api-update": "cd packages/api && yarn run update",
-    "web-dev": "cd packages/web && nuxt dev",
+    "web-dev": "cd packages/web && yarn run dev",
+    "web-dev-build": "cd packages/web && yarn run build",
+    "web-dev-preview": "cd packages/web && yarn run preview",
     "web-dev-mobile": "cd packages/web-mobile && nuxt dev",
     "web-dev-test": "cd packages/web-test && vite"
   },

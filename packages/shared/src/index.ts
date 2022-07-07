@@ -1,6 +1,5 @@
 export * from './storeRef';
 export * from './types';
-export * from './apiComputed';
 
 export const currencyParamType2: [number, string, boolean] = [2, '', true]
 export function currency(val: string | number | undefined | null, digit = 2, unit = '', rmZero = false) {
