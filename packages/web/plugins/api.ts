@@ -33,7 +33,7 @@ export const api = () => {
 			const platform = usePlatform();
 			if (platform.isEncrypt) {
 				const session = useSession();
-				return session.userId.toString();
+				return session.userId;
 			}
 		},
 	})

@@ -3,15 +3,16 @@ import { defineStore } from 'pinia';
 import { reactive, computed, toRefs } from 'vue';
 
 export const usePlatform = defineStore('platform', () => {
+  const config = useRuntimeConfig();
   // state
   const state = reactive({
-    isEncrypt: import.meta.env.VITE_TG_IS_ENCRYPT || false,
-    encrypt:undefined as {
+    isEncrypt: config.TG_IS_ENCRYPT || false,
+    encrypt: undefined as {
       token: string,
       key: string,
       iv: string,
-    } |undefined,
-    ip: '0.0.0.0',
+    } | undefined,
+    _ip: '0.0.0.0',
   });
 
   // getters
@@ -32,12 +33,14 @@ export const usePlatform = defineStore('platform', () => {
     return window.location.hostname;
   });
 
-  async function getIp() {
-    const res = await fetch('https://api.ipify.org?format=json')
-    const data = res.json()
-    state.ip = data.ip
-    return data;
-  }
+  const ip = computed<Promise<string>>(async () => {
+    if (state._ip === '0.0.0.0') {
+      const { data, pending, error, refresh } = await useAsyncData('getip', () => $fetch('https://api.ipify.org?format=json'))
+      state._ip = data.value.ip
+    }
+    return state._ip;
+  })
+
 
   return {
     ...toRefs(state),
@@ -45,7 +48,7 @@ export const usePlatform = defineStore('platform', () => {
     uuid,
     deviceInfo,
     domain,
-    getIp
+    ip
   };
 
   // actions
