@@ -61,7 +61,7 @@ export function defineTgApi(options: {
 
 		const tgClient = new TgClient(
 			{
-				BASE: import.meta.env.VITE_TG_RELAY_API_URL,
+				BASE: options.getBaseUrl(),
 				HEADERS: options.getHeaders(),
 			});
 		tgClient.encryptUserId = options.getEncryptUserId();
@@ -73,29 +73,3 @@ export function defineTgApi(options: {
 		return tgClient
 	}
 }
-
-const tgApi = defineTgApi({
-	getBaseUrl: () => import.meta.env.VITE_TG_RELAY_API_URL,
-	getHeaders: () => {
-		const platform = usePlatform();
-		const session = useSession();
-		return {
-			platform: 'Web_1.0',
-			ticket: session.user?.ticket,
-			username: session.user?.username,
-			vga: platform.vga,
-			deviceInfo: platform.deviceInfo,
-			domain: platform.domain,
-			uuid: platform.uuid,
-			Lang: 'zh-cn',
-		}
-	},
-	getEncryptUserId: () => {
-		const platform = usePlatform();
-		if (platform.isEncrypt) {
-			const session = useSession();
-			return session.userId.toString();
-		}
-	},
-})
-export const useTgApi = () => tgApi;

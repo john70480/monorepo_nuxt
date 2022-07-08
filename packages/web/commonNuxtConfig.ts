@@ -9,6 +9,10 @@ export const commonNuxtConfig: NuxtConfig = {
 	buildModules: [
 		['@pinia/nuxt', { disableVuex: true }],
 	],
+	publicRuntimeConfig: {
+		TG_RELAY_API_URL: process.env.TG_RELAY_API_URL,
+		TG_IS_ENCRYPT: process.env.TG_IS_ENCRYPT
+	},
 	vite: {
 		/* options for vite */
 		// ssr: true // enable unstable server-side rendering for development (false by default)

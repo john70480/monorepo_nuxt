@@ -12,10 +12,14 @@
   "scripts": {
     "setup": "yarn",
     "api-update": "cd packages/api && yarn run update",
-    "web-dev": "cd packages/web && yarn run dev",
-    "web-dev-build": "cd packages/web && yarn run build",
-    "web-dev-preview": "cd packages/web && yarn run preview",
-    "web-dev-mobile": "cd packages/web-mobile && nuxt dev",
+    "web-dev:dev": "cd packages/web && yarn run dev:dev",
+    "web-dev:stg": "cd packages/web && yarn run dev:stg",
+    "web-dev:prod": "cd packages/web && yarn run dev:prod",
+    "web-build:dev": "cd packages/web && yarn run build:dev",
+    "web-build:stg": "cd packages/web && yarn run build:stg",
+    "web-build:prod": "cd packages/web && yarn run build:prod",
+    "web-preview": "cd packages/web && yarn run preview",
+    "web-mobile-dev": "cd packages/web-mobile && nuxt dev",
     "web-dev-test": "cd packages/web-test && vite"
   },
   "resolutions": {

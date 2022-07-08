@@ -27,7 +27,7 @@ export class TgClient {
 
     constructor(config?: Partial<OpenAPIConfig>, HttpRequest: HttpRequestConstructor = AxiosHttpRequest) {
         this.request = new HttpRequest({
-            BASE: config?.BASE ?? 'https://tstgen.tg7777.net/relayApi',
+            BASE: config?.BASE ?? 'https://tstgendev.tg7777.net/relayApi',
             VERSION: config?.VERSION ?? '0.5.83',
             WITH_CREDENTIALS: config?.WITH_CREDENTIALS ?? false,
             CREDENTIALS: config?.CREDENTIALS ?? 'include',

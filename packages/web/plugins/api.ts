@@ -12,8 +12,9 @@ export default defineNuxtPlugin(nuxtApp => {
 })
 
 export const api = () => {
+	const config = useRuntimeConfig();
 	const tgApi = defineTgApi({
-		getBaseUrl: () => import.meta.env.VITE_TG_RELAY_API_URL,
+		getBaseUrl: () => config.TG_RELAY_API_URL,
 		getHeaders: () => {
 			const platform = usePlatform();
 			const session = useSession();
