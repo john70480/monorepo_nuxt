@@ -2,7 +2,7 @@
 	<div class="wrap">
 		<label>
 			user
-			<input v-model="username" />
+			<input v-model="userName" />
 		</label>
 		<label>
 			password
@@ -13,18 +13,17 @@
 			<input v-model="lastFour" />
 		</label>
 		<button @click="submit()">送出</button>
-		<button @click="getSiteList()">getSiteList</button>
 	</div>
 	<pre>
-		<code>		
+		<code>	
 			{{ data }}
-			{{ session }}
-      {{ siteList }}
+			{{ session.user }}
 		</code>
 	</pre>
 
 </template>
 <script setup lang="ts">
+import { Base64 } from 'js-base64';
 import { usePlatform } from '@tg/stores/src/platform';
 import { useSession } from '@tg/stores/src/session';
 import { useNuxtApp } from '#app'
@@ -37,42 +36,33 @@ definePageMeta({
 	layout: "custom",
 });
 const data = ref<ReturnType<typeof api.tg.postApiMembersLogin>>();
-const username = ref<string>();
+const userName = ref<string>();
 const password = ref<string>();
 const lastFour = ref<string>();
-const count = ref(0);
-const siteList = ref<ReturnType<typeof api.tg.getApiIntegrationNoticeSiteList>>()
 
 async function submit() {
-	count.value++;
 	const formData = {
-		username: username.value,
+		username: userName.value,
 		password: password.value,
 		lastFour: lastFour.value,
 	};
-	await platform.getIp();
 
 	data.value = await api.tg.postApiMembersLogin({
-		// platform: 'Web_1.0',
-		// uuid: platform.uuid,
-		// deviceInfo: platform.deviceInfo,
-		// vga: platform.vga,
-		// ...api.headers,
 		ip: platform.ip,
 		formData,
 	});
 
 	const { Message, StatusCode, Payload } = data.value;
-
-	session.login(Payload.token);
-	console.log('postApiMembersLogin', data.value, Message, StatusCode, Payload);
-}
-async function getSiteList() {
-
-	siteList.value = await api.tg.getApiIntegrationNoticeSiteList({
-		// ...api.headers
+	const { id, username, userid, token } = Payload
+	const json = JSON.stringify({
+		ticket: id,
+		username,
+		userid,
+		token,
 	})
-	console.log('getApiIntegrationNoticeSiteList', siteList.value);
+	const userInfo = Base64.encode(json)
+	session.login(userInfo);
+	console.log('postApiMembersLogin', data.value, Message, StatusCode, Payload);
 }
 </script>
 <style>
