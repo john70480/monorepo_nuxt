@@ -24,8 +24,8 @@
 </template>
 <script setup lang="ts">
 import { Base64 } from 'js-base64';
-import { usePlatform } from '@tg/stores/src/platform';
-import { useSession } from '@tg/stores/src/session';
+import { usePlatform } from '@tg/stores/platform';
+import { useSession } from '@tg/stores/session';
 import { useNuxtApp } from '#app'
 import { definePageMeta, ref } from '#imports';
 

@@ -22,6 +22,7 @@ export const commonNuxtConfig: NuxtConfig = {
 				'@tg/web': '@tg/web/',
 				'@tg/web-mobile': '@tg/web-mobile',
 				'@tg/shared': '@tg/shared/src',
+				'@tg/stores': '@tg/stores/src',
 				'@tg/utils': '@tg/utils/src',
 				'@tg/api': '@tg/api/src',
 			},

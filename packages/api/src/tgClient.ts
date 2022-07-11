@@ -13,7 +13,7 @@ import type {
     SetEncryptionParams,
 } from './types';
 
-import { usePlatform } from '@tg/stores/src/platform';
+import { usePlatform } from '@tg/stores/platform';
 type HttpRequestConstructor = new (config: OpenAPIConfig) => BaseHttpRequest;
 
 export class TgClient {

@@ -1,7 +1,7 @@
 // import * as http from './http';
 import { TgClient } from './tgClient';
-import { usePlatform } from '@tg/stores/src/platform';
-import { useSession } from '@tg/stores/src/session';
+import { usePlatform } from '@tg/stores/platform';
+import { useSession } from '@tg/stores/session';
 
 export let getEncryptWorker: Promise<void> | undefined;
 export function defineTgApi(options: {

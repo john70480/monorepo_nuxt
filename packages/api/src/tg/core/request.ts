@@ -5,7 +5,7 @@ import axios from 'axios';
 import type { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 import FormData from 'form-data';
 
-import { usePlatform } from '@tg/stores/src/platform';
+import { usePlatform } from '@tg/stores/platform';
 import * as AES from '@tg/api/aes';
 import { Base64 } from 'js-base64';
 

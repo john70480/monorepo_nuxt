@@ -1,7 +1,7 @@
 import { defineNuxtPlugin } from '#app'
 import { defineTgApi } from '@tg/api';
-import { usePlatform } from '@tg/stores/src/platform';
-import { useSession } from '@tg/stores/src/session';
+import { usePlatform } from '@tg/stores/platform';
+import { useSession } from '@tg/stores/session';
 
 export default defineNuxtPlugin(nuxtApp => {
 	// now available on `nuxtApp.$injected`
