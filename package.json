@@ -25,8 +25,7 @@
     "web-mobile-build:dev": "cd packages/web-mobile && yarn run build:dev",
     "web-mobile-build:stg": "cd packages/web-mobile && yarn run build:stg",
     "web-mobile-build:prod": "cd packages/web-mobile && yarn run build:prod",
-    "web-mobile--preview": "cd packages/web-mobile && yarn run preview",
-    "web-dev-test": "cd packages/web-test && vite"
+    "web-mobile--preview": "cd packages/web-mobile && yarn run preview"
   },
   "resolutions": {
     "@vue/runtime-core": "3.2.33",
