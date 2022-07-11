@@ -19,7 +19,13 @@
     "web-build:stg": "cd packages/web && yarn run build:stg",
     "web-build:prod": "cd packages/web && yarn run build:prod",
     "web-preview": "cd packages/web && yarn run preview",
-    "web-mobile-dev": "cd packages/web-mobile && nuxt dev",
+    "web-mobile-dev:dev": "cd packages/web-mobile && yarn run dev:dev",
+    "web-mobile-dev:stg": "cd packages/web-mobile && yarn run dev:stg",
+    "web-mobile-dev:prod": "cd packages/web-mobile && yarn run dev:prod",
+    "web-mobile-build:dev": "cd packages/web-mobile && yarn run build:dev",
+    "web-mobile-build:stg": "cd packages/web-mobile && yarn run build:stg",
+    "web-mobile-build:prod": "cd packages/web-mobile && yarn run build:prod",
+    "web-mobile--preview": "cd packages/web-mobile && yarn run preview",
     "web-dev-test": "cd packages/web-test && vite"
   },
   "resolutions": {

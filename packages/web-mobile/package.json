@@ -3,8 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev:dev": "cross-env-file -p ../../.env.development.json nuxt  dev",
+    "dev:stg": "cross-env-file -p ../../.env.staging.json nuxt dev ",
+    "dev:prod": "cross-env-file -p ../../.env.production.json nuxt dev",
+    "build:dev": "cross-env-file -p ../../.env.development.json nuxt build ",
+    "build:stg": "cross-env-file -p ../../.env.staging.json nuxt build",
+    "build:prod": "cross-env-file -p ../../.env.production.json nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
