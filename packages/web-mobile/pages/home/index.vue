@@ -26,8 +26,8 @@
 </template>
 <script setup lang="ts">
 /* ref() and computed() are auto-imported */
-import { usePlatform } from '@tg/stores/src/platform';
-import { useSession } from '@tg/stores/src/session';
+import { usePlatform } from '@tg/stores/platform';
+import { useSession } from '@tg/stores/session';
 import { ref } from 'vue';
 import { useNuxtApp } from '#app'
 import { definePageMeta } from '#imports';
