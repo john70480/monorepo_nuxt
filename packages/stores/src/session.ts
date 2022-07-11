@@ -28,14 +28,18 @@ export const useSession = defineStore('session', () => {
 	});
 
 	const userId = computed(() => tsStoredUser.value ? 'userid' in tsStoredUser.value ? tsStoredUser.value.userid : tsStoredUser.value.id : '')
-
+	const isAuth = computed(() => {
+		return tsStoredUser.value && tsStoredUser.value?.token.length > 0 && tsStoredUser.value?.username.length > 0;
+	})
 	return {
 		user: tsStoredUser,
 		login: _login,
 		token: tgValidToken,
 		userId,
-		tgStoredToken
+		tgStoredToken,
+		isAuth
 	};
+
 	function _login(urlToken: string) {
 		tgStoredToken.value = urlToken;
 	}

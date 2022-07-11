@@ -2,9 +2,9 @@ import { useSession } from "@tg/stores/session";
 
 
 export default defineNuxtRouteMiddleware((to, from) => {
-	// const session = useSession()
+	const session = useSession()
 	// auth
-	if (true) {
+	if (!session.isAuth) {
 		// 未登入
 		sessionStorage.clear()
 		console.log('權限不足');
