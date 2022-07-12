@@ -35,7 +35,7 @@ export class Service {
          */
         category?: string,
         /**
-         * 第三方平台代碼，全部帶空值 (saba | wm_casino | ob_poker | ob_casino | ag_casino | ky_poker | ly_poker | jdb_gaming | cq9_gaming | ob_lottery | sgwin_lottery | bbin_casino | ob_sport | allbet_casino | im_sport | kx_poker)
+         * 第三方平台代碼，全部帶空值 (saba | wm_casino | ob_poker | ob_casino | ag_casino | ky_poker | ly_poker | jdb_gaming | cq9_gaming | ob_lottery | sgwin_lottery | bbin_casino | ob_sport | allbet_casino | im_sport | kx_poker | mt_poker | ai_sport | bg_casino | dg_casino | pt_gaming | pg_gaming | mg_gaming)
          */
         platformCode?: string,
     }): CancelablePromise<{
@@ -124,7 +124,7 @@ export class Service {
          */
         category?: string,
         /**
-         * 第三方平台代碼，全部帶空值 (saba | wm_casino | ob_poker | ob_casino | ag_casino | ky_poker | ly_poker | jdb_gaming | cq9_gaming | ob_lottery | sgwin_lottery | bbin_casino | ob_sport | allbet_casino | im_sport | kx_poker)
+         * 第三方平台代碼，全部帶空值 (saba | wm_casino | ob_poker | ob_casino | ag_casino | ky_poker | ly_poker | jdb_gaming | cq9_gaming | ob_lottery | sgwin_lottery | bbin_casino | ob_sport | allbet_casino | im_sport | kx_poker | mt_poker | ai_sport | bg_casino | dg_casino | pt_gaming | pg_gaming | mg_gaming)
          */
         platformCode?: string,
     }): CancelablePromise<{
@@ -193,7 +193,7 @@ export class Service {
          */
         category?: string,
         /**
-         * 第三方平台代碼，全部帶空值 (saba | wm_casino | ob_poker | ob_casino | ag_casino | ky_poker | ly_poker | jdb_gaming | cq9_gaming | ob_lottery | sgwin_lottery | bbin_casino | ob_sport | allbet_casino | im_sport | kx_poker)
+         * 第三方平台代碼，全部帶空值 (saba | wm_casino | ob_poker | ob_casino | ag_casino | ky_poker | ly_poker | jdb_gaming | cq9_gaming | ob_lottery | sgwin_lottery | bbin_casino | ob_sport | allbet_casino | im_sport | kx_poker | mt_poker | ai_sport | bg_casino | dg_casino | pt_gaming | pg_gaming | mg_gaming)
          */
         platformCode?: string,
     }): CancelablePromise<{
@@ -367,7 +367,7 @@ export class Service {
          */
         category?: string,
         /**
-         * 第三方平台代碼，全部帶空值 (saba | wm_casino | ob_poker | ob_casino | ag_casino | ky_poker | ly_poker | jdb_gaming | cq9_gaming | ob_lottery | sgwin_lottery | bbin_casino | ob_sport | allbet_casino | im_sport | kx_poker)
+         * 第三方平台代碼，全部帶空值 (saba | wm_casino | ob_poker | ob_casino | ag_casino | ky_poker | ly_poker | jdb_gaming | cq9_gaming | ob_lottery | sgwin_lottery | bbin_casino | ob_sport | allbet_casino | im_sport | kx_poker | mt_poker | ai_sport | bg_casino | dg_casino | pt_gaming | pg_gaming | mg_gaming)
          */
         platformCode?: string,
     }): CancelablePromise<{
@@ -1153,7 +1153,14 @@ export class Service {
          */
         message?: string;
         /**
-         * 回覆代碼 0 Pass
+         * 回覆代碼
+         * - 0 Pass 撤单执行成功
+         * - 2101 撤单人并非下单人，撤单失败
+         * - 2102 撤单执行成功，該單已撤單
+         * - 2103 已过开赛时间，撤单失败
+         * - 2104 仅可在下单后180秒内撤单，撤单失败
+         * - 2105 3分钟内最多撤单 5 次，请稍后再试
+         * - 2106 1天内最多撤单10次，请稍后再试
          *
          */
         statusCode?: number;
@@ -1842,13 +1849,13 @@ export class Service {
          * 不帶預設所有
          * - tg (TG平台): platformCode包含 tg (TG平台)
          * - casinos (真人) : platformCode包含wm_casino(WM真人)
-         * - sports (體育) : platformCode包含saba(沙巴)、ob_sport(OB體育)、im_sport(IM體育)
+         * - sports (體育) : platformCode包含saba(沙巴)、ob_sport(OB體育)、im_sport(IM體育)、ai_sport(AI體育)
          * - lotteries (彩票) : platformCode包含ob_lottery(OB彩票)、sgwin_lottery(雙贏彩票)
          *
          */
         category?: string,
         /**
-         * tg(TG平台)、wm_casino(WM真人)、saba(沙巴)、ob_lottery(ob彩票)、sgwin_lottery(雙贏彩票)、ob_sport(OB體育)、im_sport(IM體育)
+         * tg(TG平台)、wm_casino(WM真人)、saba(沙巴)、ob_lottery(ob彩票)、sgwin_lottery(雙贏彩票)、ob_sport(OB體育)、im_sport(IM體育)、ai_sport(AI體育)
          */
         platformCode?: string,
     }): CancelablePromise<{
@@ -3963,7 +3970,7 @@ export class Service {
         domain?: string,
         formData?: {
             /**
-             * 第三方代碼 沙巴體育:saba|WM真人:wm_casino|OB棋牌:ob_poker|OB真人:ob_casino|AG真人:ag_casino|開元棋牌:ky_poker|樂遊棋牌:ly_poker|JDB電子:jdb_gaming|CQ9電子:cq9_gaming|OB彩票:ob_lottery|雙贏彩票:sgwin_lottery|BBIN真人:bbin_casino|OB體育:ob_sport|Allbet真人:allbet_casino|IM體育:im_sport|凱旋棋牌:kx_poker
+             * 第三方代碼 沙巴體育:saba|WM真人:wm_casino|OB棋牌:ob_poker|OB真人:ob_casino|AG真人:ag_casino|開元棋牌:ky_poker|樂遊棋牌:ly_poker|JDB電子:jdb_gaming|CQ9電子:cq9_gaming|OB彩票:ob_lottery|雙贏彩票:sgwin_lottery|BBIN真人:bbin_casino|OB體育:ob_sport|Allbet真人:allbet_casino|IM體育:im_sport|凱旋棋牌:kx_poker|美天棋牌:mt_poker|AI體育:ai_sport|BG真人:bg_casino|DG真人:dg_casino|PT電子:pt_gaming|PG電子:pg_gaming|MG電子:mg_gaming
              */
             thirdParty?: string;
             /**
@@ -6895,6 +6902,400 @@ export class Service {
     }
 
     /**
+     * 會員登入
+     * @returns any
+     * @throws ApiError
+     */
+    public postApiMembersLogin({
+        platform,
+        ip,
+        deviceInfo,
+        vga,
+        uuid,
+        formData,
+        siteClass,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * IP
+         */
+        ip: string,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: string,
+        /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: string,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
+        formData: {
+            /**
+             * 會員帳號
+             */
+            username: string;
+            /**
+             * 會員密碼
+             */
+            password: string;
+            /**
+             * 手機末四碼(判定為陌生裝置時需傳入)
+             */
+            lastFour?: string;
+        },
+        /**
+         * 站台分類 CN:內地 UK:國際
+         */
+        siteClass?: 'CN' | 'UK',
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        message?: string;
+        /**
+         * 回覆代碼
+         * - 0 登入成功
+         * - 1051 密码错误
+         * - 1053 帐密有特殊符号
+         * - 1054 您登入次数过于频繁，请于60秒钟后再尝试
+         * - 1056 查无此帐号
+         * - 1199 该帐号未曾于此装置登入过
+         * - 1120 手機末四碼有誤
+         *
+         * 黑名單
+         *
+         * - 1046 登入失败，请联系上层或客服
+         * - 1047 登入失败，请联系上层或客服
+         * - 1048 登入失败，请联系上层或客服
+         * - 1049 登入失败，请联系上层或客服
+         *
+         * 帳號鎖定
+         *
+         * - 1052 此会员登入错误五次以上，锁定帐号
+         * - 1060 此帐号已锁定，请洽上层管理员或客服
+         * - 1061 此会员登入错误五次以上，锁定IP
+         * - 1062 此帐号已锁定，请洽上层管理员或客服
+         * - 1065 此会员七天未登入，锁定帐号
+         * - 1067 此帐号已被风控
+         * - 1068 此IP禁止登入
+         *
+         */
+        statusCode?: number;
+        /**
+         * 回傳內容
+         */
+        payload?: {
+            /**
+             * 會員名稱
+             */
+            username?: string;
+            /**
+             * 會員Id
+             */
+            userid?: number;
+            /**
+             * 會員暱稱
+             */
+            usernickname?: string;
+            /**
+             * 首次登入
+             * - 0 不是
+             * - 1 是 (進入補註冊)
+             *
+             */
+            firstLogin?: number;
+            /**
+             * 登入Id(ticket)
+             */
+            id?: number;
+            /**
+             * 固定為1
+             */
+            type?: string;
+            /**
+             * 登入token
+             */
+            token?: string;
+            /**
+             * 體驗金活動ID  (沒活動時ID = 0)
+             *
+             */
+            activityId?: number;
+            /**
+             * 密码错误次數 (在狀態1051時出現)
+             */
+            errorcount?: number;
+        };
+    }> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/members/login',
+            headers: {
+                'Platform': platform,
+                'ip': ip,
+                'deviceInfo': deviceInfo,
+                'vga': vga,
+                'uuid': uuid,
+                'siteClass': siteClass,
+            },
+            formData: formData,
+            mediaType: 'application/x-www-form-urlencoded',
+        });
+    }
+
+    /**
+     * 會員登入(APP)
+     * @returns any
+     * @throws ApiError
+     */
+    public postApiMembersLoginApp({
+        platform,
+        ip,
+        deviceInfo,
+        vga,
+        uuid,
+        formData,
+        siteClass,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * IP
+         */
+        ip: string,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: string,
+        /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: string,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
+        formData: {
+            /**
+             * 會員帳號
+             */
+            username: string;
+            /**
+             * 會員密碼
+             */
+            password: string;
+            /**
+             * 手機末四碼(判定為陌生裝置時需傳入)
+             */
+            lastFour?: string;
+        },
+        /**
+         * 站台分類 CN:內地 UK:國際
+         */
+        siteClass?: 'CN' | 'UK',
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        message?: string;
+        /**
+         * 回覆代碼
+         * - 0 登入成功
+         * - 1051 密码错误
+         * - 1053 帐密有特殊符号
+         * - 1054 您登入次数过于频繁，请于60秒钟后再尝试
+         * - 1056 查无此帐号
+         * - 1199 该帐号未曾于此装置登入过
+         * - 1120 手機末四碼有誤
+         * - 2000 站台停用
+         *
+         * 黑名單
+         *
+         * - 1046 登入失败，请联系上层或客服
+         * - 1047 登入失败，请联系上层或客服
+         * - 1048 登入失败，请联系上层或客服
+         * - 1049 登入失败，请联系上层或客服
+         *
+         * 帳號鎖定
+         *
+         * - 1052 此会员登入错误五次以上，锁定帐号
+         * - 1060 此帐号已锁定，请洽上层管理员或客服
+         * - 1061 此会员登入错误五次以上，锁定IP
+         * - 1062 此帐号已锁定，请洽上层管理员或客服
+         * - 1065 此会员七天未登入，锁定帐号
+         * - 1067 此帐号已被风控
+         * - 1068 此IP禁止登入
+         *
+         */
+        statusCode?: number;
+        /**
+         * 回傳內容
+         */
+        payload?: {
+            /**
+             * 會員名稱
+             */
+            username?: string;
+            /**
+             * 會員Id
+             */
+            userid?: number;
+            /**
+             * 會員暱稱
+             */
+            usernickname?: string;
+            /**
+             * 首次登入
+             * - 0 不是
+             * - 1 是 (進入補註冊)
+             *
+             */
+            firstLogin?: number;
+            /**
+             * 登入Id(ticket)
+             */
+            id?: number;
+            /**
+             * 固定為1
+             */
+            type?: string;
+            /**
+             * 登入token
+             */
+            token?: string;
+            /**
+             * 體驗金活動ID  (沒活動時ID = 0)
+             *
+             */
+            activityId?: number;
+            /**
+             * 所有體育平台餘額轉回TG錢包
+             * - 0:未開啟免轉錢包
+             * - 1:已執行
+             *
+             */
+            allTransferToTg?: number;
+            /**
+             * 環境設定相關
+             */
+            settings?: {
+                /**
+                 * 驗證方式(陣列)
+                 */
+                authMethod?: Array<string>;
+                /**
+                 * 國家
+                 */
+                country?: string;
+                /**
+                 * 幣別
+                 */
+                currency?: string;
+                /**
+                 * 語系(陣列)
+                 */
+                languages?: Array<string>;
+            };
+            /**
+             * 密码错误次數 (在狀態1051時出現)
+             */
+            errorcount?: number;
+        };
+    }> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/members/login/app',
+            headers: {
+                'Platform': platform,
+                'ip': ip,
+                'deviceInfo': deviceInfo,
+                'vga': vga,
+                'uuid': uuid,
+                'siteClass': siteClass,
+            },
+            formData: formData,
+            mediaType: 'application/x-www-form-urlencoded',
+        });
+    }
+
+    /**
+     * 會員登出
+     * @returns any
+     * @throws ApiError
+     */
+    public postApiMembersLogout({
+        platform,
+        username,
+        ticket,
+        vga,
+        deviceInfo,
+        uuid,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 會員名稱
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 顯卡型號
+         */
+        vga: string,
+        /**
+         * 系統資訊
+         */
+        deviceInfo: string,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        message?: string;
+        /**
+         * 回覆代碼
+         * - 詳見代碼表 TG系統 網站狀態
+         * - 詳見代碼表 帳戶登入問題
+         * - 0 $username logout/$username already logout
+         *
+         */
+        statusCode?: number;
+        /**
+         * 回傳內容
+         */
+        payload?: any;
+    }> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/members/logout',
+            headers: {
+                'Platform': platform,
+                'username': username,
+                'ticket': ticket,
+                'vga': vga,
+                'deviceInfo': deviceInfo,
+                'uuid': uuid,
+            },
+        });
+    }
+
+    /**
      * 取得安全性問題
      * @returns any 安全性問題清單
      * @throws ApiError
@@ -7105,200 +7506,110 @@ export class Service {
     }
 
     /**
-     * 簡訊發送
-     * @returns any 簡訊發送
+     * 查詢代理
+     * @returns any 回傳簡訊寄送結果
      * @throws ApiError
      */
-    public postApiMembersSendSms({
-        formData,
-        platform = 'Web_1.0',
+    public getApiMembersAid({
         username,
-        ticket,
+        platform = 'Web_1.0',
     }: {
-        formData: {
-            /**
-             * 手機號含國碼
-             */
-            mobile?: string;
-            /**
-             * 手機末四碼(於會員互轉、增加USDT位置等登入後的簡訊發送功能皆需帶入，登入發送功能也需帶入)
-             */
-            lastFour?: string;
-            /**
-             * 使用功能(目前只有登入發送需帶此參數)
-             * - login：登入
-             *
-             */
-            func?: 'login';
-            /**
-             * 會員帳號，只有func=login時需帶入
-             */
-            username?: string;
-        },
+        /**
+         * 會員帳號
+         */
+        username: string,
         /**
          * APP版本號
          */
         platform?: string,
-        /**
-         * 會員帳號(於會員互轉、增加USDT位置等登入後的簡訊發送功能皆需帶入)
-         */
-        username?: string,
-        /**
-         * login_id(於會員互轉、增加USDT位置等登入後的簡訊發送功能皆需帶入)
-         */
-        ticket?: number,
     }): CancelablePromise<{
         /**
          * 回覆訊息
          */
         message?: string;
         /**
-         * 回覆代碼
-         * - 0：Pass
-         * - 1005：请确认手机号
-         * - 1113：会员电话有误或该帐号尚未绑定国码，请联系客服人员
-         * - 1119:系统简讯无法传递\n请联系上层管理员或客服
-         * - 1120:手机末四码有误
-         * - 1024:你已经重覆发送，于1分钟后再发送！
-         *
-         */
-        statusCode?: number;
-        /**
-         * 回傳內容(正式機將不再回傳code簡訊驗證碼，開發機及測試機為方便串接測試，依舊會回傳)
-         */
-        payload?: {
-            /**
-             * 簡訊驗證碼
-             */
-            code?: string;
-        };
-    }> {
-        return this.httpRequest.request({
-            method: 'POST',
-            url: '/api/members/send_sms',
-            headers: {
-                'Platform': platform,
-                'username': username,
-                'ticket': ticket,
-            },
-            formData: formData,
-            mediaType: 'application/x-www-form-urlencoded',
-        });
-    }
-
-    /**
-     * 查核簡訊驗證碼
-     * @returns any 查核簡訊驗證碼
-     * @throws ApiError
-     */
-    public postApiMembersCheckSms({
-        formData,
-        platform = 'Web_1.0',
-        username,
-        ticket,
-    }: {
-        formData: {
-            /**
-             * 手機號含國碼
-             */
-            mobile?: string;
-            /**
-             * 會員填入的手機驗證碼
-             */
-            code: string;
-            /**
-             * 手機末四碼(於會員互轉、增加USDT位置等登入後的簡訊發送功能皆需帶入，登入發送功能也需帶入)
-             */
-            lastFour?: number;
-            /**
-             * 使用功能(目前只有登入發送需帶此參數)
-             * - login：登入
-             *
-             */
-            func?: 'login';
-            /**
-             * 會員帳號，只有func=login時需帶入
-             */
-            username?: string;
-        },
-        /**
-         * APP版本號
-         */
-        platform?: string,
-        /**
-         * 會員帳號(於會員互轉、增加USDT位置等登入後的簡訊驗證功能皆需帶入)
-         */
-        username?: string,
-        /**
-         * login_id(於會員互轉、增加USDT位置等登入後的簡訊驗證功能皆需帶入)
-         */
-        ticket?: number,
-    }): CancelablePromise<{
-        /**
-         * 回覆訊息
-         */
-        message?: string;
-        /**
-         * 回覆代碼
-         * - 0：验证完成
-         * - 1032：验证码失效，请重新发送！
-         * - 1033：验证码错误，请重新确认或发送！
-         * - 1120：手机末四码有误
-         *
+         * 回覆代碼 0：pass，4444：參數錯誤
          */
         statusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: any;
+        payload?: {
+            /**
+             * 代理Id
+             */
+            aid?: number;
+        };
     }> {
         return this.httpRequest.request({
-            method: 'POST',
-            url: '/api/members/check_sms',
+            method: 'GET',
+            url: '/api/members/aid/{username}',
+            path: {
+                'username': username,
+            },
             headers: {
                 'Platform': platform,
-                'username': username,
-                'ticket': ticket,
             },
-            formData: formData,
-            mediaType: 'application/x-www-form-urlencoded',
         });
     }
 
     /**
-     * 會員補註冊
-     * @returns any 會員補註冊
+     * 會員註冊
+     * @returns any 會員註冊
      * @throws ApiError
      */
-    public postApiMembersSetUserBase({
-        vga,
+    public postApiMembersAdd({
+        platform,
         deviceInfo,
+        vga,
         uuid,
-        platform = 'Web_1.0',
-        siteClass,
+        ip,
         formData,
+        siteClass,
     }: {
         /**
-         * 顯卡型號
+         * APP版本號
          */
-        vga: string,
+        platform: string,
         /**
-         * 系統資訊
+         * 裝置資訊
          */
         deviceInfo: string,
+        /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: any,
         /**
          * 裝置UUID
          */
         uuid: string,
         /**
-         * APP版本號
+         * 用戶IP
          */
-        platform?: string,
-        /**
-         * 站台分類 CN:內地 UK:國際
-         */
-        siteClass?: 'CN' | 'UK',
-        formData?: {
+        ip: string,
+        formData: {
+            /**
+             * 代理帳號
+             */
+            l20: string;
+            /**
+             * 對應[會員註冊帳號選單]回傳的checkKey
+             */
+            checkKey: string;
+            /**
+             * 代理推廣帳號(不能和code欄位同時有值)
+             */
+            agentCode?: string;
+            /**
+             * 微商推廣碼(不能和agentCode欄位同時有值)
+             * 若此欄位有值 referrer欄位為必填
+             *
+             */
+            code?: string;
+            /**
+             * 推廣人帳號
+             */
+            referrer?: string;
             /**
              * 會員帳號
              */
@@ -7308,38 +7619,49 @@ export class Service {
              */
             password: string;
             /**
-             * 提領密碼
-             */
-            withdrawPassword: string;
-            /**
              * 手機號碼(含國碼)
              */
             mobile: string;
             /**
-             * 汇款户名
+             * 註冊使用瀏覽器
+             * - 1:chrome
+             * - 2:safari
+             * - 3:ie
+             * - 4:edge
+             * - 5:360
+             * - 6:firefox
+             * - 7:tgapp
+             * - 8:其他
+             * - 9:百度
+             * - 10:搜狗
+             * - 11:UC
+             * - 12:QQ
+             * - 13:猎豹
+             * - 14:2345
+             * - 15:傲游
+             * - 16:小米
+             * - 17:華為
+             * - 18:vivo
+             * - 19:三星
+             * - 20:魅族
+             * - 21:用友云
+             * - 22:微信app
+             * - 23:opera
+             *
              */
-            accountName: string;
-            /**
-             * 會員暱稱
-             */
-            usernickname: string;
-            /**
-             * 安全性问题Id
-             */
-            pointQuestion: number;
-            /**
-             * 安全性答案
-             */
-            pointAnswer: string;
+            browser: number;
             /**
              * email
              */
             email?: string;
-            /**
-             * 生日
-             */
-            birthday?: string;
         },
+        /**
+         * 站台分類
+         * - CN :內地
+         * - UK :國際
+         *
+         */
+        siteClass?: 'CN' | 'UK',
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -7347,40 +7669,62 @@ export class Service {
         message?: string;
         /**
          * 回覆代碼
-         * - 請參照 手機號碼驗證相關
-         * - 0:Pass
+         * - 0：Pass
+         * - 1001:请输入帐号
          * - 1002:请输入密码
-         * - 1004:请输入提款密码
-         * - 1005:请确认手机号
-         * - 1006:请输入汇款户名
-         * - 1007:提款密码和登入密码相同
-         * - 1008:昵称栏位仅允许中文与英文及数字
+         * - 1003:请确认代理商帐号
          * - 1009:注册失败，请联系上层或客服
          * - 1010:注册失败，请联系上层或客服
-         * - 1011:安全性问题为空
-         * - 1012:安全性答案为空
-         * - 1013:安全性答案仅允许中文与英文及数字
          * - 1014:帐号异常，请重新操作
+         * - 3010:code失效
          * - 1015:请正确输入Email
          * - 1016:「ZZZXXXX」此手机号已绑定
+         * - 1017:上层帐号异常，请联系客服
+         * - 1018:上层帐号异常，请联系客服
+         * - 1019:「ZZZXXXX」此帐号已使用
          * - 1020:新增会员失败
-         * - 1021:新增安全性问题失败
+         * - 1022:新增等級失敗
+         * - 1025:请输入推荐人帐号
+         * - 1026:推荐人帐号不符
+         * 手機號碼驗證相關
+         * - 1551:请输入手机号码
+         * - 1552:请正确输入手机号码
+         * - 1553:此手机号已绑定
          *
          */
         statusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: any;
+        payload?: {
+            /**
+             * 可參加的活動Id及相關圖片網址
+             */
+            activityData?: {
+                /**
+                 * 活動Id
+                 */
+                activityId?: number;
+                /**
+                 * 廣告圖片網址
+                 */
+                url?: string;
+                /**
+                 * 廣告附件圖網址
+                 */
+                attachUrl?: string;
+            };
+        };
     }> {
         return this.httpRequest.request({
             method: 'POST',
-            url: '/api/members/set_user_base',
+            url: '/api/members/add',
             headers: {
                 'Platform': platform,
-                'vga': vga,
                 'deviceInfo': deviceInfo,
+                'vga': vga,
                 'uuid': uuid,
+                'ip': ip,
                 'siteClass': siteClass,
             },
             formData: formData,
@@ -7679,6 +8023,112 @@ export class Service {
     }
 
     /**
+     * 取得會員資訊資料
+     * @returns any
+     * @throws ApiError
+     */
+    public getApiMembersContactInfo({
+        platform,
+        username,
+        ticket,
+        vga,
+        deviceInfo,
+        uuid,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 會員名稱
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 顯卡型號
+         */
+        vga: string,
+        /**
+         * 系統資訊
+         */
+        deviceInfo: string,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        message?: string;
+        /**
+         * 回覆代碼
+         * - 0 Pass
+         * - 1504 无此相关资讯
+         * - 4444 参数错误,
+         *
+         */
+        statusCode?: number;
+        /**
+         * 回傳內容
+         */
+        payload?: {
+            /**
+             * 銀行帳號
+             */
+            bankAccount?: string;
+            /**
+             * 會員暱稱
+             */
+            nickname?: string;
+            /**
+             * 隱藏密碼
+             */
+            passwordHidden?: string;
+            /**
+             * 隱藏提領密碼
+             */
+            withDrawPasswordHidden?: string;
+            /**
+             * QQ帳號
+             */
+            qq?: string;
+            /**
+             * 手機號碼2
+             */
+            phone2?: string;
+            /**
+             * 微信帳號
+             */
+            weChat?: string;
+            /**
+             * SKPYE帳號
+             */
+            skype?: string;
+            /**
+             * 電子信箱
+             */
+            email?: string;
+        };
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/api/members/contact_info',
+            headers: {
+                'Platform': platform,
+                'username': username,
+                'ticket': ticket,
+                'vga': vga,
+                'deviceInfo': deviceInfo,
+                'uuid': uuid,
+            },
+        });
+    }
+
+    /**
      * 會員資產
      * @returns any
      * @throws ApiError
@@ -7851,9 +8301,9 @@ export class Service {
         uuid: string,
         /**
          * 資訊回傳內容(會依type回傳相關欄位)
-         * - top_up：充值(充值鎖定、會員層級)
-         * - withdraw：提領(提領鎖定、提領最低限額、銀行驗證)
-         * - P2P：互轉(互轉狀態、是否通過手機檢核、驗證碼開關、銀行驗證)
+         * - top_up：充值(充值鎖定、會員層級、銀行戶名)
+         * - withdraw：提領(提領鎖定、提領最低限額、銀行驗證、有無提領資料、銀行戶名)
+         * - P2P：互轉(互轉狀態、是否通過手機檢核、驗證碼開關、銀行驗證、有無提領資料、銀行戶名)
          * - bet：下注(每日預約下單剩餘次數)
          *
          */
@@ -7912,6 +8362,17 @@ export class Service {
              * 每日預約下單剩餘次數
              */
             reserveRemainNum?: number;
+            /**
+             * 銀行戶名
+             */
+            bankAccountName?: string;
+            /**
+             * 有無提領資料
+             * - 0: 未設定過提領資料(進行設定提領資料流程)
+             * - 1: 設定過提領資料
+             *
+             */
+            hasWithdrawInfo?: number;
         };
     }> {
         return this.httpRequest.request({
@@ -8167,75 +8628,6 @@ export class Service {
             url: '/api/members/level/rule_set',
             headers: {
                 'Platform': platform,
-            },
-        });
-    }
-
-    /**
-     * 會員登出
-     * @returns any
-     * @throws ApiError
-     */
-    public postApiMembersLogout({
-        platform,
-        username,
-        ticket,
-        vga,
-        deviceInfo,
-        uuid,
-    }: {
-        /**
-         * APP版本號
-         */
-        platform: string,
-        /**
-         * 會員名稱
-         */
-        username: string,
-        /**
-         * 登入ID
-         */
-        ticket: number,
-        /**
-         * 顯卡型號
-         */
-        vga: string,
-        /**
-         * 系統資訊
-         */
-        deviceInfo: string,
-        /**
-         * 裝置UUID
-         */
-        uuid: string,
-    }): CancelablePromise<{
-        /**
-         * 回覆訊息
-         */
-        message?: string;
-        /**
-         * 回覆代碼
-         * - 詳見代碼表 TG系統 網站狀態
-         * - 詳見代碼表 帳戶登入問題
-         * - 0 $username logout/$username already logout
-         *
-         */
-        statusCode?: number;
-        /**
-         * 回傳內容
-         */
-        payload?: any;
-    }> {
-        return this.httpRequest.request({
-            method: 'POST',
-            url: '/api/members/logout',
-            headers: {
-                'Platform': platform,
-                'username': username,
-                'ticket': ticket,
-                'vga': vga,
-                'deviceInfo': deviceInfo,
-                'uuid': uuid,
             },
         });
     }
@@ -8640,32 +9032,33 @@ export class Service {
     }
 
     /**
-     * 產生驗證圖形
-     * @returns any 回傳驗證圖形的base64碼
+     * 取得圖形驗證碼
+     * @returns any 回傳圖形驗證碼
      * @throws ApiError
      */
     public getApiMembersGraphicVerification({
         platform,
+        func,
         randomNum = 'dmkjtuyijnb',
-        func = 'func',
     }: {
         /**
          * APP版本號
          */
         platform: string,
         /**
-         * 識別碼
-         */
-        randomNum?: string,
-        /**
          * 此為區分用途用, 功能上目前會有差別
          * 關鍵字|用的時機
          * --- | ---
          * bet |下注用
+         * setWithdrawInfo | 初始化提領相關資訊用
          * 除上述關鍵字以外, 可隨意填入任意字串, 但不得為空字串
          *
          */
-        func?: string,
+        func: 'func' | 'bet' | 'setWithdrawInfo',
+        /**
+         * 識別碼
+         */
+        randomNum?: string,
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -8683,7 +9076,7 @@ export class Service {
          */
         payload?: {
             /**
-             * 圖片base64編碼內容
+             * 圖片(base64編碼內容)
              */
             image?: string;
         };
@@ -8702,37 +9095,38 @@ export class Service {
     }
 
     /**
-     * 驗證輸入圖形數字
-     * @returns any
+     * 驗證圖形驗證碼
+     * @returns any 驗證結果
      * @throws ApiError
      */
     public getApiMembersCkGraphicVerification({
         platform,
         number,
+        func,
         randomNum = 'dmkjtuyijnb',
-        func = 'func',
     }: {
         /**
          * APP版本號
          */
         platform: string,
         /**
-         * 圖型驗證碼數字
+         * 圖型驗證碼 (ex. 1357)
          */
         number: string,
-        /**
-         * 識別碼
-         */
-        randomNum?: string,
         /**
          * 此為區分用途用, 功能上目前會有差別
          * 關鍵字|用的時機
          * --- | ---
          * bet |下注用
+         * setWithdrawInfo | 初始化提領相關資訊用
          * 除上述關鍵字以外, 可隨意填入任意字串, 但不得為空字串
          *
          */
-        func?: string,
+        func: 'func' | 'bet' | 'setWithdrawInfo',
+        /**
+         * 識別碼
+         */
+        randomNum?: string,
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -9020,112 +9414,6 @@ export class Service {
     }
 
     /**
-     * 取得會員資訊資料
-     * @returns any
-     * @throws ApiError
-     */
-    public getApiMembersContactInfo({
-        platform,
-        username,
-        ticket,
-        vga,
-        deviceInfo,
-        uuid,
-    }: {
-        /**
-         * APP版本號
-         */
-        platform: string,
-        /**
-         * 會員名稱
-         */
-        username: string,
-        /**
-         * 登入ID
-         */
-        ticket: number,
-        /**
-         * 顯卡型號
-         */
-        vga: string,
-        /**
-         * 系統資訊
-         */
-        deviceInfo: string,
-        /**
-         * 裝置UUID
-         */
-        uuid: string,
-    }): CancelablePromise<{
-        /**
-         * 回覆訊息
-         */
-        message?: string;
-        /**
-         * 回覆代碼
-         * - 0 Pass
-         * - 1504 无此相关资讯
-         * - 4444 参数错误,
-         *
-         */
-        statusCode?: number;
-        /**
-         * 回傳內容
-         */
-        payload?: {
-            /**
-             * 銀行帳號
-             */
-            bankAccount?: string;
-            /**
-             * 會員暱稱
-             */
-            nickname?: string;
-            /**
-             * 隱藏密碼
-             */
-            passwordHidden?: string;
-            /**
-             * 隱藏提領密碼
-             */
-            withDrawPasswordHidden?: string;
-            /**
-             * QQ帳號
-             */
-            qq?: string;
-            /**
-             * 手機號碼2
-             */
-            phone2?: string;
-            /**
-             * 微信帳號
-             */
-            weChat?: string;
-            /**
-             * SKPYE帳號
-             */
-            skype?: string;
-            /**
-             * 電子信箱
-             */
-            email?: string;
-        };
-    }> {
-        return this.httpRequest.request({
-            method: 'GET',
-            url: '/api/members/contact_info',
-            headers: {
-                'Platform': platform,
-                'username': username,
-                'ticket': ticket,
-                'vga': vga,
-                'deviceInfo': deviceInfo,
-                'uuid': uuid,
-            },
-        });
-    }
-
-    /**
      * 會員資料修改
      * @returns any 资料更新成功
      * @throws ApiError
@@ -9217,6 +9505,208 @@ export class Service {
     }
 
     /**
+     * 設定會員銀行戶名
+     * @returns any 設定會員銀行戶名
+     * @throws ApiError
+     */
+    public postApiMembersSetBankAccountName({
+        platform,
+        username,
+        ticket,
+        vga,
+        deviceInfo,
+        uuid,
+        ip,
+        formData,
+        siteClass,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 會員名稱
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: string,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: string,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
+        /**
+         * 用戶IP
+         */
+        ip: string,
+        formData: {
+            /**
+             * 銀行戶名
+             */
+            accountName: string;
+        },
+        /**
+         * 站台分類
+         * - CN :內地
+         * - UK :國際
+         *
+         */
+        siteClass?: 'CN' | 'UK',
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        message?: string;
+        /**
+         * 回覆代碼
+         * - 0：Pass
+         * - 1006:请输入銀行戶名
+         *
+         */
+        statusCode?: number;
+        /**
+         * 回傳內容
+         */
+        payload?: any;
+    }> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/members/set_bank_account_name',
+            headers: {
+                'Platform': platform,
+                'username': username,
+                'ticket': ticket,
+                'vga': vga,
+                'deviceInfo': deviceInfo,
+                'uuid': uuid,
+                'ip': ip,
+                'siteClass': siteClass,
+            },
+            formData: formData,
+            mediaType: 'application/x-www-form-urlencoded',
+        });
+    }
+
+    /**
+     * 設定會員提領資訊
+     * @returns any 設定會員提領資訊
+     * @throws ApiError
+     */
+    public postApiMembersSetWithdrawInfo({
+        platform,
+        username,
+        ticket,
+        vga,
+        deviceInfo,
+        uuid,
+        ip,
+        formData,
+        siteClass,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 會員名稱
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: string,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: string,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
+        /**
+         * 用戶IP
+         */
+        ip: string,
+        formData: {
+            /**
+             * 提領密碼
+             */
+            withdrawPassword: string;
+            /**
+             * 會員暱稱
+             */
+            usernickname: string;
+            /**
+             * 安全性问题
+             */
+            pointQuestion: string;
+            /**
+             * 安全性答案
+             */
+            pointAnswer: string;
+        },
+        /**
+         * 站台分類
+         * - CN :內地
+         * - UK :國際
+         *
+         */
+        siteClass?: 'CN' | 'UK',
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        message?: string;
+        /**
+         * 回覆代碼
+         * - 0：Pass
+         * - 1004:请输入提款密码
+         * - 1007:提款密码和登入密码相同
+         * - 1008:昵称栏位仅允许中文与英文及数字
+         * - 1011:安全性问题为空
+         * - 1012:安全性答案为空
+         * - 1013:安全性答案仅允许中文与英文及数字
+         * - 1021:新增安全性问题失败
+         *
+         */
+        statusCode?: number;
+        /**
+         * 回傳內容
+         */
+        payload?: any;
+    }> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/members/set_withdraw_info',
+            headers: {
+                'Platform': platform,
+                'username': username,
+                'ticket': ticket,
+                'vga': vga,
+                'deviceInfo': deviceInfo,
+                'uuid': uuid,
+                'ip': ip,
+                'siteClass': siteClass,
+            },
+            formData: formData,
+            mediaType: 'application/x-www-form-urlencoded',
+        });
+    }
+
+    /**
      * 檢查銀行帳戶是否存在
      * @returns any 回傳銀行帳戶是否存在
      * @throws ApiError
@@ -9268,346 +9758,6 @@ export class Service {
                 'username': username,
                 'ticket': ticket,
             },
-        });
-    }
-
-    /**
-     * 檢查驗證碼是否正確
-     * @returns any
-     * @throws ApiError
-     */
-    public postApiMembersCheckVerification({
-        platform,
-        formData,
-        username,
-        ticket,
-    }: {
-        /**
-         * APP版本號
-         */
-        platform: string,
-        formData: {
-            /**
-             * 會員帳號
-             */
-            username: string;
-            /**
-             * 用戶電話
-             */
-            phone: string;
-            /**
-             * 簡訊驗證碼
-             */
-            code: string;
-            /**
-             * 手機末四碼(於忘記提領密碼時需帶入)
-             */
-            lastFour?: string;
-        },
-        /**
-         * 會員帳號(於忘記提領密碼時需帶入)
-         */
-        username?: string,
-        /**
-         * login_id(於忘記提領密碼時需帶入)
-         */
-        ticket?: number,
-    }): CancelablePromise<{
-        /**
-         * 回覆訊息
-         */
-        message?: string;
-        /**
-         * 回覆代碼
-         * - 0 验证完成
-         * - 1032 验证码失效，请重新发送！
-         * - 1033 验证码错误，请重新确认或发送！
-         * - 1120 手机末四码有误
-         * - 4444 参数有误
-         *
-         */
-        statusCode?: number;
-        /**
-         * 回傳內容
-         */
-        payload?: {
-            /**
-             * 會員帳號
-             */
-            username?: string;
-            /**
-             * 用戶電話
-             */
-            phone?: string;
-            /**
-             * 更換密碼驗證碼
-             */
-            code?: string;
-        };
-    }> {
-        return this.httpRequest.request({
-            method: 'POST',
-            url: '/api/members/check_verification',
-            headers: {
-                'Platform': platform,
-                'username': username,
-                'ticket': ticket,
-            },
-            formData: formData,
-            mediaType: 'application/x-www-form-urlencoded',
-        });
-    }
-
-    /**
-     * 查詢代理
-     * @returns any 回傳簡訊寄送結果
-     * @throws ApiError
-     */
-    public getApiMembersAid({
-        username,
-        platform = 'Web_1.0',
-    }: {
-        /**
-         * 會員帳號
-         */
-        username: string,
-        /**
-         * APP版本號
-         */
-        platform?: string,
-    }): CancelablePromise<{
-        /**
-         * 回覆訊息
-         */
-        message?: string;
-        /**
-         * 回覆代碼 0：pass，4444：參數錯誤
-         */
-        statusCode?: number;
-        /**
-         * 回傳內容
-         */
-        payload?: {
-            /**
-             * 代理Id
-             */
-            aid?: number;
-        };
-    }> {
-        return this.httpRequest.request({
-            method: 'GET',
-            url: '/api/members/aid/{username}',
-            path: {
-                'username': username,
-            },
-            headers: {
-                'Platform': platform,
-            },
-        });
-    }
-
-    /**
-     * 會員註冊
-     * @returns any 會員註冊
-     * @throws ApiError
-     */
-    public postApiMembersAdd({
-        platform,
-        deviceInfo,
-        vga,
-        uuid,
-        formData,
-        domain,
-        ip,
-        siteClass,
-    }: {
-        /**
-         * APP版本號
-         */
-        platform: string,
-        /**
-         * 裝置資訊
-         */
-        deviceInfo: any,
-        /**
-         * 顯卡名稱(渲染器)
-         */
-        vga: any,
-        /**
-         * 裝置UUID
-         */
-        uuid: string,
-        formData: {
-            /**
-             * 代理帳號
-             */
-            l20: string;
-            /**
-             * 由會員註冊帳號選單提供的帳號驗證碼
-             */
-            checkKey: string;
-            /**
-             * 微商推廣碼
-             */
-            code: string;
-            /**
-             * 會員帳號
-             */
-            username: string;
-            /**
-             * 會員暱稱
-             */
-            usernickname: string;
-            /**
-             * 登入密碼
-             */
-            password: string;
-            /**
-             * 提領密碼
-             */
-            withdrawPassword: string;
-            /**
-             * 手機號碼(含國碼)
-             */
-            mobile: string;
-            /**
-             * 汇款户名
-             */
-            accountName: string;
-            /**
-             * 安全性问题
-             */
-            pointQuestion: string;
-            /**
-             * 安全性答案
-             */
-            pointAnswer: string;
-            /**
-             * email
-             */
-            email?: string;
-            /**
-             * 推薦人帳號
-             */
-            referrer: string;
-            /**
-             * 註冊使用瀏覽器
-             * - 1:chrome
-             * - 2:safari
-             * - 3:ie
-             * - 4:edge
-             * - 5:360
-             * - 6:firefox
-             * - 7:tgapp
-             * - 8:其他
-             * - 9:百度
-             * - 10:搜狗
-             * - 11:UC
-             * - 12:QQ
-             * - 13:猎豹
-             * - 14:2345
-             * - 15:傲游
-             * - 16:小米
-             * - 17:華為
-             * - 18:vivo
-             * - 19:三星
-             * - 20:魅族
-             * - 21:用友云
-             * - 22:微信app
-             * - 23:opera
-             *
-             */
-            browser: number;
-        },
-        /**
-         * 來源網址(原架構中的host)
-         */
-        domain?: any,
-        /**
-         * 用戶IP
-         */
-        ip?: string | null,
-        /**
-         * 站台分類 CN:內地 UK:國際
-         */
-        siteClass?: 'CN' | 'UK',
-    }): CancelablePromise<{
-        /**
-         * 回覆訊息
-         */
-        message?: string;
-        /**
-         * 回覆代碼
-         * - 0：Pass
-         * - 1001:请输入帐号
-         * - 1002:请输入密码
-         * - 1003:请确认代理商帐号
-         * - 1004:请输入提款密码
-         * - 1006:请输入汇款户名
-         * - 1007:提款密码和登入密码相同
-         * - 1008:昵称栏位仅允许中文与英文及数字
-         * - 1009:注册失败，请联系上层或客服
-         * - 1010:注册失败，请联系上层或客服
-         * - 1011:安全性问题为空
-         * - 1012:安全性答案为空
-         * - 1013:安全性答案仅允许中文与英文及数字
-         * - 1014:帐号异常，请重新操作
-         * - 3010:code失效
-         * - 1015:请正确输入Email
-         * - 1016:「ZZZXXXX」此手机号已绑定
-         * - 1017:上层帐号异常，请联系客服
-         * - 1018:上层帐号异常，请联系客服
-         * - 1019:「ZZZXXXX」此帐号已使用
-         * - 1020:新增会员失败
-         * - 1021:新增安全性问题失败
-         * - 1022:新增等級失敗
-         * - 1023:此帐号安全性问题已绑定
-         * - 1025:请输入推荐人帐号
-         * - 1026:推荐人帐号不符
-         * 手機號碼驗證相關
-         * - 1551:请输入手机号码
-         * - 1552:请正确输入手机号码
-         * - 1553:此手机号已绑定
-         *
-         */
-        statusCode?: number;
-        /**
-         * 回傳內容
-         */
-        payload?: {
-            /**
-             * 可參加的活動Id及相關圖片網址
-             */
-            activityData?: {
-                /**
-                 * 活動Id
-                 */
-                activityId?: number;
-                /**
-                 * 廣告圖片網址
-                 */
-                url?: string;
-                /**
-                 * 廣告附件圖網址
-                 */
-                attachUrl?: string;
-            };
-        };
-    }> {
-        return this.httpRequest.request({
-            method: 'POST',
-            url: '/api/members/add',
-            headers: {
-                'Platform': platform,
-                'domain': domain,
-                'ip': ip,
-                'deviceInfo': deviceInfo,
-                'vga': vga,
-                'uuid': uuid,
-                'siteClass': siteClass,
-            },
-            formData: formData,
-            mediaType: 'application/x-www-form-urlencoded',
         });
     }
 
@@ -9694,23 +9844,32 @@ export class Service {
     }
 
     /**
-     * 設定會員提領資料
+     * 新增會員銀行卡資料
      * @returns any
      * @throws ApiError
      */
     public postApiMembersSetUserBank({
         platform,
+        username,
+        ticket,
         vga,
         deviceInfo,
         uuid,
         formData,
-        username = 'P9586',
-        ticket = 18304421,
+        ip,
     }: {
         /**
          * APP版本號
          */
         platform: string,
+        /**
+         * 會員帳號
+         */
+        username: string,
+        /**
+         * login_id
+         */
+        ticket: number,
         /**
          * 顯卡型號
          */
@@ -9736,15 +9895,15 @@ export class Service {
              * 銀行賬號
              */
             bankAccount: string;
+            /**
+             * 銀行戶名(若之前銀行戶名未建立, 此參數為必填)
+             */
+            accountName?: string;
         },
         /**
-         * 會員帳號
+         * 用戶IP
          */
-        username?: string,
-        /**
-         * login_id
-         */
-        ticket?: number,
+        ip?: string,
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -9754,12 +9913,12 @@ export class Service {
          * 回覆代碼
          * - 詳見代碼表 TG系統 網站狀態
          * - 詳見代碼表 帳戶登入問題
+         * - 1006 请输入银行户名
          * - 1093 提领密码为空
          * - 1094 会员银行代码为空
          * - 1095 会员银行账号为空
-         * - 1096 会员银行账户名称为空
          * - 1097 会员账号或密码错误
-         * - 1098 此会员已设定银行账号
+         * - 1098 此会员可设定银行帐号已達上限
          * - 1099 此银行账号已被设定
          * - 1100 账户新增失败
          *
@@ -9780,6 +9939,7 @@ export class Service {
                 'vga': vga,
                 'deviceInfo': deviceInfo,
                 'uuid': uuid,
+                'ip': ip,
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
@@ -9787,19 +9947,26 @@ export class Service {
     }
 
     /**
-     * 會員銀行資料
-     * @returns any 會員銀行資料
+     * 查詢會員銀行資料
+     * @returns void
      * @throws ApiError
      */
     public getApiMembersBankInfo({
+        ticket,
+        username,
         vga,
         deviceInfo,
         uuid,
-        platform = 'Android_400',
-        ticket = 35883569,
-        username = 'pf123',
-        lang = 'zh-cn',
+        platform = 'Android_600',
     }: {
+        /**
+         * 登入id
+         */
+        ticket: number,
+        /**
+         * 使用者名稱
+         */
+        username: string,
         /**
          * 顯卡型號
          */
@@ -9816,61 +9983,7 @@ export class Service {
          * APP版本號
          */
         platform?: string,
-        /**
-         * 登入id
-         */
-        ticket?: number,
-        /**
-         * 使用者名稱
-         */
-        username?: string,
-        /**
-         * 多語言zh-cn(簡體中文)、zh-hk(繁體中文)、en-us(英文)
-         */
-        lang?: string,
-    }): CancelablePromise<{
-        /**
-         * 回覆訊息
-         */
-        message?: string;
-        /**
-         * 回覆代碼 0：Pass
-         */
-        statusCode?: number;
-        /**
-         * 回傳內容
-         */
-        payload?: {
-            /**
-             * userBank的id
-             */
-            id?: number;
-            /**
-             * 會員ID
-             */
-            uid?: number;
-            /**
-             * 銀行ID
-             */
-            bkid?: number;
-            /**
-             * 銀行名稱
-             */
-            bankname?: string;
-            /**
-             * 銀行分行名稱
-             */
-            branch?: string;
-            /**
-             * 帳號
-             */
-            account?: string;
-            /**
-             * 帳戶名稱/註冊時登記的銀行帳戶名稱
-             */
-            aname?: string;
-        };
-    }> {
+    }): CancelablePromise<void> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/api/members/bank_info',
@@ -9881,7 +9994,6 @@ export class Service {
                 'vga': vga,
                 'deviceInfo': deviceInfo,
                 'uuid': uuid,
-                'lang': lang,
             },
         });
     }
@@ -10128,57 +10240,48 @@ export class Service {
     }
 
     /**
-     * 會員登入
-     * @returns any
+     * 簡訊發送
+     * @returns any 簡訊發送
      * @throws ApiError
      */
-    public postApiMembersLogin({
-        platform,
-        ip,
-        deviceInfo,
-        vga,
-        uuid,
+    public postApiMembersSendSms({
         formData,
-        siteClass,
+        platform = 'Web_1.0',
+        username,
+        ticket,
     }: {
+        formData: {
+            /**
+             * 手機號含國碼
+             */
+            mobile?: string;
+            /**
+             * 手機末四碼(於會員互轉、增加USDT位置等登入後的簡訊發送功能皆需帶入，登入發送功能也需帶入)
+             */
+            lastFour?: string;
+            /**
+             * 使用功能(目前只有登入發送需帶此參數)
+             * - login：登入
+             *
+             */
+            func?: 'login';
+            /**
+             * 會員帳號，只有func=login時需帶入
+             */
+            username?: string;
+        },
         /**
          * APP版本號
          */
-        platform: string,
+        platform?: string,
         /**
-         * IP
+         * 會員帳號(於會員互轉、增加USDT位置等登入後的簡訊發送功能皆需帶入)
          */
-        ip: string,
+        username?: string,
         /**
-         * 裝置資訊
+         * login_id(於會員互轉、增加USDT位置等登入後的簡訊發送功能皆需帶入)
          */
-        deviceInfo: string,
-        /**
-         * 顯卡名稱(渲染器)
-         */
-        vga: string,
-        /**
-         * 裝置UUID
-         */
-        uuid: string,
-        formData: {
-            /**
-             * 會員帳號
-             */
-            username: string;
-            /**
-             * 會員密碼
-             */
-            password: string;
-            /**
-             * 手機末四碼(判定為陌生裝置時需傳入)
-             */
-            lastFour?: string;
-        },
-        /**
-         * 站台分類 CN:內地 UK:國際
-         */
-        siteClass?: 'CN' | 'UK',
+        ticket?: number,
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -10186,87 +10289,111 @@ export class Service {
         message?: string;
         /**
          * 回覆代碼
-         * - 0 登入成功
-         * - 1051 密码错误
-         * - 1053 帐密有特殊符号
-         * - 1054 您登入次数过于频繁，请于60秒钟后再尝试
-         * - 1056 查无此帐号
-         * - 1199 该帐号未曾于此装置登入过
-         * - 1120 手機末四碼有誤
+         * - 0：Pass
+         * - 1005：请确认手机号
+         * - 1113：会员电话有误或该帐号尚未绑定国码，请联系客服人员
+         * - 1119:系统简讯无法传递\n请联系上层管理员或客服
+         * - 1120:手机末四码有误
+         * - 1024:你已经重覆发送，于1分钟后再发送！
          *
-         * 黑名單
-         *
-         * - 1046 登入失败，请联系上层或客服
-         * - 1047 登入失败，请联系上层或客服
-         * - 1048 登入失败，请联系上层或客服
-         * - 1049 登入失败，请联系上层或客服
-         *
-         * 帳號鎖定
-         *
-         * - 1052 此会员登入错误五次以上，锁定帐号
-         * - 1060 此帐号已锁定，请洽上层管理员或客服
-         * - 1061 此会员登入错误五次以上，锁定IP
-         * - 1062 此帐号已锁定，请洽上层管理员或客服
-         * - 1065 此会员七天未登入，锁定帐号
+         */
+        statusCode?: number;
+        /**
+         * 回傳內容(正式機將不再回傳code簡訊驗證碼，開發機及測試機為方便串接測試，依舊會回傳)
+         */
+        payload?: {
+            /**
+             * 簡訊驗證碼
+             */
+            code?: string;
+        };
+    }> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/members/send_sms',
+            headers: {
+                'Platform': platform,
+                'username': username,
+                'ticket': ticket,
+            },
+            formData: formData,
+            mediaType: 'application/x-www-form-urlencoded',
+        });
+    }
+
+    /**
+     * 查核簡訊驗證碼
+     * @returns any 查核簡訊驗證碼
+     * @throws ApiError
+     */
+    public postApiMembersCheckSms({
+        formData,
+        platform = 'Web_1.0',
+        username,
+        ticket,
+    }: {
+        formData: {
+            /**
+             * 手機號含國碼
+             */
+            mobile?: string;
+            /**
+             * 會員填入的手機驗證碼
+             */
+            code: string;
+            /**
+             * 手機末四碼(於會員互轉、增加USDT位置等登入後的簡訊發送功能皆需帶入，登入發送功能也需帶入)
+             */
+            lastFour?: number;
+            /**
+             * 使用功能(目前只有登入發送需帶此參數)
+             * - login：登入
+             *
+             */
+            func?: 'login';
+            /**
+             * 會員帳號，只有func=login時需帶入
+             */
+            username?: string;
+        },
+        /**
+         * APP版本號
+         */
+        platform?: string,
+        /**
+         * 會員帳號(於會員互轉、增加USDT位置等登入後的簡訊驗證功能皆需帶入)
+         */
+        username?: string,
+        /**
+         * login_id(於會員互轉、增加USDT位置等登入後的簡訊驗證功能皆需帶入)
+         */
+        ticket?: number,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        message?: string;
+        /**
+         * 回覆代碼
+         * - 0：验证完成
+         * - 1032：验证码失效，请重新发送！
+         * - 1033：验证码错误，请重新确认或发送！
+         * - 1120：手机末四码有误
          *
          */
         statusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
-            /**
-             * 會員名稱
-             */
-            username?: string;
-            /**
-             * 會員Id
-             */
-            userid?: number;
-            /**
-             * 會員暱稱
-             */
-            usernickname?: string;
-            /**
-             * 首次登入
-             * - 0 不是
-             * - 1 是 (進入補註冊)
-             *
-             */
-            firstLogin?: number;
-            /**
-             * 登入Id(ticket)
-             */
-            id?: number;
-            /**
-             * 固定為1
-             */
-            type?: string;
-            /**
-             * 登入token
-             */
-            token?: string;
-            /**
-             * 體驗金活動ID  (沒活動時ID = 0)
-             *
-             */
-            activityId?: number;
-            /**
-             * 密码错误次數 (在狀態1051時出現)
-             */
-            errorcount?: number;
-        };
+        payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
-            url: '/api/members/login',
+            url: '/api/members/check_sms',
             headers: {
                 'Platform': platform,
-                'ip': ip,
-                'deviceInfo': deviceInfo,
-                'vga': vga,
-                'uuid': uuid,
-                'siteClass': siteClass,
+                'username': username,
+                'ticket': ticket,
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
@@ -10354,6 +10481,93 @@ export class Service {
             headers: {
                 'Platform': platform,
                 'ip': ip,
+                'username': username,
+                'ticket': ticket,
+            },
+            formData: formData,
+            mediaType: 'application/x-www-form-urlencoded',
+        });
+    }
+
+    /**
+     * 檢查驗證碼是否正確
+     * @returns any
+     * @throws ApiError
+     */
+    public postApiMembersCheckVerification({
+        platform,
+        formData,
+        username,
+        ticket,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        formData: {
+            /**
+             * 會員帳號
+             */
+            username: string;
+            /**
+             * 用戶電話
+             */
+            phone: string;
+            /**
+             * 簡訊驗證碼
+             */
+            code: string;
+            /**
+             * 手機末四碼(於忘記提領密碼時需帶入)
+             */
+            lastFour?: string;
+        },
+        /**
+         * 會員帳號(於忘記提領密碼時需帶入)
+         */
+        username?: string,
+        /**
+         * login_id(於忘記提領密碼時需帶入)
+         */
+        ticket?: number,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        message?: string;
+        /**
+         * 回覆代碼
+         * - 0 验证完成
+         * - 1032 验证码失效，请重新发送！
+         * - 1033 验证码错误，请重新确认或发送！
+         * - 1120 手机末四码有误
+         * - 4444 参数有误
+         *
+         */
+        statusCode?: number;
+        /**
+         * 回傳內容
+         */
+        payload?: {
+            /**
+             * 會員帳號
+             */
+            username?: string;
+            /**
+             * 用戶電話
+             */
+            phone?: string;
+            /**
+             * 更換密碼驗證碼
+             */
+            code?: string;
+        };
+    }> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/members/check_verification',
+            headers: {
+                'Platform': platform,
                 'username': username,
                 'ticket': ticket,
             },
@@ -10532,6 +10746,7 @@ export class Service {
          * - 1032 验证失效，请重新操作
          * - 1033 验证错误，请重新操作！
          * - 1034 此帐号已锁定，请联系上层管理员
+         * - 1067 此帐号已被风控
          * - 4444 参数有误
          *
          */
@@ -10671,7 +10886,7 @@ export class Service {
         /**
          * 平台名稱
          */
-        code: 'saba' | 'wm_casino' | 'ob_poker' | 'ob_casino' | 'ag_casino' | 'ky_poker' | 'ly_poker' | 'jdb_gaming' | 'cq9_gaming' | 'ob_lottery' | 'sgwin_lottery' | 'bbin_casino' | 'ob_sport' | 'allbet_casino' | 'im_sport' | 'kx_poker',
+        code: 'saba' | 'wm_casino' | 'ob_poker' | 'ob_casino' | 'ag_casino' | 'ky_poker' | 'ly_poker' | 'jdb_gaming' | 'cq9_gaming' | 'ob_lottery' | 'sgwin_lottery' | 'bbin_casino' | 'ob_sport' | 'allbet_casino' | 'im_sport' | 'kx_poker' | 'mt_poker' | 'ai_sport' | 'bg_casino' | 'dg_casino',
         formData: {
             /**
              * 平台
@@ -10885,6 +11100,631 @@ export class Service {
                 'vga': vga,
                 'uuid': uuid,
             },
+        });
+    }
+
+    /**
+     * 電子類熱門遊戲列表
+     * @returns any 電子類熱門遊戲列表
+     * @throws ApiError
+     */
+    public getApiMembersThirdpartyGamingTopList({
+        platform,
+        username,
+        ticket,
+        deviceInfo,
+        vga,
+        uuid,
+        lang,
+        domain,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 會員名稱
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: any,
+        /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: any,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
+        /**
+         * 語系
+         */
+        lang: 'zh-cn' | 'zh-hk' | 'en-us',
+        /**
+         * 首頁網址-網頁版(PC/M)需於帶入首頁網址，不包含https://，例:sta8w.k33uc.com/，APP呼叫時不需傳入，系統會自行組成網址，根據m[1~5].tvip[66,77,88].net:8888 產生隨機域名，例:m3.tvip66.net:8888
+         */
+        domain?: string,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        message?: string;
+        /**
+         * 回覆代碼
+         * - 0 Pass
+         *
+         */
+        statusCode?: number;
+        /**
+         * 回傳內容
+         */
+        payload?: Array<{
+            /**
+             * 遊戲ID
+             */
+            gameId?: number;
+            /**
+             * 遊戲名稱
+             */
+            gameName?: string;
+            /**
+             * 登入次數
+             */
+            counting?: number;
+            /**
+             * 圖片位置
+             */
+            imageUrl?: string;
+            /**
+             * 第三方平台名稱
+             */
+            thirdPartyCode?: string;
+            /**
+             * 第三方平台狀態0:正常 1:維護
+             */
+            status?: string;
+        }>;
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/api/members/thirdparty/gaming/top_list',
+            headers: {
+                'Platform': platform,
+                'username': username,
+                'ticket': ticket,
+                'deviceInfo': deviceInfo,
+                'vga': vga,
+                'uuid': uuid,
+                'domain': domain,
+                'lang': lang,
+            },
+        });
+    }
+
+    /**
+     * 查詢單一廠家的電子遊戲窗口
+     * @returns any 查詢單一廠家的電子遊戲窗口
+     * @throws ApiError
+     */
+    public getApiMembersThirdpartyGamingList({
+        platform,
+        username,
+        ticket,
+        deviceInfo,
+        vga,
+        uuid,
+        lang,
+        code,
+        domain,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 會員名稱
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: any,
+        /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: any,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
+        /**
+         * 語系
+         */
+        lang: 'zh-cn' | 'zh-hk' | 'en-us',
+        /**
+         * 平台名稱(jdb_gaming、cq9_gaming...)
+         */
+        code: string,
+        /**
+         * 首頁網址-網頁版(PC/M)需於帶入首頁網址，不包含https://，例:sta8w.k33uc.com/，APP呼叫時不需傳入，系統會自行組成網址，根據m[1~5].tvip[66,77,88].net:8888 產生隨機域名，例:m3.tvip66.net:8888
+         */
+        domain?: string,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        message?: string;
+        /**
+         * 回覆代碼
+         * - 0 Pass
+         *
+         */
+        statusCode?: number;
+        /**
+         * 回傳內容
+         */
+        payload?: Array<{
+            /**
+             * 遊戲ID
+             */
+            gameId?: number;
+            /**
+             * 遊戲名稱
+             */
+            gameName?: string;
+            /**
+             * 圖片位置
+             */
+            imageUrl?: string;
+            /**
+             * 第三方平台代碼
+             */
+            thirdPartyCode?: string;
+            /**
+             * 是否收藏 0:未收藏 1:已收藏
+             */
+            favorite?: string;
+        }>;
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/api/members/thirdparty/gaming/list/{code}',
+            path: {
+                'code': code,
+            },
+            headers: {
+                'Platform': platform,
+                'username': username,
+                'ticket': ticket,
+                'deviceInfo': deviceInfo,
+                'vga': vga,
+                'uuid': uuid,
+                'domain': domain,
+                'lang': lang,
+            },
+        });
+    }
+
+    /**
+     * 電子遊戲進入
+     * @returns any 電子遊戲進入
+     * @throws ApiError
+     */
+    public postApiMembersThirdpartyGamingLogin({
+        platform,
+        username,
+        ticket,
+        deviceInfo,
+        vga,
+        uuid,
+        lang,
+        formData,
+        domain,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 會員名稱
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: any,
+        /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: any,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
+        /**
+         * 語系
+         */
+        lang: 'zh-cn' | 'zh-hk' | 'en-us',
+        formData: {
+            /**
+             * 平台
+             * * 1:PC
+             * * 2:mobile
+             *
+             */
+            platform: 1 | 2;
+            /**
+             * 遊戲ID
+             *
+             */
+            gameId?: number;
+            /**
+             * 平台名稱(jdb_gaming、cq9_gaming...)
+             *
+             */
+            code?: string;
+        },
+        /**
+         * 首頁網址-網頁版(PC/M)需於帶入首頁網址，不包含https://，例:sta8w.k33uc.com/，APP呼叫時不需傳入，系統會自行組成網址，根據m[1~5].tvip[66,77,88].net:8888 產生隨機域名，例:m3.tvip66.net:8888
+         */
+        domain?: string,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        message?: string;
+        /**
+         * 回覆代碼
+         * - 0 Pass
+         * - 4444 參數有錯
+         * - 7001 第三方執行異常
+         * - 7002 帐号资料有误，请联系客服
+         * - 7106 第三方禁止登入
+         * - 8000 第三方維護中
+         *
+         */
+        statusCode?: number;
+        /**
+         * 回傳內容
+         */
+        payload?: {
+            /**
+             * 登入網址
+             */
+            url?: string;
+        };
+    }> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/members/thirdparty/gaming/login',
+            headers: {
+                'Platform': platform,
+                'username': username,
+                'ticket': ticket,
+                'deviceInfo': deviceInfo,
+                'vga': vga,
+                'uuid': uuid,
+                'domain': domain,
+                'lang': lang,
+            },
+            formData: formData,
+            mediaType: 'application/x-www-form-urlencoded',
+        });
+    }
+
+    /**
+     * 查詢會員所有廠家的已收藏遊戲窗口
+     * @returns any 查詢會員所有廠家的已收藏遊戲窗口
+     * @throws ApiError
+     */
+    public getApiMembersThirdpartyGamingCollectList({
+        platform,
+        username,
+        ticket,
+        deviceInfo,
+        vga,
+        uuid,
+        lang,
+        domain,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 會員名稱
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: any,
+        /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: any,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
+        /**
+         * 語系
+         */
+        lang: 'zh-cn' | 'zh-hk' | 'en-us',
+        /**
+         * 首頁網址-網頁版(PC/M)需於帶入首頁網址，不包含https://，例:sta8w.k33uc.com/，APP呼叫時不需傳入，系統會自行組成網址，根據m[1~5].tvip[66,77,88].net:8888 產生隨機域名，例:m3.tvip66.net:8888
+         */
+        domain?: string,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        message?: string;
+        /**
+         * 回覆代碼
+         * - 0 Pass
+         *
+         */
+        statusCode?: number;
+        /**
+         * 回傳內容
+         */
+        payload?: Array<{
+            /**
+             * 第三方平台名稱
+             */
+            thirdPartyCode?: string;
+            /**
+             * 第三方平台狀態0:正常 1:維護
+             */
+            status?: string;
+            /**
+             * 回傳內容
+             */
+            gameList?: Array<any>;
+        }>;
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/api/members/thirdparty/gaming/collect_list',
+            headers: {
+                'Platform': platform,
+                'username': username,
+                'ticket': ticket,
+                'deviceInfo': deviceInfo,
+                'vga': vga,
+                'uuid': uuid,
+                'domain': domain,
+                'lang': lang,
+            },
+        });
+    }
+
+    /**
+     * 查詢會員於該廠家的遊戲窗口使用紀錄
+     * @returns any 查詢會員於該廠家的遊戲窗口使用紀錄
+     * @throws ApiError
+     */
+    public getApiMembersThirdpartyGamingRecord({
+        platform,
+        username,
+        ticket,
+        deviceInfo,
+        vga,
+        uuid,
+        lang,
+        code,
+        domain,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 會員名稱
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: any,
+        /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: any,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
+        /**
+         * 語系
+         */
+        lang: 'zh-cn' | 'zh-hk' | 'en-us',
+        /**
+         * 平台名稱(jdb_gaming、cq9_gaming...)
+         */
+        code: string,
+        /**
+         * 首頁網址-網頁版(PC/M)需於帶入首頁網址，不包含https://，例:sta8w.k33uc.com/，APP呼叫時不需傳入，系統會自行組成網址，根據m[1~5].tvip[66,77,88].net:8888 產生隨機域名，例:m3.tvip66.net:8888
+         */
+        domain?: string,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        message?: string;
+        /**
+         * 回覆代碼
+         * - 0 Pass
+         *
+         */
+        statusCode?: number;
+        /**
+         * 回傳內容
+         */
+        payload?: Array<{
+            /**
+             * 遊戲ID
+             */
+            gameId?: number;
+            /**
+             * 遊戲名稱
+             */
+            gameName?: string;
+            /**
+             * 圖片位置
+             */
+            imageUrl?: string;
+            /**
+             * 最後登入時間
+             */
+            loginTime?: string;
+            /**
+             * 第三方平台狀態0:正常 1:維護
+             */
+            status?: string;
+            /**
+             * 是否收藏 0:未收藏 1:已收藏
+             */
+            favorite?: string;
+            /**
+             * 第三方平台代碼
+             */
+            thirdPartyCode?: string;
+        }>;
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/api/members/thirdparty/gaming/record/{code}',
+            path: {
+                'code': code,
+            },
+            headers: {
+                'Platform': platform,
+                'username': username,
+                'ticket': ticket,
+                'deviceInfo': deviceInfo,
+                'vga': vga,
+                'uuid': uuid,
+                'domain': domain,
+                'lang': lang,
+            },
+        });
+    }
+
+    /**
+     * 新增/取消收藏
+     * @returns any 新增/取消收藏
+     * @throws ApiError
+     */
+    public postApiMembersThirdpartyGamingCollect({
+        platform,
+        username,
+        ticket,
+        deviceInfo,
+        vga,
+        uuid,
+        lang,
+        formData,
+        domain,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 會員名稱
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: any,
+        /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: any,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
+        /**
+         * 語系
+         */
+        lang: 'zh-cn' | 'zh-hk' | 'en-us',
+        formData: {
+            /**
+             * 遊戲ID
+             *
+             */
+            gameId?: number;
+            /**
+             * 0:取消收藏 1:新增收藏
+             *
+             */
+            favorite?: number;
+        },
+        /**
+         * 首頁網址-網頁版(PC/M)需於帶入首頁網址，不包含https://，例:sta8w.k33uc.com/，APP呼叫時不需傳入，系統會自行組成網址，根據m[1~5].tvip[66,77,88].net:8888 產生隨機域名，例:m3.tvip66.net:8888
+         */
+        domain?: string,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        message?: string;
+        /**
+         * 回覆代碼
+         * - 0 Pass
+         *
+         */
+        statusCode?: number;
+        /**
+         * 回傳內容
+         */
+        payload?: any;
+    }> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/members/thirdparty/gaming/collect',
+            headers: {
+                'Platform': platform,
+                'username': username,
+                'ticket': ticket,
+                'deviceInfo': deviceInfo,
+                'vga': vga,
+                'uuid': uuid,
+                'domain': domain,
+                'lang': lang,
+            },
+            formData: formData,
+            mediaType: 'application/x-www-form-urlencoded',
         });
     }
 
