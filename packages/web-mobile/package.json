@@ -14,6 +14,8 @@
   },
   "devDependencies": {
     "nuxt": "3.0.0-rc.4",
-    "@pinia/nuxt": "^0.1.8"
+    "@pinia/nuxt": "^0.1.8",
+    "node-sass": "latest",
+    "sass-loader": "latest"
   }
 }
