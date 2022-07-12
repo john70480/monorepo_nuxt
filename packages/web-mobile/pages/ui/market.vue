@@ -1,8 +1,5 @@
 <template>
-	<div>
-		登入頁
-	</div>
+	<div>市場</div>
 </template>
-
 <style lang="scss" scoped>
 </style>

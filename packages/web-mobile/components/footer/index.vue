@@ -1,6 +1,6 @@
 <template>
 	<div>
-		header
+		footer
 	</div>
 </template>
 <script setup lang="ts"></script>
