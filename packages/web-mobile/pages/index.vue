@@ -1,4 +1,10 @@
 <template>
-	index-web-mobile
+	<Home />
 </template>
-<!-- export { default } from './fake/index.vue'; -->
+<script setup lang="ts">
+import Home from '@tg/web-mobile/pages/home/index.vue';
+
+definePageMeta({
+	hiddenHeader: true
+});
+</script>
