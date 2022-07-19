@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Microsoft JhengHei', sans-serif !important;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -35,7 +35,7 @@ ul {
   width: 100%;
   min-height: 100%;
   padding: 25vh 40px 20px;
-  background: url("@tg/web-mobile/pages/ui/assets/images/login_bg.jpg") center no-repeat;
+  background: url('@tg/web-mobile/assets/images/login_bg.jpg') center no-repeat;
   background-size: 100% 100%;
 
   .login_head {
@@ -47,7 +47,7 @@ ul {
       width: 80px;
       height: 65px;
       margin-right: auto;
-      background: url("@tg/web-mobile/pages/ui/assets/images/tg_logo.png") center no-repeat;
+      background: url('@tg/web-mobile/assets/images/tg_logo.png') center no-repeat;
       background-size: contain;
     }
 
@@ -61,7 +61,7 @@ ul {
         cursor: pointer;
 
         &::before {
-          content: "";
+          content: '';
           width: 30px;
           height: 20px;
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -69,40 +69,40 @@ ul {
         }
 
         &::after {
-          content: "";
+          content: '';
           width: 25px;
           height: 7px;
-          background: url("@tg/web-mobile/pages/ui/assets/images/select_arrow.png") center no-repeat;
+          background: url('@tg/web-mobile/assets/images/select_arrow.png') center no-repeat;
           background-size: contain;
           display: inline-block;
         }
 
         &.zh-cn::before {
-          background: url("@tg/web-mobile/pages/ui/assets/images/flag_cn.jpg") center no-repeat;
+          background: url('@tg/web-mobile/assets/images/flag_cn.jpg') center no-repeat;
           background-size: cover;
         }
         &.zh-hk::before {
-          background: url("@tg/web-mobile/pages/ui/assets/images/flag_zh.jpg") center no-repeat;
+          background: url('@tg/web-mobile/assets/images/flag_zh.jpg') center no-repeat;
           background-size: cover;
         }
         &.en-us::before {
-          background: url("@tg/web-mobile/pages/ui/assets/images/flag_en.jpg") center no-repeat;
+          background: url('@tg/web-mobile/assets/images/flag_en.jpg') center no-repeat;
           background-size: cover;
         }
         &.ja-jp::before {
-          background: url("@tg/web-mobile/pages/ui/assets/images/flag_jp.jpg") center no-repeat;
+          background: url('@tg/web-mobile/assets/images/flag_jp.jpg') center no-repeat;
           background-size: cover;
         }
         &.vi-vn::before {
-          background: url("@tg/web-mobile/pages/ui/assets/images/flag_vi.jpg") center no-repeat;
+          background: url('@tg/web-mobile/assets/images/flag_vi.jpg') center no-repeat;
           background-size: cover;
         }
         &.th-th::before {
-          background: url("@tg/web-mobile/pages/ui/assets/images/flag_th.jpg") center no-repeat;
+          background: url('@tg/web-mobile/assets/images/flag_th.jpg') center no-repeat;
           background-size: cover;
         }
         &.ko-kr::before {
-          background: url("@tg/web-mobile/pages/ui/assets/images/flag_ko.jpg") center no-repeat;
+          background: url('@tg/web-mobile/assets/images/flag_ko.jpg') center no-repeat;
           background-size: cover;
         }
       }
@@ -142,31 +142,31 @@ ul {
             }
 
             &.zh-cn .Language_select::before {
-              background: url("@tg/web-mobile/pages/ui/assets/images/flag_cn.jpg") center no-repeat;
+              background: url('@tg/web-mobile/assets/images/flag_cn.jpg') center no-repeat;
               background-size: cover;
             }
             &.zh-hk .Language_select::before {
-              background: url("@tg/web-mobile/pages/ui/assets/images/flag_zh.jpg") center no-repeat;
+              background: url('@tg/web-mobile/assets/images/flag_zh.jpg') center no-repeat;
               background-size: cover;
             }
             &.en-us .Language_select::before {
-              background: url("@tg/web-mobile/pages/ui/assets/images/flag_en.jpg") center no-repeat;
+              background: url('@tg/web-mobile/assets/images/flag_en.jpg') center no-repeat;
               background-size: cover;
             }
             &.ja-jp .Language_select::before {
-              background: url("@tg/web-mobile/pages/ui/assets/images/flag_jp.jpg") center no-repeat;
+              background: url('@tg/web-mobile/assets/images/flag_jp.jpg') center no-repeat;
               background-size: cover;
             }
             &.vi-vn .Language_select::before {
-              background: url("@tg/web-mobile/pages/ui/assets/images/flag_vi.jpg") center no-repeat;
+              background: url('@tg/web-mobile/assets/images/flag_vi.jpg') center no-repeat;
               background-size: cover;
             }
             &.th-th .Language_select::before {
-              background: url("@tg/web-mobile/pages/ui/assets/images/flag_th.jpg") center no-repeat;
+              background: url('@tg/web-mobile/assets/images/flag_th.jpg') center no-repeat;
               background-size: cover;
             }
             &.ko-kr .Language_select::before {
-              background: url("@tg/web-mobile/pages/ui/assets/images/flag_ko.jpg") center no-repeat;
+              background: url('@tg/web-mobile/assets/images/flag_ko.jpg') center no-repeat;
               background-size: cover;
             }
           }
@@ -243,12 +243,12 @@ ul {
       }
 
       &.account {
-        background: url("@tg/web-mobile/pages/ui/assets/images/login_account.png") 0 center no-repeat;
+        background: url('@tg/web-mobile/assets/images/login_account.png') 0 center no-repeat;
         background-size: auto 60%;
       }
 
       &.password {
-        background: url("@tg/web-mobile/pages/ui/assets/images/login_password.png") 0 center no-repeat;
+        background: url('@tg/web-mobile/assets/images/login_password.png') 0 center no-repeat;
         background-size: auto 60%;
       }
     }
@@ -269,16 +269,16 @@ ul {
     }
 
     label::before {
-      content: "";
+      content: '';
       width: 20px;
       height: 20px;
       margin-right: 5px;
-      background: url("@tg/web-mobile/pages/ui/assets/images/unchecked.png") center no-repeat;
+      background: url('@tg/web-mobile/assets/images/unchecked.png') center no-repeat;
       background-size: contain;
     }
 
     input:checked + label::before {
-      background: url("@tg/web-mobile/pages/ui/assets/images/checked.png") center no-repeat;
+      background: url('@tg/web-mobile/assets/images/checked.png') center no-repeat;
       background-size: contain;
     }
   }
@@ -317,7 +317,7 @@ ul {
       height: 50px;
       border-radius: 5px;
       border: 1px solid #8eaace;
-      background: url("@tg/web-mobile/pages/ui/assets/images/verify_arrow.png") center no-repeat, #fff;
+      background: url('@tg/web-mobile/assets/images/verify_arrow.png') center no-repeat, #fff;
       background-size: 40%;
       float: right;
       top: 0px;
@@ -326,7 +326,7 @@ ul {
       box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
 
       &::before {
-        content: "";
+        content: '';
         width: 36px;
         height: 36px;
         background: url(~assets/image/com_body_slip_btn.png) center no-repeat;
@@ -374,15 +374,15 @@ ul {
       border: none;
 
       &.service {
-        background: url("@tg/web-mobile/pages/ui/assets/images/24servise_btn.png") center 0 no-repeat;
+        background: url('@tg/web-mobile/assets/images/24servise_btn.png') center 0 no-repeat;
         background-size: auto 40px;
       }
       &.download {
-        background: url("@tg/web-mobile/pages/ui/assets/images/appdownload_btn.png") center 0 no-repeat;
+        background: url('@tg/web-mobile/assets/images/appdownload_btn.png') center 0 no-repeat;
         background-size: auto 40px;
       }
       &.video {
-        background: url("@tg/web-mobile/pages/ui/assets/images/video_btn.png") center 0 no-repeat;
+        background: url('@tg/web-mobile/assets/images/video_btn.png') center 0 no-repeat;
         background-size: auto 40px;
       }
 
@@ -463,7 +463,7 @@ ul {
       padding-left: 30px;
       line-height: 30px;
       margin-right: 10px;
-      background: url("@tg/web-mobile/pages/ui/assets/images/announcement.png") 0 center no-repeat;
+      background: url('@tg/web-mobile/assets/images/announcement.png') 0 center no-repeat;
       background-size: auto 20px;
     }
 
@@ -472,7 +472,7 @@ ul {
       height: 40px;
       padding: 0;
       border: none;
-      background: url("@tg/web-mobile/pages/ui/assets/images/menu_btn.png") center no-repeat;
+      background: url('@tg/web-mobile/assets/images/menu_btn.png') center no-repeat;
       background-size: auto 16px;
     }
   }
@@ -497,22 +497,22 @@ ul {
         justify-content: center;
 
         &::before {
-          content: "";
+          content: '';
           width: 30px;
           height: 30px;
           margin-right: 10px;
         }
 
         &.recharge::before {
-          background: url("@tg/web-mobile/pages/ui/assets/images/recharge_btn.png") center no-repeat;
+          background: url('@tg/web-mobile/assets/images/recharge_btn.png') center no-repeat;
           background-size: contain;
         }
         &.withdrawal::before {
-          background: url("@tg/web-mobile/pages/ui/assets/images/withdrawal_btn.png") center no-repeat;
+          background: url('@tg/web-mobile/assets/images/withdrawal_btn.png') center no-repeat;
           background-size: contain;
         }
         &.transfer::before {
-          background: url("@tg/web-mobile/pages/ui/assets/images/transfer_btn.png") center no-repeat;
+          background: url('@tg/web-mobile/assets/images/transfer_btn.png') center no-repeat;
           background-size: contain;
         }
       }
@@ -532,46 +532,46 @@ ul {
       align-items: center;
 
       &::before {
-        content: "";
+        content: '';
         width: 18px;
         height: 18px;
         margin-right: 5px;
       }
 
       &.game::before {
-        background: url("@tg/web-mobile/pages/ui/assets/images/icon_game.png") center no-repeat;
+        background: url('@tg/web-mobile/assets/images/icon_game.png') center no-repeat;
         background-size: contain;
       }
       &.event::before {
-        background: url("@tg/web-mobile/pages/ui/assets/images/icon_event.png") center no-repeat;
+        background: url('@tg/web-mobile/assets/images/icon_event.png') center no-repeat;
         background-size: contain;
       }
       &.live::before {
-        background: url("@tg/web-mobile/pages/ui/assets/images/icon_live.png") center no-repeat;
+        background: url('@tg/web-mobile/assets/images/icon_live.png') center no-repeat;
         background-size: contain;
       }
       &.sports::before {
-        background: url("@tg/web-mobile/pages/ui/assets/images/icon_sports.png") center no-repeat;
+        background: url('@tg/web-mobile/assets/images/icon_sports.png') center no-repeat;
         background-size: contain;
       }
       &.casino::before {
-        background: url("@tg/web-mobile/pages/ui/assets/images/icon_casino.png") center no-repeat;
+        background: url('@tg/web-mobile/assets/images/icon_casino.png') center no-repeat;
         background-size: contain;
       }
       &.pokers::before {
-        background: url("@tg/web-mobile/pages/ui/assets/images/icon_pokers.png") center no-repeat;
+        background: url('@tg/web-mobile/assets/images/icon_pokers.png') center no-repeat;
         background-size: contain;
       }
       &.gaming::before {
-        background: url("@tg/web-mobile/pages/ui/assets/images/icon_gaming.png") center no-repeat;
+        background: url('@tg/web-mobile/assets/images/icon_gaming.png') center no-repeat;
         background-size: contain;
       }
       &.lotteries::before {
-        background: url("@tg/web-mobile/pages/ui/assets/images/icon_lotteries.png") center no-repeat;
+        background: url('@tg/web-mobile/assets/images/icon_lotteries.png') center no-repeat;
         background-size: contain;
       }
       &.esports::before {
-        background: url("@tg/web-mobile/pages/ui/assets/images/icon_esports.png") center no-repeat;
+        background: url('@tg/web-mobile/assets/images/icon_esports.png') center no-repeat;
         background-size: contain;
       }
     }
@@ -589,10 +589,10 @@ ul {
       align-items: center;
 
       &::before {
-        content: "";
+        content: '';
         width: 20px;
         height: 20px;
-        background: url("@tg/web-mobile/pages/ui/assets/images/filter_btn.png") 0 center no-repeat;
+        background: url('@tg/web-mobile/assets/images/filter_btn.png') 0 center no-repeat;
         background-size: auto 14px;
       }
     }
@@ -601,7 +601,7 @@ ul {
       width: 40px;
       height: 40px;
       border: none;
-      background: url("@tg/web-mobile/pages/ui/assets/images/more_btn.png") center no-repeat;
+      background: url('@tg/web-mobile/assets/images/more_btn.png') center no-repeat;
       background-size: auto 14px;
     }
   }
@@ -741,7 +741,7 @@ ul {
     .live {
       font-weight: bold;
       padding-left: 20px;
-      background: url("@tg/web-mobile/pages/ui/assets/images/live_gray.png") 0 center no-repeat;
+      background: url('@tg/web-mobile/assets/images/live_gray.png') 0 center no-repeat;
       background-size: auto 12px;
     }
 
@@ -750,7 +750,7 @@ ul {
       align-items: center;
 
       &::before {
-        content: "";
+        content: '';
         width: 8px;
         height: 8px;
         margin-right: 5px;
@@ -810,7 +810,7 @@ ul {
       height: 100px;
       border-radius: 5px;
       margin-bottom: 10px;
-      background: url("@tg/web-mobile/pages/ui/assets/images/live_stadium_img.png") center no-repeat, #b0d8ff;
+      background: url('@tg/web-mobile/assets/images/live_stadium_img.png') center no-repeat, #b0d8ff;
       background-size: cover;
       overflow: hidden;
 
@@ -828,7 +828,7 @@ ul {
       align-items: center;
 
       &::before {
-        content: "";
+        content: '';
         width: 8px;
         height: 8px;
         margin-right: 5px;
@@ -880,17 +880,17 @@ header {
     border: none;
 
     &.back_btn {
-      background: url("@tg/web-mobile/pages/ui/assets/images/back_btn.png") center no-repeat;
+      background: url('@tg/web-mobile/assets/images/back_btn.png') center no-repeat;
       background-size: auto 16px;
     }
 
     &.third_party {
-      background: url("@tg/web-mobile/pages/ui/assets/images/head_entertainment_btn.png") center no-repeat;
+      background: url('@tg/web-mobile/assets/images/head_entertainment_btn.png') center no-repeat;
       background-size: auto 16px;
     }
 
     &.header_menu {
-      background: url("@tg/web-mobile/pages/ui/assets/images/head_menu_btn.png") center no-repeat;
+      background: url('@tg/web-mobile/assets/images/head_menu_btn.png') center no-repeat;
       background-size: auto 16px;
     }
   }
@@ -921,7 +921,7 @@ header {
       justify-content: center;
 
       &::before {
-        content: "";
+        content: '';
         width: 6px;
         height: 6px;
         margin-right: 10px;
@@ -932,7 +932,7 @@ header {
 
     &.filter_btn {
       width: 40px;
-      background: url("@tg/web-mobile/pages/ui/assets/images/filter_btn.png") center no-repeat;
+      background: url('@tg/web-mobile/assets/images/filter_btn.png') center no-repeat;
       background-size: 20px auto;
     }
 
@@ -949,7 +949,7 @@ header {
   line-height: 30px;
   color: #fff;
   font-size: 0.8rem;
-  background: url("@tg/web-mobile/pages/ui/assets/images/announcement.png") 10px center no-repeat, #587eb0;
+  background: url('@tg/web-mobile/assets/images/announcement.png') 10px center no-repeat, #587eb0;
   background-size: auto 20px;
   display: flex;
   align-items: center;
@@ -973,20 +973,20 @@ main {
         align-items: center;
 
         &::before {
-          content: "";
+          content: '';
           width: 16px;
           height: 16px;
           margin-right: 5px;
-          background: url("@tg/web-mobile/pages/ui/assets/images/icon_market.png") center no-repeat;
+          background: url('@tg/web-mobile/assets/images/icon_market.png') center no-repeat;
           background-size: contain;
         }
 
         &::after {
-          content: "";
+          content: '';
           width: 12px;
           height: 12px;
           margin-left: 5px;
-          background: url("@tg/web-mobile/pages/ui/assets/images/icon_arrow.png") center no-repeat;
+          background: url('@tg/web-mobile/assets/images/icon_arrow.png') center no-repeat;
           background-size: contain;
         }
 
@@ -1018,7 +1018,7 @@ main {
             align-items: center;
 
             &::before {
-              content: "";
+              content: '';
               width: 8px;
               height: 8px;
               margin-right: 5px;
@@ -1085,7 +1085,7 @@ nav {
       width: 60px;
       height: 49px;
       margin: 10px auto 5px 10px;
-      background: url("@tg/web-mobile/pages/ui/assets/images/tg_logo.png") center no-repeat;
+      background: url('@tg/web-mobile/assets/images/tg_logo.png') center no-repeat;
       background-size: contain;
     }
 
@@ -1110,133 +1110,133 @@ nav {
           align-items: center;
 
           &::before {
-            content: "";
+            content: '';
             width: 26px;
             height: 26px;
             margin-right: 10px;
           }
 
           &.new::after {
-            content: "";
+            content: '';
             position: absolute;
             top: 5px;
             left: -8px;
             width: 22px;
             height: 9px;
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_new.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_new.png') center no-repeat;
             background-size: contain;
           }
 
           &.icon01::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_01.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_01.png') center no-repeat;
             background-size: contain;
           }
           &.icon02::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_02.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_02.png') center no-repeat;
             background-size: contain;
           }
           &.icon03::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_03.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_03.png') center no-repeat;
             background-size: contain;
           }
           &.icon04::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_04.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_04.png') center no-repeat;
             background-size: contain;
           }
           &.icon05::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_05.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_05.png') center no-repeat;
             background-size: contain;
           }
           &.icon06::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_06.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_06.png') center no-repeat;
             background-size: contain;
           }
           &.icon07::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_07.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_07.png') center no-repeat;
             background-size: contain;
           }
           &.icon08::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_08.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_08.png') center no-repeat;
             background-size: contain;
           }
           &.icon09::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_09.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_09.png') center no-repeat;
             background-size: contain;
           }
           &.icon10::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_10.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_10.png') center no-repeat;
             background-size: contain;
           }
           &.icon11::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_11.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_11.png') center no-repeat;
             background-size: contain;
           }
           &.icon12::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_12.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_12.png') center no-repeat;
             background-size: contain;
           }
           &.icon13::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_13.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_13.png') center no-repeat;
             background-size: contain;
           }
           &.icon14::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_14.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_14.png') center no-repeat;
             background-size: contain;
           }
           &.icon15::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_15.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_15.png') center no-repeat;
             background-size: contain;
           }
           &.icon16::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_16.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_16.png') center no-repeat;
             background-size: contain;
           }
           &.icon17::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_17.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_17.png') center no-repeat;
             background-size: contain;
           }
           &.icon18::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_18.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_18.png') center no-repeat;
             background-size: contain;
           }
           &.icon19::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_19.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_19.png') center no-repeat;
             background-size: contain;
           }
           &.icon20::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_20.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_20.png') center no-repeat;
             background-size: contain;
           }
           &.icon21::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_21.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_21.png') center no-repeat;
             background-size: contain;
           }
           &.icon22::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_22.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_22.png') center no-repeat;
             background-size: contain;
           }
           &.icon23::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_23.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_23.png') center no-repeat;
             background-size: contain;
           }
           &.icon24::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_24.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_24.png') center no-repeat;
             background-size: contain;
           }
           &.icon25::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_25.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_25.png') center no-repeat;
             background-size: contain;
           }
           &.icon26::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_26.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_26.png') center no-repeat;
             background-size: contain;
           }
           &.icon27::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_27.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_27.png') center no-repeat;
             background-size: contain;
           }
           &.icon28::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_28.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_28.png') center no-repeat;
             background-size: contain;
           }
         }
@@ -1253,13 +1253,13 @@ nav {
           align-items: center;
 
           &::after {
-            content: "";
+            content: '';
             position: absolute;
             top: 50%;
             right: 20px;
             width: 13px;
             height: 7px;
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/submenu_arrow.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/submenu_arrow.png') center no-repeat;
             background-size: contain;
             transform: translateY(-50%) scaleY(1);
           }
@@ -1305,7 +1305,7 @@ nav {
         justify-content: center;
 
         &::before {
-          content: "";
+          content: '';
           width: 20px;
           height: 20px;
           margin-right: 10px;
@@ -1315,12 +1315,12 @@ nav {
           border-right: 1px solid #fff;
 
           &::before {
-            background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_29.png") center no-repeat;
+            background: url('@tg/web-mobile/assets/images/nav/navicon_29.png') center no-repeat;
             background-size: contain;
           }
         }
         &.download_btn::before {
-          background: url("@tg/web-mobile/pages/ui/assets/images/nav/navicon_30.png") center no-repeat;
+          background: url('@tg/web-mobile/assets/images/nav/navicon_30.png') center no-repeat;
           background-size: contain;
         }
       }
@@ -1356,34 +1356,34 @@ footer {
     justify-content: flex-start;
 
     &::before {
-      content: "";
+      content: '';
       width: 26px;
       height: 26px;
       margin-bottom: 8px;
     }
 
     &.home_btn::before {
-      background: url("@tg/web-mobile/pages/ui/assets/images/theme/basic/icon_home_off.png") center no-repeat;
+      background: url('@tg/web-mobile/assets/images/theme/basic/icon_home_off.png') center no-repeat;
       background-size: contain;
     }
 
     &.market_btn::before {
-      background: url("@tg/web-mobile/pages/ui/assets/images/theme/basic/icon_market_off.png") center no-repeat;
+      background: url('@tg/web-mobile/assets/images/theme/basic/icon_market_off.png') center no-repeat;
       background-size: contain;
     }
 
     &.category_btn::before {
-      background: url("@tg/web-mobile/pages/ui/assets/images/icon_logo.png") center no-repeat;
+      background: url('@tg/web-mobile/assets/images/icon_logo.png') center no-repeat;
       background-size: contain;
     }
 
     &.history_btn::before {
-      background: url("@tg/web-mobile/pages/ui/assets/images/theme/basic/icon_history_off.png") center no-repeat;
+      background: url('@tg/web-mobile/assets/images/theme/basic/icon_history_off.png') center no-repeat;
       background-size: contain;
     }
 
     &.my_btn::before {
-      background: url("@tg/web-mobile/pages/ui/assets/images/theme/basic/icon_my_off.png") center no-repeat;
+      background: url('@tg/web-mobile/assets/images/theme/basic/icon_my_off.png') center no-repeat;
       background-size: contain;
     }
 
@@ -1391,22 +1391,22 @@ footer {
       color: #3d5de2;
 
       &.home_btn::before {
-        background: url("@tg/web-mobile/pages/ui/assets/images/theme/basic/icon_home_on.png") center no-repeat;
+        background: url('@tg/web-mobile/assets/images/theme/basic/icon_home_on.png') center no-repeat;
         background-size: contain;
       }
 
       &.market_btn::before {
-        background: url("@tg/web-mobile/pages/ui/assets/images/theme/basic/icon_market_on.png") center no-repeat;
+        background: url('@tg/web-mobile/assets/images/theme/basic/icon_market_on.png') center no-repeat;
         background-size: contain;
       }
 
       &.history_btn::before {
-        background: url("@tg/web-mobile/pages/ui/assets/images/theme/basic/icon_history_on.png") center no-repeat;
+        background: url('@tg/web-mobile/assets/images/theme/basic/icon_history_on.png') center no-repeat;
         background-size: contain;
       }
 
       &.my_btn::before {
-        background: url("@tg/web-mobile/pages/ui/assets/images/theme/basic/icon_my_on.png") center no-repeat;
+        background: url('@tg/web-mobile/assets/images/theme/basic/icon_my_on.png') center no-repeat;
         background-size: contain;
       }
     }

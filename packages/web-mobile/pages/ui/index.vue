@@ -1,29 +1,19 @@
 <template>
   <div class="index">
-    <div
-      class="swiper-container swiper homeBanner swiper-container-initialized swiper-container-horizontal"
-    >
+    <div class="swiper-container swiper homeBanner swiper-container-initialized swiper-container-horizontal">
       <div class="swiper-wrapper">
         <div class="swiper-slide swiper-slide-duplicate">
-          <img src="@tg/web-mobile/pages/ui/assets/images/banner01.png" />
+          <img src="@tg/web-mobile/assets/images/banner01.png" />
         </div>
       </div>
       <div class="swiper-pagination swiper-pagination-bullets">
-        <span class="swiper-pagination-bullet"></span
-        ><span
-          class="swiper-pagination-bullet swiper-pagination-bullet-active"
-        ></span
-        ><span class="swiper-pagination-bullet"></span
-        ><span class="swiper-pagination-bullet"></span
-        ><span class="swiper-pagination-bullet"></span
-        ><span class="swiper-pagination-bullet"></span
-        ><span class="swiper-pagination-bullet"></span>
+        <span class="swiper-pagination-bullet"></span><span
+          class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span
+          class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+          class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+          class="swiper-pagination-bullet"></span>
       </div>
-      <span
-        class="swiper-notification"
-        aria-live="assertive"
-        aria-atomic="true"
-      ></span>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
     </div>
 
     <div class="index_header">
@@ -69,7 +59,7 @@
               </div>
             </div>
           </div>
-		      <div class="swiper-slide">
+          <div class="swiper-slide">
             <div class="hotmatch">
               <div class="game_date">
                 <b>10-15 22:30</b>
@@ -120,28 +110,28 @@
       <button class="filter_btn mr-a">全部</button>
       <button class="more_btn"></button>
     </div>
-	  <div class="index_box">
+    <div class="index_box">
       <div class="swiper-container event-swiper swiper-container-initialized swiper-container-horizontal">
         <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
           <div class="swiper-slide">
-			      <img src="@tg/web-mobile/pages/ui/assets/images/banner02.png" />
+            <img src="@tg/web-mobile/assets/images/banner02.png" />
           </div>
           <div class="swiper-slide">
-            <img src="@tg/web-mobile/pages/ui/assets/images/banner02.png" />
+            <img src="@tg/web-mobile/assets/images/banner02.png" />
           </div>
         </div>
       </div>
     </div>
 
-	  <div class="sub_title">
+    <div class="sub_title">
       <b class="live mr-a">赛事直播</b>
       <button class="more_btn"></button>
     </div>
-	  <div class="index_box">
+    <div class="index_box">
       <div class="swiper-container live-swiper swiper-container-initialized swiper-container-horizontal">
         <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
           <div class="swiper-slide">
-			      <div class="game_live">
+            <div class="game_live">
               <div class="video">
                 <iframe src="https://www.youtube.com/embed/ZEQdAVoh_ww" frameborder="0"></iframe>
               </div>
@@ -162,28 +152,31 @@
       </div>
     </div>
 
-	  <div class="sub_title">
+    <div class="sub_title">
       <b class="sports mr-a">体育</b>
       <button class="more_btn"></button>
     </div>
-	  <div class="index_box">
+    <div class="index_box">
       <div class="swiper-container platform-swiper swiper-container-initialized swiper-container-horizontal">
         <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
           <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-sports-0.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-sports-0.png" />
+              </div>
               <span>沙巴体育</span>
             </div>
           </div>
-		      <div class="swiper-slide">
+          <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-sports-1.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-sports-1.png" />
+              </div>
               <span>OB体育</span>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-sports-2.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-sports-2.png" />
+              </div>
               <span>IM体育</span>
             </div>
           </div>
@@ -195,24 +188,24 @@
       <b class="casino mr-a">真人</b>
       <button class="more_btn"></button>
     </div>
-	  <div class="index_box">
+    <div class="index_box">
       <div class="swiper-container platform-swiper swiper-container-initialized swiper-container-horizontal">
         <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
           <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-casinos-0.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-casinos-0.png" /></div>
               <span>WM真人</span>
             </div>
           </div>
-		      <div class="swiper-slide">
+          <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-casinos-1.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-casinos-1.png" /></div>
               <span>OB真人</span>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-casinos-2.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-casinos-2.png" /></div>
               <span>AG真人</span>
             </div>
           </div>
@@ -224,24 +217,27 @@
       <b class="pokers mr-a">棋牌</b>
       <button class="more_btn"></button>
     </div>
-	  <div class="index_box">
+    <div class="index_box">
       <div class="swiper-container platform-swiper swiper-container-initialized swiper-container-horizontal">
         <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
           <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-pokers-0.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-pokers-0.png" />
+              </div>
               <span>OB棋牌</span>
             </div>
           </div>
-		      <div class="swiper-slide">
+          <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-pokers-1.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-pokers-1.png" />
+              </div>
               <span>开元棋牌</span>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-pokers-2.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-pokers-2.png" />
+              </div>
               <span>乐游棋牌</span>
             </div>
           </div>
@@ -253,24 +249,27 @@
       <b class="gaming mr-a">电子</b>
       <button class="more_btn"></button>
     </div>
-	  <div class="index_box">
+    <div class="index_box">
       <div class="swiper-container platform-swiper swiper-container-initialized swiper-container-horizontal">
         <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
           <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-gaming-0.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-gaming-0.png" />
+              </div>
               <span>CQ9电子</span>
             </div>
           </div>
-		      <div class="swiper-slide">
+          <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-gaming-1.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-gaming-1.png" />
+              </div>
               <span>JDB电子</span>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-gaming-2.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-gaming-2.png" />
+              </div>
               <span>PG电子</span>
             </div>
           </div>
@@ -282,18 +281,18 @@
       <b class="lotteries mr-a">彩票</b>
       <button class="more_btn"></button>
     </div>
-	  <div class="index_box">
+    <div class="index_box">
       <div class="swiper-container platform-swiper swiper-container-initialized swiper-container-horizontal">
         <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
           <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-lotteries-0.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-lotteries-0.png" /></div>
               <span>OB彩票</span>
             </div>
           </div>
-		      <div class="swiper-slide">
+          <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-lotteries-1.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-lotteries-1.png" /></div>
               <span>双赢彩票</span>
             </div>
           </div>
@@ -305,24 +304,24 @@
       <b class="esports mr-a">电竞</b>
       <button class="more_btn"></button>
     </div>
-	  <div class="index_box">
+    <div class="index_box">
       <div class="swiper-container platform-swiper swiper-container-initialized swiper-container-horizontal">
         <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
           <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-esports-0.png" /></div>
-              <span>xx电竞</span>
-            </div>
-          </div>
-		      <div class="swiper-slide">
-            <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-esports-1.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-esports-0.png" /></div>
               <span>xx电竞</span>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="platform_content">
-              <div class="platform_pic"><img src="@tg/web-mobile/pages/ui/assets/images/platform/banner-esports-2.png" /></div>
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-esports-1.png" /></div>
+              <span>xx电竞</span>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="platform_content">
+              <div class="platform_pic"><img src="@tg/web-mobile/assets/images/platform/banner-esports-2.png" /></div>
               <span>xx电竞</span>
             </div>
           </div>
@@ -392,14 +391,14 @@
             <li><button class="icon28">设置</button></li>
           </ul>
         </li>
-        
+
       </ul>
       <div class="nav_row">
         <button class="logout_btn">登出</button>
         <button class="download_btn">APP下载</button>
       </div>
     </div>
-    
+
     <button class="close_nav" @click="navswitch = false"></button>
   </nav>
 </template>
