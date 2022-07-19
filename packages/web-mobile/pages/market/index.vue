@@ -68,7 +68,6 @@ import Tabs from './tabs.vue';
 import Announcement from '@tg/web-mobile/pages/home/announcement.vue';
 
 definePageMeta({
-	// layout: "none"
 	title: "市场列表"
 });
 const languageList = ref(false)
