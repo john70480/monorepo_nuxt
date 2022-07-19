@@ -41,13 +41,12 @@
       "@tg/shared/*": ["packages/shared/src/*"],
       "@tg/stores/*": ["packages/stores/src/*"],
       "@tg/api/*": ["packages/api/src/*"],
-      "@tg/web/*": ["packages/web/*"],
-      "@tg/web-mobile/*": ["packages/web-mobile/*"],
+      "@tg/web/": ["packages/web/"],
+      "@tg/web-mobile/": ["packages/web-mobile/"],
       "@tg/*": ["packages/*/src"],
-      "/*": ["packages/web/*"]
+      // "/*": ["packages/web/*"]
     },
     "types": ["vite/client", "vite-plugin-pages/client", "vite-plugin-vue-layouts/client", "vite-plugin-vue-component-preview/client"]
   },
-  "extends": "./packages/web/.nuxt/tsconfig.json",
-  "include": ["packages/web", "packages/web-mobile", "packages/*/src", "env.d.ts", "packages/web/.nuxt/nuxt.d.ts"]
+  "include": ["packages/web", "packages/web-mobile", "packages/*/src", "env.d.ts", "packages/web/.nuxt/nuxt.d.ts","packages/web-mobile/.nuxt/nuxt.d.ts"]
 }
