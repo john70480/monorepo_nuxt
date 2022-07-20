@@ -1,6 +1,13 @@
 <template>
 	<div class="market">
-		<Tabs></Tabs>
+		<div class="tabs">
+			<TgTabs type="mobile-market-tabs" v-model="tab">
+				<TgTabPane :value="0">全部(70)</TgTabPane>
+				<TgTabPane :value="1">今日(32)</TgTabPane>
+				<TgTabPane :value="2">明日(40)</TgTabPane>
+			</TgTabs>
+			<span class="filter_btn" @click="test()"></span>
+		</div>
 		<Announcement></Announcement>
 		<ul class="game_list">
 			<li v-for="n in 5" :key="n">
@@ -32,7 +39,11 @@ import Announcement from '@tg/web-mobile/pages/home/announcement.vue';
 definePageMeta({
 	title: "市场列表"
 });
-const languageList = ref(false)
+const tab = ref(0);
+function test() {
+	console.log('tests');
+
+}
 </script>
 <style lang="scss" scoped>
 /*市場列表*/
@@ -128,6 +139,19 @@ const languageList = ref(false)
 				}
 			}
 		}
+	}
+}
+
+.tabs {
+	background: #36567f;
+	display: grid;
+	grid-template-columns: 1fr auto;
+
+	.filter_btn {
+		height: 40px;
+		width: 40px;
+		background: url('@tg/web-mobile/assets/images/filter_btn.png') center no-repeat;
+		background-size: 20px auto;
 	}
 }
 </style>
