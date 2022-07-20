@@ -2,7 +2,6 @@
 	<div class="platform_content">
 		<div class="platform_pic">
 			<img :src="ImageSrc" />
-			<!-- <img src="@tg/web-mobile/assets/images/platform/banner-casinos-0.png" /> -->
 		</div>
 		<span>{{ title }}</span>
 	</div>
