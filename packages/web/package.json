@@ -13,8 +13,8 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.4",
-    "@pinia/nuxt": "^0.1.8",
+    "nuxt": "^3.0.0-rc.6",
+    "@pinia/nuxt": "latest",
     "cross-env-file": "latest"
   }
 }

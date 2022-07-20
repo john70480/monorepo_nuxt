@@ -27,10 +27,6 @@
     "web-mobile-build:prod": "cd packages/web-mobile && yarn run build:prod",
     "web-mobile--preview": "cd packages/web-mobile && yarn run preview"
   },
-  "resolutions": {
-    "@vue/runtime-core": "3.2.33",
-    "@vue/runtime-dom": "3.2.33"
-  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@gitlab.com/h5frontend/tg_web.git"
@@ -39,6 +35,10 @@
   "license": "ISC",
   "bugs": {
     "url": "https://gitlab.com/h5frontend/tg_web/issues"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
   },
   "homepage": "https://gitlab.com/h5frontend/tg_web#readme"
 }

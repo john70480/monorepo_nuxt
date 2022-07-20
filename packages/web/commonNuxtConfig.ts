@@ -6,9 +6,7 @@ export const commonNuxtConfig: NuxtConfig = {
 	typescript: {
 		shim: false
 	},
-	buildModules: [
-		['@pinia/nuxt', { disableVuex: true }],
-	],
+	modules: ['@pinia/nuxt'],
 	publicRuntimeConfig: {
 		TG_RELAY_API_URL: process.env.TG_RELAY_API_URL,
 		TG_IS_ENCRYPT: process.env.TG_IS_ENCRYPT
