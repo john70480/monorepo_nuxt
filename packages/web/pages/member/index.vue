@@ -1,5 +1,6 @@
 <template>
-	member page
+	<div>member page</div>
+
 </template>
 <script setup lang="ts">
 definePageMeta({

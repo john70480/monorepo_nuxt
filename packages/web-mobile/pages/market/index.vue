@@ -1,67 +1,67 @@
 <template>
-
-	<Tabs></Tabs>
-	<Announcement></Announcement>
-	<ul class="game_list">
-		<li>
-			<div class="game_title">
-				<b>欧洲冠军联赛</b>
-				<span>2020-10-15 23:30</span>
-			</div>
-			<div class="team_row">
-				<div class="team_name">
-					<b>华沙普洛克U19(主)</b>
-					<b>洛兹U19</b>
+	<div class="market">
+		<Tabs></Tabs>
+		<Announcement></Announcement>
+		<ul class="game_list">
+			<li>
+				<div class="game_title">
+					<b>欧洲冠军联赛</b>
+					<span>2020-10-15 23:30</span>
 				</div>
-				<div class="guaranteed">保本</div>
-			</div>
-			<div class="score">
-				<span>
-					<b>3-3</b>
-					<b>1.91</b>
-				</span>
-			</div>
-		</li>
-		<li>
-			<div class="game_title">
-				<b>欧洲冠军联赛</b>
-				<span>2020-10-15 23:30</span>
-			</div>
-			<div class="team_row">
-				<div class="team_name">
-					<b>华沙普洛克U19(主)</b>
-					<b>洛兹U19</b>
+				<div class="team_row">
+					<div class="team_name">
+						<b>华沙普洛克U19(主)</b>
+						<b>洛兹U19</b>
+					</div>
+					<div class="guaranteed">保本</div>
 				</div>
-				<div class="guaranteed">保本</div>
-			</div>
-			<div class="score">
-				<span>
-					<b>3-3</b>
-					<b>1.91</b>
-				</span>
-			</div>
-		</li>
-		<li>
-			<div class="game_title">
-				<b>欧洲冠军联赛</b>
-				<span>2020-10-15 23:30</span>
-			</div>
-			<div class="team_row">
-				<div class="team_name">
-					<b>华沙普洛克U19(主)</b>
-					<b>洛兹U19</b>
+				<div class="score">
+					<span>
+						<b>3-3</b>
+						<b>1.91</b>
+					</span>
 				</div>
-				<div class="guaranteed">保本</div>
-			</div>
-			<div class="score">
-				<span>
-					<b>3-3</b>
-					<b>1.91</b>
-				</span>
-			</div>
-		</li>
-	</ul>
-
+			</li>
+			<li>
+				<div class="game_title">
+					<b>欧洲冠军联赛</b>
+					<span>2020-10-15 23:30</span>
+				</div>
+				<div class="team_row">
+					<div class="team_name">
+						<b>华沙普洛克U19(主)</b>
+						<b>洛兹U19</b>
+					</div>
+					<div class="guaranteed">保本</div>
+				</div>
+				<div class="score">
+					<span>
+						<b>3-3</b>
+						<b>1.91</b>
+					</span>
+				</div>
+			</li>
+			<li>
+				<div class="game_title">
+					<b>欧洲冠军联赛</b>
+					<span>2020-10-15 23:30</span>
+				</div>
+				<div class="team_row">
+					<div class="team_name">
+						<b>华沙普洛克U19(主)</b>
+						<b>洛兹U19</b>
+					</div>
+					<div class="guaranteed">保本</div>
+				</div>
+				<div class="score">
+					<span>
+						<b>3-3</b>
+						<b>1.91</b>
+					</span>
+				</div>
+			</li>
+		</ul>
+	</div>
 </template>
 <script setup lang="ts">
 import Tabs from './tabs.vue';

@@ -13,14 +13,13 @@
 			<input v-model="lastFour" />
 		</label>
 		<button @click="submit()">送出</button>
-	</div>
-	<pre>
+		<pre>
 		<code>	
 			{{ data }}
 			{{ session.user }}
 		</code>
 	</pre>
-
+	</div>
 </template>
 <script setup lang="ts">
 import { Base64 } from 'js-base64';
