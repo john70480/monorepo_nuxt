@@ -1,18 +1,16 @@
 <template>
 	<div class="app">
-		<Header v-if="!route.meta.hiddenHeader"></Header>
+		<TgHeader v-if="!route.meta.hiddenHeader"></TgHeader>
 		<main>
 			<slot />
 
 		</main>
-		<Footer></Footer>
-		<SideNav></SideNav>
+		<TgFooter></TgFooter>
+		<TgSideNavigation>
+		</TgSideNavigation>
 	</div>
 </template>
 <script setup lang="ts">
-import Header from "@tg/web-mobile/components/header/index.vue";
-import Footer from "@tg/web-mobile/components/footer/index.vue";
-import SideNav from "@tg/web-mobile/components/side-navigation/index.vue";
 const route = useRoute();
 </script>
 <style lang="scss" scoped>
