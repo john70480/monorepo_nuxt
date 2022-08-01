@@ -42,15 +42,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 本周資料
              */
@@ -131,15 +131,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 已下單資料
              */
@@ -200,15 +200,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 本周結果加總
              */
@@ -374,15 +374,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 總筆數
              */
@@ -442,15 +442,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 金額
              */
@@ -495,15 +495,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 總筆數
              */
@@ -554,15 +554,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             data?: Array<any>;
         };
     }> {
@@ -610,15 +610,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * TG獎金
              */
@@ -686,15 +686,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數錯誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 聯盟列表
              */
@@ -754,15 +754,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 聯盟ID
              */
@@ -833,11 +833,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數錯誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -877,11 +877,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -957,11 +957,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -1036,16 +1036,16 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0 Pass
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 比賽ID
              */
@@ -1151,7 +1151,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass 撤单执行成功
@@ -1163,7 +1163,7 @@ export class Service {
          * - 2106 1天内最多撤单10次，请稍后再试
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -1206,11 +1206,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -1307,7 +1307,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0：Pass
@@ -1332,11 +1332,11 @@ export class Service {
          * - 1773:超过单场$setValue限制
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 微商廣告設定 1:顯示橫幅,也顯示廣告(非微商,已達門檻,無設定不顯示) 2:顯示橫幅,不顯示廣告 3:不用橫幅,不用廣告
              */
@@ -1409,15 +1409,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 賽事資訊
              */
@@ -1765,15 +1765,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 6001：審核同意 6002:審核拒絕 6000:lock
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 注單ID
              */
@@ -1862,15 +1862,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 總筆數
              */
@@ -1976,15 +1976,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 賽事資料
          */
-        payload?: {
+        Payload?: {
             /**
              * 今日/明日/本周
              */
@@ -2030,11 +2030,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 賽事資料
          */
@@ -2084,15 +2084,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 當前賽季ID
              */
@@ -2166,15 +2166,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 當前賽季ID
              */
@@ -2234,15 +2234,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 對陣表資訊
              */
@@ -2321,16 +2321,16 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0 Pass 4444:參數錯誤
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             gameList?: Array<any>;
             information?: any;
         };
@@ -2419,15 +2419,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0 Pass 4444:參數錯誤 1778:晒单延迟中
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 聊天室ID
              */
@@ -2484,15 +2484,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 歐洲盃專區
              */
@@ -2588,7 +2588,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0：Pass
@@ -2606,11 +2606,11 @@ export class Service {
          * - 1773:超过单场{messageVale}限制 ，剩下額度{remainingQuota}
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 預約單號
              */
@@ -2738,18 +2738,18 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0：Pass
          * - 4444:参数有误
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 預約內容
              */
@@ -2850,14 +2850,14 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0：Pass
          * - 4444:参数有误
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -2896,15 +2896,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 保留餘額
              */
@@ -2936,15 +2936,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數有誤或是type不存在
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 最高金額
              */
@@ -2990,15 +2990,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 查詢之會員代碼
              */
@@ -3047,15 +3047,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數有誤 1302:找不到轉入會員ID 1303:轉出轉入ID相同
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 狀態碼
              */
@@ -3101,15 +3101,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 1310:查無此帳號 4444:參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 開始時間
              */
@@ -3189,11 +3189,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -3240,15 +3240,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444參數有誤 1310:查無帳號 1311:此帐号无法进行充值，请联系上层或客服 1312:此帐号无法进行充值，请联系上层或客服
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             block1?: {
                 /**
                  * 區塊名稱
@@ -3301,27 +3301,27 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 回覆訊息
              */
-            message?: string;
+            Message?: string;
             /**
              * 回覆代碼 0：Pass，4444：未傳入會員帳號 1320:無此帳號資料 1321:無帳戶名稱資料
              */
-            statusCode?: number;
+            StatusCode?: number;
             /**
              * 回傳內容
              */
-            payload?: {
+            Payload?: {
                 /**
                  * 帳戶名
                  */
@@ -3364,27 +3364,27 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 1305:每笔充值需间隔30秒以上,请稍后再尝试 1306:每笔提领需间隔60秒以上,请稍后再尝试
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 回覆訊息
              */
-            message?: string;
+            Message?: string;
             /**
              * 回覆代碼 0：Pass，4444：未傳入會員帳號 1320:無此帳號資料 1321:無帳戶名稱資料
              */
-            statusCode?: number;
+            StatusCode?: number;
             /**
              * 回傳內容
              */
-            payload?: {
+            Payload?: {
                 /**
                  * 驗證狀態
                  */
@@ -3436,15 +3436,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 1350:類別選擇錯誤 1351:充值金额不正確 1352:平台帐务整理中请稍等3~5分钟再试 1353:不符合充值金額 1354:無支付渠道資料
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 序號
              */
@@ -3591,15 +3591,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass / 2201：请重新确认交易密码 / 2202：请重新确认金额 / 2203：互转点数必须大于或等于100点 / 2204：会员帐号错误 / 2205：该身份限制提领动作 / 2206：转入会员帐号错误 / 2207：请重新确认转入转出帐号 / 2208：转出帐号限制 / 2209：转入帐号限制 / 2210：转入系统帐号限制 / 2211：请联系上层或客服 / 2212：未有提领纪录 / 2213：重复互转，请至交易明细查询结果 / 2214：会员身份错误|交易密码 / 2215：交易额度超过可用余额 / 2216：尚有会员互转保留额度100(200分钟) / 2217：尚有赛事保留额度 100 / 2218：新增交易记录失败 / 2219：确认交易失败 / 2220：更新交易记录失败 / 2238：您的会员互转功能已被关闭，无法使用会员互转
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 互轉單號
              */
@@ -3666,15 +3666,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 總筆數
              */
@@ -3793,11 +3793,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：success / 2221：银行材料在48小时内有变更过 / 2222：金额小于100 / 2223：30 | 60秒内有充直/提领成功记录 / 2224：未填写打款人栏位/打款人文字长度大于20 / 2225：尚有赛事保留余额 / 2226：传入资料内含出入管理黑名单 / 2227：打款人户名有误 / 2228：该帐号不可充值 / 2229：该帐号不可提领 / 2230：付款方式不得为空 / 2231：提领的卡号或银行与后台不符 / 2232：无可用渠道 / 2233：汇率已异动 / 2234：提领密码有误 / 2235：已超过每日提领限额 / 2236：手续费不符 / 2237：帐户余额不足 / 2238：数字货币提款功能尚未激活，需要有银行卡提款成功记录才能激活此功能 / 2239：TXID格式错误 / 2240：目前尚未开放此渠道
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -3842,15 +3842,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 使用者是否有銀行卡提款成功記錄  ('1':有提领成功纪录 ;'0':未有提领成功纪录)
              */
@@ -3894,15 +3894,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 判斷輸入的帳戶名稱是否與資料庫一致  ('1':一致 ;'0':不一致或無資料)
              */
@@ -3986,15 +3986,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0:Pass, 2303:处理中, 2304:转帐失败, 4444:參數有誤, 1310:查無帳號, 2301:该身份限制转帐动作, 2302:您有转帐仍在处理中，请5分钟后重新再试
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 當statusCode=2304時，转帐失败時的原因 => 2:会员余额不足, 3:超过转帐金额限制, 4:系统错误，请联系客服, 5:转帐金额受限，请联系客服, 6:(第三方名稱)系统维护中, 7:(第三方名稱)系统忙绿中，请稍后再试, 8:帐号被锁定，请联系客服, 10:转帐作业需间隔5秒以上，请稍后在进行操作, 11:(第三方名稱)转账功能已锁定，请联系客服, 12:转账过于频繁，(第三方名稱)转账功能已锁定，请联系客服, 13:游戏进行中，请稍后在进行操作
              */
@@ -4070,15 +4070,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0:Pass, 4444:參數有誤, 1310:查無帳號, 2301:该身份限制转帐动作, 2302:您有转帐仍在处理中，请5分钟后重新再试
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             saba?: {
                 /**
                  * 轉帳結果 0:Pass, 1310:查無帳號, 2301:该身份限制转帐动作, 2302:您有转帐仍在处理中，请5分钟后重新再试, 1:处理中, 2:会员余额不足, 3:超过转帐金额限制, 4:系统错误，请联系客服, 5:转帐金额受限，请联系客服, 6:(第三方名稱)系统维护中, 7:(第三方名稱)系统忙绿中，请稍后再试, 8:帐号被锁定，请联系客服, 10:转帐作业需间隔5秒以上，请稍后在进行操作, 11:(第三方名稱)转账功能已锁定，请联系客服, 12:转账过于频繁，(第三方名稱)转账功能已锁定，请联系客服, 13:游戏进行中，请稍后在进行操作
@@ -4163,15 +4163,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，3020：非微商會員
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             rewardNotices?: Array<{
                 /**
                  * 獎金公告ID
@@ -4309,11 +4309,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，3001：非微商會員
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -4382,15 +4382,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 筆數
              */
@@ -4487,12 +4487,12 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤，1601：無須更新
          */
-        statusCode?: number;
-        payload?: {
+        StatusCode?: number;
+        Payload?: {
             /**
              * 更新通過(1)
              */
@@ -4573,12 +4573,12 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤，1601：無須更新
          */
-        statusCode?: number;
-        payload?: {
+        StatusCode?: number;
+        Payload?: {
             /**
              * 更新通過(1)
              */
@@ -4660,15 +4660,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數錯誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             categoryList?: Array<any>;
             'data(系統公告、個人公告)'?: Array<any>;
             'data(登入公告)'?: Array<any>;
@@ -4734,15 +4734,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數錯誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 個人公告未讀數量
              */
@@ -4833,11 +4833,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -4906,11 +4906,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數錯誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -4959,11 +4959,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -5028,15 +5028,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，1801：此user 沒有註冊推播
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 會員id
              */
@@ -5156,11 +5156,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數錯誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         payload?: any;
     }> {
         return this.httpRequest.request({
@@ -5243,7 +5243,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass
@@ -5251,7 +5251,7 @@ export class Service {
          * - 1801 使用者未註冊推播
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         payload?: any;
     }> {
         return this.httpRequest.request({
@@ -5333,11 +5333,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數錯誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         payload?: any;
     }> {
         return this.httpRequest.request({
@@ -5377,11 +5377,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -5432,17 +5432,17 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 success
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 在線人數
              */
@@ -5474,11 +5474,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -5572,11 +5572,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -5671,12 +5671,12 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數錯誤
          */
-        statusCode?: number;
-        payload?: {
+        StatusCode?: number;
+        Payload?: {
             /**
              * 新聞編號
              */
@@ -5780,13 +5780,13 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 success 4444 參數錯誤 1604 新闻按赞失败，已经按过赞了
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -5864,13 +5864,13 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 success 4444 參數錯誤 1603 留言失敗
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -5938,11 +5938,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass 4444:參數錯誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -6038,13 +6038,13 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 success 4444 參數錯誤 1605 新闻留言按赞失败，已经按过赞了
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -6112,11 +6112,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -6205,11 +6205,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -6286,11 +6286,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -6379,11 +6379,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -6494,11 +6494,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -6614,7 +6614,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 申请成功
@@ -6643,11 +6643,11 @@ export class Service {
          * - 4444 参数有误
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 活動名稱
              */
@@ -6714,11 +6714,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -6868,7 +6868,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 申请成功
@@ -6878,7 +6878,7 @@ export class Service {
          * - 4444 参数有误
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -6957,7 +6957,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 登入成功
@@ -6986,11 +6986,11 @@ export class Service {
          * - 1068 此IP禁止登入
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 會員名稱
              */
@@ -7105,7 +7105,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 登入成功
@@ -7135,11 +7135,11 @@ export class Service {
          * - 1068 此IP禁止登入
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 會員名稱
              */
@@ -7267,7 +7267,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 詳見代碼表 TG系統 網站狀態
@@ -7275,7 +7275,7 @@ export class Service {
          * - 0 $username logout/$username already logout
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -7316,11 +7316,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -7366,11 +7366,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -7425,7 +7425,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0：Pass
@@ -7434,7 +7434,7 @@ export class Service {
          * - 1553：此手机号已绑定
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -7474,15 +7474,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：未傳入代理帳號，3001:代理失效
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 會員帳號選單
              */
@@ -7526,15 +7526,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：pass，4444：參數錯誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 代理Id
              */
@@ -7666,7 +7666,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0：Pass
@@ -7692,11 +7692,11 @@ export class Service {
          * - 1553:此手机号已绑定
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 可參加的活動Id及相關圖片網址
              */
@@ -7778,15 +7778,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數錯誤
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 會員帳號
              */
@@ -7875,7 +7875,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 詳見代碼表 TG系統 網站狀態
@@ -7886,11 +7886,11 @@ export class Service {
          * - 1092 等级资料异常，请联系上层或客服
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 銀行驗證
              * - 0:關
@@ -8063,7 +8063,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass
@@ -8071,11 +8071,11 @@ export class Service {
          * - 4444 参数错误,
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 銀行帳號
              */
@@ -8177,7 +8177,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 詳見代碼表 TG系統 網站狀態
@@ -8187,11 +8187,11 @@ export class Service {
          * - 1091 查詢失败，请联系上层或客服
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 存款總額
              */
@@ -8312,7 +8312,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 詳見代碼表 TG系統 網站狀態
@@ -8321,11 +8321,11 @@ export class Service {
          * - 4444 参数有误
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 充值鎖定
              */
@@ -8433,18 +8433,18 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass
          * - 4444 参数有误
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 累計充值
              */
@@ -8566,13 +8566,13 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -8648,17 +8648,17 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 下注下限值
              */
@@ -8715,15 +8715,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0 Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 參照資料(幣別名稱, 鏈名稱, 提領資料)
              */
@@ -8911,7 +8911,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 4444 参数有误
@@ -8923,7 +8923,7 @@ export class Service {
          * - 1105 添加失败
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -9000,7 +9000,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 修改成功
@@ -9009,7 +9009,7 @@ export class Service {
          * - 1111 未修改
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -9063,18 +9063,18 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass
          * - 4444 未傳入驗證碼
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 圖片(base64編碼內容)
              */
@@ -9131,14 +9131,14 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 success
          * - 1076 图形验证码错误
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -9204,17 +9204,17 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0：Pass
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 剩餘保本額度
              */
@@ -9298,7 +9298,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 success
@@ -9313,7 +9313,7 @@ export class Service {
          * - 1120 手机末四码有误
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -9383,7 +9383,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 密码正确
@@ -9391,7 +9391,7 @@ export class Service {
          * - 1077 密码错误
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -9473,7 +9473,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 詳見代碼表 TG系統 網站狀態
@@ -9485,7 +9485,7 @@ export class Service {
          * - 1058 不可與登入密碼相同
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         payload?: any;
     }> {
         return this.httpRequest.request({
@@ -9565,14 +9565,14 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0：Pass
          * - 1006:请输入銀行戶名
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -9669,7 +9669,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0：Pass
@@ -9682,7 +9682,7 @@ export class Service {
          * - 1021:新增安全性问题失败
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -9737,11 +9737,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，1501：銀行帳號為空值，1502：銀行帳號格式有誤，1503：銀行帳號已存在
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -9807,7 +9807,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 查询会员ID为#####
@@ -9815,11 +9815,11 @@ export class Service {
          * - 1122 请重新确认「转入会员帐号」
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 轉入目標uid
              */
@@ -9908,7 +9908,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 詳見代碼表 TG系統 網站狀態
@@ -9923,7 +9923,7 @@ export class Service {
          * - 1100 账户新增失败
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -10046,7 +10046,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 success
@@ -10054,7 +10054,7 @@ export class Service {
          * - 4444 参数有误
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -10097,11 +10097,11 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0 成功
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -10161,7 +10161,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 【提交成功】请耐心等候上级与您联系，谢谢!
@@ -10174,7 +10174,7 @@ export class Service {
          * - 1075 【提交失败】
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -10209,18 +10209,18 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 未达发送次数上限
          * - 1066 【已达上限】您已达到每日发送次数上限
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 已上傳次數 (狀態為0 時出現)
              */
@@ -10286,7 +10286,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0：Pass
@@ -10297,11 +10297,11 @@ export class Service {
          * - 1024:你已经重覆发送，于1分钟后再发送！
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容(正式機將不再回傳code簡訊驗證碼，開發機及測試機為方便串接測試，依舊會回傳)
          */
-        payload?: {
+        Payload?: {
             /**
              * 簡訊驗證碼
              */
@@ -10372,7 +10372,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0：验证完成
@@ -10381,7 +10381,7 @@ export class Service {
          * - 1120：手机末四码有误
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -10446,7 +10446,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0:系统简讯已送出
@@ -10460,11 +10460,11 @@ export class Service {
          * - 1024:你已经重覆发送，于1分钟后再发送！
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 簡訊驗證碼
              */
@@ -10534,7 +10534,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 验证完成
@@ -10544,11 +10544,11 @@ export class Service {
          * - 4444 参数有误
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 會員帳號
              */
@@ -10607,7 +10607,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 密码修改完成
@@ -10621,7 +10621,7 @@ export class Service {
          * - 4444 参数有误
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -10674,7 +10674,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 提領密码修改完成!!
@@ -10689,7 +10689,7 @@ export class Service {
          * - 4444 参数有误
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -10739,7 +10739,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 成功解锁
@@ -10750,7 +10750,7 @@ export class Service {
          * - 4444 参数有误
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -10814,7 +10814,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 [禁止登入]疑似重覆使用扫盘程式
@@ -10822,7 +10822,7 @@ export class Service {
          * - 1064 [危险帐号]疑似使用扫盘程式
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -10904,7 +10904,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass
@@ -10915,11 +10915,11 @@ export class Service {
          * - 8000 第三方維護中
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 登入網址
              *
@@ -11001,7 +11001,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass
@@ -11011,11 +11011,11 @@ export class Service {
          * - 1132 修改失敗
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             switch?: any;
         };
     }> {
@@ -11076,14 +11076,14 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass
          * - 1133 會員未開啟免轉錢包(若前端不需針對此API狀態做反饋，忽略即可)
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -11154,13 +11154,13 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -11263,13 +11263,13 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -11386,7 +11386,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass
@@ -11397,11 +11397,11 @@ export class Service {
          * - 8000 第三方維護中
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 登入網址
              */
@@ -11477,13 +11477,13 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -11574,13 +11574,13 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -11698,13 +11698,13 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 Pass
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
@@ -11774,7 +11774,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤，
          */
@@ -11782,7 +11782,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 國家區域ID
              */
@@ -11883,7 +11883,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤，
          */
@@ -11965,7 +11965,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤，
          */
@@ -12043,7 +12043,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤，
          */
@@ -12121,7 +12121,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤，
          */
@@ -12199,7 +12199,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤，
          */
@@ -12277,7 +12277,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤，
          */
@@ -12349,7 +12349,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -12427,7 +12427,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -12435,7 +12435,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 設置ID
              */
@@ -12611,7 +12611,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -12619,7 +12619,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             all?: {
                 /**
                  * 年化報酬率 %
@@ -12870,7 +12870,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，詳細statusCode請參閱文檔
          */
@@ -12878,7 +12878,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 設置ID
              */
@@ -13034,7 +13034,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，詳細statusCode請參閱文檔
          */
@@ -13042,7 +13042,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 設置ID
              */
@@ -13125,7 +13125,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤，
          */
@@ -13211,7 +13211,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤，
          */
@@ -13297,7 +13297,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤，
          */
@@ -13383,7 +13383,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤，
          */
@@ -13464,7 +13464,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤，
          */
@@ -13566,7 +13566,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -13574,7 +13574,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 執行歷程
              */
@@ -13693,7 +13693,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -13701,7 +13701,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 匹配記錄
              */
@@ -13838,7 +13838,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -13846,7 +13846,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 匹配記錄
              */
@@ -13924,7 +13924,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -13932,7 +13932,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * API位置
              */
@@ -13968,7 +13968,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -14068,7 +14068,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -14076,7 +14076,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 下注資料
              */
@@ -14206,7 +14206,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -14214,7 +14214,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 匹配資訊
              */
@@ -14361,7 +14361,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -14369,7 +14369,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 訊息通知
              */
@@ -14462,7 +14462,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -14470,7 +14470,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 訊息通知
              */
@@ -14582,7 +14582,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -14590,7 +14590,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 執行歷程
              */
@@ -14705,7 +14705,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -14713,7 +14713,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 匹配記錄
              */
@@ -14821,7 +14821,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -14829,7 +14829,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 訊息通知
              */
@@ -14918,7 +14918,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -14926,7 +14926,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 訊息通知
              */
@@ -15011,7 +15011,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass，4444：參數有誤，
          */
@@ -15096,7 +15096,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -15104,7 +15104,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 累積流水合計
              */
@@ -15196,7 +15196,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -15204,7 +15204,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 未過帳注單量
              */
@@ -15284,7 +15284,7 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0：Pass
          */
@@ -15292,7 +15292,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * aesKey
              */
@@ -15366,15 +15366,15 @@ export class Service {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼 0:Pass
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 平台清單
              */

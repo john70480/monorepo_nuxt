@@ -31,18 +31,18 @@ export class IpService {
         /**
          * 回覆訊息
          */
-        message?: string;
+        Message?: string;
         /**
          * 回覆代碼
          * - 0 成功
          * - 4444 IP異常
          *
          */
-        statusCode?: number;
+        StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: {
+        Payload?: {
             /**
              * 查詢IP
              */
