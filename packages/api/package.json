@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "main": "out/index.js",
   "scripts": {
-    "update": "openapi -i https://doc.tg6666.net/docs -o ./src/tg --useOptions  --name client --request ./src/tg/tg-request.ts --client axios "
+    "update-api": "openapi -i https://doc.tg6666.net/docs -o ./src/tg --useOptions  --name client --request ./src/tg/tg-request.ts --client axios ",
+    "replace": "ts-node ./scripts/replace.ts ",
+    "update": "npm run update-api && npm run replace"
   },
   "dependencies": {
     "axios": "latest",
@@ -17,6 +19,9 @@
     "@types/crypto-js": "^4.0.2",
     "@types/qs": "^6.9.7",
     "@types/uuid": "^8.3.1",
-    "openapi-typescript-codegen": "^0.23.0"
+    "@types/node": "latest",
+    "typescript": "latest",
+    "openapi-typescript-codegen": "^0.23.0",
+    "ts-node": "latest"
   }
 }
