@@ -16,7 +16,7 @@
 
 		<SubTitle type="game" title="热门赛事"></SubTitle>
 		<div class="index_box">
-			<Swiper class="swiper-container game-swiper " :autoplay="true" slides-per-view="auto">
+			<Swiper class="swiper-container game-swiper " slides-per-view="auto">
 				<SwiperSlide v-for="n in 5" :key="n">
 					<MatchCard></MatchCard>
 				</SwiperSlide>
@@ -25,7 +25,7 @@
 
 		<SubTitle type="event" title="优惠活动" :showFilter="true"></SubTitle>
 		<div class="index_box">
-			<Swiper class="swiper-container event-swiper " :autoplay="true" slides-per-view="auto">
+			<Swiper class="swiper-container event-swiper " slides-per-view="auto">
 				<SwiperSlide v-for="n in 5" :key="n">
 					<img src="@tg/web-mobile/assets/images/banner02.png" />
 				</SwiperSlide>
@@ -34,7 +34,7 @@
 
 		<SubTitle type="live" title="赛事直播"></SubTitle>
 		<div class="index_box">
-			<Swiper class="swiper-container live-swiper " :autoplay="true" slides-per-view="auto">
+			<Swiper class="swiper-container live-swiper " slides-per-view="auto">
 				<SwiperSlide v-for="n in 5" :key="n">
 					<VideoCard></VideoCard>
 				</SwiperSlide>
@@ -44,7 +44,7 @@
 		<template v-for="(item, index) in platformList" :key="index">
 			<SubTitle :type="index" :title="item.title"></SubTitle>
 			<div class="index_box">
-				<Swiper class="swiper-container platform-swiper " :autoplay="true" slides-per-view="auto">
+				<Swiper class="swiper-container platform-swiper " slides-per-view="auto">
 					<SwiperSlide v-for="(list, index) in item.list" :key="index">
 						<PlatformCard :title="list.title" :ImageSrc="list.imageSrc"></PlatformCard>
 					</SwiperSlide>
