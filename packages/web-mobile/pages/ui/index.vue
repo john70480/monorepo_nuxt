@@ -417,5 +417,5 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "@tg/web-mobile/pages/ui/assets/scss/style.scss";
+// @import "@tg/web-mobile/pages/ui/assets/scss/style.scss";
 </style>
