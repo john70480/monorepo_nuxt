@@ -13,10 +13,13 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "nuxt": "^3.0.0-rc.6",
     "@pinia/nuxt": "latest",
     "node-sass": "latest",
+    "nuxt": "^3.0.0-rc.6",
     "sass": "latest",
     "sass-loader": "latest"
+  },
+  "dependencies": {
+    "swiper": "^8.3.2"
   }
 }
