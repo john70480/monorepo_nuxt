@@ -3,55 +3,17 @@
 		<div class="nav_menu">
 			<div class="nav_logo"></div>
 			<ul>
-				<li><button class="icon01">充值</button></li>
-				<li><button class="icon02">提领</button></li>
-				<li><button class="icon03">转账</button></li>
-				<li><button class="icon04">活动大厅</button></li>
-				<li><button class="icon05 new">娱乐</button></li>
-				<li><button class="icon06 new">TG微商</button></li>
-				<li><button class="icon07">智能下單</button></li>
-				<li :class="{ active: Nav_market }">
-					<span class="sub-item" @click="Nav_market = !Nav_market">TG市场</span>
-					<ul>
-						<li><button class="icon08">市场列表</button></li>
-						<li><button class="icon09">赛事直播</button></li>
-						<li><button class="icon10">赛事结果</button></li>
-						<li><button class="icon11">历年赛事统计</button></li>
-						<li><button class="icon12">即时比分</button></li>
-					</ul>
+				<li v-for="(item, index) in navList" :key="index" :class="{ active: item.active }">
+					<template v-if="item.sub?.length">
+						<span class="sub-item" @click="item.active = !item.active">{{ item.text }}</span>
+						<ul>
+							<li v-for="(subItem, index) in item.sub" :key="index">
+								<button :class="subItem.class">{{ subItem.text }}</button>
+							</li>
+						</ul>
+					</template>
+					<button v-else :class="item.class">{{ item.text }}</button>
 				</li>
-				<li :class="{ active: Nav_service }">
-					<span class="sub-item" @click="Nav_service = !Nav_service">会员服务</span>
-					<ul>
-						<li><button class="icon13">联络客服</button></li>
-						<li><button class="icon14">公告</button></li>
-						<li><button class="icon15">上级协助</button></li>
-						<li><button class="icon16">VIP规则</button></li>
-						<li><button class="icon17">规则说明</button></li>
-						<li><button class="icon18">讨论区</button></li>
-						<li><button class="icon19">帮助中心</button></li>
-						<li><button class="icon20">关于TG</button></li>
-						<li><button class="icon21">与我们合作</button></li>
-					</ul>
-				</li>
-				<li :class="{ active: Nav_accounts }">
-					<span class="sub-item" @click="Nav_accounts = !Nav_accounts">交易帐务</span>
-					<ul>
-						<li><button class="icon22">下单明细</button></li>
-						<li><button class="icon23">历史帐务</button></li>
-						<li><button class="icon24">总帐表</button></li>
-						<li><button class="icon25">交易记录</button></li>
-					</ul>
-				</li>
-				<li :class="{ active: Nav_my }">
-					<span class="sub-item" @click="Nav_my = !Nav_my">我的权益</span>
-					<ul>
-						<li><button class="icon26">我的</button></li>
-						<li><button class="icon27">个人资料</button></li>
-						<li><button class="icon28">设置</button></li>
-					</ul>
-				</li>
-
 			</ul>
 			<div class="nav_row">
 				<button class="logout_btn">登出</button>
@@ -66,10 +28,57 @@
 import { useApp } from '@tg/web-mobile/stores/app';
 
 const app = useApp()
-const Nav_market = ref(false);
-const Nav_service = ref(false);
-const Nav_accounts = ref(false);
-const Nav_my = ref(false);
+
+const navList = ref<{ text: string, class: string, active?: boolean, sub?: { text: string, class: string }[] }[]>([
+	{ text: "充值", class: "icon01" },
+	{ text: "提领", class: "icon02" },
+	{ text: "转账", class: "icon03" },
+	{ text: "活动大厅", class: "icon04" },
+	{ text: "娱乐", class: "icon05 new" },
+	{ text: "TG微商", class: "icon06 new" },
+	{ text: "智能下單", class: "icon07" },
+	{
+		text: "TG市场", class: "", active: false,
+		sub: [
+			{ text: "市场列表", class: "icon08" },
+			{ text: "赛事直播", class: "icon09" },
+			{ text: "赛事结果", class: "icon10" },
+			{ text: "历年赛事统计", class: "icon11" },
+			{ text: "即时比分", class: "icon12" },
+		]
+	},
+	{
+		text: "会员服务", class: "", active: false,
+		sub: [
+			{ text: "联络客服", class: "icon13" },
+			{ text: "公告", class: "icon14" },
+			{ text: "上级协助", class: "icon15" },
+			{ text: "VIP规则", class: "icon16" },
+			{ text: "规则说明", class: "icon17" },
+			{ text: "讨论区", class: "icon18" },
+			{ text: "帮助中心", class: "icon19" },
+			{ text: "关于TG", class: "icon20" },
+			{ text: "与我们合作", class: "icon21" },
+		]
+	},
+	{
+		text: "交易帐务", class: "", active: false,
+		sub: [
+			{ text: "下单明细", class: "icon22" },
+			{ text: "历史帐务", class: "icon23" },
+			{ text: "总帐表", class: "icon24" },
+			{ text: "交易记录", class: "icon25" },
+		]
+	},
+	{
+		text: "我的权益", class: "", active: false,
+		sub: [
+			{ text: "我的", class: "icon26" },
+			{ text: "个人资料", class: "icon27" },
+			{ text: "设置", class: "icon28" },
+		]
+	},
+])
 </script>
 <style lang="scss" scoped>
 nav {
