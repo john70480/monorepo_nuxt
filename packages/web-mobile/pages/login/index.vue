@@ -33,14 +33,7 @@
       <label for="remember">記住帳密</label>
     </div>
 
-    <div class="verify">
-      <div id="verify_box" ref="box">
-        <div id="verifyText">请滑动验证</div>
-        <div id="verify_xbox" ref="xbox">
-          <div id="btn" ref="btn" draggable="true"></div>
-        </div>
-      </div>
-    </div>
+    <SliderUnlock></SliderUnlock>
 
     <div class="btn_row">
       <button class="service">24H客服</button>
@@ -53,6 +46,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import SliderUnlock from "./slider-unlock.vue";
 definePageMeta({
   layout: "none"
 });
@@ -330,83 +324,6 @@ function chooseLang(lang: string) {
     }
   }
 
-  .verify {
-    margin-top: 10%;
-    border-radius: 5px;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-
-    #verify_box {
-      height: 50px;
-      text-align: center;
-      line-height: 50px;
-      font-size: 0.9rem;
-      color: #c3c3c3;
-      position: relative;
-      background: #394c65;
-    }
-
-    #verify_xbox {
-      width: 50px;
-      height: 50px;
-      text-align: center;
-      font-size: 14px;
-      color: #fff;
-      position: absolute;
-      top: 0px;
-      border-radius: 8px;
-      background: linear-gradient(to left, #426796, #6c8cbd);
-    }
-
-    #btn {
-      cursor: pointer;
-      width: 50px;
-      height: 50px;
-      border-radius: 5px;
-      border: 1px solid #8eaace;
-      background: url('@tg/web-mobile/assets/images/verify_arrow.png') center no-repeat, #fff;
-      background-size: 40%;
-      float: right;
-      top: 0px;
-      left: 0px;
-      overflow: hidden;
-      box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
-
-      &::before {
-        content: '';
-        width: 36px;
-        height: 36px;
-        background: url(~assets/image/com_body_slip_btn.png) center no-repeat;
-        background-size: contain;
-        display: block;
-      }
-    }
-
-    .continue {
-      width: 120px;
-      height: 50px;
-      background-color: rgba(212, 212, 212, 1);
-      margin: 0 70px;
-      border: none;
-      color: #302f41;
-      font-size: 16px;
-
-      &:hover {
-        background-color: rgba(235, 54, 38, 1);
-        color: #ffffff;
-      }
-    }
-
-    #verifyText {
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-    }
-  }
 
   .btn_row {
     margin-top: 10%;

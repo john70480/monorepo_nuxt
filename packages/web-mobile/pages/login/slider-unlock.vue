@@ -1,0 +1,166 @@
+<template>
+	<div id="box">
+		<div class="bgColor"></div>
+		<div class="txt">请滑动验证</div>
+		<!--給i標簽添加上相應字體圖標的類名即可-->
+		<div class="slider">
+			<i v-show="!isSuccess" class="el-icon-d-arrow-right"></i>
+			<i v-show="isSuccess" class="el-icon-check"></i>
+		</div>
+	</div>
+</template>
+<script  >
+export default {
+	mounted() {
+		var self = this;
+		//一、定義瞭一個獲取元素的方法
+		function getEle(selector) {
+			return document.querySelector(selector);
+		}
+		//二、獲取到需要用到的DOM元素
+		var box = getEle("#box"), //容器
+			bgColor = getEle(".bgColor"), //背景色
+			txt = getEle(".txt"), //文本
+			slider = getEle(".slider"), //滑塊
+			icon = getEle(".slider>i"),
+			successMoveDistance = box.offsetWidth - slider.offsetWidth, //解鎖需要滑動的距離
+			downX; //用於存放鼠標按下時的位置
+		//三、給滑塊添加鼠標按下事件
+		slider.onmousedown = mousedownHandler;
+		slider.ontouchstart = mousedownHandler; //移動端加touchstart事件
+		//3.1鼠標按下事件的方法實現
+		function mousedownHandler(e) {
+			bgColor.style.transition = "";
+			slider.style.transition = "";
+			var e = e || window.event || e.which;
+			downX = e.clientX ? e.clientX : e.changedTouches[0].clientX;
+			if (!self.isSuccess) {
+				//在鼠標按下時，分別給鼠標添加移動和松開事件
+				document.onmousemove = mousemoveHandler;
+				document.onmouseup = mouseupHandler;
+				//添加移動端對應事件
+				document.ontouchmove = mousemoveHandler;
+				document.ontouchend = mouseupHandler;
+			}
+		}
+		//四、定義一個獲取鼠標當前需要移動多少距離的方法
+		function getOffsetX(offset, min, max) {
+			if (offset < min) {
+				offset = min;
+			} else if (offset > max) {
+				offset = max;
+			}
+			return offset;
+		}
+		//3.1.1鼠標移動事件的方法實現
+		function mousemoveHandler(e) {
+			var e = e || window.event || e.which;
+			var moveX = e.clientX ? e.clientX : e.changedTouches[0].clientX;
+			console.log(moveX);
+			var offsetX = getOffsetX(moveX - downX, 0, successMoveDistance);
+			bgColor.style.width = offsetX + "px";
+			slider.style.left = offsetX + "px";
+
+			if (offsetX == successMoveDistance) {
+				success();
+			}
+			//如果不設置滑塊滑動時會出現問題（目前還不知道為什麼）
+			e.preventDefault();
+		}
+		//3.1.2鼠標松開事件的方法實現
+		function mouseupHandler(e) {
+			if (!self.isSuccess) {
+				bgColor.style.width = 0 + "px";
+				slider.style.left = 0 + "px";
+				bgColor.style.transition = "width 0.5s linear";
+				slider.style.transition = "left 0.5s linear";
+			}
+			document.onmousemove = null;
+			document.onmouseup = null;
+			//移除移動端事件
+			document.ontouchmove = null;
+			document.ontouchend = null;
+		}
+		//五、定義一個滑塊解鎖成功的方法
+		function success() {
+			self.isSuccess = true;
+			txt.innerHTML = "解鎖成功";
+			bgColor.style.backgroundColor = "lightgreen";
+			//滑動成功時，移除鼠標按下事件和鼠標移動事件
+			slider.onmousedown = null;
+			document.onmousemove = null;
+			//移除移動端事件
+			document.ontouchstart = null;
+			document.ontouchmove = null;
+		}
+	},
+	data() {
+		return {
+			isSuccess: false,
+		};
+	},
+};
+</script>
+<style >
+/*  使用全局樣式樣式去掉 */
+* {
+	touch-action: pan-y;
+}
+</style >
+<style lang="scss" scoped>
+#box {
+	margin-top: 10%;
+	position: relative;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 0.9rem;
+	color: #c3c3c3;
+	background: #394c65;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+}
+
+.bgColor {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50px;
+	height: 50px;
+	border-radius: 5px;
+	background-image: linear-gradient(to right, #b9c4cd, #939aa1);
+}
+
+.txt {
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	text-align: center;
+}
+
+.slider {
+	position: absolute;
+	cursor: move;
+
+	width: 50px;
+	height: 50px;
+	border-radius: 5px;
+	border: 1px solid #8eaace;
+	background: url('@tg/web-mobile/assets/images/verify_arrow.png') center no-repeat, #fff;
+	background-size: 40%;
+	float: right;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+.slider>i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+</style>
