@@ -3,21 +3,16 @@
     <div class="login_head">
       <div class="logo"></div>
       <div class="select_language">
-        <div class="Language_select zh-cn" @click="languageList = true">
+        <div :class="['Language_select', language]" @click="languageFlag = true">
         </div>
-        <div class="Language_list" v-if="languageList">
+        <div class="Language_list" v-if="languageFlag && LanguageList.length > 0">
           <ul>
-            <li class="lang-menu-item zh-cn">
-              <div class="Language_select"></div>
-            </li>
-            <li class="lang-menu-item en-us">
-              <div class="Language_select"></div>
-            </li>
-            <li class="lang-menu-item zh-hk">
+            <li v-for="(item, index) in LanguageList" :key="index" :class="['lang-menu-item', item]"
+              @click="chooseLang(item)">
               <div class="Language_select"></div>
             </li>
           </ul>
-          <div class="close_list" @click="languageList = false"></div>
+          <div class="close_list" @click="languageFlag = false"></div>
         </div>
       </div>
     </div>
@@ -61,7 +56,13 @@
 definePageMeta({
   layout: "none"
 });
-const languageList = ref(false)
+const languageFlag = ref(false);
+const language = ref('zh-cn');
+const LanguageList = ref(['zh-cn', 'en-us', 'zh-hk'])
+function chooseLang(lang: string) {
+  language.value = lang;
+  languageFlag.value = false;
+}
 </script>
 
 <style lang="scss" scoped>
