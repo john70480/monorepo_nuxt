@@ -1,5 +1,5 @@
 <template>
-	<div class="market-card">
+	<v-card class="market-card">
 		<div class="game_title">
 			<b>欧洲冠军联赛</b>
 			<span>2020-10-15 23:30</span>
@@ -17,7 +17,7 @@
 				<b>1.91</b>
 			</span>
 		</div>
-	</div>
+	</v-card>
 </template>
 <script setup lang="ts"></script>
 <style lang="scss" scoped>

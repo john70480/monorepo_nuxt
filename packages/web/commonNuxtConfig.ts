@@ -6,6 +6,10 @@ export const commonNuxtConfig: NuxtConfig = {
 	typescript: {
 		shim: false
 	},
+  css: ['vuetify/lib/styles/main.sass'],
+  build: {
+    transpile: ['vuetify'],
+  },
 	modules: ['@pinia/nuxt'],
 	publicRuntimeConfig: {
 		TG_RELAY_API_URL: process.env.TG_RELAY_API_URL,
