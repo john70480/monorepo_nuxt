@@ -1,5 +1,6 @@
 <template>
 	<div class="app">
+		<TgDialog></TgDialog>
 		<TgHeader v-if="!route.meta.hiddenHeader"></TgHeader>
 		<main>
 			<slot />
