@@ -1,15 +1,14 @@
 <template>
-	<div class="app">
+	<v-app>
 		<TgDialog></TgDialog>
 		<TgHeader v-if="!route.meta.hiddenHeader"></TgHeader>
-		<main>
+		<v-main>
 			<slot />
-
-		</main>
+		</v-main>
 		<TgFooter></TgFooter>
 		<TgSideNavigation>
 		</TgSideNavigation>
-	</div>
+	</v-app>
 </template>
 <script setup lang="ts">
 const route = useRoute();

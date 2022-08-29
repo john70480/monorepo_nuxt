@@ -1,11 +1,13 @@
 <template>
-	<header>
-		<!-- 返回按鈕 -->
-		<!-- <button class="back_btn"></button> -->
+	<v-app-bar density="compact">
+		<template v-slot:prepend>
+			<button class="third_party"></button>
+		</template>
 		<span>{{ route.meta.title }}</span>
-		<button class="third_party"></button>
-		<button class="header_menu" @click="app.navSwitch = true"></button>
-	</header>
+		<template v-slot:append>
+			<button class="header_menu" @click="app.navSwitch = !app.navSwitch"></button>
+		</template>
+	</v-app-bar>
 </template>
 <script setup lang="ts">
 import { useApp } from '@tg/web-mobile/stores/app';
