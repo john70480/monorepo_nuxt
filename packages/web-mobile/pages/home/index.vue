@@ -68,7 +68,9 @@ definePageMeta({
 	hiddenHeader: true
 });
 const app = useApp()
-const platformList = {
+</script>
+<script  lang="ts">
+export const platformList = {
 	sports: {
 		title: '体育',
 		list: [
@@ -116,7 +118,6 @@ const platformList = {
 		]
 	},
 }
-
 </script>
 <style lang="scss" scoped>
 .index {

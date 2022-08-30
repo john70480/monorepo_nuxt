@@ -6,14 +6,16 @@
 	</footer>
 </template>
 <script setup lang="ts">
+import { useDialogs } from '@tg/web-mobile/stores/dialogs';
+
 const route = useRoute();
 const router = useRouter();
-
+const dialog = useDialogs();
 const footerList = computed(() => {
 	return [
 		{ title: "首页", class: ["home_btn", { "active": ["index", "home"].includes(route.name as string) }], link: () => router.push('/home') },
 		{ title: "市场列表", class: ["market_btn", { "active": route.name === "market" }], link: () => router.push('/market') },
-		{ title: "分类", class: ["category_btn", { "active": route.name === "classification" }], link: () => router.push('/classification') },
+		{ title: "分类", class: ["category_btn", { "active": route.name === "classification" }], link: () => dialog.classificationOpen = !dialog.classificationOpen },
 		{ title: "历史帐务", class: ["history_btn", { "active": route.name === "accounting" }], link: () => router.push('/accounting') },
 		{ title: "我的", class: ["my_btn", { "active": route.name === "my" }], link: () => router.push('/my') },
 	]
