@@ -1,10 +1,7 @@
 <template>
-	<v-dialog v-model="dialogsStore.classificationOpen">
+	<TgDialog type="classification">
 		<v-card>
 			<slot name="header">
-				<v-btn :block="true" color="green darken-1" text @click="dialogsStore.classificationOpen = false">
-					{{ close }}
-				</v-btn>
 				<v-tabs v-model="platformTab">
 					<v-tab v-for="(item, index) in platformList" :key="index" color="deep-orange">
 						{{ item.title }}
@@ -26,15 +23,13 @@
 				</v-container>
 			</slot>
 		</v-card>
-	</v-dialog>
+	</TgDialog>
 </template>
 <script lang="ts" setup>
 import { useDialogs } from '@tg/web-mobile/stores/dialogs';
 import { platformList } from '@tg/web-mobile/pages/home/index.vue';
-import SubTitle from '@tg/web-mobile/pages/home/sub-ttitle.vue';
 import PlatformCard from './platform-card.vue';
 
 const dialogsStore = useDialogs();
 const platformTab = ref<keyof typeof platformList>('sports')
-const close = dialogsStore.current?.closeText || "關閉"
 </script>

@@ -1,32 +1,86 @@
 <template>
-  <v-dialog v-model="dialogsStore.open" fullscreen class="pa-md-4 mx-lg-auto">
-    <v-card>
-      <slot name="header">
-        <v-card-title class="text-h5  text-center" :ripple="{ center: true }">
-          {{ title }}
-        </v-card-title>
+	<v-dialog v-model="open" class="pa-md-4 mx-lg-auto" :type="type">
+		<div class="close" @click="close()"></div>
+		<slot>
 
-      </slot>
-
-      <slot>
-        <v-card-text>
-          {{ message }}
-        </v-card-text>
-      </slot>
-
-
-      <v-card-actions bottom>
-        <v-btn :block="true" color="green darken-1" text @click="dialogsStore.close">
-          {{ close }}
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+		</slot>
+	</v-dialog>
 </template>
 <script lang="ts" setup>
 import { useDialogs } from '@tg/web-mobile/stores/dialogs';
+
+const props = withDefaults(defineProps<{
+	type: typeof types[number],
+}>(), {
+	type: 'default'
+});
 const dialogsStore = useDialogs();
-const title = dialogsStore.current?.title || "標題";
-const close = dialogsStore.current?.closeText || "關閉"
-const message = dialogsStore.current?.message || "訊息訊息訊息訊息訊息訊息訊息訊息訊息訊息訊息"
+
+const open = computed({
+	get: () => {
+		switch (props.type) {
+			case 'classification':
+				return dialogsStore.classificationOpen
+			default:
+				return dialogsStore.open
+		}
+	},
+	set: value => {
+		switch (props.type) {
+			case 'classification':
+				dialogsStore.classificationOpen = value;
+				break;
+			default:
+				dialogsStore.open = value;
+				break;
+		}
+	},
+});
+// const fullscreen = computed(() => false)
+// const fullscreen = computed(() => ['fullscreen', 'classification'].includes(props.type))
+function close() {
+	open.value = false;
+}
+
 </script>
+<script lang="ts">
+export const types = [
+	'default',
+	'classification',
+	'fullscreen',
+] as const;
+</script>
+<style lang="scss">
+.v-dialog {
+	.close {
+		// z-index: 9999;
+		cursor: pointer;
+		position: absolute;
+		right: 50%;
+		top: -30px;
+		background: url('@tg/web-mobile/assets/images/come_body_cancel_btn.png') center no-repeat;
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.v-dialog[type="default"] {
+	.v-overlay__content {
+		padding: 10px;
+		max-height: 90%;
+		width: 100%;
+	}
+}
+
+.v-dialog[type="classification"],
+.v-dialog[type="fullscreen"] {
+
+	.v-overlay__content {
+		position: relative;
+		overflow-y: visible;
+		margin: 30px 0 0 0;
+		height: calc(100% - 50px);
+		width: 100%;
+	}
+}
+</style>

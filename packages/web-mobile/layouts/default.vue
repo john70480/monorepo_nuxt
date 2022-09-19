@@ -1,8 +1,7 @@
 <template>
 	<v-app>
-		<TgDialog></TgDialog>
-		<TgClassification>
-		</TgClassification>
+		<TgDialogMessage />
+		<TgClassification />
 		<TgHeader v-if="!route.meta.hiddenHeader"></TgHeader>
 		<v-main>
 			<slot />
@@ -13,7 +12,6 @@
 	</v-app>
 </template>
 <script setup lang="ts">
-import Classification from '../components/tg/dialog/classification.vue';
 const route = useRoute();
 </script>
 <style lang="scss" scoped>
