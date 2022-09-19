@@ -14,7 +14,7 @@
 			</div>
 		</div>
 
-		<SubTitle type="game" title="热门赛事"></SubTitle>
+		<SubTitle type="game" title="热门赛事" @more="router.push({ path: 'market' })"></SubTitle>
 		<div class="index_box">
 			<Swiper class="swiper-container game-swiper " slides-per-view="auto">
 				<SwiperSlide v-for="n in 5" :key="n">
@@ -68,6 +68,7 @@ definePageMeta({
 	hiddenHeader: true
 });
 const app = useApp()
+const router = useRouter();
 </script>
 <script  lang="ts">
 export const platformList = {

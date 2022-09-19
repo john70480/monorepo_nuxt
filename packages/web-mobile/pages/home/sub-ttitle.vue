@@ -2,7 +2,7 @@
 	<div class="sub_title">
 		<b :class="[type, { 'mr-a': !showFilter }]">{{ title }}</b>
 		<button v-if="showFilter" class="filter_btn" :class="{ 'mr-a': showFilter }">全部</button>
-		<button class="more_btn"></button>
+		<button class="more_btn" @click="emit('more')"></button>
 	</div>
 </template>
 <script setup lang="ts">
@@ -12,6 +12,9 @@ defineProps({
 	type: { type: String as PropType<typeof types[number]>, default: '' },
 	title: String,
 	showFilter: { type: Boolean, default: false },
+});
+const emit = defineEmits({
+	more: () => true,
 });
 </script>
 <script lang="ts">
@@ -116,6 +119,7 @@ export const types = [
 	}
 
 	.more_btn {
+		cursor: pointer;
 		width: 40px;
 		height: 40px;
 		border: none;
