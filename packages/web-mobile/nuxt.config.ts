@@ -7,7 +7,8 @@ export default defineNuxtConfig({
 		'images': '@tg/web-mobile/assets/images',
 	},
 	css: [
-		// SCSS file in the project
+		// SCSS file in the project		
+		...commonNuxtConfig.css || [],
 		'@tg/web-mobile/assets/scss/style.scss'
 	]
 })

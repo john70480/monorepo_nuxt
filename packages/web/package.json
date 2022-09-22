@@ -16,5 +16,9 @@
     "nuxt": "^3.0.0-rc.8",
     "@pinia/nuxt": "latest",
     "cross-env-file": "latest"
+  },
+  "dependencies": {
+    "sass": "^1.54.4",
+    "vuetify": "^3.0.0-beta.7"
   }
 }
