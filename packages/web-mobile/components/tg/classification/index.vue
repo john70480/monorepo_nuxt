@@ -2,11 +2,11 @@
 	<TgDialog type="classification">
 		<v-card>
 			<slot name="header">
-				<v-tabs v-model="platformTab">
-					<v-tab v-for="(item, index) in platformList" :key="index" color="deep-orange">
+				<TgTabs type="mobile-market-tabs" v-model="platformTab">
+					<v-tab v-for="(item, index) in platformList" :key="index" hide-slider :value="index">
 						{{ item.title }}
 					</v-tab>
-				</v-tabs>
+				</TgTabs>
 			</slot>
 
 			<slot>
@@ -26,10 +26,8 @@
 	</TgDialog>
 </template>
 <script lang="ts" setup>
-import { useDialogs } from '@tg/web-mobile/stores/dialogs';
 import { platformList } from '@tg/web-mobile/pages/home/index.vue';
 import PlatformCard from './platform-card.vue';
 
-const dialogsStore = useDialogs();
 const platformTab = ref<keyof typeof platformList>('sports')
 </script>
