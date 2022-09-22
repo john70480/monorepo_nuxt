@@ -1,8 +1,8 @@
 <template>
-	<div :class="$style.tabs" :type="type">
+	<v-tabs v-model="modelValue" class="tabs" :type="type" align-with-title>
 		<slot></slot>
 		<slot name="filter"></slot>
-	</div>
+	</v-tabs>
 </template>
 
 <script lang="ts" setup>
@@ -21,14 +21,14 @@ export const types = [
 	'mobile-market-tabs',
 ] as const;
 </script>
-
-<style lang="scss" module>
+<style lang="scss" >
+// <style lang="scss" module>
 %flex-tabs {
 	display: inline-flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;
 
-	[tab-pane] {
+	.v-tab {
 		cursor: pointer;
 		user-select: none;
 		text-decoration: none;
@@ -53,10 +53,11 @@ export const types = [
 	background: #36567f;
 	display: flex;
 	align-items: center;
+	height: 40px;
 
-	[tab-pane] {
+	.v-tab {
 		flex: 1;
-		height: 40px;
+		height: 40px !important;
 		color: #c3c3c3;
 		font-size: 0.8rem;
 		line-height: 1;
@@ -64,15 +65,15 @@ export const types = [
 		border-right: 1px solid #c3c3c3;
 		background: transparent;
 
-		&:hover,
-		&[active] {
+		&.v-slide-group-item--active,
+		&:hover {
 			color: #fff;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 		}
 
-		&[active] {
+		&.v-slide-group-item--active {
 			&::before {
 				content: '';
 				width: 6px;
@@ -81,10 +82,6 @@ export const types = [
 				border-radius: 50%;
 				background: linear-gradient(to bottom, #ffae5c, #f5720d);
 			}
-		}
-
-		&:last-child {
-			// border-right: none;
 		}
 	}
 }

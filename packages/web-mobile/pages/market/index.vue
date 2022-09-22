@@ -2,9 +2,9 @@
 	<div class="market">
 		<div class="tabs">
 			<TgTabs type="mobile-market-tabs" v-model="tab">
-				<TgTabPane :value="0">全部(70)</TgTabPane>
-				<TgTabPane :value="1">今日(32)</TgTabPane>
-				<TgTabPane :value="2">明日(40)</TgTabPane>
+				<v-tab v-for="item in items" :key="item" hide-slider>
+					{{ item }}
+				</v-tab>
 			</TgTabs>
 			<span class="filter_btn" @click="test()"></span>
 		</div>
@@ -19,11 +19,11 @@
 <script setup lang="ts">
 import Announcement from '@tg/web-mobile/pages/home/announcement.vue';
 import MarketCard from "./market-card.vue";
-
 definePageMeta({
 	title: "市场列表"
 });
 const tab = ref(0);
+const items = ['全部(70)', '今日(32)', '明日(40)']
 function test() {
 	console.log('tests');
 
