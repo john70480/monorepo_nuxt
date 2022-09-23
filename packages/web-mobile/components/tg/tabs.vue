@@ -1,15 +1,23 @@
 <template>
-	<v-tabs v-model="modelValue" class="tabs" :type="type" align-with-title>
+	<v-tabs v-model="modelValueProxy" class="tabs" :type="type" align-with-title>
 		<slot></slot>
 		<slot name="filter"></slot>
 	</v-tabs>
 </template>
 
 <script lang="ts" setup>
-defineProps<{
+const props = defineProps<{
 	type: typeof types[number],
 	modelValue?: any,
 }>();
+
+const emit = defineEmits<{
+	(event: 'update:modelValue', payload?: any): void
+}>();
+const modelValueProxy = computed({
+	get: () => props.modelValue,
+	set: (val) => emit("update:modelValue", val)
+})
 </script>
 
 <script lang="ts">
@@ -64,6 +72,10 @@ export const types = [
 		border: none;
 		border-right: 1px solid #c3c3c3;
 		background: transparent;
+
+		&:first-child {
+			margin-inline-start: 0px !important;
+		}
 
 		&.v-slide-group-item--active,
 		&:hover {
