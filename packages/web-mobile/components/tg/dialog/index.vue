@@ -10,7 +10,7 @@
 import { useDialogs } from '@tg/web-mobile/stores/dialogs';
 
 const props = withDefaults(defineProps<{
-	type: typeof types[number],
+	type?: typeof types[number],
 }>(), {
 	type: 'default'
 });

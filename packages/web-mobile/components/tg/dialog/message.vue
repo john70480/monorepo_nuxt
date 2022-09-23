@@ -25,17 +25,9 @@
 </template>
 <script lang="ts" setup>
 import { useDialogs } from '@tg/web-mobile/stores/dialogs';
-const props = defineProps<{
-  type: typeof types[number],
-}>();
 
 const dialogsStore = useDialogs();
 const title = dialogsStore.current?.title || "標題";
 const close = dialogsStore.current?.closeText || "關閉"
 const message = dialogsStore.current?.message || "訊息訊息訊息訊息訊息訊息訊息訊息訊息訊息訊息"
-</script>
-<script lang="ts">
-export const types = [
-  'default',
-] as const;
 </script>
