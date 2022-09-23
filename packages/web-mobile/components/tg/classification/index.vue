@@ -1,5 +1,5 @@
 <template>
-	<TgDialog type="classification">
+	<TgDialog type="classification" :dialogBind="{fullscreen:true}">
 		<v-card>
 			<slot name="header">
 				<TgTabs type="mobile-market-tabs" v-model="platformTab">

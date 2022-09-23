@@ -1,5 +1,5 @@
 <template>
-	<v-dialog v-model="open" class="pa-md-4 mx-lg-auto" :type="type">
+	<v-dialog v-model="open" :class="{'ma-2':type==='default'}" :type="type" v-bind="dialogBind">
 		<div class="close" @click="close()"></div>
 		<slot>
 
@@ -8,11 +8,13 @@
 </template>
 <script lang="ts" setup>
 import { useDialogs } from '@tg/web-mobile/stores/dialogs';
+import type { VDialog } from "vuetify/components";
 
 const props = withDefaults(defineProps<{
 	type?: typeof types[number],
+	dialogBind?: VDialog["$props"]
 }>(), {
-	type: 'default'
+	type: 'default',
 });
 const dialogsStore = useDialogs();
 
@@ -36,8 +38,7 @@ const open = computed({
 		}
 	},
 });
-// const fullscreen = computed(() => false)
-// const fullscreen = computed(() => ['fullscreen', 'classification'].includes(props.type))
+
 function close() {
 	open.value = false;
 }
@@ -66,7 +67,6 @@ export const types = [
 
 .v-dialog[type="default"] {
 	.v-overlay__content {
-		padding: 10px;
 		max-height: 90%;
 		width: 100%;
 	}
