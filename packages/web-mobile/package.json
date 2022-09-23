@@ -15,12 +15,12 @@
   "devDependencies": {
     "@pinia/nuxt": "latest",
     "node-sass": "latest",
-    "nuxt": "^3.0.0-rc.8",
+    "nuxt": "rc",
     "sass-loader": "latest"
   },
   "dependencies": {
     "sass": "^1.54.4",
     "swiper": "^8.3.2",
-    "vuetify": "^3.0.0-beta.7"
+    "vuetify": "next"
   }
 }
