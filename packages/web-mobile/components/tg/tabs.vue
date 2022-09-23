@@ -26,7 +26,7 @@ export default {
 };
 
 export const types = [
-	'mobile-market-tabs',
+	'tg-tabs',
 ] as const;
 </script>
 <style lang="scss" >
@@ -56,12 +56,14 @@ export const types = [
 	}
 }
 
-.tabs[type="mobile-market-tabs"] {
+.tabs[type="tg-tabs"] {
 	@extend %flex-tabs;
 	background: #36567f;
 	display: flex;
 	align-items: center;
-	height: 40px;
+	min-height: 40px;
+	width: 100%;
+	overflow-x: auto;
 
 	.v-tab {
 		flex: 1;

@@ -1,7 +1,7 @@
 <template>
 	<div class="market">
 		<div class="tabs">
-			<TgTabs type="mobile-market-tabs" v-model="tab">
+			<TgTabs type="tg-tabs" v-model="tab">
 				<v-tab v-for="item in items" :key="item" hide-slider>
 					{{ item }}
 				</v-tab>
