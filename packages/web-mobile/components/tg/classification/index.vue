@@ -1,5 +1,5 @@
 <template>
-	<TgDialog type="classification" :dialogBind="{fullscreen:true}">
+	<TgDialog v-model="dialogsStore.classificationOpen" type="classification" :dialogBind="{fullscreen:true}">
 		<v-card>
 			<TgTabs type="tg-tabs" v-model="platformTab">
 				<v-tab v-for="(item, index) in platformList" :key="index" hide-slider :value="index">
@@ -23,6 +23,8 @@
 <script lang="ts" setup>
 import { platformList } from '@tg/web-mobile/pages/home/index.vue';
 import PlatformCard from './platform-card.vue';
+import { useDialogs } from '@tg/web-mobile/stores/dialogs';
 
+const dialogsStore = useDialogs();
 const platformTab = ref<keyof typeof platformList>('sports')
 </script>

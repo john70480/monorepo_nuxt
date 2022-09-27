@@ -1,5 +1,5 @@
 <template>
-	<v-dialog v-model="open" :class="{'ma-2':type==='default'}" :type="type" v-bind="dialogBind">
+	<v-dialog v-model="openProxy" :class="{ 'ma-2': type === 'default' }" :type="type" v-bind="dialogBind">
 		<div class="close" @click="close()"></div>
 		<slot>
 
@@ -7,40 +7,26 @@
 	</v-dialog>
 </template>
 <script lang="ts" setup>
-import { useDialogs } from '@tg/web-mobile/stores/dialogs';
 import type { VDialog } from "vuetify/components";
 
 const props = withDefaults(defineProps<{
+	modelValue: boolean,
 	type?: typeof types[number],
 	dialogBind?: VDialog["$props"]
 }>(), {
 	type: 'default',
 });
-const dialogsStore = useDialogs();
+const emit = defineEmits<{
+	(event: 'update:modelValue', payload: boolean): void
+}>();
 
-const open = computed({
-	get: () => {
-		switch (props.type) {
-			case 'classification':
-				return dialogsStore.classificationOpen
-			default:
-				return dialogsStore.open
-		}
-	},
-	set: value => {
-		switch (props.type) {
-			case 'classification':
-				dialogsStore.classificationOpen = value;
-				break;
-			default:
-				dialogsStore.open = value;
-				break;
-		}
-	},
+const openProxy = computed({
+	get: () => props.modelValue,
+	set: (val) => emit("update:modelValue", val)
 });
 
 function close() {
-	open.value = false;
+	openProxy.value = false;
 }
 
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <TgDialog>
+  <TgDialog v-model="dialogsStore.open">
     <v-card>
       <slot name="header">
         <v-card-title class="text-h5  text-center" :ripple="{ center: true }">
