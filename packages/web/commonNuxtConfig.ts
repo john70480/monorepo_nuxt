@@ -1,4 +1,4 @@
-import { NuxtConfig } from 'nuxt'
+import { NuxtConfig } from 'nuxt/config'
 
 export const commonNuxtConfig: NuxtConfig = {
 	ssr: false,
