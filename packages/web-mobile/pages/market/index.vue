@@ -21,7 +21,6 @@
 <script setup lang="ts">
 import Announcement from '@tg/web-mobile/pages/home/announcement.vue';
 import { useDialogs } from '@tg/web-mobile/stores/dialogs';
-import MarketCard from "./market-card.vue";
 definePageMeta({
 	title: "市场列表"
 });
@@ -37,9 +36,6 @@ function test() {
 </script>
 <style lang="scss" scoped>
 /*市場列表*/
-// .game_list {
-// 	li {}
-// }
 
 .tabs {
 	background: #36567f;
