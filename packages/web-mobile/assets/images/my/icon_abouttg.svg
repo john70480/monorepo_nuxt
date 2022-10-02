@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+    <defs>
+        <linearGradient id="00g5e5mdna" x1="-.731" y1="-1.307" x2="1.608" y2="-1.445" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#f5fbff"/>
+            <stop offset="1" stop-color="#90c3ea"/>
+        </linearGradient>
+        <clipPath id="hpyk1x5pdb">
+            <path data-name="Rectangle 40883" transform="translate(556 2129)" style="fill:url(#00g5e5mdna)" d="M0 0h120v120H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="Group 84093" transform="translate(-556 -2129)" style="clip-path:url(#hpyk1x5pdb)">
+        <path data-name="Path 83173" d="M103.366 0H5.434A5.439 5.439 0 0 0 0 5.434v70.722a5.439 5.439 0 0 0 5.434 5.434h16.322v15.1l16.98-15.08h64.63a5.439 5.439 0 0 0 5.434-5.434V5.434A5.439 5.439 0 0 0 103.366 0zM74.918 16.863a7.039 7.039 0 1 1-7.039 7.037 7.04 7.04 0 0 1 7.039-7.037zm-42.236 0a7.039 7.039 0 1 1-7.039 7.037 7.04 7.04 0 0 1 7.04-7.037zM76.736 46.7c-3.249 10.23-12.048 17.115-21.892 17.115S36.2 56.933 32.953 46.7l-1.508-4.757h46.78z" style="fill:url(#00g5e5mdna)" transform="translate(561.6 2141)"/>
+    </g>
+</svg>

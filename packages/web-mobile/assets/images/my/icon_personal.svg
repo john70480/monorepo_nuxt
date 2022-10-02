@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+    <defs>
+        <linearGradient id="445dgp26aa" x1="-.731" y1="-1.307" x2="1.608" y2="-1.445" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#f5fbff"/>
+            <stop offset="1" stop-color="#90c3ea"/>
+        </linearGradient>
+        <clipPath id="j7vtyj4wtb">
+            <path data-name="Rectangle 40882" transform="translate(995 1261)" style="fill:url(#445dgp26aa)" d="M0 0h120v120H0z"/>
+        </clipPath>
+    </defs>
+    <g style="clip-path:url(#j7vtyj4wtb)">
+        <path data-name="Path 83172" d="M72.376 0H8.042v8.042h64.334zM8.042 96.5h64.334v-8.041H8.042zm64.334-80.417H8.042A8.04 8.04 0 0 0 0 24.125v48.25a8.04 8.04 0 0 0 8.042 8.042h64.334a8.04 8.04 0 0 0 8.042-8.042v-48.25a8.04 8.04 0 0 0-8.042-8.042zM40.209 27.141a9.047 9.047 0 1 1-9.047 9.047 9.061 9.061 0 0 1 9.047-9.047zm20.1 41.214H20.1v-6.032c0-6.695 13.41-10.052 20.1-10.052s20.1 3.357 20.1 10.052z" transform="translate(19.372 11.898)" style="fill:url(#445dgp26aa)"/>
+    </g>
+</svg>

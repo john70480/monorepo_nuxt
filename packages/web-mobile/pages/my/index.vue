@@ -12,7 +12,7 @@
 
 			</div>
 			<div class="d-flex px-4 pt-2 pb-4">
-				<span class="icon icon-quota pr-2 mt-auto mb-auto"></span>
+				<span class="icon icon--small icon-quota pr-2 mt-auto mb-auto"></span>
 				<div class="text-body-2 text-second">總資產: {{memberInfo.quota}}</div>
 			</div>
 			<div class="userInfo-footer py-1">
@@ -36,10 +36,148 @@
 				</v-row>
 			</div>
 		</div>
+		<div class="content py-2">
+			<div class="block px-4 pt-3 pb-2">
+				<div class="d-flex pb-1 justify-space-between">
+					<div class="text-caption text-white">TG钱包 </div>
+					<div class="text-caption text-white">888,888,888.00</div>
+				</div>
+				<div class="d-flex pb-1 justify-space-between">
+					<div class="text-caption text-white">锁定钱包 </div>
+					<div class="text-caption text-white">888,888,888.00</div>
+				</div>
+				<div class="d-flex pb-1 justify-space-between">
+					<div class="text-caption text-white">体验钱包 </div>
+					<div class="text-caption text-white">0.00</div>
+				</div>
+			</div>
+			<div class="block-option d-flex flex-row-reverse py-2 px-4 ">
+				<span class="icon icon--small icon-maskgroup pr-2 mt-auto mb-auto"></span>
+			</div>
+			<div class="block px-4 pt-3 pb-2">
+				<div class="d-flex pb-1 justify-space-between">
+					<div class="text-caption text-white">正在交易笔数 </div>
+					<div class="text-caption text-white">18</div>
+				</div>
+				<div class="d-flex pb-1 justify-space-between">
+					<div class="text-caption text-white">累计实货量 </div>
+					<div class="text-caption text-white">822,888.00</div>
+				</div>
+				<div class="d-flex pb-1 justify-space-between">
+					<div class="text-caption text-white">保级差额(尚缺) </div>
+					<div class="text-caption text-white">500</div>
+				</div>
+			</div>
+			<div class="block-option d-flex flex-row-reverse py-2 px-4 ">
+				<span class="icon icon--small icon-questions pr-2 mt-auto mb-auto"></span>
+			</div>
+			<div class="block px-4 pt-3 pb-2">
+				<v-tabs class="tabs-my mb-4" height="20" hide-slider>
+					<v-tab class="text-caption d-flex" :class="{'tabs--active': currentTab === myTabs.vip}"
+						:value="myTabs.vip" @click="handleVipClick(myTabs.vip)">
+						<span class="icon icon-cycle mr-2"></span>
+						<div>
+							VIP权限
+						</div>
+					</v-tab>
+					<v-tab class="text-caption d-flex" :class="{'tabs--active': currentTab === myTabs.tg}"
+						:value="myTabs.tg" @click="handleVipClick(myTabs.tg)">
+						<span class="icon icon-cycle mr-2"></span>
+						<div>
+							智能权限
+						</div>
+					</v-tab>
+				</v-tabs>
+				<v-window v-model="currentTab">
+					<v-window-item :value="myTabs.vip">
+						<div class="d-flex pb-1 justify-space-between">
+							<div class="text-caption text-white">负利红包</div>
+							<div class="text-caption text-white">1％</div>
+						</div>
+						<div class="d-flex pb-1 justify-space-between">
+							<div class="text-caption text-white">提领优惠 </div>
+							<div class="text-caption text-white">4次</div>
+						</div>
+						<div class="d-flex pb-1 justify-space-between">
+							<div class="text-caption text-white">提领限额</div>
+							<div class="text-caption text-white">1,000,000</div>
+						</div>
+					</v-window-item>
+				</v-window>
+				<v-window v-model="currentTab">
+					<v-window-item :value="myTabs.tg"></v-window-item>
+				</v-window>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="block px-4 pt-3 pb-2">
+				<v-row class="pt-2 pb-3 mx-2">
+					<v-col class="v-col-3">
+						<dvi class="d-flex flex-column">
+							<span class="icon icon-rule pr-2 mt-auto mb-auto"></span>
+							<div class="pt-2 text-caption text-white text-center">
+								VIP规则
+							</div>
+						</dvi>
+					</v-col>
+					<v-col class="v-col-3">
+						<dvi class="d-flex flex-column">
+							<span class="icon icon-announcement pr-2 mt-auto mb-auto"></span>
+							<div class="pt-2 text-caption text-white text-center">
+								公告
+							</div>
+						</dvi>
+					</v-col>
+					<v-col class="v-col-3">
+						<dvi class="d-flex flex-column">
+							<span class="icon icon-bossassist pr-2 mt-auto mb-auto"></span>
+							<div class="pt-2 text-caption text-white text-center">
+								上级协助
+							</div>
+						</dvi>
+					</v-col>
+					<v-col class="v-col-3">
+						<dvi class="d-flex flex-column">
+							<span class="icon icon-24service pr-2 mt-auto mb-auto"></span>
+							<div class="pt-2 text-caption text-white text-center">
+								24H客服
+							</div>
+						</dvi>
+					</v-col>
+				</v-row>
+				<v-row class="pt-2 pb-3 mx-2">
+					<v-col class="v-col-3">
+						<dvi class="d-flex flex-column">
+							<span class="icon icon-setting pr-2 mt-auto mb-auto"></span>
+							<div class="pt-2 text-caption text-white text-center">
+								設置
+							</div>
+						</dvi>
+					</v-col>
+					<v-col class="v-col-3">
+						<dvi class="d-flex flex-column">
+							<span class="icon icon-personal pr-2 mt-auto mb-auto"></span>
+							<div class="pt-2 text-caption text-white text-center">
+								个人资料
+							</div>
+						</dvi>
+					</v-col>
+					<v-col class="v-col-3">
+						<dvi class="d-flex flex-column">
+							<span class="icon icon-abouttg pr-2 mt-auto mb-auto"></span>
+							<div class="pt-2 text-caption text-white text-center">
+								关于TG
+							</div>
+						</dvi>
+					</v-col>
+				</v-row>
+			</div>
+		</div>
 	</div>
 </template>
 <script setup lang="ts">
 import LanguageSelector from '@tg/web-mobile/components/my/language-selector.vue';
+import { Ref } from 'vue';
 
 export type MemberInfoModel = {
 	enableVerifyCode?: number;
@@ -69,32 +207,50 @@ export type MemberInfoModel = {
 	withdrawalMin?: string;
 	reserveRemainNum?: number;
 };
+const enum myTabs {
+	'vip' = 'vip',
+	'tg' = 'tg'
+};
 
 definePageMeta({
 	title: "我的"
 });
 
-const memberInfo: MemberInfoModel = {
+const memberInfo: Ref<MemberInfoModel> = ref({
 	username: 'PPP123',
 	quota: '888,888,888.00'
+});
+const currentTab: Ref<myTabs> = ref(myTabs.vip)
+
+function handleVipClick(newVal: myTabs = currentTab.value): void {
+	currentTab.value = newVal;
 }
 
 </script>
 <style lang="scss" scoped>
 $icon-list: (
-	"recharge": "recharge",
-	"pickup": "pickup",
-	"transfer": "transfer",
-	"active": "active",
-	"userlevel": "vipicon",
-	"quota": "totalwallet"
+	"recharge": "recharge.svg",
+	"pickup": "pickup.svg",
+	"transfer": "transfer.svg",
+	"active": "active.svg",
+	"userlevel": "vipicon.svg",
+	"quota": "totalwallet.svg",
+	"maskgroup": "maskgroup.svg",
+	"questions": "questions.svg",
+	"rule": "rule.svg",
+	"announcement": "announcement.svg",
+	"bossassist": "bossassist.svg",
+	"24service": "24service.svg",
+	"setting": "setting.svg",
+	"personal": "personal.png",
+	"abouttg": "abouttg.svg",
 );
 
 @each $key,
 $val in $icon-list {
 	.icon-#{$key} {
 		&::before {
-			background: url('@tg/web-mobile/assets/images/my/icon_#{$val}.svg') center no-repeat;
+			background: url('@tg/web-mobile/assets/images/my/icon_#{$val}') center no-repeat;
 			background-size: cover;
 		}
 	}
@@ -115,6 +271,62 @@ $val in $icon-list {
 			height: 21px;
 		}
 
+	}
+}
+
+.content {
+	background-image: linear-gradient(to left, #426796, #6c8cbd);
+}
+
+.footer {
+	& .icon {
+		&::before {
+			width: 30px;
+			height: 30px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+	}
+}
+
+.block {
+	background: #36567f;
+}
+
+.tabs-my {
+	font-weight: normal;
+	height: 20px;
+
+
+	.v-tab.v-tab.v-tab {
+		color: #c3c3c3;
+		height: 20px;
+		min-width: 60px;
+		padding-left: 0px;
+
+		&.tabs--active {
+			color: #FFF;
+			font-weight: bolder;
+
+			.icon-cycle {
+				&::before {
+					content: ' ';
+					display: block;
+				}
+			}
+		}
+
+		.icon-cycle {
+			&::before {
+				content: ' ';
+				display: none;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background-image: linear-gradient(to bottom, #ffae5c, #f5720d);
+			}
+		}
 	}
 }
 
@@ -152,10 +364,10 @@ $val in $icon-list {
 	}
 }
 
-.icon-quota {
+.icon--small {
 	&::before {
 		width: 18px;
-		height: 16px;
+		height: 18px;
 	}
 }
 </style>
