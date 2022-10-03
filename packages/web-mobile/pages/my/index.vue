@@ -52,7 +52,7 @@
 				</div>
 			</div>
 			<div class="block-option d-flex flex-row-reverse py-2 px-4 ">
-				<span class="icon icon--small icon-maskgroup pr-2 mt-auto mb-auto"></span>
+				<span class="icon icon--small icon-maskgroup pr-2 mt-auto mb-auto" @click="handleAssetsOpen()"></span>
 			</div>
 			<div class="block px-4 pt-3 pb-2">
 				<div class="d-flex pb-1 justify-space-between">
@@ -103,8 +103,6 @@
 							<div class="text-caption text-white">1,000,000</div>
 						</div>
 					</v-window-item>
-				</v-window>
-				<v-window v-model="currentTab">
 					<v-window-item :value="myTabs.tg"></v-window-item>
 				</v-window>
 			</div>
@@ -174,10 +172,13 @@
 			</div>
 		</div>
 	</div>
+	<MyTotalAssets></MyTotalAssets>
 </template>
 <script setup lang="ts">
 import LanguageSelector from '@tg/web-mobile/components/my/language-selector.vue';
-import { Ref } from 'vue';
+import { ref, Ref } from 'vue';
+import { useDialogs } from '@tg/web-mobile/stores/dialogs';
+
 
 export type MemberInfoModel = {
 	enableVerifyCode?: number;
@@ -207,14 +208,15 @@ export type MemberInfoModel = {
 	withdrawalMin?: string;
 	reserveRemainNum?: number;
 };
+definePageMeta({
+	title: "我的"
+});
+
+const dialogsStore = useDialogs();
 const enum myTabs {
 	'vip' = 'vip',
 	'tg' = 'tg'
 };
-
-definePageMeta({
-	title: "我的"
-});
 
 const memberInfo: Ref<MemberInfoModel> = ref({
 	username: 'PPP123',
@@ -224,6 +226,10 @@ const currentTab: Ref<myTabs> = ref(myTabs.vip)
 
 function handleVipClick(newVal: myTabs = currentTab.value): void {
 	currentTab.value = newVal;
+}
+
+function handleAssetsOpen(): void {
+	dialogsStore.assetsOpen = true;
 }
 
 </script>
