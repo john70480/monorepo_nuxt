@@ -16,6 +16,9 @@
 		</ul>
 		<MarketOrder v-model:open="orderOpen"></MarketOrder>
 		<MarketChooseLeague v-model:open="chooseLeagueOpen"></MarketChooseLeague>
+		<MarketTransaction v-model:open="transactionOpen"></MarketTransaction>
+		<MarketReserve v-model:open="reserveOpen"></MarketReserve>
+		<MarketAmountSetting v-model:open="amountSettingOpen"></MarketAmountSetting>
 	</div>
 </template>
 <script setup lang="ts">
@@ -28,6 +31,9 @@ const dialogs = useDialogs()
 const tab = ref(0);
 const orderOpen = ref(false);
 const chooseLeagueOpen = ref(false);
+const transactionOpen = ref(false);
+const reserveOpen = ref(false);
+const amountSettingOpen = ref(false);
 const items = ['全部(70)', '今日(32)', '明日(40)']
 function test() {
 	console.log('tests');

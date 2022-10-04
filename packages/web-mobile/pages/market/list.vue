@@ -54,11 +54,13 @@
 				</v-window-item>
 			</v-window>
 		</v-container>
+		<MarketTradeDetails v-model:open="tradeDetailsOpen"></MarketTradeDetails>
 	</div>
 </template>
 <script setup lang="ts">
 const tab = ref(0)
 const showTab = ref(0)
+const tradeDetailsOpen = ref(false);
 const tabsList = ['波胆', '半场波胆', '总得分']
 function test() { }
 </script>
