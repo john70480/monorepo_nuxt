@@ -1,5 +1,5 @@
 <template>
-	<v-container class="order-general fill-height overflow-y-auto text-body-2 pa-0 d-flex flex-column" fluid>
+	<v-container class="order order-general fill-height overflow-y-auto text-body-2 pa-0 d-flex flex-column" fluid>
 		<v-row class="ma-0 mt-10">
 			<v-col cols="6">
 				<span>你正在</span>
@@ -84,40 +84,12 @@ const amount = ref<number>();
 </script>
 
 <style lang="scss" scoped>
+@import './assets/scss/order.scss';
+
 .order-general {
-	// font-size: 0.9rem;
-	color: #283763;
-
 	.v-row {
-		flex: none;
-
 		&:nth-child(even) {
 			background: #eef4f8;
-		}
-
-		&:last-child {
-			flex: 1;
-
-		}
-	}
-
-	.setting {
-		gap: 10px;
-
-		img {
-			width: 30px;
-			height: 30px;
-		}
-	}
-
-	.select-name {
-		font-size: 1rem;
-	}
-
-	.balance {
-		img {
-			width: 15px;
-			margin-right: 5px;
 		}
 	}
 }
