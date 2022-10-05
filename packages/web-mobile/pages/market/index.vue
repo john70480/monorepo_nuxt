@@ -14,15 +14,20 @@
 				<MarketCard></MarketCard>
 			</li>
 		</ul>
+		<MarketOrder v-model:open="orderOpen"></MarketOrder>
+		<MarketChooseLeague v-model:open="chooseLeagueOpen"></MarketChooseLeague>
 	</div>
 </template>
 <script setup lang="ts">
 import Announcement from '@tg/web-mobile/pages/home/announcement.vue';
-import MarketCard from "./market-card.vue";
+import { useDialogs } from '@tg/web-mobile/stores/dialogs';
 definePageMeta({
 	title: "市场列表"
 });
+const dialogs = useDialogs()
 const tab = ref(0);
+const orderOpen = ref(false);
+const chooseLeagueOpen = ref(false);
 const items = ['全部(70)', '今日(32)', '明日(40)']
 function test() {
 	console.log('tests');
@@ -31,9 +36,6 @@ function test() {
 </script>
 <style lang="scss" scoped>
 /*市場列表*/
-// .game_list {
-// 	li {}
-// }
 
 .tabs {
 	background: #36567f;

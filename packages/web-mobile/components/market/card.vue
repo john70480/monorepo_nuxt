@@ -25,21 +25,7 @@
 	color: #283763;
 
 	.game_title {
-		padding: 5px 10px;
-		font-size: 0.9rem;
-		line-height: 1.6;
 		background: #eef4f8;
-		display: flex;
-		align-items: center;
-
-		&::before {
-			content: '';
-			width: 16px;
-			height: 16px;
-			margin-right: 5px;
-			background: url('@tg/web-mobile/assets/images/icon_market.png') center no-repeat;
-			background-size: contain;
-		}
 
 		&::after {
 			content: '';
@@ -48,44 +34,6 @@
 			margin-left: 5px;
 			background: url('@tg/web-mobile/assets/images/icon_arrow.png') center no-repeat;
 			background-size: contain;
-		}
-
-		b {
-			flex: 1;
-		}
-
-		span {
-			font-size: 0.8rem;
-			margin-left: 10px;
-		}
-	}
-
-	.team_row {
-		padding: 10px;
-		display: flex;
-		align-items: flex-start;
-
-		.team_name {
-			flex: 1;
-			font-size: 0.8rem;
-			padding-right: 10px;
-			display: flex;
-			flex-direction: column;
-			gap: 5px;
-
-			b {
-				display: flex;
-				align-items: center;
-
-				&::before {
-					content: '';
-					width: 8px;
-					height: 8px;
-					margin-right: 5px;
-					border-radius: 50%;
-					background: linear-gradient(to bottom, #eaf5fb, #b2c9d5);
-				}
-			}
 		}
 	}
 
