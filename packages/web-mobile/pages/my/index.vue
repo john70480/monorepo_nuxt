@@ -72,16 +72,16 @@
 				<span class="icon icon--small icon-questions pr-2 mt-auto mb-auto"></span>
 			</div>
 			<div class="block px-4 pt-3 pb-2">
-				<v-tabs class="tabs-my mb-4" height="20" hide-slider>
+				<v-tabs class="tabs-my mb-4" height="20" hide-slider v-model="currentTab">
 					<v-tab class="text-caption d-flex" :class="{'tabs--active': currentTab === myTabs.vip}"
-						:value="myTabs.vip" @click="handleVipClick(myTabs.vip)">
+						:value="myTabs.vip">
 						<span class="icon icon-cycle mr-2"></span>
 						<div>
 							VIP权限
 						</div>
 					</v-tab>
 					<v-tab class="text-caption d-flex" :class="{'tabs--active': currentTab === myTabs.tg}"
-						:value="myTabs.tg" @click="handleVipClick(myTabs.tg)">
+						:value="myTabs.tg">
 						<span class="icon icon-cycle mr-2"></span>
 						<div>
 							智能权限
@@ -174,10 +174,7 @@
 	</div>
 	<MyTotalAssets></MyTotalAssets>
 </template>
-<script setup lang="ts">
-import LanguageSelector from '@tg/web-mobile/components/my/language-selector.vue';
-import { ref, Ref } from 'vue';
-import { useDialogs } from '@tg/web-mobile/stores/dialogs';
+<script lang="ts">
 
 
 export type MemberInfoModel = {
@@ -208,6 +205,12 @@ export type MemberInfoModel = {
 	withdrawalMin?: string;
 	reserveRemainNum?: number;
 };
+</script>
+<script setup lang="ts">
+import LanguageSelector from '@tg/web-mobile/components/my/language-selector.vue';
+import { ref, Ref } from 'vue';
+import { useDialogs } from '@tg/web-mobile/stores/dialogs';
+
 definePageMeta({
 	title: "我的"
 });
