@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+    <defs>
+        <linearGradient id="ofhndgqhta" x1="-.731" y1="-1.307" x2="1.608" y2="-1.445" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#f5fbff"/>
+            <stop offset="1" stop-color="#90c3ea"/>
+        </linearGradient>
+        <clipPath id="5jauubyp9b">
+            <path data-name="Rectangle 40880" transform="translate(165 1699)" style="fill:url(#ofhndgqhta)" d="M0 0h120v120H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="Group 84085" transform="translate(-165 -1699)" style="clip-path:url(#5jauubyp9b)">
+        <path data-name="Path 83156" d="M7.132 16.081A10.062 10.062 0 0 0 .444 28.633l1.94 6.376A10.062 10.062 0 0 0 14.935 41.7l.29-.089L7.422 15.97z" transform="translate(170.598 1736.833)" style="fill:url(#ofhndgqhta)"/>
+        <path data-name="Path 83157" d="M48.281 2.151a7.135 7.135 0 0 0-4.927 8.159L6.48 32.76l7.8 25.615.78-.022v13.822c0 5.551 3.366 10.054 7.513 10.054h5.44c4.147 0 7.513-4.5 7.513-10.054l-3.79-14.558 25.7-1.115a7.152 7.152 0 0 0 8.472 3.678l5.112-1.56L53.386.59z" transform="translate(178.562 1717.925)" style="fill:url(#ofhndgqhta)"/>
+        <path data-name="Path 83158" d="M69.794 22.048C64.756 5.507 46.943-3.723 30 1.427l1.962 6.421c13.376-4.08 27.466 3.165 31.438 16.14 3.946 12.975-3.723 26.842-17.1 30.921l1.962 6.421c16.917-5.172 26.571-22.74 21.532-39.282z" transform="translate(207.477 1717.2)" style="fill:url(#ofhndgqhta)"/>
+        <path data-name="Path 83159" d="M55.06 18.551C52.206 9.1 41.862 3.859 32.008 6.869c-.156.045-.312.111-.468.156l1.717 5.618a4.018 4.018 0 0 0 .468-.178c6.755-2.051 13.8 1.427 15.739 7.78S47.48 33.42 40.725 35.471c-.156.045-.334.089-.49.134l1.717 5.618c.156-.045.334-.089.49-.134C52.273 38.1 57.936 27.981 55.06 18.551z" transform="translate(209.37 1724.599)" style="fill:url(#ofhndgqhta)"/>
+        <path data-name="Path 83160" d="M41.953 15.5c-.981-3.255-4.771-4.994-8.4-3.879a4.019 4.019 0 0 0-.468.178l3.567 11.749a4.01 4.01 0 0 0 .49-.134c3.629-1.119 5.792-4.664 4.811-7.914z" transform="translate(211.264 1731.066)" style="fill:url(#ofhndgqhta)"/>
+    </g>
+</svg>
