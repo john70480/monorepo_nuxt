@@ -1,0 +1,31 @@
+.order {
+  color: #283763;
+
+  .v-row {
+    flex: none;
+
+    &:last-child {
+      flex: 1;
+    }
+  }
+
+  .setting {
+    gap: 10px;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .select-name {
+    font-size: 1rem;
+  }
+
+  .balance {
+    img {
+      width: 15px;
+      margin-right: 5px;
+    }
+  }
+}

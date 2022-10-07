@@ -8,6 +8,6 @@ export default defineNuxtConfig({
 	css: [
 		// SCSS file in the project		
 		...commonNuxtConfig.css || [],
-		'@tg/web-mobile/assets/scss/style.scss'
+		'@tg/web-mobile/assets/scss/common.scss'
 	]
 })
