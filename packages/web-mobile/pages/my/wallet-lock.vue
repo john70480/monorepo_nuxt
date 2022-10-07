@@ -5,24 +5,24 @@
                 <MyTransaction v-bind:data="item">
                     <template class="font-weight-black" v-slot v-if="!!item.title">{{item.title}}</template>
                     <template v-slot:footer>
-                        <v-col col="4" class="text-caption font-weight-black text-blue--deep">{{item.summary}}
+                        <v-col cols="4" class="text-caption font-weight-black text-blue--deep">{{item.summary}}
                         </v-col>
-                        <v-col col="8" class="text-caption font-weight-black text-caption text-right text-blue--deep">
+                        <v-col cols="8" class="text-caption font-weight-black text-caption text-right text-blue--deep">
                             {{item.total}}
                         </v-col>
                     </template>
                 </MyTransaction>
             </template>
         </div>
-        <v-footer class="py-2 px-2 flex-column">
+        <v-footer class="py-2 px-4 flex-column">
             <v-row class="py-1">
-                <v-col col="4" class="text-caption font-weight-black px-0 text-blue--deep">笔数</v-col>
-                <v-col col="8" class="text-caption text-right  font-weight-black px-0 text-blue--deep">25
+                <v-col cols="4" class="text-caption font-weight-black px-0 text-blue--deep">笔数</v-col>
+                <v-col cols="8" class="text-caption text-right  font-weight-black px-0 text-blue--deep">25
                 </v-col>
             </v-row>
             <v-row class="py-1">
-                <v-col col="4" class="text-caption font-weight-black px-0 text-blue--deep">总金额</v-col>
-                <v-col col="8" class="text-caption text-right  font-weight-black px-0  text-green">
+                <v-col cols="4" class="text-caption font-weight-black px-0 text-blue--deep">总金额</v-col>
+                <v-col cols="8" class="text-caption text-right  font-weight-black px-0  text-green">
                     999,992,222.00
                 </v-col>
             </v-row>
@@ -100,10 +100,6 @@ const res: WalletTransaction[] = [
 ]
 </script>
 <style lang="scss" scoped>
-.text-caption {
-    line-height: 1.25rem;
-}
-
 .text-blue--deep {
     color: #283763;
 }
