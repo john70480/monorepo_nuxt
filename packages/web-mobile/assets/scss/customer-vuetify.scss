@@ -1,6 +1,10 @@
 .v-theme--tgTheme {
   .bg-primary {
-    // .v-btn.bg-primary {
     background: var(--bg-primary) !important;
+  }
+
+  .v-btn--variant-tonal {
+    color: #fff;
+    background-color: #c3c3c3;
   }
 }
