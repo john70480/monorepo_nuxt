@@ -30,7 +30,7 @@
 			<v-window v-model="showTab">
 				<v-window-item>
 					<v-row>
-						<v-col cols="4" v-for="item in 12">
+						<v-col cols="4" v-for="item in 12" @click="openOrder()">
 							<v-card class="text-center">
 								<v-card-subtitle>0-0</v-card-subtitle>
 								<v-card-item>
@@ -45,7 +45,7 @@
 					</v-row>
 				</v-window-item>
 				<v-window-item>
-					<v-row v-for="item in 12">
+					<v-row v-for="item in 12" @click="openOrder()">
 						<v-col cols="2">保本</v-col>
 						<v-col cols="3">0-0</v-col>
 						<v-col cols="3">5.50%</v-col>
@@ -55,14 +55,19 @@
 			</v-window>
 		</v-container>
 		<MarketTradeDetails v-model:open="tradeDetailsOpen"></MarketTradeDetails>
+		<MarketOrder v-model:open="orderOpen"></MarketOrder>
 	</div>
 </template>
 <script setup lang="ts">
 const tab = ref(0)
 const showTab = ref(0)
 const tradeDetailsOpen = ref(false);
+const orderOpen = ref(false);
 const tabsList = ['波胆', '半场波胆', '总得分']
 function test() { }
+function openOrder() {
+	orderOpen.value = true;
+}
 </script>
 
 <style lang="scss" scoped>

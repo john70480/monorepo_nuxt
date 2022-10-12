@@ -14,7 +14,6 @@
 				<MarketCard></MarketCard>
 			</li>
 		</ul>
-		<MarketOrder v-model:open="orderOpen"></MarketOrder>
 		<MarketChooseLeague v-model:open="chooseLeagueOpen"></MarketChooseLeague>
 		<MarketTransaction v-model:open="transactionOpen"></MarketTransaction>
 		<MarketReserve v-model:open="reserveOpen"></MarketReserve>
