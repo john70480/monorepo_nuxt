@@ -9,35 +9,43 @@
 			<span class="vs_btn" @click="test()"></span>
 		</div>
 		<v-container>
-			<v-row>
-				<v-col cols="6">
-					<img src="@tg/web-mobile/assets/images/com_body_statistics_btn.svg" />
-					<span>成交量210,000,000</span>
-				</v-col>
-				<v-col cols=" 6" class="text-right">
-					<v-tabs v-model="showTab" hide-slider>
-						<v-tab>
-							<img src="@tg/web-mobile/assets/images/com_body_statistics_sheet_active_btn.svg" />
-						</v-tab>
-						<v-tab>
-							<img src="@tg/web-mobile/assets/images/com_body_statistics_list_btn.svg" />
-						</v-tab>
-					</v-tabs>
 
-				</v-col>
-			</v-row>
+		<v-container class="pa-2">
+			<div class="info-header d-flex align-center justify-space-between my-2">
+				<div class="d-flex align-center ">
+					<img src="@tg/web-mobile/assets/images/com_body_statistics_btn.svg" class="mr-2" />
+					<b>成交量210,000,000</b>
+				</div>
+				<div>
+					<TgTabs type="market-list-tabs" v-model="showTab">
+						<v-tab>
+							<v-icon class="material-icons-sharp">grid_view</v-icon>
+						</v-tab>
+						<v-tab>
+							<v-icon>list</v-icon>
+						</v-tab>
+					</TgTabs>
+				</div>
+			</div>
+
 			<!-- 列表 -->
 			<v-window v-model="showTab">
 				<v-window-item>
-					<v-row>
+					<v-row dense>
 						<v-col cols="4" v-for="item in 12" @click="openOrder()">
-							<v-card class="text-center">
-								<v-card-subtitle>0-0</v-card-subtitle>
+							<v-card class="trade-card text-center pt-3" elevation="0" rounded="0">
+								<div class="guaranteed py-0" v-if="false">保本</div>
+								<div class="experience-gold py-0" v-if="false">體驗金</div>
 								<v-card-item>
-									<v-row>
-										<v-col cols="12" class="profit-rate ">5.56%</v-col>
-										<v-col cols="12">可交易量</v-col>
-										<v-col cols="12">$5,152.50</v-col>
+									<v-row no-gutters>
+										<v-col cols="12" class="score">0-0</v-col>
+										<v-col cols="12">
+											<span class="profit-rate pa-2 ">
+												5.56%
+											</span>
+										</v-col>
+										<v-col cols="12" class="tradable">可交易量</v-col>
+										<v-col cols="12" class="total">$5,152.50</v-col>
 									</v-row>
 								</v-card-item>
 							</v-card>
@@ -72,7 +80,8 @@ function openOrder() {
 
 <style lang="scss" scoped>
 .mark-list {
-	// .vs_btn {}
+	background-color: #EFF4F8;
+	color: #283763;
 
 	.tabs {
 		background: #36567f;
@@ -87,9 +96,38 @@ function openOrder() {
 		}
 	}
 
-	.profit-rate {
-		background-color: #8EAACE;
-		// min-width: 186px;
+	.info-header {
+		font-size: 0.8rem;
+
+		img {
+			height: 18px;
+		}
 	}
+
+	.trade-card {
+		position: relative;
+		font-size: 0.8rem;
+
+		.guaranteed,
+		.experience-gold {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		.v-row {
+			gap: 10px;
+		}
+
+		.profit-rate {
+			background-color: #8EAACE;
+			border-radius: 4px;
+		}
+
+		.total {
+			font-weight: bold;
+		}
+	}
+
 }
 </style>
