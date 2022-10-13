@@ -111,68 +111,68 @@
 			<div class="block px-4 pt-3 pb-2">
 				<v-row class="pt-2 pb-3 mx-2">
 					<v-col class="v-col-3">
-						<dvi class="d-flex flex-column">
+						<div class="d-flex flex-column">
 							<span class="icon icon-rule pr-2 mt-auto mb-auto"></span>
 							<div class="pt-2 text-caption text-white text-center">
 								VIP规则
 							</div>
-						</dvi>
+						</div>
 					</v-col>
 					<v-col class="v-col-3">
-						<dvi class="d-flex flex-column">
+						<div class="d-flex flex-column">
 							<span class="icon icon-announcement pr-2 mt-auto mb-auto"></span>
 							<div class="pt-2 text-caption text-white text-center">
 								公告
 							</div>
-						</dvi>
+						</div>
 					</v-col>
 					<v-col class="v-col-3">
-						<dvi class="d-flex flex-column">
+						<div class="d-flex flex-column">
 							<span class="icon icon-bossassist pr-2 mt-auto mb-auto"></span>
 							<div class="pt-2 text-caption text-white text-center">
 								上级协助
 							</div>
-						</dvi>
+						</div>
 					</v-col>
 					<v-col class="v-col-3">
-						<dvi class="d-flex flex-column">
+						<div class="d-flex flex-column">
 							<span class="icon icon-24service pr-2 mt-auto mb-auto"></span>
 							<div class="pt-2 text-caption text-white text-center">
 								24H客服
 							</div>
-						</dvi>
+						</div>
 					</v-col>
 				</v-row>
 				<v-row class="pt-2 pb-3 mx-2">
 					<v-col class="v-col-3">
-						<dvi class="d-flex flex-column">
+						<div class="d-flex flex-column">
 							<span class="icon icon-setting pr-2 mt-auto mb-auto"></span>
 							<div class="pt-2 text-caption text-white text-center">
 								設置
 							</div>
-						</dvi>
+						</div>
 					</v-col>
 					<v-col class="v-col-3">
-						<dvi class="d-flex flex-column">
+						<div class="d-flex flex-column">
 							<span class="icon icon-personal pr-2 mt-auto mb-auto"></span>
 							<div class="pt-2 text-caption text-white text-center">
 								个人资料
 							</div>
-						</dvi>
+						</div>
 					</v-col>
 					<v-col class="v-col-3">
-						<dvi class="d-flex flex-column">
+						<div class="d-flex flex-column">
 							<span class="icon icon-abouttg pr-2 mt-auto mb-auto"></span>
 							<div class="pt-2 text-caption text-white text-center">
 								关于TG
 							</div>
-						</dvi>
+						</div>
 					</v-col>
 				</v-row>
 			</div>
 		</div>
+		<MyTotalAssets></MyTotalAssets>
 	</div>
-	<MyTotalAssets></MyTotalAssets>
 </template>
 <script lang="ts">
 
@@ -212,7 +212,8 @@ import { ref, Ref } from 'vue';
 import { useDialogs } from '@tg/web-mobile/stores/dialogs';
 
 definePageMeta({
-	title: "我的"
+	title: "我的",
+	isMainPage: true
 });
 
 const dialogsStore = useDialogs();

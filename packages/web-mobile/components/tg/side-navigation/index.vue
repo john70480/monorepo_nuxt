@@ -91,7 +91,7 @@ nav {
 	display: none;
 
 	&.active {
-		z-index: 999;
+		z-index: 1005;
 		display: block;
 	}
 
