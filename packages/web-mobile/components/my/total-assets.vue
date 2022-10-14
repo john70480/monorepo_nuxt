@@ -8,7 +8,8 @@
 							<span class="icon icon-wallet pr-2 mt-auto mb-auto"></span>
 							<div class="text-body-2 text-blue--deep font-weight-black">总资产</div>
 						</div>
-						<div class="d-flex text-body-2 text-blue--deep my-2 font-weight-black">888,888,888.00</div>
+						<div class="d-flex text-body-2 text-blue--deep my-2 font-weight-black align-center">
+							888,888,888.00</div>
 					</div>
 					<v-divider class="mx-2"></v-divider>
 				</div>
@@ -18,7 +19,8 @@
 							<span class="icon icon-tgwallet pr-2 mt-auto mb-auto"></span>
 							<div class="text-body-2 text-blue--deep font-weight-black">TG钱包</div>
 						</div>
-						<div class="d-flex text-body-2 text-blue--deep my-2 font-weight-black">888,888,888.00</div>
+						<div class="d-flex text-body-2 text-blue--deep my-2 font-weight-black align-center">
+							888,888,888.00</div>
 					</div>
 					<v-divider class="mx-2"></v-divider>
 				</div>
@@ -28,7 +30,8 @@
 							<span class="icon icon-lockwallet pr-2 mt-auto mb-auto"></span>
 							<div class="text-body-2 text-blue--deep font-weight-black">锁定钱包</div>
 						</div>
-						<div class="d-flex text-body-2 text-blue--deep my-2 font-weight-black">888,888,888.00</div>
+						<div class="d-flex text-body-2 text-blue--deep my-2 font-weight-black align-center">
+							888,888,888.00</div>
 					</div>
 					<v-divider class="mx-2"></v-divider>
 				</div>
@@ -38,7 +41,8 @@
 							<span class="icon icon-experiencewallet pr-2 mt-auto mb-auto"></span>
 							<div class="text-body-2 text-blue--deep font-weight-black">体验金钱包</div>
 						</div>
-						<div class="d-flex text-body-2 text-blue--deep my-2 font-weight-black">888,888,888.00</div>
+						<div class="d-flex text-body-2 text-blue--deep my-2 font-weight-black align-center">
+							888,888,888.00</div>
 					</div>
 				</div>
 			</div>

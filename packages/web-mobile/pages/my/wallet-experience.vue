@@ -1,5 +1,5 @@
 <template>
-    <div class="lock-wallet fill-height">
+    <div class="experience-wallet fill-height">
         <div class="content d-flex flex-column">
             <template v-for="item in res">
                 <v-row class="row-info">
@@ -67,7 +67,7 @@ const res: ExperienceInfo[] = [
 ]
 </script>
 <style lang="scss" scoped>
-.lock-wallet {
+.experience-wallet {
     background-image: linear-gradient(45deg, #718db7, #527299);
 }
 
