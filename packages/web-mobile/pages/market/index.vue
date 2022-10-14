@@ -10,7 +10,7 @@
 		</div>
 		<Announcement></Announcement>
 		<ul class="game_list">
-			<li v-for="n in 5" :key="n">
+			<li v-for="n in 2" :key="n" @click="router.push('/market/list')">
 				<MarketCard></MarketCard>
 			</li>
 		</ul>
@@ -27,8 +27,8 @@ definePageMeta({
 	title: "市场列表"
 });
 const dialogs = useDialogs()
+const router = useRouter()
 const tab = ref(0);
-const orderOpen = ref(false);
 const chooseLeagueOpen = ref(false);
 const transactionOpen = ref(false);
 const reserveOpen = ref(false);
