@@ -28,8 +28,6 @@
 			</TgTabs>
 			<img class="vs_btn ma-2" src="@tg/web-mobile/assets/images/com_body_tab_vs_btn.svg" @click="vs()" />
 		</div>
-		<v-container>
-
 		<v-container class="pa-2">
 			<div class="info-header d-flex align-center justify-space-between my-2">
 				<div class="d-flex align-center ">
