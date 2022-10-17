@@ -6,8 +6,11 @@
 					{{ item }}
 				</v-tab>
 			</TgTabs>
-			<span class="filter_btn" @click="test()"></span>
+			<div class="filter d-flex align-center justify-center">
+				<img src="@tg/web-mobile/assets/images/filter_btn.png" @click="chooseLeagueOpen = true">
+			</div>
 		</div>
+		<!-- <v-btn @click="dialogs.open = true">open</v-btn> -->
 		<Announcement></Announcement>
 		<ul class="game_list">
 			<li v-for="n in 2" :key="n" @click="router.push('/market/list')">
@@ -15,9 +18,6 @@
 			</li>
 		</ul>
 		<MarketChooseLeague v-model:open="chooseLeagueOpen"></MarketChooseLeague>
-		<MarketTransaction v-model:open="transactionOpen"></MarketTransaction>
-		<MarketReserve v-model:open="reserveOpen"></MarketReserve>
-		<MarketAmountSetting v-model:open="amountSettingOpen"></MarketAmountSetting>
 	</div>
 </template>
 <script setup lang="ts">
@@ -30,14 +30,7 @@ const dialogs = useDialogs()
 const router = useRouter()
 const tab = ref(0);
 const chooseLeagueOpen = ref(false);
-const transactionOpen = ref(false);
-const reserveOpen = ref(false);
-const amountSettingOpen = ref(false);
 const items = ['全部(70)', '今日(32)', '明日(40)']
-function test() {
-	console.log('tests');
-
-}
 </script>
 <style lang="scss" scoped>
 /*市場列表*/
@@ -47,11 +40,13 @@ function test() {
 	display: grid;
 	grid-template-columns: 1fr auto;
 
-	.filter_btn {
-		height: 40px;
+	.filter {
 		width: 40px;
-		background: url('@tg/web-mobile/assets/images/filter_btn.png') center no-repeat;
-		background-size: 20px auto;
+
+		img {
+			height: 25px;
+			width: 25px;
+		}
 	}
 }
 </style>

@@ -86,12 +86,18 @@
 		</v-container>
 		<MarketTradeDetails v-model:open="tradeDetailsOpen"></MarketTradeDetails>
 		<MarketOrder v-model:open="orderOpen"></MarketOrder>
+		<MarketTransaction v-model:open="transactionOpen"></MarketTransaction>
+		<MarketReserve v-model:open="reserveOpen"></MarketReserve>
+		<MarketAmountSetting v-model:open="amountSettingOpen"></MarketAmountSetting>
 	</div>
 </template>
 <script setup lang="ts">
 const tab = ref(0)
 const showTab = ref(0)
 const tradeDetailsOpen = ref(false);
+const transactionOpen = ref(false);
+const reserveOpen = ref(false);
+const amountSettingOpen = ref(false);
 const orderOpen = ref(false);
 const tabsList = ['波胆', '半场波胆', '总得分']
 function vs() {
