@@ -2,52 +2,58 @@
 	<TgDialog v-model="openProxy">
 		<v-card class="transaction">
 			<v-card-title class="text-center">{{ title }}</v-card-title>
-			<v-container>
-				<v-row class="justify-center">
+			<v-card-text class="pa-0">
+				<div class="status  text-center py-5">
 					<img :src="statusImg" />
-				</v-row>
-				<v-row class="info">
-					<v-col cols="12" class="game_title">
+				</div>
+				<div class="info">
+					<div class="game_title pl-0">
 						<b>欧洲冠军联赛</b>
 						<span>2020-10-15 23:30</span>
-					</v-col>
-					<v-col cols="12" class="team_row">
+					</div>
+					<div class="team_row border-bottom px-0">
 						<div class="team_name">
 							<b>华沙普洛克U19(主)</b>
 							<b>洛兹U19</b>
 						</div>
 						<div class="guaranteed">保本</div>
-					</v-col>
-					<v-col cols="4">单号</v-col>
-					<v-col cols="8" class="text-right">
-						<span>123123123123123123123123</span>
-						<span class="audit" v-if="auditFlag">(待确认)</span>
-					</v-col>
-					<v-col cols="4">金额</v-col>
-					<v-col cols="8" class="text-right">10,000</v-col>
-					<v-col cols="4">获利率%</v-col>
-					<v-col cols="8" class="text-right">X 12.6%</v-col>
+					</div>
 
-					<v-col cols="4">预估获利</v-col>
-					<v-col cols="8" class="text-right">120,450.80</v-col>
-				</v-row>
-				<v-row class="warn" v-if="failFlag">
-					<v-col cols="12">
-						超过可用余额，99,999,00>98,000,00
-						您尚有1,999,00金额被锁定
+					<div class="d-flex justify-space-between">
+						<b>单号</b>
+						<b>
+							<span>123123123123123123123123</span>
+							<span class="text-red" v-if="auditFlag">(待确认)</span>
+						</b>
+					</div>
+					<div class="d-flex justify-space-between">
+						<b>金额</b>
+						<b>10,000</b>
+					</div>
+					<div class="d-flex justify-space-between border-bottom pb-2">
+						<b>获利率%</b>
+						<b>X 12.6%</b>
+					</div>
+					<div class="d-flex justify-space-between">
+						<b>预估获利</b>
+						<b class="text-green">120,450.80</b>
+					</div>
+				</div>
+				<v-row class="warn ma-1" v-if="failFlag">
+					<v-col cols="12" class="text-red">
+						<p>超过可用余额，99,999,00>98,000,00</p>
+						<p>您尚有1,999,00金额被锁定</p>
 					</v-col>
 				</v-row>
-				<v-row>
+				<v-row class="pa-2 action ">
 					<v-col cols="12">
-						<v-btn block color="primary">前往交易明细</v-btn>
+						<v-btn block class="bg-primary">前往下单明细</v-btn>
 					</v-col>
-				</v-row>
-				<v-row>
-					<v-col cols="12">
+					<v-col cols="12" class="banner text-center">
 						<img src="@tg/web-mobile/assets/images/banner_black.png" />
 					</v-col>
 				</v-row>
-			</v-container>
+			</v-card-text>
 		</v-card>
 	</TgDialog>
 </template>
@@ -63,7 +69,7 @@ enum statusMap {
 	fail = 1,
 	audit = 2
 };
-const status: statusMap = 2;
+const status: statusMap = 1;
 const openProxy = computed({
 	get: () => props.open,
 	set: (val) => emit("update:open", val)
@@ -111,9 +117,9 @@ const failFlag = computed(() => [statusMap.fail].includes(status))
 </script>
 
 <style lang="scss" scoped>
-.transaction {
-	.info {
-		background: #eef4f8;
-	}
+@import './assets/scss/market.scss';
+
+.banner img {
+	width: 95%;
 }
 </style>

@@ -87,7 +87,7 @@
 const amount = ref<number>();
 </script>
 <style lang="scss" scoped>
-@import './assets/scss/order.scss';
+@import './assets/scss/market.scss';
 
 .order-reserve {
 	.v-row:nth-child(even) {

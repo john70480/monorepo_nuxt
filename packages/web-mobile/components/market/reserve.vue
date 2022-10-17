@@ -99,22 +99,5 @@ const failFlag = computed(() => [statusMap.fail].includes(status))
 </script>
 
 <style lang="scss" scoped>
-.transaction {
-	font-size: 0.85rem;
-	min-height: 500px;
-
-	.info {
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
-		background: #eef4f8;
-		padding: 10px 15px;
-	}
-
-	.status {
-		img {
-			height: 50px;
-		}
-	}
-}
+@import './assets/scss/market.scss';
 </style>
