@@ -1,20 +1,17 @@
 <template>
-	<TgDialog v-model="openProxy">
+	<TgDialog v-model="openProxy" type="fullscreen80">
 		<v-card class="transaction">
 			<v-card-title>快捷金額設定</v-card-title>
-			<v-container>
+			<v-card-text>
 				<v-row v-for="(item, index) in settingList" :key="index">
 					<v-col cols="12">
-						<v-text-field v-model="item.value" :label="item.label"></v-text-field>
-					</v-col>
-
-				</v-row>
-				<v-row>
-					<v-col cols="12">
-						<v-btn block color="primary">确认修改</v-btn>
+						<tg-text-field v-model="item.value" :label="item.label"></tg-text-field>
 					</v-col>
 				</v-row>
-			</v-container>
+			</v-card-text>
+			<v-card-actions>
+				<v-btn block class="bg-primary">确认修改</v-btn>
+			</v-card-actions>
 		</v-card>
 	</TgDialog>
 </template>
