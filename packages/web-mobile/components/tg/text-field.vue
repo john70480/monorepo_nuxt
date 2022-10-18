@@ -1,10 +1,14 @@
 <template>
-	<v-text-field v-model="modelValueProxy" :class="type" v-bind="_bind"></v-text-field>
+	<div class="tg-text-field" :type="type">
+		<label v-if="label">{{ label }}</label>
+		<v-text-field v-model="modelValueProxy" v-bind="_bind"></v-text-field>
+	</div>
 </template>
 <script lang="ts" setup>
 import type { VTextField } from "vuetify/components";
 
 const props = withDefaults(defineProps<{
+	label?: string,
 	type?: typeof types[number],
 	modelValue?: any,
 	textBind?: VTextField["$props"]
@@ -42,12 +46,24 @@ export const defaultBind: VTextField["$props"] = {
 }
 </script>
 <style lang="scss" >
-.v-text-field.default {
-	.v-input__control .v-field__field {
-		min-height: auto !important;
-		height: 30px;
-		display: flex !important;
-		align-items: center !important;
+.tg-text-field[type="default"] {
+	display: flex;
+	flex-direction: column;
+
+	label {
+		font-size: 0.8rem;
+		font-weight: bold;
+		color: #283763;
+		margin-bottom: 8px;
+	}
+
+	.v-text-field {
+		.v-input__control .v-field__field {
+			min-height: auto !important;
+			height: 30px;
+			display: flex !important;
+			align-items: center !important;
+		}
 	}
 }
 </style>
