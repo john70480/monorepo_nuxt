@@ -2,7 +2,7 @@
   <TgDialog v-model="dialogsStore.open">
     <v-card>
       <slot name="header">
-        <v-card-title class="text-h5  text-center" :ripple="{ center: true }">
+        <v-card-title :ripple="{ center: true }">
           {{ title }}
         </v-card-title>
 

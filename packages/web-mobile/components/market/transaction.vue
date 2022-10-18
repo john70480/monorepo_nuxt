@@ -1,7 +1,7 @@
 <template>
 	<TgDialog v-model="openProxy">
 		<v-card class="transaction">
-			<v-card-title class="text-center">{{ title }}</v-card-title>
+			<v-card-title>{{ title }}</v-card-title>
 			<v-card-text class="pa-0">
 				<div class="status  text-center py-5">
 					<img :src="statusImg" />

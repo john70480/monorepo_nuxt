@@ -38,9 +38,16 @@ export const types = [
 ] as const;
 </script>
 <style lang="scss">
+%v-card-title {
+	margin: 0 10px;
+	border-bottom: solid 1px #c3c3c3;
+	text-align: center;
+	font-weight: bold;
+	color: #283763;
+}
+
 .v-dialog {
 	.close {
-		// z-index: 9999;
 		cursor: pointer;
 		position: absolute;
 		right: 50%;
@@ -55,6 +62,10 @@ export const types = [
 	.v-overlay__content {
 		max-height: 90%;
 		width: 100%;
+
+		.v-card-title {
+			@extend %v-card-title;
+		}
 	}
 }
 
@@ -67,6 +78,10 @@ export const types = [
 		margin: 30px 0 0 0;
 		height: calc(100% - 50px);
 		width: 100%;
+	}
+
+	.v-card-title {
+		@extend %v-card-title;
 	}
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
 	<TgDialog v-model="openProxy">
 		<v-card class="transaction">
-			<v-card-title class="text-center">{{ title }}</v-card-title>
+			<v-card-title>{{ title }}</v-card-title>
 			<v-card-text class="pa-0">
 				<div class="status  text-center py-5">
 					<img :src="statusImg" />
@@ -23,7 +23,7 @@
 						<b>8.51%~10.51%</b>
 					</div>
 					<template v-if="successFlag">
-						<div class="border-bottom pb-2 d-flex justify-space-between">
+						<div class="d-flex justify-space-between border-bottom pb-2">
 							<b>交易金额</b>
 							<b>10,000</b>
 						</div>

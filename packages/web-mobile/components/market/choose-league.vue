@@ -1,7 +1,7 @@
 <template>
 	<TgDialog v-model="openProxy" type="fullscreen" :dialogBind="{ fullscreen: true }">
 		<v-card class="choose-league">
-			<v-card-title class="text-center">选择联盟</v-card-title>
+			<v-card-title>选择联盟</v-card-title>
 			<v-container class="fill-height overflow-y-auto text-body-2">
 				<v-row no-gutters>
 					<v-col cols="6" v-for="item in 40">
