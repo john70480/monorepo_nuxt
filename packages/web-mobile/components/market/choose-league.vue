@@ -1,5 +1,5 @@
 <template>
-	<TgDialog v-model="openProxy" type="fullscreen" :dialogBind="{ fullscreen: true }">
+	<TgDialog v-model="openProxy" type="fullscreen">
 		<v-card class="choose-league">
 			<v-card-title>选择联盟</v-card-title>
 			<v-container class="fill-height overflow-y-auto text-body-2">

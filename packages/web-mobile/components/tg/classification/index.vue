@@ -1,5 +1,5 @@
 <template>
-	<TgDialog v-model="dialogsStore.classificationOpen" type="classification" :dialogBind="{ fullscreen: true }">
+	<TgDialog v-model="dialogsStore.classificationOpen" type="classification">
 		<v-card>
 			<TgTabs type="tg-tabs" v-model="platformTab">
 				<v-tab v-for="(item, index) in platformList" :key="index" hide-slider :value="index">
