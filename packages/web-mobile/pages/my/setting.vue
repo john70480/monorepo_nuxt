@@ -1,5 +1,5 @@
 <template>
-    <div class="fill-height">
+    <div class="fill-height bg-primary">
         <div class="content d-flex flex-column">
             <MyItemSetting row-title="接收推播通知">
                 <TgSwitchs :switchBind="{hideDetails: true}" :modelValue="isNotify" @click="isNotify != isNotify"
@@ -42,10 +42,6 @@ const isNotify: Ref<boolean> = ref(false);
 const isVoiceOn: Ref<boolean> = ref(false);
 </script>
 <style lang="scss" scoped>
-.fill-height {
-    background-image: linear-gradient(45deg, #718db7, #527299);
-}
-
 $icon-list: (
     "open": "my/icon_open.svg",
     "zh-cn": "flag_cn.jpg",

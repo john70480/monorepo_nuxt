@@ -35,7 +35,7 @@ const props = defineProps<{
 
 .row-info {
     margin: 0;
-    background-color: #eef4f8;
+    background-color: #FFF;
     height: 40px;
     padding-top: 8px;
     padding-bottom: 8px;
