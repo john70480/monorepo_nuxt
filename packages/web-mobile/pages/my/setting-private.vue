@@ -1,16 +1,16 @@
 <template>
-    <div class="fill-height">
+    <div class="fill-height  bg-primary">
         <div class="content d-flex flex-column">
             <MyItemSetting row-title="可用额度">
                 401,948.04
             </MyItemSetting>
             <v-divider></v-divider>
-            <MyItemSetting row-title="密码">
+            <MyItemSetting row-title="密码" @click="PasswordModifyOpen = true">
                 a*****4
                 <span class="icon icon-open mt-auto mb-auto"></span>
             </MyItemSetting>
             <v-divider></v-divider>
-            <MyItemSetting row-title="提款密码">
+            <MyItemSetting row-title="提款密码" @click="WithdrawPasswordOpen = true">
                 f******2
                 <span class="icon icon-open mt-auto mb-auto"></span>
             </MyItemSetting>
@@ -30,6 +30,8 @@
                 <span class="icon icon-open mt-auto mb-auto"></span>
             </MyItemSetting>
         </div>
+        <MyPasswordModify v-model:open="PasswordModifyOpen"></MyPasswordModify>
+        <MyWithdrawPassword v-model:open="WithdrawPasswordOpen"></MyWithdrawPassword>
     </div>
 </template>
 <script lang="ts" setup>import { Ref } from 'vue';
@@ -37,8 +39,8 @@
 definePageMeta({
     title: "个人资料"
 });
-const isNotify: Ref<boolean> = ref(false);
-const isVoiceOn: Ref<boolean> = ref(false);
+const PasswordModifyOpen: Ref<boolean> = ref<boolean>(false);
+const WithdrawPasswordOpen: Ref<boolean> = ref<boolean>(false);
 </script>
 <style lang="scss" scoped>
 .fill-height {
