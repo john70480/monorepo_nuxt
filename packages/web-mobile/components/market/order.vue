@@ -1,5 +1,5 @@
 <template>
-	<TgDialog v-model="openProxy" type="fullscreen" :dialogBind="{ fullscreen: true }">
+	<TgDialog v-model="openProxy" type="fullscreen">
 		<v-card>
 			<TgTabs type="tg-tabs" v-model="tab">
 				<v-tab v-for="(item, index) in tabList" hide-slider>

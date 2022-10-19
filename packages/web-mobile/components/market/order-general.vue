@@ -10,7 +10,7 @@
 				<b class="text-red">波胆1-0</b>
 			</v-col>
 			<v-col cols="6" class="text-right">
-				<v-select v-model="wallet" :items="walletList" item-title="text" item-value="value" filled label="選擇錢包">
+				<v-select v-model="wallet" :items="walletList" item-title="text" item-value="value" filled>
 				</v-select>
 			</v-col>
 		</v-row>
@@ -20,14 +20,12 @@
 				<b>欧洲冠军联赛</b>
 				<span>2020-10-15 23:30</span>
 			</v-col>
-			<v-col cols="12">
-				<div class="team_row">
-					<div class="team_name">
-						<b>华沙普洛克U19(主)</b>
-						<b>洛兹U19</b>
-					</div>
-					<div class="guaranteed">保本</div>
+			<v-col cols="12" class="team_row">
+				<div class="team_name">
+					<b>华沙普洛克U19(主)</b>
+					<b>洛兹U19</b>
 				</div>
+				<div class="guaranteed">保本</div>
 			</v-col>
 		</v-row>
 
@@ -37,14 +35,14 @@
 				<p><b>*保本额度:9,999,999.00</b></p>
 			</v-col>
 			<v-col cols="6">
-				<v-text-field v-model="amount" :counter="10" label="交易金额" required></v-text-field>
+				<tg-text-field v-model="amount"></tg-text-field>
 			</v-col>
 			<v-col cols="12" class="setting d-flex align-center justify-end ">
 				<img src="@tg/web-mobile/assets/images/com_body_setting_ic.svg" />
 				<v-btn v-for="item in 3">{{ item }}</v-btn>
 			</v-col>
 			<v-col cols="12" class="d-flex justify-space-between">
-				<b>获利%</b>
+				<b>目前获利%</b>
 				<b>12.6%</b>
 			</v-col>
 			<v-col cols="12" class="d-flex justify-space-between">
@@ -57,18 +55,20 @@
 			</v-col>
 		</v-row>
 
-		<v-row class="ma-0" no-gutters>
+		<v-row class="pa-2 align-content-space-between">
 			<v-col cols="12">
-				<v-col cols="12">
+				<p>
 					<span>请确认交易明细无误，确认交易后</span>
 					<span class="text-red">无法改注单</span>
-				</v-col>
-				<v-col cols="12" class="balance">
+				</p>
+				<p class="balance ">
 					<img src="@tg/web-mobile/assets/images/tg_money_ic.svg" />
 					<b>TG余额:3,168,500.00</b>
-				</v-col>
+				</p>
 			</v-col>
-			<v-btn block color="primary">確定</v-btn>
+			<v-col cols="12">
+				<v-btn block color="primary">確定</v-btn>
+			</v-col>
 		</v-row>
 	</v-container>
 </template>
@@ -84,7 +84,7 @@ const amount = ref<number>();
 </script>
 
 <style lang="scss" scoped>
-@import './assets/scss/order.scss';
+@import './assets/scss/market.scss';
 
 .order-general {
 	.v-row {

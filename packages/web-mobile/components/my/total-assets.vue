@@ -1,5 +1,5 @@
 <template>
-	<TgDialog v-model="dialogsStore.assetsOpen" type="classification" :dialogBind="{fullscreen:true}">
+	<TgDialog v-model="dialogsStore.assetsOpen" type="classification">
 		<v-card class="container">
 			<div class="content">
 				<div class="block">

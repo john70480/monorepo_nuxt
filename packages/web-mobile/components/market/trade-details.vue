@@ -1,5 +1,5 @@
 <template>
-	<TgDialog v-model="openProxy" type="fullscreen" :dialogBind="{ fullscreen: true }">
+	<TgDialog v-model="openProxy" type="fullscreen">
 		<v-card>
 			<v-card-title>交易量明细</v-card-title>
 			<v-card-item>
