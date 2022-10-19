@@ -1,48 +1,33 @@
 <template>
     <div class="fill-height">
         <div class="content d-flex flex-column">
-            <MyItemSetting>
-                可用额度
-                <template v-slot:rightLabel></template>
+            <MyItemSetting row-title="可用额度">
+                401,948.04
             </MyItemSetting>
             <v-divider></v-divider>
-            <MyItemSetting open>
-                密码
-                <template v-slot:rightLabel>
-                    a*****4
-                </template>
+            <MyItemSetting row-title="密码">
+                a*****4
+                <span class="icon icon-open mt-auto mb-auto"></span>
             </MyItemSetting>
             <v-divider></v-divider>
-            <MyItemSetting open>
-                提款密码
-                <template v-slot:rightLabel>
-                    f******2
-                </template>
+            <MyItemSetting row-title="提款密码">
+                f******2
+                <span class="icon icon-open mt-auto mb-auto"></span>
             </MyItemSetting>
             <v-divider></v-divider>
-            <MyItemSetting>
-                绑定手机
-                <template v-slot:rightLabel>
-                    +86-********41
-                </template>
+            <MyItemSetting row-title="绑定手机">
+                +86-********41
             </MyItemSetting>
             <v-divider></v-divider>
-            <MyItemSetting>
-                QQ帐号
-                <template v-slot:rightLabel></template>
+            <MyItemSetting row-title="QQ帐号">
             </MyItemSetting>
             <v-divider></v-divider>
-            <MyItemSetting>
-                微信帐号
-                <template v-slot:rightLabel>
-                </template>
+            <MyItemSetting row-title="微信帐号">
             </MyItemSetting>
             <v-divider></v-divider>
-            <MyItemSetting open>
-                快捷金额
-                <template v-slot:rightLabel>
-                    100,200,300
-                </template>
+            <MyItemSetting row-title="快捷金额">
+                100,200,300
+                <span class="icon icon-open mt-auto mb-auto"></span>
             </MyItemSetting>
         </div>
     </div>

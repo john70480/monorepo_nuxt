@@ -1,31 +1,21 @@
 <template>
     <v-row class="row-info">
         <v-col cols="6" class="py-2 pr-0">
-            <slot name="leftLabel">
-                {{label}}
+            <slot name="rowTitleLabel">
+                {{rowTitle}}
             </slot>
         </v-col>
         <v-col cols="6" class="py-2 pl-0 float-right d-flex justify-content-end ">
-            <slot name="rightLabel">
+            <slot>
 
             </slot>
-            <template v-if="switch">
-                <v-switch class="float-right" v-bind="switchBind" hide-details></v-switch>
-            </template>
-            <template v-if="open">
-                <span class="icon icon-open mt-auto mb-auto"></span>
-            </template>
         </v-col>
     </v-row>
 </template>
 <script lang="ts" setup>
 import type { VSwitch } from "vuetify/components";
 const props = defineProps<{
-    switch?: boolean,
-    switchBind?: VSwitch["$props"]
-    open?: boolean,
-
-
+    rowTitle?: string,
 }>();
 </script>
 <style lang="scss" scoped>
@@ -42,14 +32,6 @@ const props = defineProps<{
     text-transform: none !important;
 }
 
-:deep(.v-switch__track) {
-    border-radius: 14px;
-    height: 21px;
-    opacity: 0.6;
-    width: 36px;
-    cursor: pointer;
-    background-image: linear-gradient(to right, #a4e2ff, #2c66a8 98%);
-}
 
 .row-info {
     margin: 0;
@@ -71,22 +53,6 @@ const props = defineProps<{
 
 .justify-content-end {
     justify-content: flex-end;
-}
-
-
-.icon-open {
-    display: flex;
-    flex-direction: row-reverse;
-
-    &::before {
-        background: url('@tg/web-mobile/assets/images/my/icon_open.svg') center no-repeat;
-        background-size: cover;
-        content: ' ';
-        display: block;
-        width: 6px;
-        height: 12px;
-        margin-left: 8px;
-    }
 }
 
 .icon-flag {

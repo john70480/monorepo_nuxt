@@ -1,36 +1,34 @@
 <template>
     <div class="fill-height">
         <div class="content d-flex flex-column">
-            <MyItemSetting @click="isNotify = !isNotify" switch :switch-bind="{modelValue: isNotify}">
-                接收推播通知
-                <template v-slot:rightLabel></template>
+            <MyItemSetting row-title="接收推播通知">
+                <TgSwitchs :switchBind="{hideDetails: true}" :modelValue="isNotify" @click="isNotify != isNotify"
+                    floatRight></TgSwitchs>
             </MyItemSetting>
             <v-divider></v-divider>
-            <MyItemSetting @click="isVoiceOn = !isVoiceOn" switch :switch-bind="{modelValue: isVoiceOn}">
-                提示音效
-                <template v-slot:rightLabel></template>
+            <MyItemSetting row-title="提示音效">
+                <TgSwitchs :switchBind="{hideDetails: true}" :modelValue="isVoiceOn" floatRight></TgSwitchs>
             </MyItemSetting>
             <v-divider></v-divider>
-            <MyItemSetting open>
-                登入验证设定
-                <template v-slot:rightLabel></template>
-            </MyItemSetting>
-            <v-divider></v-divider>
-            <MyItemSetting open>
-                <span class="icon icon-flag icon-zh-cn d-flex pr-2 mt-auto mb-auto">简体中文</span>
-                <template v-slot:rightLabel></template>
+            <MyItemSetting row-title="登入验证设定">
+
+                <span class="icon icon-open mt-auto mb-auto"></span>
             </MyItemSetting>
             <v-divider></v-divider>
             <MyItemSetting>
-                清理缓存
-                <template v-slot:rightLabel></template>
-            </MyItemSetting>
-            <v-divider></v-divider>
-            <MyItemSetting>
-                版本 : v1.0
-                <template v-slot:rightLabel>
-                    <p class="text-right text-grey--light">最新版本为v2.0建议更新</p>
+                <template v-slot:rowTitleLabel>
+                    <span class="icon icon-flag icon-zh-cn d-flex pr-2 mt-auto mb-auto">简体中文</span>
                 </template>
+                <span class="icon icon-open mt-auto mb-auto"></span>
+            </MyItemSetting>
+            <v-divider></v-divider>
+            <MyItemSetting row-title="清理缓存">
+
+                <template v-slot:rightLabel></template>
+            </MyItemSetting>
+            <v-divider></v-divider>
+            <MyItemSetting row-title="版本 : v1.0">
+                <p class="text-right text-grey--light">最新版本为v2.0建议更新</p>
             </MyItemSetting>
         </div>
     </div>
@@ -81,5 +79,20 @@ $val in $icon-list {
 
 .text-grey--light {
     color: #c3c3c3
+}
+
+.icon-open {
+    display: flex;
+    flex-direction: row-reverse;
+
+    &::before {
+        background: url('@tg/web-mobile/assets/images/my/icon_open.svg') center no-repeat;
+        background-size: cover;
+        content: ' ';
+        display: block;
+        width: 6px;
+        height: 12px;
+        margin-left: 8px;
+    }
 }
 </style>
