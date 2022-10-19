@@ -145,7 +145,7 @@
 				</v-row>
 				<v-row class="pt-2 pb-3 mx-2">
 					<v-col class="v-col-3">
-						<div class="d-flex flex-column">
+						<div class="d-flex flex-column" @click="handleDirection('/my/setting')">
 							<span class="icon icon-setting pr-2 mt-auto mb-auto"></span>
 							<div class="pt-2 text-caption text-white text-center">
 								設置
@@ -153,7 +153,7 @@
 						</div>
 					</v-col>
 					<v-col class="v-col-3">
-						<div class="d-flex flex-column">
+						<div class="d-flex flex-column" @click="handleDirection('/my/setting-private')">
 							<span class="icon icon-personal pr-2 mt-auto mb-auto"></span>
 							<div class="pt-2 text-caption text-white text-center">
 								个人资料
@@ -217,6 +217,7 @@ definePageMeta({
 });
 
 const dialogsStore = useDialogs();
+const router = useRouter();
 const enum myTabs {
 	'vip' = 'vip',
 	'tg' = 'tg'
@@ -228,8 +229,8 @@ const memberInfo: Ref<MemberInfoModel> = ref({
 });
 const currentTab: Ref<myTabs> = ref(myTabs.vip)
 
-function handleVipClick(newVal: myTabs = currentTab.value): void {
-	currentTab.value = newVal;
+function handleDirection(url: string): void {
+	router.push(url);
 }
 
 function handleAssetsOpen(): void {
