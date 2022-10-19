@@ -1,3 +1,11 @@
 @import './variable.scss';
 @import './customer-vuetify.scss';
 @import './style.scss';
+
+.tg-bg-1 {
+  background-image: var(--tg-bg-1);
+}
+
+.border-bottom {
+  border-bottom: solid 1px #c3c3c3;
+}
