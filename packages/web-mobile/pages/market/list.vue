@@ -31,7 +31,8 @@
 		<v-container class="pa-2">
 			<div class="info-header d-flex align-center justify-space-between my-2">
 				<div class="d-flex align-center ">
-					<img src="@tg/web-mobile/assets/images/com_body_statistics_btn.svg" class="mr-2" />
+					<img src="@tg/web-mobile/assets/images/com_body_statistics_btn.svg" class="mr-2"
+						@click="tradeDetailsOpen = true" />
 					<b>成交量210,000,000</b>
 				</div>
 				<div>
@@ -88,16 +89,18 @@
 		<MarketOrder v-model:open="orderOpen"></MarketOrder>
 		<MarketTransaction v-model:open="transactionOpen"></MarketTransaction>
 		<MarketReserve v-model:open="reserveOpen"></MarketReserve>
-		<MarketAmountSetting v-model:open="amountSettingOpen"></MarketAmountSetting>
+		<MarketAmountSetting v-model:open="market.amountSettingOpen"></MarketAmountSetting>
 	</div>
 </template>
 <script setup lang="ts">
+import { useMarket } from '@tg/web-mobile/stores/market';
+
+const market = useMarket();
 const tab = ref(0)
 const showTab = ref(0)
 const tradeDetailsOpen = ref(false);
 const transactionOpen = ref(false);
 const reserveOpen = ref(false);
-const amountSettingOpen = ref(false);
 const orderOpen = ref(false);
 const tabsList = ['波胆', '半场波胆', '总得分']
 function vs() {
