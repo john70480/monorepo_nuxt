@@ -1,8 +1,8 @@
 <template>
     <v-row class="row-info">
         <v-col cols="6" class="py-2 pr-0">
-            <slot>
-
+            <slot name="leftLabel">
+                {{label}}
             </slot>
         </v-col>
         <v-col cols="6" class="py-2 pl-0 float-right d-flex justify-content-end ">
@@ -40,6 +40,15 @@ const props = defineProps<{
     letter-spacing: 0.0333333333em !important;
     font-family: "Roboto", sans-serif !important;
     text-transform: none !important;
+}
+
+:deep(.v-switch__track) {
+    border-radius: 14px;
+    height: 21px;
+    opacity: 0.6;
+    width: 36px;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #a4e2ff, #2c66a8 98%);
 }
 
 .row-info {
