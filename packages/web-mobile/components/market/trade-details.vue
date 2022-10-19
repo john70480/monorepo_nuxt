@@ -2,24 +2,31 @@
 	<TgDialog v-model="openProxy" type="fullscreen">
 		<v-card>
 			<v-card-title>交易量明细</v-card-title>
-			<v-card-item>
-				<v-row class="">
-					<v-col cols="12">欧洲冠军联赛</v-col>
-					<v-col cols="12">华沙普洛克U19(主)</v-col>
-					<v-col cols="12">洛兹U19</v-col>
-				</v-row>
-				<v-row>
-					<v-col cols="12">總成交量210,000,000</v-col>
-				</v-row>
-				<v-row v-for="item in 10">
-					<v-col cols="2" class="text-center">0-0</v-col>
-					<v-col cols="7">
-						<v-progress-linear v-model="power" color="amber" height="25"></v-progress-linear>
+			<div class="team-info team_row">
+				<b>欧洲冠军联赛</b>
+				<div class="team_name">
+					<b>华沙普洛克U19(主)</b>
+					<b>洛兹U19</b>
+				</div>
+			</div>
+			<div class="text-right border-bottom pa-2">
+				<b>總成交量:210,000,000</b>
+			</div>
+			<v-container class="odds-wrap overflow-y-auto">
+				<v-row v-for="item in 20">
+					<v-col cols="2" class="odds-score text-center">0-0</v-col>
+					<v-col cols="10" class="odds-progress-wrap">
+						<v-row>
+							<v-col cols="8">
+								<tg-progress-linear v-model="power"></tg-progress-linear>
+							</v-col>
+							<v-col cols="4" class="text-right">
+								<b>5000</b>
+							</v-col>
+						</v-row>
 					</v-col>
-					<v-col cols="3" class="text-right">5000</v-col>
 				</v-row>
-
-			</v-card-item>
+			</v-container>
 		</v-card>
 	</TgDialog>
 </template>
@@ -30,9 +37,36 @@ const props = defineProps<{
 const emit = defineEmits<{
 	(event: 'update:open', payload: boolean): void
 }>();
-const power = ref(80);
+const power = ref(81);
 const openProxy = computed({
 	get: () => props.open,
 	set: (val) => emit("update:open", val)
 });
 </script>
+<style lang="scss" scoped>
+.team-info {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	background-image: var(--tg-bg-1);
+	color: #fff;
+}
+
+.odds-wrap {
+	>.v-row:first-child {
+		.v-col {
+			padding-top: 20px;
+			align-items: end;
+		}
+	}
+
+	.odds-score {
+		display: flex;
+		align-items: end;
+	}
+
+	.odds-progress-wrap {
+		background-image: linear-gradient(to right, #EDE9E0, #FEFEFE);
+	}
+}
+</style>
