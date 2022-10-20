@@ -5,6 +5,7 @@
 import Home from '@tg/web-mobile/pages/home/index.vue';
 
 definePageMeta({
-	hiddenHeader: true
+	hiddenHeader: true,
+	isMainPage: true
 });
 </script>
