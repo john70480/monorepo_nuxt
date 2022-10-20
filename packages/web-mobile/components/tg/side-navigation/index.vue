@@ -101,7 +101,7 @@ nav {
 		right: 0;
 		width: 80%;
 		height: 100%;
-		background: linear-gradient(to left, #426796, #6c8cbd);
+		background: var(--tg-bg-primary);
 		z-index: 10;
 		display: flex;
 		flex-direction: column;

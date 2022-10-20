@@ -1,5 +1,5 @@
 <template>
-    <div class="fill-height bg-primary">
+    <div class="fill-height tg-bg-primary">
         <div class="content d-flex flex-column">
             <MyItemSetting row-title="接收推播通知">
                 <TgSwitchs :switchBind="{hideDetails: true}" :modelValue="isNotify" @click="isNotify != isNotify"

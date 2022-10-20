@@ -11,7 +11,7 @@
 						<b>欧洲冠军联赛</b>
 						<span>2020-10-15 23:30</span>
 					</div>
-					<div class="team_row border-bottom px-0">
+					<div class="team_row tg-border-bottom px-0">
 						<div class="team_name">
 							<b>华沙普洛克U19(主)</b>
 							<b>洛兹U19</b>

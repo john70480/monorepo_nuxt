@@ -9,7 +9,7 @@
 					<b>洛兹U19</b>
 				</div>
 			</div>
-			<div class="text-right border-bottom pa-2">
+			<div class="text-right tg-border-bottom pa-2">
 				<b>總成交量:210,000,000</b>
 			</div>
 			<v-container class="odds-wrap overflow-y-auto">

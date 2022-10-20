@@ -1,4 +1,7 @@
 .v-theme--tgTheme {
-  --bg-primary: linear-gradient(to left, #426796, #6c8cbd);
+  /***vuetify***/
+  --bg-primary: linear-gradient(to right, #62aada, #4385bd);
   --v-theme-on-secondary: white;
+  /***tg***/
+  --tg-bg-primary: linear-gradient(to left, #426796, #6c8cbd);
 }

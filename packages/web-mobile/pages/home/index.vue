@@ -147,7 +147,7 @@ export const platformList = {
 	}
 
 	.index_box {
-		background: linear-gradient(to left, #426796, #6c8cbd);
+		background: var(--tg-bg-primary);
 
 		.index_row {
 			padding: 5px 10px;

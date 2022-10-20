@@ -87,6 +87,10 @@ ul {
   flex: 0;
 }
 
-.border-bottom {
+.tg-border-bottom {
   border-bottom: solid 1px #c3c3c3;
+}
+
+.tg-bg-primary {
+  background: var(--tg-bg-primary) !important;
 }

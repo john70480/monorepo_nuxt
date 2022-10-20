@@ -1,5 +1,5 @@
 <template>
-    <div class="experience-wallet fill-height  bg-primary">
+    <div class="experience-wallet fill-height tg-bg-primary">
         <div class="content d-flex flex-column">
             <template v-for="item in res">
                 <v-row class="row-info">
