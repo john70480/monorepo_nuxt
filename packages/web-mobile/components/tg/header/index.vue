@@ -1,9 +1,9 @@
 <template>
-	<v-app-bar density="compact">
+	<v-app-bar density="compact" class="tg-header">
 		<template v-slot:prepend>
 			<div class="d-flex align-center">
-				<template v-if="!route.meta.isMainPage">
-					<span class="icon icon-goback" @click="router.back()"></span>
+				<template v-if="goBackFlag">
+					<span class="icon icon-goback" @click="goBack()"></span>
 				</template>
 				<span class="mt-auto mb-auto d-flex">{{ route.meta.title }}</span>
 			</div>
@@ -22,10 +22,16 @@ import { useApp } from '@tg/web-mobile/stores/app';
 const app = useApp()
 const route = useRoute();
 const router = useRouter();
+const goBackFlag = computed(() => {
+	return !route.meta.isMainPage
+})
+function goBack() {
+	router.back();
+}
 </script>
 
 <style lang="scss" scoped>
-header {
+header.tg-header {
 	background: linear-gradient(to bottom, #fff, #fff 40%, #e2e8f2 90%, #c5d0e4);
 	display: flex;
 	align-items: center;
