@@ -1,10 +1,17 @@
 <template>
 	<v-app-bar density="compact">
 		<template v-slot:prepend>
-			<button class="third_party"></button>
+			<div class="d-flex align-center">
+				<template v-if="!route.meta.isMainPage">
+					<span class="icon icon-goback" @click="router.back()"></span>
+				</template>
+				<span class="mt-auto mb-auto d-flex">{{ route.meta.title }}</span>
+			</div>
+
 		</template>
-		<span>{{ route.meta.title }}</span>
+
 		<template v-slot:append>
+			<button class="third_party"></button>
 			<button class="header_menu" @click="app.navSwitch = !app.navSwitch"></button>
 		</template>
 	</v-app-bar>
@@ -14,6 +21,7 @@ import { useApp } from '@tg/web-mobile/stores/app';
 
 const app = useApp()
 const route = useRoute();
+const router = useRouter();
 </script>
 
 <style lang="scss" scoped>
@@ -21,6 +29,7 @@ header {
 	background: linear-gradient(to bottom, #fff, #fff 40%, #e2e8f2 90%, #c5d0e4);
 	display: flex;
 	align-items: center;
+	z-index: 991;
 
 	span {
 		flex: 1;
@@ -49,6 +58,25 @@ header {
 		&.header_menu {
 			background: url('@tg/web-mobile/assets/images/head_menu_btn.png') center no-repeat;
 			background-size: auto 16px;
+		}
+	}
+}
+
+.icon {
+	&::before {
+		height: 20px;
+		width: 12px;
+		content: ' ';
+		display: block;
+	}
+
+	&.icon-goback {
+		flex: 0;
+
+		&::before {
+			background: url('@tg/web-mobile/assets/images/theme/basic/icon_goback.svg') center no-repeat;
+			background-size: cover;
+
 		}
 	}
 }

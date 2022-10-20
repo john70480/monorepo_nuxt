@@ -65,7 +65,8 @@ import MatchCard from './match-card.vue';
 import VideoCard from './video-card.vue';
 
 definePageMeta({
-	hiddenHeader: true
+	hiddenHeader: true,
+	isMainPage: true
 });
 const app = useApp()
 const router = useRouter();

@@ -49,6 +49,7 @@ ul {
     margin-left: 10px;
   }
 }
+
 .team_row {
   padding: 10px;
   display: flex;
@@ -76,6 +77,14 @@ ul {
       }
     }
   }
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-0 {
+  flex: 0;
 }
 
 .border-bottom {

@@ -6,7 +6,7 @@
 		<v-main>
 			<slot />
 		</v-main>
-		<TgFooter></TgFooter>
+		<TgFooter v-if="$route.meta.isMainPage"></TgFooter>
 		<TgSideNavigation>
 		</TgSideNavigation>
 	</v-app>

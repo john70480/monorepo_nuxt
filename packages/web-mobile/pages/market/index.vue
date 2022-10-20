@@ -24,7 +24,8 @@
 import Announcement from '@tg/web-mobile/pages/home/announcement.vue';
 import { useDialogs } from '@tg/web-mobile/stores/dialogs';
 definePageMeta({
-	title: "市场列表"
+	title: "市场列表",
+	isMainPage: true
 });
 const dialogs = useDialogs()
 const router = useRouter()

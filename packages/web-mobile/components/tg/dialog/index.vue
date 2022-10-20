@@ -87,7 +87,7 @@ const fullscreenBind = {
 .v-dialog[type="fullscreen"] {
 	display: flex;
 	flex-direction: column;
-	justify-content: end;
+	justify-content: flex-end;
 
 	.v-overlay__content {
 		position: relative;
