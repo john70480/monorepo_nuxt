@@ -48,28 +48,7 @@
 			</div>
 
 			<v-row class="footer py-2 mt-2 px-4">
-				<TgItemImage col="6" :imgBind="{src: './../assets/images/my/icon_sabasports_logo.png'}" imgHeight="80"
-					:footerClass="footerClass" bgImgColor="eef4f8" bgColor="4988b9">
-					888,888,888.00
-				</TgItemImage>
-				<TgItemImage col="6" :imgBind="{src: './../assets/images/my/icon_sabasports_logo.png'}" imgHeight="80"
-					:footerClass="footerClass" bgImgColor="eef4f8" bgColor="4988b9">
-					888,888,888.00
-				</TgItemImage>
-				<TgItemImage col="6" :imgBind="{src: './../assets/images/my/icon_sabasports_logo.png'}" imgHeight="80"
-					:footerClass="footerClass" bgImgColor="eef4f8" bgColor="4988b9">
-					888,888,888.00
-				</TgItemImage>
-				<TgItemImage col="6" :imgBind="{src: './../assets/images/my/icon_sabasports_logo.png'}" imgHeight="80"
-					:footerClass="footerClass" bgImgColor="eef4f8" bgColor="4988b9">
-					888,888,888.00
-				</TgItemImage>
-				<TgItemImage col="6" :imgBind="{src: './../assets/images/my/icon_sabasports_logo.png'}" imgHeight="80"
-					:footerClass="footerClass" bgImgColor="eef4f8" bgColor="4988b9">
-					888,888,888.00
-				</TgItemImage>
-				<TgItemImage col="6" :imgBind="{src: './../assets/images/my/icon_sabasports_logo.png'}" imgHeight="80"
-					:footerClass="footerClass" bgImgColor="eef4f8" bgColor="4988b9">
+				<TgItemImage :imgBind="{src: './../assets/images/my/icon_sabasports_logo.png'}" v-for="item  in 12">
 					888,888,888.00
 				</TgItemImage>
 			</v-row>
