@@ -48,7 +48,7 @@ const openProxy = computed({
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
-	background-image: var(--tg-bg-1);
+	background-image: var(--tg-bg-primary);
 	color: #fff;
 }
 

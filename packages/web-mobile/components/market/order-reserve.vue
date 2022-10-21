@@ -31,11 +31,11 @@
 				<b>交易金额</b>
 				<p><b>*尚可预约笔数:50</b></p>
 			</v-col>
-			<v-col cols="6" class="d-flex align-center">
+			<v-col cols="6">
 				<tg-text-field v-model="amount"></tg-text-field>
 			</v-col>
 			<v-col cols="12" class="setting d-flex align-center justify-end ">
-				<img src="@tg/web-mobile/assets/images/com_body_setting_ic.svg" @click="market.amountSettingOpen=true" />
+				<img src="@tg/web-mobile/assets/images/com_body_setting_ic.svg" @click="market.amountSettingOpen = true" />
 				<v-btn v-for="item in 3">{{ item }}</v-btn>
 			</v-col>
 			<v-col cols="12" class="d-flex justify-space-between">
