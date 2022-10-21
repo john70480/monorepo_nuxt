@@ -62,7 +62,7 @@ const openProxy = computed({
 
 	.odds-score {
 		display: flex;
-		align-items: end;
+		align-items: flex-end;
 	}
 
 	.odds-progress-wrap {
