@@ -1,5 +1,5 @@
 <template>
-	<div class="container my">
+	<div class="container my fill-height tg-bg-primary">
 		<div class="banner userInfo">
 			<div class="d-flex px-4 pt-2 justify-space-between">
 				<div class="d-flex mt-auto mb-auto">
@@ -36,7 +36,7 @@
 				</v-row>
 			</div>
 		</div>
-		<div class="content py-2">
+		<div class="py-2">
 			<div class="block px-4 pt-3 pb-2">
 				<div class="d-flex pb-1 justify-space-between">
 					<div class="text-caption text-white">TG钱包 </div>
@@ -73,15 +73,13 @@
 			</div>
 			<div class="block px-4 pt-3 pb-2">
 				<v-tabs class="tabs-my mb-4" height="20" hide-slider v-model="currentTab">
-					<v-tab class="text-caption d-flex" :class="{'tabs--active': currentTab === myTabs.vip}"
-						:value="myTabs.vip">
+					<v-tab class="text-caption d-flex" :class="{'tabs--active': currentTab === myTabs.vip}" :value="myTabs.vip">
 						<span class="icon icon-cycle mr-2"></span>
 						<div>
 							VIP权限
 						</div>
 					</v-tab>
-					<v-tab class="text-caption d-flex" :class="{'tabs--active': currentTab === myTabs.tg}"
-						:value="myTabs.tg">
+					<v-tab class="text-caption d-flex" :class="{'tabs--active': currentTab === myTabs.tg}" :value="myTabs.tg">
 						<span class="icon icon-cycle mr-2"></span>
 						<div>
 							智能权限
@@ -285,9 +283,6 @@ $val in $icon-list {
 	}
 }
 
-.content {
-	background-image: linear-gradient(to left, #426796, #6c8cbd);
-}
 
 .footer {
 	& .icon {
