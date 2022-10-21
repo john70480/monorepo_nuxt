@@ -60,7 +60,7 @@ const fullscreenBind = {
 	color: #283763;
 }
 
-.v-dialog {
+%dialog {
 	.close {
 		cursor: pointer;
 		position: absolute;
@@ -73,11 +73,13 @@ const fullscreenBind = {
 }
 
 .v-dialog[type="default"] {
+	@extend %dialog;
+
 	.v-overlay__content {
 		max-height: 90%;
 		width: 100%;
 
-		.v-card-title {
+		>.v-card>.v-card-title {
 			@extend %v-card-title;
 		}
 	}
@@ -85,6 +87,7 @@ const fullscreenBind = {
 
 .v-dialog[type="classification"],
 .v-dialog[type="fullscreen"] {
+	@extend %dialog;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -95,10 +98,10 @@ const fullscreenBind = {
 		margin: 30px 0 0 0;
 		height: calc(100% - 50px);
 		width: 100%;
-	}
 
-	.v-card-title {
-		@extend %v-card-title;
+		>.v-card>.v-card-title {
+			@extend %v-card-title;
+		}
 	}
 }
 
