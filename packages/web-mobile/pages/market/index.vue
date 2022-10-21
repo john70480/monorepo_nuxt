@@ -1,15 +1,13 @@
 <template>
 	<div class="market">
-		<div class="tabs">
-			<TgTabs type="tg-tabs" v-model="tab">
-				<v-tab v-for="item in items" :key="item" hide-slider>
-					{{ item }}
-				</v-tab>
-			</TgTabs>
-			<div class="filter d-flex align-center justify-center">
-				<img src="@tg/web-mobile/assets/images/filter_btn.png" @click="chooseLeagueOpen = true">
-			</div>
-		</div>
+		<TgTabs v-model="tab">
+			<v-tab v-for="item in items" :key="item" hide-slider>
+				{{ item }}
+			</v-tab>
+			<template #additional>
+				<img class="filter ma-2" src="@tg/web-mobile/assets/images/filter_btn.png" @click="chooseLeagueOpen = true">
+			</template>
+		</TgTabs>
 		<!-- <v-btn @click="dialogs.open = true">open</v-btn> -->
 		<Announcement></Announcement>
 		<ul class="game_list">
@@ -36,18 +34,8 @@ const items = ['全部(70)', '今日(32)', '明日(40)']
 <style lang="scss" scoped>
 /*市場列表*/
 
-.tabs {
-	background: #36567f;
-	display: grid;
-	grid-template-columns: 1fr auto;
-
-	.filter {
-		width: 40px;
-
-		img {
-			height: 25px;
-			width: 25px;
-		}
-	}
+.filter {
+	height: 25px;
+	width: 25px;
 }
 </style>

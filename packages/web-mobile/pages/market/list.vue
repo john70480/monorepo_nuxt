@@ -20,14 +20,14 @@
 				<span>洛兹U19</span>
 			</v-col>
 		</v-row>
-		<div class="tabs ">
-			<TgTabs type="tg-tabs" v-model="tab">
-				<v-tab v-for="item in tabsList" :key="item" hide-slider>
-					{{ item }}
-				</v-tab>
-			</TgTabs>
-			<img class="vs_btn ma-2" src="@tg/web-mobile/assets/images/com_body_tab_vs_btn.svg" @click="vs()" />
-		</div>
+		<TgTabs v-model="tab">
+			<v-tab v-for="item in tabsList" :key="item" hide-slider>
+				{{ item }}
+			</v-tab>
+			<template #additional>
+				<img class="vs_btn ma-2" src="@tg/web-mobile/assets/images/com_body_tab_vs_btn.svg" @click="vs()" />
+			</template>
+		</TgTabs>
 		<v-container class="pa-2">
 			<div class="info-header d-flex align-center justify-space-between my-2">
 				<div class="d-flex align-center ">
@@ -36,7 +36,7 @@
 					<b>成交量210,000,000</b>
 				</div>
 				<div>
-					<TgTabs type="market-list-tabs" v-model="showTab">
+					<TgTabs type="icon-tabs" v-model="showTab">
 						<v-tab>
 							<v-icon class="material-icons-sharp">grid_view</v-icon>
 						</v-tab>
@@ -144,16 +144,10 @@ function openOrder() {
 		}
 	}
 
-	.tabs {
-		background: #36567f;
-		display: grid;
-		grid-template-columns: 1fr auto;
-		align-items: center;
 
-		.vs_btn {
-			height: 20px;
-			width: 20px;
-		}
+	.vs_btn {
+		height: 20px;
+		width: 20px;
 	}
 
 	.info-header {

@@ -1,7 +1,7 @@
 <template>
 	<TgDialog v-model="dialogsStore.classificationOpen" type="classification">
 		<div class="fill-height d-flex flex-column">
-			<TgTabs type="tg-tabs" v-model="platformTab">
+			<TgTabs v-model="platformTab">
 				<v-tab v-for="(item, index) in platformList" :key="index" hide-slider :value="index">
 					{{ item.title }}
 				</v-tab>

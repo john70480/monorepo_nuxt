@@ -1,7 +1,7 @@
 <template>
 	<TgDialog v-model="openProxy" type="fullscreen">
 		<v-card>
-			<TgTabs type="tg-tabs" v-model="tab">
+			<TgTabs v-model="tab">
 				<v-tab v-for="(item, index) in tabList" hide-slider>
 					{{ item }}
 				</v-tab>
