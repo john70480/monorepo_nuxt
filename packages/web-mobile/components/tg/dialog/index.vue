@@ -64,7 +64,7 @@ const fullscreenBind = {
 	.close {
 		cursor: pointer;
 		position: absolute;
-		right: 50%;
+		right: calc(50% - 10px);
 		top: -30px;
 		background: url('@tg/web-mobile/assets/images/come_body_cancel_btn.png') center no-repeat;
 		width: 20px;

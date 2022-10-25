@@ -3,10 +3,10 @@ import { defineStore } from 'pinia';
 
 export const useDialogs = defineStore('dialogs', () => {
 
-	const arr = ref<{ title: string, message: string, closeText?: string }[]>([]);
+	const arr = ref<{ title: string, message: string, closeText?: string, icontype?: string }[]>([]);
 	const current = computed(() => arr.value.length ? arr.value[0] : undefined);
 	let closeHandle: Function | null = null;
-	
+
 	// state
 	const state = reactive({
 		open: false,
@@ -28,11 +28,12 @@ export const useDialogs = defineStore('dialogs', () => {
 	};
 
 	// message-popup -----Start
-	function pop(title: string, message: string, closeText?: string) {
-		arr.value.push({ title, message, closeText });
+	function pop(title: string, message: string, closeText?: string, icontype?: string) {
+		arr.value.push({ title, message, closeText, icontype });
+		state.open = true;
 	}
 	function close() {
-		state.open=false;
+		state.open = false;
 		if (typeof closeHandle === 'function') {
 			closeHandle();
 		}
