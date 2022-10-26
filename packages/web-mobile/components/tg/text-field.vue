@@ -22,8 +22,9 @@ const emit = defineEmits<{
 const _bind = computed(() => {
 	let obj: VTextField["$props"] = {}
 	switch (props.type) {
-		// case 'default':
-		// 	break;
+		case 'login':
+			obj = { ...defaultBind, variant: "underlined" }
+			break;
 		default:
 			obj = defaultBind;
 			break;
@@ -38,11 +39,13 @@ const modelValueProxy = computed({
 <script lang="ts">
 export const types = [
 	'default',
+	'login'
 ] as const;
 export const defaultBind: VTextField["$props"] = {
 	variant: "outlined",
 	density: "compact",
-	hideDetails: true
+	hideDetails: true,
+	clearable: true
 }
 </script>
 <style lang="scss" >
@@ -63,6 +66,18 @@ export const defaultBind: VTextField["$props"] = {
 			height: 30px;
 			display: flex !important;
 			align-items: center !important;
+		}
+	}
+}
+
+.tg-text-field[type="login"] {
+	.v-input {
+		color: #8eaace;
+
+		.v-input__control {
+			.v-field__prepend-inner .material-icons {
+				font-size: 32px;
+			}
 		}
 	}
 }
