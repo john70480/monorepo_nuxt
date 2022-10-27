@@ -10,6 +10,9 @@
 	</div>
 </template>
 <script setup lang="ts">
+const emit = defineEmits<{
+	(event: 'success'): void
+}>();
 
 const isSuccess = ref(false)
 //二、獲取到需要用到的DOM元素
@@ -42,7 +45,6 @@ function mousedownHandler(e: MouseEvent | TouchEvent) {
 function mousemoveHandler(e: MouseEvent | TouchEvent) {
 	var e = e || window.event || e.which;
 	var moveX = e.clientX ? e.clientX : e.changedTouches[0].clientX;
-	console.log(moveX);
 	var offsetX = getOffsetX(moveX - downX, 0, successMoveDistance.value);
 	if (bgColor.value && slider.value) {
 		bgColor.value.style.width = offsetX + "px";
@@ -84,7 +86,7 @@ function success() {
 	isSuccess.value = true;
 	txt.value = "解鎖成功";
 	if (bgColor.value && slider.value) {
-		bgColor.value.style.backgroundColor = "lightgreen";
+		// bgColor.value.style.backgroundColor = "lightgreen";
 		//滑動成功時，移除鼠標按下事件和鼠標移動事件
 		slider.value.onmousedown = null;
 	}
@@ -92,6 +94,7 @@ function success() {
 	//移除移動端事件
 	document.ontouchstart = null;
 	document.ontouchmove = null;
+	emit('success');
 }
 </script>
 <style >
@@ -121,7 +124,7 @@ function success() {
 	width: 50px;
 	height: 50px;
 	border-radius: 5px;
-	background-image: linear-gradient(to right, #b9c4cd, #939aa1);
+	background-image: var(--tg-bg-primary);
 }
 
 .txt {

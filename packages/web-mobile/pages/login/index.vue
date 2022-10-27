@@ -20,21 +20,21 @@
       <button class="active">登入</button>
       <button>註冊</button>
     </div>
-    <form>
-      <div class="input_row account">
-        <input type="text" placeholder="帳號" />
-      </div>
-      <div class="input_row password">
-        <input type="text" placeholder="密碼" />
-      </div>
+    <form class="login-form">
+      <tg-text-field type="login" v-model="formData.username"
+        :textBind="{ placeholder: '帳號', prependInnerIcon: 'person' }">
+      </tg-text-field>
+      <tg-text-field type="login" v-model="formData.password"
+        :textBind="{ placeholder: '密碼', prependInnerIcon: 'lock' }">
+      </tg-text-field>
     </form>
     <div class="remember_row">
       <input type="checkbox" id="remember" />
       <label for="remember">記住帳密</label>
     </div>
 
-    <SliderUnlock></SliderUnlock>
-
+    <TgSliderUnlock @success="login()"></TgSliderUnlock>
+    <!-- <v-btn @click="login()"></v-btn> -->
     <div class="btn_row">
       <button class="service">24H客服</button>
       <button class="download">APP下载</button>
@@ -46,16 +46,45 @@
   </div>
 </template>
 <script setup lang="ts">
-import SliderUnlock from "./slider-unlock.vue";
+import { Base64 } from 'js-base64';
+import { useSession } from '@tg/stores/session';
+
 definePageMeta({
   layout: "none"
 });
+
+const api = useNuxtApp().$api();
+const session = useSession();
+
 const languageFlag = ref(false);
 const language = ref('zh-cn');
 const LanguageList = ref(['zh-cn', 'en-us', 'zh-hk'])
+const formData = ref({
+  username: "",
+  password: "",
+})
 function chooseLang(lang: string) {
   language.value = lang;
   languageFlag.value = false;
+}
+
+async function login() {
+  const { data, pending } = await useAsyncData('memberLogin',
+    () => api.tg.postApiMembersLogin({
+      formData: formData.value
+    }),
+  );
+  const { Message, StatusCode, Payload } = data.value;
+  const { id, username, userid, token } = Payload
+  const json = JSON.stringify({
+    ticket: id,
+    username,
+    userid,
+    token,
+  })
+  const userInfo = Base64.encode(json)
+  session.login(userInfo);
+  console.log('postApiMembersLogin', data.value, Message, StatusCode, Payload);
 }
 </script>
 
@@ -261,38 +290,6 @@ function chooseLang(lang: string) {
     display: flex;
     flex-direction: column;
     gap: 30px;
-
-    .input_row {
-      border-bottom: 1px solid #8eaace;
-      padding-left: 35px;
-      display: flex;
-      align-items: center;
-
-      input {
-        flex: 1;
-        height: 40px;
-        color: #8eaace;
-        font-size: 1rem;
-        border: none;
-        background: transparent;
-        outline: none;
-
-        &::placeholder {
-          color: #8eaace;
-          font-size: 1rem;
-        }
-      }
-
-      &.account {
-        background: url('@tg/web-mobile/assets/images/login_account.png') 0 center no-repeat;
-        background-size: auto 60%;
-      }
-
-      &.password {
-        background: url('@tg/web-mobile/assets/images/login_password.png') 0 center no-repeat;
-        background-size: auto 60%;
-      }
-    }
   }
 
   .remember_row {

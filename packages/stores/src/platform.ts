@@ -35,7 +35,7 @@ export const usePlatform = defineStore('platform', () => {
 
   const ip = computed<Promise<string>>(async () => {
     if (state._ip === '0.0.0.0') {
-      const { data, pending, error, refresh } = await useAsyncData('getip', () => $fetch('https://api.ipify.org?format=json'))
+      const { data, pending, error, refresh } = await useFetch('https://api.ipify.org?format=json')
       state._ip = data.value.ip
     }
     return state._ip;
