@@ -63,13 +63,16 @@ import SubTitle from './sub-ttitle.vue';
 import PlatformCard from './platform-card.vue';
 import MatchCard from './match-card.vue';
 import VideoCard from './video-card.vue';
-
+import { useHome } from '@tg/web-mobile/stores/home';
+const homeStore = useHome();
 definePageMeta({
 	hiddenHeader: true,
 	isMainPage: true
 });
+
 const app = useApp()
 const router = useRouter();
+const siteList = await homeStore.getSiteList();
 </script>
 <script  lang="ts">
 export const platformList = {
