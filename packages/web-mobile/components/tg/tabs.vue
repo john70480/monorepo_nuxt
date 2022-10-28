@@ -79,7 +79,7 @@ export const defaultBind: VTabs["$props"] = {
 	grid-template-columns: 1fr auto;
 	background: #36567f;
 
-	.v-tabs:deep {
+	:deep(.v-tabs) {
 		@extend %flex-tabs;
 		display: flex;
 		align-items: center;
@@ -124,7 +124,7 @@ export const defaultBind: VTabs["$props"] = {
 }
 
 .tg-tabs[type="icon-tabs"] {
-	.v-tabs:deep {
+	:deep(.v-tabs) {
 		@extend %flex-tabs;
 		display: flex;
 		align-items: center;
