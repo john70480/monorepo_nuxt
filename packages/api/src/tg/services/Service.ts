@@ -841,7 +841,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<any>;
+        Payload?: Array<any>;
     }> {
         return this.httpRequest.request({
             method: 'GET',
@@ -885,7 +885,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<{
+        Payload?: Array<{
             /**
              * 選項id
              */
@@ -946,7 +946,7 @@ export class Service {
          */
         username?: string,
         /**
-         * 賽事列表類型 UEFA:歐洲國家杯 olympic:東京奧運
+         * 賽事列表類型 UEFA:歐洲國家杯 olympic:東京奧運  2022FIFA:世界杯
          */
         type?: any,
         /**
@@ -965,7 +965,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<any>;
+        Payload?: Array<any>;
     }> {
         return this.httpRequest.request({
             method: 'GET',
@@ -1167,7 +1167,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -1193,6 +1193,7 @@ export class Service {
     public getApiGamesPopularBets({
         platform = 'Android_400',
         lang,
+        type,
     }: {
         /**
          * APP版本號
@@ -1202,6 +1203,10 @@ export class Service {
          * 語言zh-cn、zh-hk、en-us
          */
         lang?: string,
+        /**
+         * 2022FIFA:世界杯
+         */
+        type?: any,
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -1214,7 +1219,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<any>;
+        Payload?: Array<any>;
     }> {
         return this.httpRequest.request({
             method: 'GET',
@@ -1222,6 +1227,9 @@ export class Service {
             headers: {
                 'Platform': platform,
                 'lang': lang,
+            },
+            query: {
+                'type': type,
             },
         });
     }
@@ -1302,6 +1310,10 @@ export class Service {
              * 智能下單手動下單用參數，授權TG系統自動執行 (0不授權、1授權)
              */
             authExec?: string;
+            /**
+             * B端使用保險的參數，C端則無
+             */
+            insurance?: number;
         },
     }): CancelablePromise<{
         /**
@@ -1330,6 +1342,10 @@ export class Service {
          * - 1771:超过单项$setValue限制
          * - 1772:超过单玩法$setValue限制
          * - 1773:超过单场$setValue限制
+         * - 1790:会员等级不符，无法使用保险
+         * - 1791:该选项无法使用保险
+         * - 1792:会员被禁止使用保险
+         * - 1793:当前保险费率0％，无法下单
          *
          */
         StatusCode?: number;
@@ -1342,7 +1358,7 @@ export class Service {
              */
             advSet?: number;
             /**
-             * 超过下注限制時回傳限制額度
+             * 當statusCode為1719、1771、1772、1773時，用於顯示不足或是超過限制額度
              */
             messageValue?: number;
             /**
@@ -1369,6 +1385,10 @@ export class Service {
              * 當前獲利率
              */
             profit?: string;
+            /**
+             * 是否使用保險
+             */
+            insurance?: string;
         };
     }> {
         return this.httpRequest.request({
@@ -2038,7 +2058,7 @@ export class Service {
         /**
          * 賽事資料
          */
-        payload?: Array<any>;
+        Payload?: Array<any>;
     }> {
         return this.httpRequest.request({
             method: 'GET',
@@ -2583,6 +2603,10 @@ export class Service {
              * 選項獲利率
              */
             profit?: string;
+            /**
+             * B端使用保險的參數，C端則無
+             */
+            insurance?: number;
         },
     }): CancelablePromise<{
         /**
@@ -2604,6 +2628,9 @@ export class Service {
          * - 1771:超过单项{messageVale}限制 ，剩下額度{remainingQuota}
          * - 1772:超过单玩法{messageVale}限制 ，剩下額度{remainingQuota}
          * - 1773:超过单场{messageVale}限制 ，剩下額度{remainingQuota}
+         * - 1790:会员等级不符，无法使用保险
+         * - 1791:该选项无法使用保险
+         * - 1792:会员被禁止使用保险
          *
          */
         StatusCode?: number;
@@ -2663,6 +2690,10 @@ export class Service {
              * 客隊
              */
             away?: string;
+            /**
+             * 是否使用保險
+             */
+            insurance?: string;
         };
     }> {
         return this.httpRequest.request({
@@ -2861,7 +2892,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -3197,7 +3228,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<any>;
+        Payload?: Array<any>;
     }> {
         return this.httpRequest.request({
             method: 'GET',
@@ -3593,7 +3624,7 @@ export class Service {
          */
         Message?: string;
         /**
-         * 回覆代碼 0：Pass / 2201：请重新确认交易密码 / 2202：请重新确认金额 / 2203：互转点数必须大于或等于100点 / 2204：会员帐号错误 / 2205：该身份限制提领动作 / 2206：转入会员帐号错误 / 2207：请重新确认转入转出帐号 / 2208：转出帐号限制 / 2209：转入帐号限制 / 2210：转入系统帐号限制 / 2211：请联系上层或客服 / 2212：未有提领纪录 / 2213：重复互转，请至交易明细查询结果 / 2214：会员身份错误|交易密码 / 2215：交易额度超过可用余额 / 2216：尚有会员互转保留额度100(200分钟) / 2217：尚有赛事保留额度 100 / 2218：新增交易记录失败 / 2219：确认交易失败 / 2220：更新交易记录失败 / 2238：您的会员互转功能已被关闭，无法使用会员互转
+         * 回覆代碼 0：Pass / 2201：请重新确认交易密码 / 2202：请重新确认金额 / 2203：互转点数必须大于或等于100点 / 2204：会员帐号错误 / 2205：该身份限制提领动作 / 2206：转入会员帐号错误 / 2207：请重新确认转入转出帐号 / 2208：转出帐号限制 / 2209：转入帐号限制 / 2210：转入系统帐号限制 / 2211：请联系上层或客服 / 2212：未有提领纪录 / 2213：重复互转，请至交易明细查询结果 / 2214：会员身份错误|交易密码 / 2215：交易额度超过可用余额 / 2216：尚有会员互转保留额度100(200分钟) / 2217：尚有赛事保留额度 100 / 2218：新增交易记录失败 / 2219：确认交易失败 / 2220：更新交易记录失败 / 2238：您的会员互转功能已被关闭，无法使用会员互转 / 2242：流水設定錯誤 / 2243：更新充值流水失败
          */
         StatusCode?: number;
         /**
@@ -3801,7 +3832,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -4118,6 +4149,611 @@ export class Service {
     }
 
     /**
+     * 會員流水查詢
+     * @returns any
+     * @throws ApiError
+     */
+    public getApiFinanceWithdrawLimit({
+        userId,
+        platform = 'Android_400',
+    }: {
+        /**
+         * 會員ID
+         */
+        userId: number,
+        /**
+         * APP版本號
+         */
+        platform?: string,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        Message?: string;
+        /**
+         * 回覆代碼
+         * - 0 Pass
+         * - 4444 参数有误
+         *
+         */
+        StatusCode?: number;
+        /**
+         * 回傳內容
+         */
+        Payload?: {
+            /**
+             * 流水值
+             */
+            withdrawLmit?: number;
+        };
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/api/finance/withdrawLimit/{userId}',
+            path: {
+                'userId': userId,
+            },
+            headers: {
+                'Platform': platform,
+            },
+        });
+    }
+
+    /**
+     * 取得細部服務狀態
+     * @returns any 回傳各服務狀態
+     * @throws ApiError
+     */
+    public getApiNoticeApiStatus({
+        platform,
+        mode,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 模式(all:全站所有 mobile:行動裝置 )
+         */
+        mode: 'all' | 'mobile',
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        Message?: string;
+        /**
+         * 回覆代碼 0：Pass
+         */
+        StatusCode?: number;
+        /**
+         * 回傳內容
+         */
+        Payload?: Array<{
+            /**
+             * api編號
+             */
+            apiId?: string;
+            /**
+             * api英文名稱
+             */
+            apiNameEn?: string;
+            /**
+             * api中文名稱
+             */
+            apiNameCh?: string;
+            /**
+             * 啟用狀態 0：未啟用，1：啟用
+             */
+            status?: number;
+        }>;
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/api/notice/api_status/{mode}',
+            path: {
+                'mode': mode,
+            },
+            headers: {
+                'Platform': platform,
+            },
+        });
+    }
+
+    /**
+     * 查詢網站設定
+     * @returns any 回傳網站設定資料
+     * @throws ApiError
+     */
+    public postApiNoticeSiteSetting({
+        platform,
+        domain,
+        username,
+        ticket,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 站台域名(未登入時資料以此欄位查詢, 若域名還是查不到資料, 回傳訪客網站設定)
+         * - example: sta8w.k33uc.com
+         *
+         */
+        domain?: string,
+        /**
+         * 會員帳號(登入時傳)
+         */
+        username?: string,
+        /**
+         * 登入ID(登入時傳)
+         */
+        ticket?: number,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        Message?: string;
+        /**
+         * 回覆代碼
+         * * 0: Pass
+         * * 4444: 參數有誤
+         * * 4201: 查无域名設定对应资料
+         *
+         */
+        StatusCode?: number;
+        /**
+         * 回傳內容
+         */
+        Payload?: {
+            /**
+             * 幣別
+             */
+            currency?: string;
+            /**
+             * 時區
+             * - PC平台 Asia/Shanghai|GMT+08:00
+             * - APP Asia/Shanghai
+             *
+             */
+            timezone?: string;
+            /**
+             * 語系(有可能為空陣列)
+             */
+            languages?: Array<string>;
+            /**
+             * 匯率
+             */
+            exchangeRate?: string;
+            /**
+             * 巿場
+             */
+            country?: string;
+            /**
+             * 商戶資訊
+             * - 如果值不為TG則
+             * - 隱藏
+             * - 智能下單功能
+             * - 官網視頻
+             * - USDT充值教學
+             *
+             */
+            site?: string;
+            /**
+             * 分潤設定 (訪客模式下為空陣列)
+             *
+             */
+            dividendSystem?: Array<string>;
+        };
+    }> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/notice/site_setting',
+            headers: {
+                'Platform': platform,
+                'domain': domain,
+                'Username': username,
+                'Ticket': ticket,
+            },
+        });
+    }
+
+    /**
+     * 取得平台服務狀態
+     * @returns any 取得平台服務狀態
+     * @throws ApiError
+     */
+    public getApiNoticeServiceStatus({
+        username,
+        ticket,
+        vga,
+        deviceInfo,
+        uuid,
+        serviceCode,
+        platform = 'Android_500',
+    }: {
+        /**
+         * 會員帳號
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 顯卡型號
+         */
+        vga: string,
+        /**
+         * 系統資訊
+         */
+        deviceInfo: string,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
+        /**
+         * 平台代碼 | 說明
+         * --- | ---
+         * tgbusiness | 微商平台
+         * auto | 智能平台
+         * live | 直播平台
+         *
+         */
+        serviceCode: 'tgbusiness' | 'auto' | 'live',
+        /**
+         * APP版本號
+         */
+        platform?: string,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        Message?: string;
+        /**
+         * 回覆代碼 0：Pass
+         */
+        StatusCode?: number;
+        /**
+         * 回傳內容
+         */
+        Payload?: Array<{
+            /**
+             * 平台代碼
+             * - tgbusiness:微商平台
+             * - auto:智能平台
+             * - live:直播平台
+             *
+             */
+            serviceCode?: string;
+            /**
+             * 平台服務狀態
+             * - 0:一般模式
+             * - 1:維護模式
+             * - 2:停用
+             *
+             */
+            serviceStatus?: number;
+            /**
+             * 維護時間
+             */
+            time?: string;
+        }>;
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/api/notice/service_status/{serviceCode}',
+            path: {
+                'serviceCode': serviceCode,
+            },
+            headers: {
+                'Platform': platform,
+                'Username': username,
+                'Ticket': ticket,
+                'vga': vga,
+                'deviceInfo': deviceInfo,
+                'uuid': uuid,
+            },
+        });
+    }
+
+    /**
+     * 查詢會員相關 通路設定的驗證方式
+     * @returns any
+     * @throws ApiError
+     */
+    public postApiNoticeSiteAuthMethods({
+        platform,
+        formData,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        formData: {
+            /**
+             * 帳號
+             */
+            username: string;
+            /**
+             * 此為額外查詢的功能(非必填)
+             * 關鍵字|用的時機
+             * --- | ---
+             * unblock | 檢查申請解鎖功能(產生回傳canUnblock欄位)
+             *
+             */
+            func?: string;
+        },
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        Message?: string;
+        /**
+         * 回覆代碼
+         * - 0: Pass
+         * - 1056: 查无此帐号
+         *
+         */
+        StatusCode?: number;
+        /**
+         * 回傳內容
+         */
+        Payload?: {
+            /**
+             * 註冊驗證方式陣列(以下至少會有一種, 可同時有多種)
+             * - email 信箱
+             * - mobile 手機
+             *
+             */
+            register?: Array<string>;
+            /**
+             * 微商註冊驗證方式
+             * - wechat 微信
+             * - email 信箱
+             *
+             */
+            tgbusiness?: string;
+            /**
+             * func = unblock時出現
+             * - 1 可以解鎖
+             * - 0 不可解鎖
+             *
+             */
+            canUnblock?: number;
+        };
+    }> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/notice/site_auth_methods',
+            headers: {
+                'Platform': platform,
+            },
+            formData: formData,
+            mediaType: 'application/x-www-form-urlencoded',
+        });
+    }
+
+    /**
+     * 取得客服渠道
+     * @returns any 回傳QRCode&客服資訊（保留10分鐘)
+     * @throws ApiError
+     */
+    public getApiNoticeServiceChannel({
+        platform,
+        username,
+        ticket,
+        country,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 會員名稱(登入前可不傳)
+         */
+        username?: string,
+        /**
+         * 登入ID(登入前可不傳)
+         */
+        ticket?: number,
+        /**
+         * 巿場([選填]未登入時傳入)
+         */
+        country?: 'CN',
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        Message?: string;
+        /**
+         * 回覆代碼
+         * - 0：Pass
+         * - 4444: 參數有錯
+         * - 4201: 網域不存在或停用
+         *
+         */
+        StatusCode?: number;
+        /**
+         * 回傳內容
+         */
+        Payload?: {
+            /**
+             * 推廣短連結
+             * * 手機版: 登入頁；註冊按鈕點擊連結
+             * * APP: 掃QR，快速註冊套用的推廣網址
+             * * 網頁版: 首頁；註冊按鈕點擊連結
+             *
+             */
+            promote_url?: string;
+            services?: Array<({
+                /**
+                 * 客服類別
+                 * - qq QQ
+                 * - wei 微信
+                 * - mosgram 泡泡
+                 *
+                 */
+                item?: string;
+                /**
+                 * 顯示名稱
+                 */
+                num?: string;
+                /**
+                 * QRCODE圖片位址
+                 */
+                img?: string;
+            } | {
+                /**
+                 * 除錯用(和後台設定同步)
+                 */
+                type?: number;
+                /**
+                 * 客服URL類型
+                 * - 0:內嵌客服
+                 * - 1:開啟外部連結
+                 *
+                 */
+                openLink?: number;
+                /**
+                 * 客服類別
+                 * - serviceOnline
+                 *
+                 */
+                item?: string;
+                /**
+                 * 客服目前的網址
+                 */
+                serviceUrl?: string;
+            })>;
+        };
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/api/notice/service_channel',
+            headers: {
+                'Platform': platform,
+                'Username': username,
+                'Ticket': ticket,
+            },
+            query: {
+                'country': country,
+            },
+        });
+    }
+
+    /**
+     * 取得首頁橫幅資訊
+     * @returns any
+     * @throws ApiError
+     */
+    public getApiNoticeBanners({
+        platform,
+        username,
+        ticket,
+        lang,
+        _for,
+        country,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 會員名稱(未登入不用傳)
+         */
+        username?: string,
+        /**
+         * 登入ID(未登入不用傳)
+         */
+        ticket?: number,
+        /**
+         * 語系
+         */
+        lang?: string,
+        /**
+         * 格式
+         */
+        _for?: 'TG_BUSINESS',
+        /**
+         * 巿場([選填]未登入時傳入)
+         */
+        country?: 'CN',
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        Message?: string;
+        /**
+         * 回覆代碼
+         * - 0: Pass
+         * - 4444: 參數有缺
+         *
+         */
+        StatusCode?: number;
+        /**
+         * 回傳內容
+         */
+        Payload?: Array<any>;
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/api/notice/banners',
+            headers: {
+                'Platform': platform,
+                'Username': username,
+                'Ticket': ticket,
+                'lang': lang,
+            },
+            query: {
+                'for': _for,
+                'country': country,
+            },
+        });
+    }
+
+    /**
+     * 取得在線人數
+     * @returns any
+     * @throws ApiError
+     */
+    public getApiNoticeOnlineNumber({
+        platform,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        Message?: string;
+        /**
+         * 回覆代碼
+         * - 0 success
+         *
+         */
+        StatusCode?: number;
+        /**
+         * 回傳內容
+         */
+        Payload?: {
+            /**
+             * 在線人數
+             */
+            number?: number;
+        };
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/api/notice/online_number',
+            headers: {
+                'Platform': platform,
+            },
+        });
+    }
+
+    /**
      * 取得會員獎金公告
      * @returns any 取得會員獎金公告
      * @throws ApiError
@@ -4317,7 +4953,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'PUT',
@@ -4612,11 +5248,10 @@ export class Service {
     public getApiNoticeList({
         username,
         ticket,
-        vga,
         deviceInfo,
+        vga,
         uuid,
         type,
-        siteClass,
         platform = 'Web_1.0',
         lang,
     }: {
@@ -4625,17 +5260,17 @@ export class Service {
          */
         username: string,
         /**
-         * login_id
+         * 登入ID
          */
         ticket: number,
         /**
-         * 顯卡型號
-         */
-        vga: string,
-        /**
-         * 系統資訊
+         * 裝置資訊
          */
         deviceInfo: string,
+        /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: string,
         /**
          * 裝置UUID
          */
@@ -4644,10 +5279,6 @@ export class Service {
          * 公告分類 2全站公告 3個人公告 4登入公告
          */
         type: 2 | 3 | 4,
-        /**
-         * 區域版本參數
-         */
-        siteClass: 'CN' | 'UK',
         /**
          * APP版本號
          */
@@ -4682,13 +5313,12 @@ export class Service {
             },
             headers: {
                 'Platform': platform,
-                'username': username,
+                'Username': username,
                 'Ticket': ticket,
-                'vga': vga,
                 'deviceInfo': deviceInfo,
+                'vga': vga,
                 'uuid': uuid,
                 'lang': lang,
-                'siteClass': siteClass,
             },
         });
     }
@@ -4841,7 +5471,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'PUT',
@@ -4914,7 +5544,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'PUT',
@@ -4929,55 +5559,6 @@ export class Service {
                 'deviceInfo': deviceInfo,
                 'uuid': uuid,
                 'Platform': platform,
-            },
-        });
-    }
-
-    /**
-     * 取得首頁橫幅資訊
-     * @returns any
-     * @throws ApiError
-     */
-    public getApiNoticeBanners({
-        platform,
-        lang,
-        _for,
-    }: {
-        /**
-         * APP版本號
-         */
-        platform: string,
-        /**
-         * 語系
-         */
-        lang?: string,
-        /**
-         * 格式
-         */
-        _for?: 'TG_BUSINESS',
-    }): CancelablePromise<{
-        /**
-         * 回覆訊息
-         */
-        Message?: string;
-        /**
-         * 回覆代碼 0：Pass
-         */
-        StatusCode?: number;
-        /**
-         * 回傳內容
-         */
-        payload?: Array<any>;
-    }> {
-        return this.httpRequest.request({
-            method: 'GET',
-            url: '/api/notice/banners',
-            headers: {
-                'Platform': platform,
-                'lang': lang,
-            },
-            query: {
-                'for': _for,
             },
         });
     }
@@ -5161,7 +5742,7 @@ export class Service {
          * 回覆代碼 0：Pass 4444:參數錯誤
          */
         StatusCode?: number;
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -5252,7 +5833,7 @@ export class Service {
          *
          */
         StatusCode?: number;
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -5338,7 +5919,7 @@ export class Service {
          * 回覆代碼 0：Pass 4444:參數錯誤
          */
         StatusCode?: number;
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -5353,181 +5934,6 @@ export class Service {
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
-        });
-    }
-
-    /**
-     * 取得細部服務狀態
-     * @returns any 回傳各服務狀態
-     * @throws ApiError
-     */
-    public getApiNoticeApiStatus({
-        platform,
-        mode,
-    }: {
-        /**
-         * APP版本號
-         */
-        platform: string,
-        /**
-         * 模式(all:全站所有 mobile:行動裝置 )
-         */
-        mode: 'all' | 'mobile',
-    }): CancelablePromise<{
-        /**
-         * 回覆訊息
-         */
-        Message?: string;
-        /**
-         * 回覆代碼 0：Pass
-         */
-        StatusCode?: number;
-        /**
-         * 回傳內容
-         */
-        payload?: Array<{
-            /**
-             * api編號
-             */
-            apiId?: string;
-            /**
-             * api英文名稱
-             */
-            apiNameEn?: string;
-            /**
-             * api中文名稱
-             */
-            apiNameCh?: string;
-            /**
-             * 啟用狀態 0：未啟用，1：啟用
-             */
-            status?: number;
-        }>;
-    }> {
-        return this.httpRequest.request({
-            method: 'GET',
-            url: '/api/notice/api_status/{mode}',
-            path: {
-                'mode': mode,
-            },
-            headers: {
-                'Platform': platform,
-            },
-        });
-    }
-
-    /**
-     * 取得在線人數
-     * @returns any
-     * @throws ApiError
-     */
-    public getApiNoticeOnlineNumber({
-        platform,
-    }: {
-        /**
-         * APP版本號
-         */
-        platform: string,
-    }): CancelablePromise<{
-        /**
-         * 回覆訊息
-         */
-        Message?: string;
-        /**
-         * 回覆代碼
-         * - 0 success
-         *
-         */
-        StatusCode?: number;
-        /**
-         * 回傳內容
-         */
-        Payload?: {
-            /**
-             * 在線人數
-             */
-            number?: number;
-        };
-    }> {
-        return this.httpRequest.request({
-            method: 'GET',
-            url: '/api/notice/online_number',
-            headers: {
-                'Platform': platform,
-            },
-        });
-    }
-
-    /**
-     * 取得客服渠道
-     * @returns any 回傳QRCode&客服資訊（保留10分鐘)
-     * @throws ApiError
-     */
-    public getApiNoticeServiceChannel({
-        platform,
-    }: {
-        /**
-         * APP版本號
-         */
-        platform: string,
-    }): CancelablePromise<{
-        /**
-         * 回覆訊息
-         */
-        Message?: string;
-        /**
-         * 回覆代碼 0：Pass
-         */
-        StatusCode?: number;
-        /**
-         * 回傳內容
-         */
-        payload?: Array<({
-            /**
-             * 客服類別
-             * - qq
-             * - wei
-             *
-             */
-            item?: string;
-            /**
-             * 資料碼(帳號)
-             */
-            num?: string;
-            /**
-             * QRCODE圖片位址
-             */
-            img?: string;
-        } | {
-            /**
-             * 除錯用(和後台設定同步)
-             */
-            type?: number;
-            /**
-             * 客服URL類型
-             * - 0:內嵌客服
-             * - 1:開啟外部連結
-             *
-             */
-            openLink?: number;
-            /**
-             * 客服類別
-             * - serviceOnline
-             *
-             */
-            item?: string;
-            /**
-             * 客服目前的網址
-             */
-            serviceUrl?: string;
-        })>;
-    }> {
-        return this.httpRequest.request({
-            method: 'GET',
-            url: '/api/notice/service_channel',
-            headers: {
-                'Platform': platform,
-            },
         });
     }
 
@@ -5580,7 +5986,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<{
+        Payload?: Array<{
             /**
              * 新聞編號
              */
@@ -5790,7 +6196,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -5874,7 +6280,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -5946,7 +6352,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<{
+        Payload?: Array<{
             /**
              * 新聞編號
              */
@@ -6048,7 +6454,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -6067,21 +6473,362 @@ export class Service {
     }
 
     /**
-     * 取得平台服務狀態
-     * @returns any 取得平台服務狀態
+     * 取得活動類別與列表
+     * @returns any 取得活動類別與列表
      * @throws ApiError
      */
-    public getApiNoticeServiceStatus({
+    public getApiActivityActivityCategory({
+        platform = 'Android_900',
+        username,
+        ticket,
         vga,
         deviceInfo,
         uuid,
-        serviceCode,
-        ticket = 120298108,
-        username = 'P9586',
-        platform = 'Android_500',
+        lang,
+        country,
     }: {
         /**
+         * APP版本號
+         */
+        platform?: string,
+        /**
+         * 會員帳號(未登入時可不傳)
+         */
+        username?: string,
+        /**
+         * 登入ID(未登入時可不傳)
+         */
+        ticket?: number,
+        /**
          * 顯卡型號
+         */
+        vga?: string,
+        /**
+         * 系統資訊
+         */
+        deviceInfo?: string,
+        /**
+         * 裝置UUID
+         */
+        uuid?: string,
+        /**
+         * 多國參數
+         */
+        lang?: 'en-us' | 'zh-cn' | 'zh-hk',
+        /**
+         * 巿場([選填]未登入時傳入)
+         */
+        country?: 'CN',
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        Message?: string;
+        /**
+         * 回覆代碼
+         * - 0 Pass
+         *
+         */
+        StatusCode?: number;
+        /**
+         * 回傳內容
+         */
+        Payload?: Array<{
+            /**
+             * 類別ID
+             */
+            categoryId?: number;
+            /**
+             * 類別名稱
+             */
+            categoryName?: string;
+            activity?: Array<{
+                /**
+                 * 類別ID
+                 */
+                categoryId?: number;
+                /**
+                 * 類別名稱
+                 */
+                categoryName?: string;
+                /**
+                 * 活動ID
+                 */
+                activityId?: number;
+                /**
+                 * 活動名稱
+                 */
+                activityName?: string;
+                /**
+                 * 是否為活動
+                 * - 0 純廣告
+                 * - 1 活動
+                 *
+                 */
+                checkActive?: string;
+                /**
+                 * 廣告ID
+                 */
+                bannerId?: number;
+                /**
+                 * 廣告圖名稱
+                 */
+                bannerTitle?: string;
+                /**
+                 * 網頁版廣告圖
+                 */
+                webBanner?: string;
+                /**
+                 * 手機版廣告圖
+                 */
+                mobileBanner?: string;
+                /**
+                 * 附件類別
+                 * - 0 無附件
+                 * - 1 文字
+                 * - 2 附檔
+                 * - 3 網址
+                 * - 4 市場
+                 *
+                 */
+                attachType?: string;
+                /**
+                 * 連結網址
+                 */
+                linkUrl?: string;
+                /**
+                 * 會員可不可以申請
+                 * - 0 不可申請
+                 * - 1 可申請
+                 *
+                 */
+                activityStatus?: number;
+                /**
+                 * 活動是否開放申請
+                 * - 1 可申請
+                 * - 2 不可申請
+                 *
+                 */
+                doingStatus?: number;
+                /**
+                 * 網頁版是否顯示
+                 * - 0 不顯示
+                 * - 1 顯示
+                 *
+                 */
+                webShow?: number;
+                /**
+                 * 手機版是否顯示
+                 * - 0 不顯示
+                 * - 1 顯示
+                 *
+                 */
+                mobileShow?: number;
+            }>;
+        }>;
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/api/activity/activity_category',
+            headers: {
+                'Platform': platform,
+                'Username': username,
+                'Ticket': ticket,
+                'vga': vga,
+                'deviceInfo': deviceInfo,
+                'uuid': uuid,
+                'lang': lang,
+            },
+            query: {
+                'country': country,
+            },
+        });
+    }
+
+    /**
+     * 取得活動資訊
+     * 特性
+     * - 未登入: 活動基本資料
+     * - 登入: 活動基本資料+活動能否申請
+     *
+     * @returns any 取得活動資訊明細
+     * @throws ApiError
+     */
+    public getApiActivityActivityInformation({
+        platform,
+        activityId,
+        username,
+        ticket,
+        lang,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 活動編號
+         */
+        activityId: string,
+        /**
+         * 會員名稱
+         */
+        username?: string,
+        /**
+         * 登入ID
+         */
+        ticket?: number,
+        /**
+         * 多國參數
+         */
+        lang?: 'en-us' | 'zh-cn' | 'zh-hk',
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        Message?: string;
+        /**
+         * 回覆代碼
+         * - 0 Pass
+         * - 4444 參數有誤
+         *
+         */
+        StatusCode?: number;
+        /**
+         * 回傳內容
+         */
+        Payload?: Array<{
+            /**
+             * 分類ID
+             */
+            categoryId?: number;
+            /**
+             * 分類名稱
+             */
+            categoryName?: string;
+            /**
+             * 活動名稱
+             */
+            activityName?: string;
+            /**
+             * 活動開始時間
+             */
+            allowDurationStart?: string;
+            /**
+             * 活動結束時間
+             */
+            allowDurationEnd?: string;
+            /**
+             * 活動狀態
+             * - 2 暫停前台會員申請
+             * - 3 關閉 (已刪除 or 前台不顯示)
+             * - 4 刪除 (包含後台都不顯示)開放
+             *
+             */
+            activityStatus?: number;
+            /**
+             * 網頁版活動圖
+             */
+            webBanner?: string;
+            /**
+             * 手機版活動圖
+             */
+            mobileBanner?: string;
+            /**
+             * 附件圖
+             */
+            linkUrl?: string;
+            /**
+             * 申請解鎖提領按鈕的狀態
+             * - 0 不顯示
+             * - 1 顯示
+             * - 2 灰色按鈕
+             *
+             */
+            pickupUnlock?: string;
+            /**
+             * 會員可否申請此活動
+             * - 0 不可申請
+             * - 1 可以申請
+             *
+             */
+            canApply?: number;
+            /**
+             * 此活動不能申請的原因
+             * - 0 無異常
+             * - 1 為純廣告不可申請
+             * - 2 不在活動開放時間
+             * - 3 活動門檻未過
+             * - 4 不在可申請時間
+             * - 5 參加條件不符
+             * - 6 申請項目未達標
+             * - 7 目前活動無法申請
+             * - 8 前一次申請尚未結束
+             * - 9 已參與過類似的活動 (不可同时申请活动)
+             *
+             */
+            applyStatus?: number;
+            condition?: Array<any>;
+            allowDate?: Array<any>;
+            auditEntry?: Array<any>;
+            pattern?: Array<any>;
+            reward?: Array<any>;
+            /**
+             * 會員可否申請此活動
+             * - 0 不可申請
+             * - 1 可以申請
+             *
+             */
+            applyNum?: string;
+            /**
+             * 所需顯示之會員資料
+             */
+            userInformation?: Array<any>;
+        }>;
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/api/activity/activity_information/{activityId}',
+            path: {
+                'activityId': activityId,
+            },
+            headers: {
+                'Platform': platform,
+                'Username': username,
+                'Ticket': ticket,
+                'lang': lang,
+            },
+        });
+    }
+
+    /**
+     * 取得會員活動報名狀態
+     * @returns any 取得會員活動報名狀態
+     * @throws ApiError
+     */
+    public getApiActivityUserActivity({
+        platform,
+        username,
+        ticket,
+        vga,
+        deviceInfo,
+        uuid,
+        lang,
+        activityId,
+    }: {
+        /**
+         * APP版本號 (ex. Android_500)
+         */
+        platform: string,
+        /**
+         * 會員帳號
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 顯卡名稱(渲染器)
          */
         vga: string,
         /**
@@ -6093,92 +6840,176 @@ export class Service {
          */
         uuid: string,
         /**
-         * 平台代碼
+         * 多國參數
          */
-        serviceCode: 'tgbusiness' | 'auto' | 'live',
+        lang?: 'en-us' | 'zh-cn' | 'zh-hk',
         /**
-         * login_id
+         * 活動編號 (若要撈全部活動請帶0)
          */
-        ticket?: number,
-        /**
-         * 會員帳號
-         */
-        username?: string,
-        /**
-         * APP版本號
-         */
-        platform?: string,
+        activityId?: string,
     }): CancelablePromise<{
         /**
          * 回覆訊息
          */
         Message?: string;
         /**
-         * 回覆代碼 0：Pass
+         * 回覆代碼
+         * - 0 Pass
+         * - 4444 參數有誤
+         *
          */
         StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: Array<{
+        Payload?: Array<{
             /**
-             * 平台代碼
-             * - tgbusiness:微商平台
-             * - auto:智能平台
-             * - live:直播平台
-             *
+             * 分類id
              */
-            serviceCode?: string;
+            categoryId?: number;
             /**
-             * 平台服務狀態
-             * - 0:一般模式
-             * - 1:維護模式
-             *
+             * 分類名稱
              */
-            serviceStatus?: number;
+            categoryName?: string;
             /**
-             * 維護時間
+             * 活動id
              */
-            time?: string;
+            activityId?: number;
+            /**
+             * 活動名稱
+             */
+            activityName?: string;
+            /**
+             * 剩餘可申請次數
+             */
+            applyNum?: number;
+            /**
+             * 廣告設定手機圖
+             */
+            mobileImg?: string;
+            /**
+             * 廣告設定網頁圖
+             */
+            webImg?: string;
+            detail?: Array<{
+                /**
+                 * 申請編號
+                 */
+                applyId?: number;
+                /**
+                 * 申請時間
+                 */
+                createdTime?: string;
+                /**
+                 * 審核狀態
+                 * - 0 待審核
+                 * - 1 已初審核可
+                 * - 2 已複審通過
+                 * - 8 初審拒絕(審核失敗)
+                 * - 9 複審拒絕(審核失敗)
+                 *
+                 */
+                applyStatus?: number;
+                /**
+                 * 初審時間
+                 */
+                firstReviewTime?: string;
+                /**
+                 * 初審訊息
+                 */
+                firstDeniedMsg?: string;
+                /**
+                 * 複審時間
+                 */
+                seconReviewTime?: string;
+                /**
+                 * 複審訊息
+                 */
+                secondDeniedMsg?: string;
+                /**
+                 * 申請項目
+                 */
+                applicationProject?: string;
+                /**
+                 * 前端顯示:申請提領權限開啟
+                 * - 0 不顯示(活動無此設定)
+                 * - 1 顯示
+                 * - 2 反灰(已申請開啟提領權限:審核中)
+                 *
+                 */
+                pickupUnlockDisplay?: number;
+                /**
+                 * 前端顯示:申請彩金
+                 * - 0 不顯示(申請項目無此設定/已領取/審核拒絕)
+                 * - 1 顯示(可領取)
+                 * - 2 顯示(累計流水中)
+                 * - 3 顯示(流水完成, 待審核)
+                 *
+                 */
+                applyBonusDisplay?: number;
+                /**
+                 * 前端顯示:申請彩金的額外資料
+                 * > 若applyBonusDisplay值
+                 * - 是 以下其中一種, 會有資料
+                 * - 2 顯示(累計流水中)
+                 * - 3 顯示(流水完成, 待審核)
+                 * - 不是
+                 * - 此欄位回傳空物件
+                 *
+                 */
+                applyBonusDisplayDetail?: {
+                    /**
+                     * 累積流水百分比(#.##)
+                     *
+                     */
+                    progress?: string;
+                    /**
+                     * 剩餘流水(#,###.##)
+                     *
+                     */
+                    remainingDealMoney?: string;
+                };
+            }>;
         }>;
     }> {
         return this.httpRequest.request({
             method: 'GET',
-            url: '/api/notice/service_status/{serviceCode}',
+            url: '/api/activity/user_activity/{activityId}',
             path: {
-                'serviceCode': serviceCode,
+                'activityId': activityId,
             },
             headers: {
-                'Ticket': ticket,
-                'username': username,
                 'Platform': platform,
+                'Username': username,
+                'Ticket': ticket,
                 'vga': vga,
                 'deviceInfo': deviceInfo,
                 'uuid': uuid,
+                'lang': lang,
             },
         });
     }
 
     /**
-     * 取得活動類別與列表
-     * @returns any 取得活動類別與列表
+     * 【微商】取得活動類別與列表
+     * @returns any 【微商】取得活動類別與列表
      * @throws ApiError
      */
-    public getApiActivityActivityCategory({
+    public getApiActivityActivityCategory1({
         username,
         ticket,
         vga,
         deviceInfo,
         uuid,
-        platform = 'Android_500',
-        lang,
+        platform = 'Android_900',
+        viewKind = '2',
     }: {
         /**
          * 會員帳號
          */
         username: string,
         /**
-         * login_id
+         * 登入ID
          */
         ticket: number,
         /**
@@ -6198,88 +7029,10 @@ export class Service {
          */
         platform?: string,
         /**
-         * 多國參數
-         */
-        lang?: 'en-us' | 'zh-cn' | 'zh-hk',
-    }): CancelablePromise<{
-        /**
-         * 回覆訊息
-         */
-        Message?: string;
-        /**
-         * 回覆代碼 0：Pass
-         */
-        StatusCode?: number;
-        /**
-         * 回傳內容
-         */
-        payload?: Array<{
-            /**
-             * 類別ID
-             */
-            categoryId?: number;
-            /**
-             * 類別名稱
-             */
-            categoryName?: string;
-            activity?: Array<any>;
-        }>;
-    }> {
-        return this.httpRequest.request({
-            method: 'GET',
-            url: '/api/activity/activity_category',
-            headers: {
-                'Platform': platform,
-                'username': username,
-                'Ticket': ticket,
-                'vga': vga,
-                'deviceInfo': deviceInfo,
-                'uuid': uuid,
-                'lang': lang,
-            },
-        });
-    }
-
-    /**
-     * 【微商】取得活動類別與列表
-     * @returns any 【微商】取得活動類別與列表
-     * @throws ApiError
-     */
-    public getApiActivityActivityCategory1({
-        vga,
-        deviceInfo,
-        uuid,
-        ticket = 120298108,
-        username = 'P9586',
-        platform = 'Android_400',
-        viewKind = '2',
-    }: {
-        /**
-         * 顯卡型號
-         */
-        vga: string,
-        /**
-         * 系統資訊
-         */
-        deviceInfo: string,
-        /**
-         * 裝置UUID
-         */
-        uuid: string,
-        /**
-         * login_id
-         */
-        ticket?: number,
-        /**
-         * 會員帳號
-         */
-        username?: string,
-        /**
-         * APP版本號
-         */
-        platform?: string,
-        /**
-         * 活動類別(1:全體會員可看 2:微商會員可看)
+         * 活動類別
+         * - 1 全體會員可看
+         * - 2 微商會員可看
+         *
          */
         viewKind?: string,
     }): CancelablePromise<{
@@ -6288,13 +7041,15 @@ export class Service {
          */
         Message?: string;
         /**
-         * 回覆代碼 0：Pass
+         * 回覆代碼
+         * - 0 Pass
+         *
          */
         StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: Array<{
+        Payload?: Array<{
             /**
              * 類別ID
              */
@@ -6313,127 +7068,12 @@ export class Service {
                 'viewKind': viewKind,
             },
             headers: {
-                'Ticket': ticket,
-                'username': username,
-                'vga': vga,
-                'deviceInfo': deviceInfo,
-                'uuid': uuid,
                 'Platform': platform,
-            },
-        });
-    }
-
-    /**
-     * 取得會員活動報名狀態
-     * @returns any 取得會員活動報名狀態
-     * @throws ApiError
-     */
-    public getApiActivityUserActivity({
-        username,
-        ticket,
-        vga,
-        deviceInfo,
-        uuid,
-        userId,
-        platform = 'Web_1.0',
-        lang,
-        activityId = '0',
-    }: {
-        /**
-         * 會員帳號
-         */
-        username: string,
-        /**
-         * login_id
-         */
-        ticket: number,
-        /**
-         * 顯卡型號
-         */
-        vga: string,
-        /**
-         * 系統資訊
-         */
-        deviceInfo: string,
-        /**
-         * 裝置UUID
-         */
-        uuid: string,
-        /**
-         * 會員編號
-         */
-        userId: string,
-        /**
-         * APP版本號 (ex. Android_500)
-         */
-        platform?: string,
-        /**
-         * 多國參數
-         */
-        lang?: 'en-us' | 'zh-cn' | 'zh-hk',
-        /**
-         * 活動編號(若要撈全部活動請帶0)
-         */
-        activityId?: string,
-    }): CancelablePromise<{
-        /**
-         * 回覆訊息
-         */
-        Message?: string;
-        /**
-         * 回覆代碼 0：Pass，4444：參數有誤
-         */
-        StatusCode?: number;
-        /**
-         * 回傳內容
-         */
-        payload?: Array<{
-            /**
-             * 分類id
-             */
-            categoryId?: number;
-            /**
-             * 分類名稱
-             */
-            categoryName?: string;
-            /**
-             * 活動id
-             */
-            activityId?: number;
-            /**
-             * 活動名稱
-             */
-            activityName?: string;
-            /**
-             * 剩餘可申請次數
-             */
-            applyNum?: number;
-            /**
-             * 廣告設定手機圖
-             */
-            mobileImg?: string;
-            /**
-             * 廣告設定網頁圖
-             */
-            webImg?: string;
-            detail?: Array<any>;
-        }>;
-    }> {
-        return this.httpRequest.request({
-            method: 'GET',
-            url: '/api/activity/user_activity/{activityId}',
-            path: {
-                'userId': userId,
-                'activityId': activityId,
-            },
-            headers: {
-                'Platform': platform,
-                'username': username,
+                'Username': username,
                 'Ticket': ticket,
                 'vga': vga,
                 'deviceInfo': deviceInfo,
                 'uuid': uuid,
-                'lang': lang,
             },
         });
     }
@@ -6444,18 +7084,30 @@ export class Service {
      * @throws ApiError
      */
     public getApiActivityUserActivity1({
+        platform,
+        username,
+        ticket,
         vga,
         deviceInfo,
         uuid,
-        ticket = 120298108,
-        username = 'P9586',
-        platform = 'Android_300',
-        userId = '8070',
-        activityId = '0',
+        lang,
+        activityId,
         viewKind = '2',
     }: {
         /**
-         * 顯卡型號
+         * APP版本號 (ex. Android_500)
+         */
+        platform: string,
+        /**
+         * 會員帳號
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 顯卡名稱(渲染器)
          */
         vga: string,
         /**
@@ -6467,23 +7119,11 @@ export class Service {
          */
         uuid: string,
         /**
-         * login_id
+         * 多國參數
          */
-        ticket?: number,
+        lang?: 'en-us' | 'zh-cn' | 'zh-hk',
         /**
-         * 會員帳號
-         */
-        username?: string,
-        /**
-         * APP版本號
-         */
-        platform?: string,
-        /**
-         * 會員編號
-         */
-        userId?: string,
-        /**
-         * 活動編號(若要撈全部活動請帶0)
+         * 活動編號 (若要撈全部活動請帶0)
          */
         activityId?: string,
         /**
@@ -6496,13 +7136,16 @@ export class Service {
          */
         Message?: string;
         /**
-         * 回覆代碼 0：Pass，4444：參數有誤
+         * 回覆代碼
+         * - 0 Pass
+         * - 4444 參數有誤
+         *
          */
         StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: Array<{
+        Payload?: Array<{
             /**
              * 分類id
              */
@@ -6531,85 +7174,158 @@ export class Service {
              * 廣告設定網頁圖
              */
             webImg?: string;
-            detail?: Array<any>;
+            detail?: Array<{
+                /**
+                 * 申請編號
+                 */
+                applyId?: number;
+                /**
+                 * 申請時間
+                 */
+                createdTime?: string;
+                /**
+                 * 審核狀態
+                 * - 0 待審核
+                 * - 1 已初審核可
+                 * - 2 已複審通過
+                 * - 8 初審拒絕(審核失敗)
+                 * - 9 複審拒絕(審核失敗)
+                 *
+                 */
+                applyStatus?: number;
+                /**
+                 * 初審時間
+                 */
+                firstReviewTime?: string;
+                /**
+                 * 初審訊息
+                 */
+                firstDeniedMsg?: string;
+                /**
+                 * 複審時間
+                 */
+                seconReviewTime?: string;
+                /**
+                 * 複審訊息
+                 */
+                secondDeniedMsg?: string;
+                /**
+                 * 申請項目
+                 */
+                applicationProject?: string;
+                /**
+                 * 前端顯示:申請提領權限開啟
+                 * - 0 不顯示(活動無此設定)
+                 * - 1 顯示
+                 * - 2 反灰(已申請開啟提領權限:審核中)
+                 *
+                 */
+                pickupUnlockDisplay?: number;
+                /**
+                 * 前端顯示:申請彩金
+                 * - 0 不顯示(申請項目無此設定/已領取/審核拒絕)
+                 * - 1 顯示(可領取)
+                 * - 2 顯示(累計流水中)
+                 * - 3 顯示(流水完成, 待審核)
+                 *
+                 */
+                applyBonusDisplay?: number;
+                /**
+                 * 前端顯示:申請彩金的額外資料
+                 * > 若applyBonusDisplay值
+                 * - 是 以下其中一種, 會有資料
+                 * - 2 顯示(累計流水中)
+                 * - 3 顯示(流水完成, 待審核)
+                 * - 不是
+                 * - 此欄位回傳空物件
+                 *
+                 */
+                applyBonusDisplayDetail?: {
+                    /**
+                     * 累積流水百分比(#.##)
+                     *
+                     */
+                    progress?: string;
+                    /**
+                     * 剩餘流水(#,###.##)
+                     *
+                     */
+                    remainingDealMoney?: string;
+                };
+            }>;
         }>;
     }> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/api/activity/user_activity/{activityId}/{viewKind}',
             path: {
-                'userId': userId,
                 'activityId': activityId,
                 'viewKind': viewKind,
             },
             headers: {
+                'Platform': platform,
+                'Username': username,
                 'Ticket': ticket,
-                'username': username,
                 'vga': vga,
                 'deviceInfo': deviceInfo,
                 'uuid': uuid,
-                'Platform': platform,
+                'lang': lang,
             },
         });
     }
 
     /**
-     * 會員申請報名活動
+     * 提出活動報名申請
      * @returns any 會員申請報名活動
      * @throws ApiError
      */
     public postApiActivityUserActivity({
+        platform,
         username,
         ticket,
-        vga,
         deviceInfo,
+        vga,
         uuid,
-        platform = 'Android_500',
+        applyReward,
         lang,
-        ip = '172.0.2.3',
         activityId = 2,
-        applyReward = 20,
     }: {
         /**
-         * 會員帳號
+         * APP版本號
+         */
+        platform: string,
+        /**
+         * 會員名稱
          */
         username: string,
         /**
-         * login_id
+         * 登入ID
          */
         ticket: number,
         /**
-         * 顯卡型號
-         */
-        vga: string,
-        /**
-         * 系統資訊
+         * 裝置資訊
          */
         deviceInfo: string,
+        /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: string,
         /**
          * 裝置UUID
          */
         uuid: string,
         /**
-         * APP版本號
+         * 申請項目
          */
-        platform?: string,
+        applyReward: number,
         /**
          * 多國參數
          */
         lang?: 'en-us' | 'zh-cn' | 'zh-hk',
         /**
-         * 會員IP
-         */
-        ip?: string,
-        /**
          * 活動編號
          */
         activityId?: number,
-        /**
-         * 申請金額
-         */
-        applyReward?: number,
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -6639,7 +7355,13 @@ export class Service {
          * - 1419 充值或提领功能关闭无法申请，请联系线上客服
          * - 1422 很抱歉，您VIP等级未达申请项目条件!
          * - 1423 很抱歉，您帐户总额未达申请项目条件!
+         * - 1424 很抱歉，提领功能关闭无法申请，请联系线上客服!
+         * - 1425 抱歉，活动周期(14天)内不得重复申请!
          * - 1426 很抱歉，您的欧洲杯投资总结果未达申请项目条件!
+         * - 1427 很抱歉，活動首存金额不符申请项目条件!
+         * - 1428 很抱歉，充值功能关闭无法申请，请联系线上客服!
+         * - 1429 申請前N小時內未有充值
+         * - 1430 已參與過類似的活動
          * - 4444 参数有误
          *
          */
@@ -6653,9 +7375,19 @@ export class Service {
              */
             activityName?: string;
             /**
-             * 模組id(模組5為體驗金模組)
+             * 模組ID
+             * - 模組5為體驗金模組(舊版)
+             * - 新版固定為0
+             *
              */
             moduleId?: string;
+            /**
+             * 關閉提領權限特性
+             * - 0 無
+             * - 1 有
+             *
+             */
+            closeWithdrawPermission?: number;
         };
     }> {
         return this.httpRequest.request({
@@ -6667,177 +7399,46 @@ export class Service {
             },
             headers: {
                 'Platform': platform,
-                'username': username,
+                'Username': username,
                 'Ticket': ticket,
-                'vga': vga,
                 'deviceInfo': deviceInfo,
+                'vga': vga,
                 'uuid': uuid,
                 'lang': lang,
-                'ip': ip,
             },
         });
     }
 
     /**
-     * 取得活動資訊明細
-     * @returns any 取得活動資訊明細
-     * @throws ApiError
-     */
-    public getApiActivityActivityInformation({
-        platform = 'Android_500',
-        username,
-        ticket,
-        lang,
-        activityId = '2',
-    }: {
-        /**
-         * APP版本號
-         */
-        platform?: string,
-        /**
-         * 會員帳號
-         */
-        username?: string,
-        /**
-         * login_id
-         */
-        ticket?: number,
-        /**
-         * 多國參數
-         */
-        lang?: 'en-us' | 'zh-cn' | 'zh-hk',
-        /**
-         * 活動編號
-         */
-        activityId?: string,
-    }): CancelablePromise<{
-        /**
-         * 回覆訊息
-         */
-        Message?: string;
-        /**
-         * 回覆代碼 0：Pass，4444：參數有誤
-         */
-        StatusCode?: number;
-        /**
-         * 回傳內容
-         */
-        payload?: Array<{
-            /**
-             * 分類ID
-             */
-            categoryId?: number;
-            /**
-             * 分類名稱
-             */
-            categoryName?: string;
-            /**
-             * 活動名稱
-             */
-            activityName?: string;
-            /**
-             * 活動開始時間
-             */
-            allowDurationStart?: string;
-            /**
-             * 活動結束時間
-             */
-            allowDurationEnd?: string;
-            /**
-             * 活動狀態 2暫停前台會員申請 3關閉 (已刪除 or 前台不顯示) 4刪除 (包含後台都不顯示)開放
-             */
-            activityStatus?: number;
-            /**
-             * 網頁版活動圖
-             */
-            webBanner?: string;
-            /**
-             * 手機版活動圖
-             */
-            mobileBanner?: string;
-            /**
-             * 附件圖
-             */
-            linkUrl?: string;
-            /**
-             * 申請解鎖提領按鈕的狀態
-             * - 0:不顯示
-             * - 1:顯示
-             * - 2:灰色按鈕
-             *
-             */
-            pickupUnlock?: string;
-            /**
-             * 會員可否申請此活動 0:不可申請 1:可以申請
-             */
-            canApply?: number;
-            /**
-             * 此活動不能申請的原因
-             * - 0:無異常
-             * - 1:為純廣告不可申請
-             * - 2:不在活動開放時間
-             * - 3:活動門檻未過
-             * - 4:不在可申請時間
-             * - 5:參加條件不符
-             * - 6:申請項目未達標
-             * - 7:目前活動無法申請
-             * - 8:前一次申請尚未結束
-             *
-             */
-            applyStatus?: number;
-            condition?: Array<any>;
-            allowDate?: Array<any>;
-            auditEntry?: Array<any>;
-            pattern?: Array<any>;
-            reward?: Array<any>;
-            /**
-             * 會員可否申請此活動 0:不可申請 1:可以申請
-             */
-            applyNum?: string;
-            /**
-             * 所需顯示之會員資料
-             */
-            userInformation?: Array<any>;
-        }>;
-    }> {
-        return this.httpRequest.request({
-            method: 'GET',
-            url: '/api/activity/activity_information/{activityId}',
-            path: {
-                'activityId': activityId,
-            },
-            headers: {
-                'Platform': platform,
-                'username': username,
-                'Ticket': ticket,
-                'lang': lang,
-            },
-        });
-    }
-
-    /**
-     * 次級活動申請
+     * 提出次級活動申請
      * @returns any 次級活動申請
      * @throws ApiError
      */
     public postApiActivityApplyFunctional({
-        vga,
+        username,
+        ticket,
         deviceInfo,
+        vga,
         uuid,
         formData,
-        platform = 'Android_300',
-        username = 'P9586',
-        ticket = 120298108,
-        ip = '172.0.2.3',
+        platform = 'Android_900',
     }: {
+        /**
+         * 會員帳號
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: string,
         /**
          * 顯卡型號
          */
         vga: string,
-        /**
-         * 系統資訊
-         */
-        deviceInfo: string,
         /**
          * 裝置UUID
          */
@@ -6852,18 +7453,6 @@ export class Service {
          * APP版本號
          */
         platform?: string,
-        /**
-         * 會員帳號
-         */
-        username?: string,
-        /**
-         * login_id
-         */
-        ticket?: number,
-        /**
-         * 會員IP
-         */
-        ip?: string,
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -6875,6 +7464,9 @@ export class Service {
          * - 1401 申請失敗
          * - 1420 最後一筆申請不是複審通過的狀態
          * - 1421 提領功能並未被關閉
+         * - 1431 次級活動流水條件未满足
+         * - 1432 活動未申請
+         * - 1433 審核狀態不正確
          * - 4444 参数有误
          *
          */
@@ -6882,19 +7474,101 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/api/activity/apply_functional',
             headers: {
                 'Platform': platform,
-                'username': username,
+                'Username': username,
                 'Ticket': ticket,
-                'vga': vga,
                 'deviceInfo': deviceInfo,
+                'vga': vga,
                 'uuid': uuid,
-                'ip': ip,
+            },
+            formData: formData,
+            mediaType: 'application/x-www-form-urlencoded',
+        });
+    }
+
+    /**
+     * 提出彩金申請
+     * @returns any 提出彩金申請
+     * @throws ApiError
+     */
+    public postApiActivityApplyBonus({
+        username,
+        ticket,
+        deviceInfo,
+        vga,
+        uuid,
+        formData,
+        platform = 'Android_900',
+    }: {
+        /**
+         * 會員帳號
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: string,
+        /**
+         * 顯卡型號
+         */
+        vga: string,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
+        formData: {
+            /**
+             * 活動編號
+             */
+            activityId: number;
+        },
+        /**
+         * APP版本號
+         */
+        platform?: string,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        Message?: string;
+        /**
+         * 回覆代碼
+         * - 0 申请成功
+         * - 1401 申請失敗
+         * - 1405 活動設定異常
+         * - 1432 活動未申請
+         * - 1433 審核狀態不正確
+         * - 1434 獎勵已發放
+         * - 1435 申請資料異常
+         * - 4444 参数有误
+         *
+         */
+        StatusCode?: number;
+        /**
+         * 回傳內容
+         */
+        Payload?: any;
+    }> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/activity/apply_bonus',
+            headers: {
+                'Platform': platform,
+                'Username': username,
+                'Ticket': ticket,
+                'deviceInfo': deviceInfo,
+                'vga': vga,
+                'uuid': uuid,
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
@@ -6908,21 +7582,15 @@ export class Service {
      */
     public postApiMembersLogin({
         platform,
-        ip,
         deviceInfo,
         vga,
         uuid,
         formData,
-        siteClass,
     }: {
         /**
          * APP版本號
          */
         platform: string,
-        /**
-         * IP
-         */
-        ip: string,
         /**
          * 裝置資訊
          */
@@ -6945,14 +7613,22 @@ export class Service {
              */
             password: string;
             /**
-             * 手機末四碼(判定為陌生裝置時需傳入)
+             * 手機末四碼
+             * - 傳入時機
+             * 1. 判定為陌生裝置時
+             * 2. 註冊驗證設定有mobile, 但註冊驗證設定有多種時, 其他有填此欄可留空
+             *
              */
             lastFour?: string;
+            /**
+             * 信箱
+             * - 傳入時機
+             * 1. 判定為陌生裝置時
+             * 2. 註冊驗證設定有email, 但註冊驗證設定有多種時, 其他有填此欄可留空
+             *
+             */
+            email?: string;
         },
-        /**
-         * 站台分類 CN:內地 UK:國際
-         */
-        siteClass?: 'CN' | 'UK',
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -6967,6 +7643,8 @@ export class Service {
          * - 1056 查无此帐号
          * - 1199 该帐号未曾于此装置登入过
          * - 1120 手機末四碼有誤
+         * - 1126 信箱有誤
+         * - 1127 邮箱资讯不完整，请联系客服
          *
          * 黑名單
          *
@@ -6983,7 +7661,7 @@ export class Service {
          * - 1062 此帐号已锁定，请洽上层管理员或客服
          * - 1065 此会员七天未登入，锁定帐号
          * - 1067 此帐号已被风控
-         * - 1068 此IP禁止登入
+         * - 1068 此IP禁止登入(24小時內同IP密碼錯10次)
          *
          */
         StatusCode?: number;
@@ -7028,171 +7706,54 @@ export class Service {
              */
             activityId?: number;
             /**
-             * 密码错误次數 (在狀態1051時出現)
-             */
-            errorcount?: number;
-        };
-    }> {
-        return this.httpRequest.request({
-            method: 'POST',
-            url: '/api/members/login',
-            headers: {
-                'Platform': platform,
-                'ip': ip,
-                'deviceInfo': deviceInfo,
-                'vga': vga,
-                'uuid': uuid,
-                'siteClass': siteClass,
-            },
-            formData: formData,
-            mediaType: 'application/x-www-form-urlencoded',
-        });
-    }
-
-    /**
-     * 會員登入(APP)
-     * @returns any
-     * @throws ApiError
-     */
-    public postApiMembersLoginApp({
-        platform,
-        ip,
-        deviceInfo,
-        vga,
-        uuid,
-        formData,
-        siteClass,
-    }: {
-        /**
-         * APP版本號
-         */
-        platform: string,
-        /**
-         * IP
-         */
-        ip: string,
-        /**
-         * 裝置資訊
-         */
-        deviceInfo: string,
-        /**
-         * 顯卡名稱(渲染器)
-         */
-        vga: string,
-        /**
-         * 裝置UUID
-         */
-        uuid: string,
-        formData: {
-            /**
-             * 會員帳號
-             */
-            username: string;
-            /**
-             * 會員密碼
-             */
-            password: string;
-            /**
-             * 手機末四碼(判定為陌生裝置時需傳入)
-             */
-            lastFour?: string;
-        },
-        /**
-         * 站台分類 CN:內地 UK:國際
-         */
-        siteClass?: 'CN' | 'UK',
-    }): CancelablePromise<{
-        /**
-         * 回覆訊息
-         */
-        Message?: string;
-        /**
-         * 回覆代碼
-         * - 0 登入成功
-         * - 1051 密码错误
-         * - 1053 帐密有特殊符号
-         * - 1054 您登入次数过于频繁，请于60秒钟后再尝试
-         * - 1056 查无此帐号
-         * - 1199 该帐号未曾于此装置登入过
-         * - 1120 手機末四碼有誤
-         * - 2000 站台停用
-         *
-         * 黑名單
-         *
-         * - 1046 登入失败，请联系上层或客服
-         * - 1047 登入失败，请联系上层或客服
-         * - 1048 登入失败，请联系上层或客服
-         * - 1049 登入失败，请联系上层或客服
-         *
-         * 帳號鎖定
-         *
-         * - 1052 此会员登入错误五次以上，锁定帐号
-         * - 1060 此帐号已锁定，请洽上层管理员或客服
-         * - 1061 此会员登入错误五次以上，锁定IP
-         * - 1062 此帐号已锁定，请洽上层管理员或客服
-         * - 1065 此会员七天未登入，锁定帐号
-         * - 1067 此帐号已被风控
-         * - 1068 此IP禁止登入
-         *
-         */
-        StatusCode?: number;
-        /**
-         * 回傳內容
-         */
-        Payload?: {
-            /**
-             * 會員名稱
-             */
-            username?: string;
-            /**
-             * 會員Id
-             */
-            userid?: number;
-            /**
-             * 會員暱稱
-             */
-            usernickname?: string;
-            /**
-             * 首次登入
-             * - 0 不是
-             * - 1 是 (進入補註冊)
+             * 第三方平台餘額轉回TG錢包資料
+             * - 以免轉錢包開關決定回傳資料
+             * - 開: 回傳object
+             * - 關: 回傳integer: 0
              *
              */
-            firstLogin?: number;
-            /**
-             * 登入Id(ticket)
-             */
-            id?: number;
-            /**
-             * 固定為1
-             */
-            type?: string;
-            /**
-             * 登入token
-             */
-            token?: string;
-            /**
-             * 體驗金活動ID  (沒活動時ID = 0)
-             *
-             */
-            activityId?: number;
-            /**
-             * 所有體育平台餘額轉回TG錢包
-             * - 0:未開啟免轉錢包
-             * - 1:已執行
-             *
-             */
-            allTransferToTg?: number;
-            /**
-             * 環境設定相關
-             */
-            settings?: {
+            allTransferToTg?: {
                 /**
-                 * 驗證方式(陣列)
+                 * platformCode是指第三方平台代碼ex. saba, wm_casino
                  */
-                authMethod?: Array<string>;
+                ':platformCode'?: {
+                    /**
+                     * 第三方平台錢包轉回狀態
+                     * - 1310 未註冊
+                     * - 2301 限制轉帳
+                     * - 2302 有未處理的單
+                     * - 7 額度查詢失敗
+                     * - 2 額度異常
+                     *
+                     */
+                    transferCode?: string;
+                    /**
+                     * 第三方平台錢包轉回狀態
+                     */
+                    balance?: string;
+                };
+            };
+            /**
+             * 註冊驗證方式陣列(以下至少會有一種, 可同時有多種)
+             * - email 信箱
+             * - mobile 手機
+             *
+             */
+            registerAuth?: Array<string>;
+            /**
+             * 網站設定資料
+             */
+            siteSetting?: {
                 /**
-                 * 國家
+                 * 時區
+                 */
+                timezone?: string;
+                /**
+                 * 匯率
+                 */
+                exchangeRate?: string;
+                /**
+                 * 巿場
                  */
                 country?: string;
                 /**
@@ -7200,26 +7761,31 @@ export class Service {
                  */
                 currency?: string;
                 /**
-                 * 語系(陣列)
+                 * 商戶資訊
+                 * - 如果值不為TG則
+                 * - 隱藏
+                 * - 智能下單功能
+                 * - 官網視頻
+                 * - USDT充值教學
+                 *
                  */
-                languages?: Array<string>;
+                site?: string;
+                /**
+                 * 分潤設定
+                 *
+                 */
+                dividendSystem?: Array<string>;
             };
-            /**
-             * 密码错误次數 (在狀態1051時出現)
-             */
-            errorcount?: number;
         };
     }> {
         return this.httpRequest.request({
             method: 'POST',
-            url: '/api/members/login/app',
+            url: '/api/members/login',
             headers: {
                 'Platform': platform,
-                'ip': ip,
                 'deviceInfo': deviceInfo,
                 'vga': vga,
                 'uuid': uuid,
-                'siteClass': siteClass,
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
@@ -7233,16 +7799,28 @@ export class Service {
      */
     public postApiMembersLogout({
         platform,
+        deviceInfo,
+        vga,
+        uuid,
         username,
         ticket,
-        vga,
-        deviceInfo,
-        uuid,
     }: {
         /**
          * APP版本號
          */
         platform: string,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: string,
+        /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: string,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
         /**
          * 會員名稱
          */
@@ -7251,18 +7829,6 @@ export class Service {
          * 登入ID
          */
         ticket: number,
-        /**
-         * 顯卡型號
-         */
-        vga: string,
-        /**
-         * 系統資訊
-         */
-        deviceInfo: string,
-        /**
-         * 裝置UUID
-         */
-        uuid: string,
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -7279,18 +7845,18 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/api/members/logout',
             headers: {
                 'Platform': platform,
-                'username': username,
-                'ticket': ticket,
-                'vga': vga,
                 'deviceInfo': deviceInfo,
+                'vga': vga,
                 'uuid': uuid,
+                'Username': username,
+                'Ticket': ticket,
             },
         });
     }
@@ -7324,7 +7890,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<{
+        Payload?: Array<{
             /**
              * 問題編號
              */
@@ -7374,7 +7940,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<{
+        Payload?: Array<{
             /**
              * 國家名稱
              */
@@ -7438,7 +8004,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'GET',
@@ -7507,28 +8073,33 @@ export class Service {
 
     /**
      * 查詢代理
-     * @returns any 回傳簡訊寄送結果
+     * @returns any 回傳代理查詢結果
      * @throws ApiError
      */
     public getApiMembersAid({
+        platform,
         username,
-        platform = 'Web_1.0',
     }: {
-        /**
-         * 會員帳號
-         */
-        username: string,
         /**
          * APP版本號
          */
-        platform?: string,
+        platform: string,
+        /**
+         * 代理帳號
+         */
+        username: string,
     }): CancelablePromise<{
         /**
          * 回覆訊息
          */
         Message?: string;
         /**
-         * 回覆代碼 0：pass，4444：參數錯誤
+         * 回覆代碼
+         * - 0 pass
+         * - 4444 參數錯誤
+         * - 1056 查無此帳號
+         * - 3001 代理失效
+         *
          */
         StatusCode?: number;
         /**
@@ -7539,6 +8110,13 @@ export class Service {
              * 代理Id
              */
             aid?: number;
+            /**
+             * 註冊驗證方式陣列(以下至少會有一種, 可同時有多種)
+             * - email 信箱
+             * - mobile 手機
+             *
+             */
+            registerAuth?: Array<string>;
         };
     }> {
         return this.httpRequest.request({
@@ -7554,6 +8132,71 @@ export class Service {
     }
 
     /**
+     * 驗證會員推廣碼
+     * @returns any
+     * @throws ApiError
+     */
+    public postApiMembersVerifyPromoteCode({
+        platform,
+        formData,
+    }: {
+        /**
+         * APP版本號
+         */
+        platform: string,
+        formData: {
+            /**
+             * 微商推廣帳號
+             */
+            code: string;
+        },
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        Message?: string;
+        /**
+         * 回覆代碼
+         * - 0 Pass
+         * - 4444 参数有误
+         * - 3001 代理失效
+         * - 3010 code失效
+         *
+         */
+        StatusCode?: number;
+        /**
+         * 回傳內容
+         */
+        Payload?: {
+            /**
+             * 代理帳號
+             */
+            l20?: string;
+            /**
+             * 推廣會員帳號
+             */
+            parent?: string;
+            /**
+             * 註冊驗證方式陣列(以下至少會有一種, 可同時有多種)
+             * - email 信箱
+             * - mobile 手機
+             *
+             */
+            registerAuth?: Array<string>;
+        };
+    }> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/members/verify_promote_code',
+            headers: {
+                'Platform': platform,
+            },
+            formData: formData,
+            mediaType: 'application/x-www-form-urlencoded',
+        });
+    }
+
+    /**
      * 會員註冊
      * @returns any 會員註冊
      * @throws ApiError
@@ -7563,9 +8206,7 @@ export class Service {
         deviceInfo,
         vga,
         uuid,
-        ip,
         formData,
-        siteClass,
     }: {
         /**
          * APP版本號
@@ -7578,20 +8219,12 @@ export class Service {
         /**
          * 顯卡名稱(渲染器)
          */
-        vga: any,
+        vga: string,
         /**
          * 裝置UUID
          */
         uuid: string,
-        /**
-         * 用戶IP
-         */
-        ip: string,
         formData: {
-            /**
-             * 代理帳號
-             */
-            l20: string;
             /**
              * 對應[會員註冊帳號選單]回傳的checkKey
              */
@@ -7611,6 +8244,10 @@ export class Service {
              */
             referrer?: string;
             /**
+             * 代理帳號
+             */
+            l20: string;
+            /**
              * 會員帳號
              */
             username: string;
@@ -7620,8 +8257,20 @@ export class Service {
             password: string;
             /**
              * 手機號碼(含國碼)
+             * - 註冊驗證欄位
+             * - 1. 註冊驗證設定若有mobile必填
+             * - 2. 設定有多種時, 其他註冊驗證欄位有填的話, 可留空
+             *
              */
-            mobile: string;
+            mobile?: string;
+            /**
+             * 信箱(example@example.cc)
+             * - 註冊驗證欄位
+             * - 1. 註冊驗證設定若有email必填
+             * - 2. 設定有多種時, 其他註冊驗證欄位有填的話, 可留空
+             *
+             */
+            email?: string;
             /**
              * 註冊使用瀏覽器
              * - 1:chrome
@@ -7650,18 +8299,7 @@ export class Service {
              *
              */
             browser: number;
-            /**
-             * email
-             */
-            email?: string;
         },
-        /**
-         * 站台分類
-         * - CN :內地
-         * - UK :國際
-         *
-         */
-        siteClass?: 'CN' | 'UK',
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -7669,27 +8307,30 @@ export class Service {
         Message?: string;
         /**
          * 回覆代碼
-         * - 0：Pass
-         * - 1001:请输入帐号
-         * - 1002:请输入密码
-         * - 1003:请确认代理商帐号
-         * - 1009:注册失败，请联系上层或客服
-         * - 1010:注册失败，请联系上层或客服
-         * - 1014:帐号异常，请重新操作
-         * - 3010:code失效
-         * - 1015:请正确输入Email
-         * - 1016:「ZZZXXXX」此手机号已绑定
-         * - 1017:上层帐号异常，请联系客服
-         * - 1018:上层帐号异常，请联系客服
-         * - 1019:「ZZZXXXX」此帐号已使用
-         * - 1020:新增会员失败
-         * - 1022:新增等級失敗
-         * - 1025:请输入推荐人帐号
-         * - 1026:推荐人帐号不符
+         * - 0 Pass
+         * - 1001 请输入帐号
+         * - 1002 请输入密码
+         * - 1003 请确认代理商帐号
+         * - 1009 注册失败，请联系上层或客服
+         * - 1010 注册失败，请联系上层或客服
+         * - 1014 帐号异常，请重新操作
+         * - 3010 code失效
+         * - 1015 请正确输入Email
+         * - 1016 「ZZZXXXX」此手机号已绑定
+         * - 1017 上层帐号异常，请联系客服
+         * - 1018 上层帐号异常，请联系客服
+         * - 1019 「ZZZXXXX」此帐号已使用
+         * - 1020 新增会员失败
+         * - 1022 新增等級失敗
+         * - 1025 请输入推荐人帐号
+         * - 1026 推荐人帐号不符
+         * - 1151 注册验证必填栏位为空
+         * - 1152 此邮箱已绑定
+         *
          * 手機號碼驗證相關
-         * - 1551:请输入手机号码
-         * - 1552:请正确输入手机号码
-         * - 1553:此手机号已绑定
+         * - 1551 请输入手机号码
+         * - 1552 请正确输入手机号码
+         * - 1553 此手机号已绑定
          *
          */
         StatusCode?: number;
@@ -7714,6 +8355,42 @@ export class Service {
                  */
                 attachUrl?: string;
             };
+            /**
+             * 網站設定資料
+             */
+            siteSetting?: {
+                /**
+                 * 時區
+                 */
+                timezone?: string;
+                /**
+                 * 匯率
+                 */
+                exchangeRate?: string;
+                /**
+                 * 巿場
+                 */
+                country?: string;
+                /**
+                 * 幣別
+                 */
+                currency?: string;
+                /**
+                 * 商戶資訊
+                 * - 如果值不為TG則
+                 * - 隱藏
+                 * - 智能下單功能
+                 * - 官網視頻
+                 * - USDT充值教學
+                 *
+                 */
+                site?: string;
+                /**
+                 * 分潤設定
+                 *
+                 */
+                dividendSystem?: Array<string>;
+            };
         };
     }> {
         return this.httpRequest.request({
@@ -7724,8 +8401,6 @@ export class Service {
                 'deviceInfo': deviceInfo,
                 'vga': vga,
                 'uuid': uuid,
-                'ip': ip,
-                'siteClass': siteClass,
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
@@ -8490,6 +9165,20 @@ export class Service {
              */
             lastUpdate?: string;
             /**
+             * 目前直推人數(格式#,###)
+             */
+            userPromoteNum?: string;
+            /**
+             * 下一等級直推人數(格式#,###)
+             */
+            promoteNumNextLevel?: string;
+            /**
+             * 下一等級總額度(格式#,###.##)
+             * - 會員目前總額度 請從 會員資產API /api/members/assets/{type} 查詢並自行加總
+             *
+             */
+            totalAmountNumNextLevel?: string;
+            /**
              * 現在等級優惠
              */
             offer?: {
@@ -8517,6 +9206,10 @@ export class Service {
                  * 智能特權-設置重啟間隔(分鐘)
                  */
                 restartIntervals?: number;
+                /**
+                 * 下注保險費率 (格式##.##)
+                 */
+                betInsurancePercent?: string;
             };
             /**
              * 為了減少request消耗, 加入以下欄位
@@ -8551,17 +9244,27 @@ export class Service {
     }
 
     /**
-     * 會員等級規則
+     * 會員等級規則詳細
      * @returns any
      * @throws ApiError
      */
     public getApiMembersLevelRuleSet({
         platform,
+        username,
+        ticket,
     }: {
         /**
          * APP版本號
          */
         platform: string,
+        /**
+         * 會員名稱
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -8569,14 +9272,14 @@ export class Service {
         Message?: string;
         /**
          * 回覆代碼
-         * - 0 Pass
+         * 0 Pass
          *
          */
         StatusCode?: number;
         /**
          * 回傳內容
          */
-        payload?: Array<{
+        Payload?: Array<{
             /**
              * 等級
              */
@@ -8621,6 +9324,18 @@ export class Service {
              * 智能特權-設置重啟間隔(分鐘)
              */
             restartIntervals?: number;
+            /**
+             * 下注保險費率 (格式##.##)
+             */
+            betInsurancePercent?: string;
+            /**
+             * 直推人數(格式#,###)
+             */
+            promoteNum?: string;
+            /**
+             * 總額度(格式#,###.##)
+             */
+            totalAmount?: string;
         }>;
     }> {
         return this.httpRequest.request({
@@ -8628,6 +9343,8 @@ export class Service {
             url: '/api/members/level/rule_set',
             headers: {
                 'Platform': platform,
+                'Username': username,
+                'Ticket': ticket,
             },
         });
     }
@@ -8639,11 +9356,36 @@ export class Service {
      */
     public getApiMembersConfigBetThreshold({
         platform,
+        username,
+        ticket,
+        deviceInfo,
+        vga,
+        uuid,
     }: {
         /**
          * APP版本號
          */
         platform: string,
+        /**
+         * 會員名稱
+         */
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: string,
+        /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: string,
+        /**
+         * 裝置UUID
+         */
+        uuid: string,
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -8652,6 +9394,7 @@ export class Service {
         /**
          * 回覆代碼
          * - 0 Pass
+         * - 1092 等级资料异常，请联系上层或客服
          *
          */
         StatusCode?: number;
@@ -8670,6 +9413,11 @@ export class Service {
             url: '/api/members/config/bet_threshold',
             headers: {
                 'Platform': platform,
+                'Username': username,
+                'Ticket': ticket,
+                'deviceInfo': deviceInfo,
+                'vga': vga,
+                'uuid': uuid,
             },
         });
     }
@@ -8927,7 +9675,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -9013,7 +9761,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -9142,7 +9890,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'GET',
@@ -9317,7 +10065,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -9395,7 +10143,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -9486,7 +10234,7 @@ export class Service {
          *
          */
         StatusCode?: number;
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -9513,12 +10261,10 @@ export class Service {
         platform,
         username,
         ticket,
-        vga,
         deviceInfo,
+        vga,
         uuid,
-        ip,
         formData,
-        siteClass,
     }: {
         /**
          * APP版本號
@@ -9533,34 +10279,23 @@ export class Service {
          */
         ticket: number,
         /**
-         * 顯卡名稱(渲染器)
-         */
-        vga: string,
-        /**
          * 裝置資訊
          */
         deviceInfo: string,
         /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: string,
+        /**
          * 裝置UUID
          */
         uuid: string,
-        /**
-         * 用戶IP
-         */
-        ip: string,
         formData: {
             /**
              * 銀行戶名
              */
             accountName: string;
         },
-        /**
-         * 站台分類
-         * - CN :內地
-         * - UK :國際
-         *
-         */
-        siteClass?: 'CN' | 'UK',
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -9576,20 +10311,18 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/api/members/set_bank_account_name',
             headers: {
                 'Platform': platform,
-                'username': username,
-                'ticket': ticket,
-                'vga': vga,
+                'Username': username,
+                'Ticket': ticket,
                 'deviceInfo': deviceInfo,
+                'vga': vga,
                 'uuid': uuid,
-                'ip': ip,
-                'siteClass': siteClass,
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
@@ -9605,12 +10338,10 @@ export class Service {
         platform,
         username,
         ticket,
-        vga,
         deviceInfo,
+        vga,
         uuid,
-        ip,
         formData,
-        siteClass,
     }: {
         /**
          * APP版本號
@@ -9625,46 +10356,43 @@ export class Service {
          */
         ticket: number,
         /**
-         * 顯卡名稱(渲染器)
-         */
-        vga: string,
-        /**
          * 裝置資訊
          */
         deviceInfo: string,
         /**
+         * 顯卡名稱(渲染器)
+         */
+        vga: string,
+        /**
          * 裝置UUID
          */
         uuid: string,
-        /**
-         * 用戶IP
-         */
-        ip: string,
         formData: {
             /**
              * 提領密碼
              */
             withdrawPassword: string;
             /**
-             * 會員暱稱
+             * 會員暱稱 (視客戶需求必填)
              */
-            usernickname: string;
+            usernickname?: string;
             /**
-             * 安全性问题
+             * 安全性问题 (視客戶需求必填, 有安全性答案必填安全性問題)
+             * - 1    我母亲的姓
+             * - 2    我父亲的名
+             * - 3    我最喜欢的食物
+             * - 4    我的宠物名字
+             * - 5    最喜欢的电影名称
+             * - 6    就读小学的名称
+             * - 7    最喜欢的书名
+             *
              */
-            pointQuestion: string;
+            pointQuestion?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
             /**
-             * 安全性答案
+             * 安全性答案 (視客戶需求必填, 有安全性問題必填安全性答案)
              */
-            pointAnswer: string;
+            pointAnswer?: string;
         },
-        /**
-         * 站台分類
-         * - CN :內地
-         * - UK :國際
-         *
-         */
-        siteClass?: 'CN' | 'UK',
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -9686,20 +10414,18 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/api/members/set_withdraw_info',
             headers: {
                 'Platform': platform,
-                'username': username,
-                'ticket': ticket,
-                'vga': vga,
+                'Username': username,
+                'Ticket': ticket,
                 'deviceInfo': deviceInfo,
+                'vga': vga,
                 'uuid': uuid,
-                'ip': ip,
-                'siteClass': siteClass,
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
@@ -9745,7 +10471,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'GET',
@@ -9852,11 +10578,10 @@ export class Service {
         platform,
         username,
         ticket,
-        vga,
         deviceInfo,
+        vga,
         uuid,
         formData,
-        ip,
     }: {
         /**
          * APP版本號
@@ -9867,17 +10592,17 @@ export class Service {
          */
         username: string,
         /**
-         * login_id
+         * 登入ID
          */
         ticket: number,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: string,
         /**
          * 顯卡型號
          */
         vga: string,
-        /**
-         * 系統資訊
-         */
-        deviceInfo: string,
         /**
          * 裝置UUID
          */
@@ -9900,10 +10625,6 @@ export class Service {
              */
             accountName?: string;
         },
-        /**
-         * 用戶IP
-         */
-        ip?: string,
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -9927,19 +10648,18 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/api/members/set_user_bank',
             headers: {
                 'Platform': platform,
-                'username': username,
-                'ticket': ticket,
-                'vga': vga,
+                'Username': username,
+                'Ticket': ticket,
                 'deviceInfo': deviceInfo,
+                'vga': vga,
                 'uuid': uuid,
-                'ip': ip,
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
@@ -10058,7 +10778,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -10105,7 +10825,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<{
+        Payload?: Array<{
             /**
              * 類別
              */
@@ -10178,7 +10898,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -10240,8 +10960,163 @@ export class Service {
     }
 
     /**
+     * 發送信箱驗證碼
+     * @returns any 信箱驗證碼發送
+     * @throws ApiError
+     */
+    public postApiMembersSendMail({
+        formData,
+        platform = 'Web_1.0',
+        username,
+        ticket,
+    }: {
+        formData: {
+            /**
+             * 使用功能
+             * 功能代碼|說明|使用時機
+             * --- | --- | ---
+             * forgetPwd | 忘記密碼 | 未登入
+             * login | 登入 | 未登入
+             * unblock | 申請解鎖 | 未登入
+             * c2c | 會員互轉 | 登入
+             * forgetPickup | 忘記提領密碼 | 登入
+             * usdtAdd| USDT綁定地址 | 登入
+             * memberadd | 會員註冊 | 未登入
+             * setUserBase | 會員補註冊 | 登入
+             *
+             */
+            func: 'forgetPwd' | 'login' | 'unblock' | 'c2c' | 'forgetPickup' | 'usdtAdd' | 'memberadd' | 'setUserBase';
+            /**
+             * 信箱地址
+             */
+            email: string;
+            /**
+             * 會員帳號(func使用時機為 未登入 時帶入) **請用大寫**
+             *
+             */
+            username?: string;
+            /**
+             * 上層帳號(func為 memberadd(註冊) 時帶入)
+             * - **推廣註冊**: 推廣人帳號
+             * - **代理註冊**: 代理帳號
+             *
+             */
+            parentAccount?: string;
+        },
+        /**
+         * APP版本號
+         */
+        platform?: string,
+        /**
+         * 會員帳號(func使用時機為 登入 時代入)
+         */
+        username?: string,
+        /**
+         * 登入ID(func使用時機為 登入 時代入)
+         */
+        ticket?: number,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        Message?: string;
+        /**
+         * 回覆代碼
+         * - 0 Pass
+         * - 4444 参数错误
+         * - 1056 查无此帐号
+         * - 1136 系统传送延迟\n请联系上层管理员或客服
+         * - 1137 你已经重覆发送，于1分钟后再发送！
+         * - 1138 会员信箱有误或该帐号尚未绑定，请联系客服人员
+         * - 1139 会员信箱与传入不匹配
+         * - 1140 系统驗證碼无法传递\n请联系上层管理员或客服
+         * - 1056 查无此帐号
+         * - 1152 此邮箱已绑定
+         *
+         */
+        StatusCode?: number;
+        /**
+         * 回傳內容
+         *
+         */
+        Payload?: {
+            /**
+             * 驗證碼(正式機不回傳)
+             * - 開發機/測試機為方便串接測試，會回傳
+             *
+             */
+            code?: string;
+        };
+    }> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/members/send_mail',
+            headers: {
+                'Platform': platform,
+                'Username': username,
+                'Ticket': ticket,
+            },
+            formData: formData,
+            mediaType: 'application/x-www-form-urlencoded',
+        });
+    }
+
+    /**
+     * 驗證信箱驗證碼
+     * @returns any 驗證信箱驗證碼
+     * @throws ApiError
+     */
+    public postApiMembersCheckMail({
+        formData,
+        platform = 'Web_1.0',
+    }: {
+        formData: {
+            /**
+             * 信箱地址
+             */
+            email: string;
+            /**
+             * 信箱驗證碼
+             */
+            code: string;
+        },
+        /**
+         * APP版本號
+         */
+        platform?: string,
+    }): CancelablePromise<{
+        /**
+         * 回覆訊息
+         */
+        Message?: string;
+        /**
+         * 回覆代碼
+         * - 0 Pass
+         * - 1032 验证码失效，请重新发送！
+         * - 1033 验证码错误，请重新确认或发送！
+         *
+         */
+        StatusCode?: number;
+        /**
+         * 回傳內容
+         *
+         */
+        Payload?: any;
+    }> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/members/check_mail',
+            headers: {
+                'Platform': platform,
+            },
+            formData: formData,
+            mediaType: 'application/x-www-form-urlencoded',
+        });
+    }
+
+    /**
      * 簡訊發送
-     * @returns any 簡訊發送
+     * @returns any
      * @throws ApiError
      */
     public postApiMembersSendSms({
@@ -10252,34 +11127,41 @@ export class Service {
     }: {
         formData: {
             /**
-             * 手機號含國碼
+             * 會員帳號(func使用時機為 未登入/特例 時代入)
+             *
+             */
+            username?: string;
+            /**
+             * 手機號含國碼(func使用時機為 未登入/特例 時代入)
              */
             mobile?: string;
             /**
-             * 手機末四碼(於會員互轉、增加USDT位置等登入後的簡訊發送功能皆需帶入，登入發送功能也需帶入)
+             * 手機末四碼(func使用時機為 登入 時代入)
              */
             lastFour?: string;
             /**
-             * 使用功能(目前只有登入發送需帶此參數)
-             * - login：登入
+             * 使用功能
+             * 功能代碼|說明|使用時機
+             * --- | --- | ---
+             * login | 登入 | 未登入(只驗後4碼)
+             * c2c | 會員互轉 | 登入
+             * usdtAdd| USDT綁定地址 | 登入
+             * memberadd | 會員註冊 | 特例
+             * setUserBase | 補註冊 | 特例
              *
              */
-            func?: 'login';
-            /**
-             * 會員帳號，只有func=login時需帶入
-             */
-            username?: string;
+            func: 'login' | 'c2c' | 'usdtAdd' | 'memberadd' | 'setUserBase';
         },
         /**
          * APP版本號
          */
         platform?: string,
         /**
-         * 會員帳號(於會員互轉、增加USDT位置等登入後的簡訊發送功能皆需帶入)
+         * 會員帳號(func使用時機為 登入 時代入)
          */
         username?: string,
         /**
-         * login_id(於會員互轉、增加USDT位置等登入後的簡訊發送功能皆需帶入)
+         * 登入ID(func使用時機為 登入 時代入)
          */
         ticket?: number,
     }): CancelablePromise<{
@@ -10299,11 +11181,13 @@ export class Service {
          */
         StatusCode?: number;
         /**
-         * 回傳內容(正式機將不再回傳code簡訊驗證碼，開發機及測試機為方便串接測試，依舊會回傳)
+         * 回傳內容
          */
         Payload?: {
             /**
-             * 簡訊驗證碼
+             * 簡訊驗證碼(正式機不回傳)
+             * - 開發機/測試機 為方便測試回傳
+             *
              */
             code?: string;
         };
@@ -10313,8 +11197,8 @@ export class Service {
             url: '/api/members/send_sms',
             headers: {
                 'Platform': platform,
-                'username': username,
-                'ticket': ticket,
+                'Username': username,
+                'Ticket': ticket,
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
@@ -10323,7 +11207,7 @@ export class Service {
 
     /**
      * 查核簡訊驗證碼
-     * @returns any 查核簡訊驗證碼
+     * @returns any
      * @throws ApiError
      */
     public postApiMembersCheckSms({
@@ -10334,38 +11218,45 @@ export class Service {
     }: {
         formData: {
             /**
-             * 手機號含國碼
-             */
-            mobile?: string;
-            /**
-             * 會員填入的手機驗證碼
+             * 簡訊驗證碼
              */
             code: string;
             /**
-             * 手機末四碼(於會員互轉、增加USDT位置等登入後的簡訊發送功能皆需帶入，登入發送功能也需帶入)
-             */
-            lastFour?: number;
-            /**
-             * 使用功能(目前只有登入發送需帶此參數)
-             * - login：登入
+             * 會員帳號(func使用時機為 未登入/特例 時代入)
              *
              */
-            func?: 'login';
-            /**
-             * 會員帳號，只有func=login時需帶入
-             */
             username?: string;
+            /**
+             * 手機號含國碼(func使用時機為 未登入/特例 時代入)
+             */
+            mobile?: string;
+            /**
+             * 手機末四碼(func使用時機為 登入 時代入)
+             */
+            lastFour?: string;
+            /**
+             * 使用功能
+             * 功能代碼|說明|使用時機
+             * --- | --- | ---
+             * login | 登入 | 未登入(只驗後4碼)
+             * c2c | 會員互轉 | 登入
+             * usdtAdd| USDT綁定地址 | 登入
+             * memberadd | 會員註冊 | 特例
+             * setUserBase | 補註冊 | 特例
+             *
+             */
+            func: 'login' | 'c2c' | 'usdtAdd' | 'memberadd' | 'setUserBase';
         },
         /**
          * APP版本號
          */
         platform?: string,
         /**
-         * 會員帳號(於會員互轉、增加USDT位置等登入後的簡訊驗證功能皆需帶入)
+         * 會員帳號(func使用時機為登入時代入)
          */
         username?: string,
         /**
-         * login_id(於會員互轉、增加USDT位置等登入後的簡訊驗證功能皆需帶入)
+         * 登入ID(func使用時機為登入時代入)
          */
         ticket?: number,
     }): CancelablePromise<{
@@ -10385,15 +11276,15 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/api/members/check_sms',
             headers: {
                 'Platform': platform,
-                'username': username,
-                'ticket': ticket,
+                'Username': username,
+                'Ticket': ticket,
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
@@ -10402,44 +11293,49 @@ export class Service {
 
     /**
      * 找回密碼前發送驗証碼
-     * @returns any 回傳簡訊寄送結果
+     * @returns any
      * @throws ApiError
      */
     public postApiMembersForgetPasswordSms({
-        ip,
         formData,
         platform = 'Web_1.0',
         username,
         ticket,
     }: {
-        /**
-         * 使用者ip
-         */
-        ip: string,
         formData: {
             /**
-             * 會員帳號
+             * 會員帳號(func使用時機為 未登入 時代入) **請用大寫**
              */
-            username: string;
+            username?: string;
             /**
-             * 手機號碼
+             * 手機號含國碼(func使用時機為 未登入 時代入)
              */
-            phone?: string;
+            mobile?: string;
             /**
-             * 手機末四碼(於忘記提領密碼時需帶入)
+             * 手機末四碼(func使用時機為 登入 時代入)
              */
             lastFour?: string;
+            /**
+             * 使用功能
+             * 功能代碼|說明|使用時機
+             * --- | --- | ---
+             * forgetPwd | 忘記密碼 | 未登入
+             * unblock | 申請解鎖 | 未登入
+             * forgetPickup | 忘記提領密碼 | 登入
+             *
+             */
+            func: 'forgetPwd' | 'unblock' | 'forgetPickup';
         },
         /**
          * APP版本號
          */
         platform?: string,
         /**
-         * 會員帳號(於忘記提領密碼時需帶入)
+         * 會員帳號(func使用時機為 登入 時代入)
          */
         username?: string,
         /**
-         * login_id(於忘記提領密碼時需帶入)
+         * 登入ID(func使用時機為 登入 時代入)
          */
         ticket?: number,
     }): CancelablePromise<{
@@ -10480,9 +11376,8 @@ export class Service {
             url: '/api/members/forget_password_sms',
             headers: {
                 'Platform': platform,
-                'ip': ip,
-                'username': username,
-                'ticket': ticket,
+                'Username': username,
+                'Ticket': ticket,
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
@@ -10506,28 +11401,39 @@ export class Service {
         platform: string,
         formData: {
             /**
-             * 會員帳號
+             * 會員帳號(func使用時機為 未登入 時代入) **請用大寫**
+             *
              */
-            username: string;
+            username?: string;
             /**
-             * 用戶電話
+             * 手機號含國碼(func使用時機為 未登入 時代入)
              */
-            phone: string;
+            mobile?: string;
             /**
              * 簡訊驗證碼
              */
             code: string;
             /**
-             * 手機末四碼(於忘記提領密碼時需帶入)
+             * 手機末四碼(func使用時機為 登入 時代入)
              */
             lastFour?: string;
+            /**
+             * 使用功能
+             * 功能代碼|說明|使用時機
+             * --- | --- | ---
+             * forgetPwd | 忘記密碼 | 未登入
+             * unblock | 申請解鎖 | 未登入
+             * forgetPickup | 忘記提領密碼 | 登入
+             *
+             */
+            func: 'forgetPwd' | 'unblock' | 'forgetPickup';
         },
         /**
-         * 會員帳號(於忘記提領密碼時需帶入)
+         * 會員帳號(func使用時機為 登入 時代入)
          */
         username?: string,
         /**
-         * login_id(於忘記提領密碼時需帶入)
+         * 登入ID(func使用時機為 登入 時代入)
          */
         ticket?: number,
     }): CancelablePromise<{
@@ -10554,11 +11460,7 @@ export class Service {
              */
             username?: string;
             /**
-             * 用戶電話
-             */
-            phone?: string;
-            /**
-             * 更換密碼驗證碼
+             * 更換密碼/申請解鎖驗證碼
              */
             code?: string;
         };
@@ -10568,8 +11470,8 @@ export class Service {
             url: '/api/members/check_verification',
             headers: {
                 'Platform': platform,
-                'username': username,
-                'ticket': ticket,
+                'Username': username,
+                'Ticket': ticket,
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
@@ -10578,6 +11480,9 @@ export class Service {
 
     /**
      * 更換密碼(忘記密碼用)
+     * 額外特性
+     * - 修改成功後，若會員是可以自助解鎖的狀態，解鎖會員鎖定狀態
+     *
      * @returns any
      * @throws ApiError
      */
@@ -10591,7 +11496,11 @@ export class Service {
         platform: string,
         formData: {
             /**
-             * 會員帳號
+             * 會員帳號(ex. P9586)
+             * - 必須都用大寫
+             * - api/members/check_verification(檢查驗證碼是否正確) 會員帳號 **都用大寫**
+             * - api/members/check_mail(驗證信箱驗證碼)會員帳號 **都用大寫**
+             *
              */
             username: string;
             /**
@@ -10599,7 +11508,7 @@ export class Service {
              */
             password: string;
             /**
-             * 驗證碼
+             * 驗證碼(ex. 831f92b3d8a68795f28275db450ad42d)
              */
             code: string;
         },
@@ -10625,7 +11534,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -10645,20 +11554,19 @@ export class Service {
      */
     public postApiMembersForgetPickupPassword({
         platform,
-        ip,
         formData,
     }: {
         /**
          * APP版本號
          */
         platform: string,
-        /**
-         * 用戶端IP
-         */
-        ip: string,
         formData: {
             /**
-             * 會員帳號
+             * 會員帳號(ex. P9586)
+             * - 必須都用大寫
+             * - api/members/check_verification(檢查驗證碼是否正確) 會員帳號 **大小寫相同**
+             * - api/members/check_mail(驗證信箱驗證碼)會員帳號 **都用大寫**
+             *
              */
             username: string;
             /**
@@ -10666,7 +11574,7 @@ export class Service {
              */
             password: string;
             /**
-             * 驗證碼
+             * 驗證碼(ex. 831f92b3d8a68795f28275db450ad42d)
              */
             code: string;
         },
@@ -10693,14 +11601,13 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/api/members/forget_pickup_password',
             headers: {
                 'Platform': platform,
-                'ip': ip,
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
@@ -10714,24 +11621,19 @@ export class Service {
      */
     public postApiMembersUnblock({
         platform,
-        ip,
         formData,
     }: {
         /**
          * APP版本號
          */
         platform: string,
-        /**
-         * 用戶端IP
-         */
-        ip: string,
         formData: {
             /**
-             * 會員帳號
+             * 會員帳號(ex. P9586)
              */
             username: string;
             /**
-             * 驗證碼
+             * 驗證碼(ex. 831f92b3d8a68795f28275db450ad42d)
              */
             code: string;
         },
@@ -10754,14 +11656,13 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/api/members/unblock',
             headers: {
                 'Platform': platform,
-                'ip': ip,
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
@@ -10774,42 +11675,37 @@ export class Service {
      * @throws ApiError
      */
     public postApiMembersBlock({
-        platform,
-        vga,
+        username,
+        ticket,
         deviceInfo,
+        vga,
         uuid,
-        username = 'P9586',
-        ticket = 18304421,
-        ip = '1.1.1.1',
+        platform = 'Android_900',
     }: {
         /**
-         * APP版本號
+         * 會員帳號
          */
-        platform: string,
+        username: string,
+        /**
+         * 登入ID
+         */
+        ticket: number,
+        /**
+         * 裝置資訊
+         */
+        deviceInfo: string,
         /**
          * 顯卡型號
          */
         vga: string,
         /**
-         * 系統資訊
-         */
-        deviceInfo: string,
-        /**
          * 裝置UUID
          */
         uuid: string,
         /**
-         * 會員帳號
+         * APP版本號
          */
-        username?: string,
-        /**
-         * login_id
-         */
-        ticket?: number,
-        /**
-         * IP
-         */
-        ip?: string,
+        platform?: string,
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -10826,19 +11722,18 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/api/members/block',
             headers: {
                 'Platform': platform,
-                'username': username,
-                'ticket': ticket,
-                'vga': vga,
+                'Username': username,
+                'Ticket': ticket,
                 'deviceInfo': deviceInfo,
+                'vga': vga,
                 'uuid': uuid,
-                'ip': ip,
             },
         });
     }
@@ -10857,7 +11752,6 @@ export class Service {
         uuid,
         code,
         formData,
-        domain,
     }: {
         /**
          * APP版本號
@@ -10884,9 +11778,9 @@ export class Service {
          */
         uuid: string,
         /**
-         * 平台名稱
+         * 平台名稱(ex. saba)
          */
-        code: 'saba' | 'wm_casino' | 'ob_poker' | 'ob_casino' | 'ag_casino' | 'ky_poker' | 'ly_poker' | 'jdb_gaming' | 'cq9_gaming' | 'ob_lottery' | 'sgwin_lottery' | 'bbin_casino' | 'ob_sport' | 'allbet_casino' | 'im_sport' | 'kx_poker' | 'mt_poker' | 'ai_sport' | 'bg_casino' | 'dg_casino',
+        code: string,
         formData: {
             /**
              * 平台
@@ -10896,10 +11790,6 @@ export class Service {
              */
             platform: 1 | 2;
         },
-        /**
-         * 首頁網址-網頁版(PC/M)需於帶入首頁網址，不包含https://，例:sta8w.k33uc.com/，APP呼叫時不需傳入，系統會自行組成網址，根據m[1~5].tvip[66,77,88].net:8888 產生隨機域名，例:m3.tvip66.net:8888
-         */
-        domain?: string,
     }): CancelablePromise<{
         /**
          * 回覆訊息
@@ -10912,6 +11802,7 @@ export class Service {
          * - 7001 第三方執行異常
          * - 7002 帐号资料有误，请联系客服
          * - 7106 第三方禁止登入
+         * - 7999 第三方未開放
          * - 8000 第三方維護中
          *
          */
@@ -10935,12 +11826,11 @@ export class Service {
             },
             headers: {
                 'Platform': platform,
-                'username': username,
-                'ticket': ticket,
+                'Username': username,
+                'Ticket': ticket,
                 'deviceInfo': deviceInfo,
                 'vga': vga,
                 'uuid': uuid,
-                'domain': domain,
             },
             formData: formData,
             mediaType: 'application/x-www-form-urlencoded',
@@ -11087,7 +11977,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -11164,7 +12054,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<{
+        Payload?: Array<{
             /**
              * 遊戲ID
              */
@@ -11273,7 +12163,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<{
+        Payload?: Array<{
             /**
              * 遊戲ID
              */
@@ -11294,6 +12184,10 @@ export class Service {
              * 是否收藏 0:未收藏 1:已收藏
              */
             favorite?: string;
+            /**
+             * 標籤 0:無 1:NEW
+             */
+            gameTag?: string;
         }>;
     }> {
         return this.httpRequest.request({
@@ -11394,6 +12288,7 @@ export class Service {
          * - 7001 第三方執行異常
          * - 7002 帐号资料有误，请联系客服
          * - 7106 第三方禁止登入
+         * - 7999 第三方未開放
          * - 8000 第三方維護中
          *
          */
@@ -11413,8 +12308,8 @@ export class Service {
             url: '/api/members/thirdparty/gaming/login',
             headers: {
                 'Platform': platform,
-                'username': username,
-                'ticket': ticket,
+                'Username': username,
+                'Ticket': ticket,
                 'deviceInfo': deviceInfo,
                 'vga': vga,
                 'uuid': uuid,
@@ -11487,7 +12382,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<{
+        Payload?: Array<{
             /**
              * 第三方平台名稱
              */
@@ -11584,7 +12479,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<{
+        Payload?: Array<{
             /**
              * 遊戲ID
              */
@@ -11613,6 +12508,10 @@ export class Service {
              * 第三方平台代碼
              */
             thirdPartyCode?: string;
+            /**
+             * 標籤 0:無 1:NEW
+             */
+            gameTag?: string;
         }>;
     }> {
         return this.httpRequest.request({
@@ -11708,7 +12607,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -11891,7 +12790,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -11973,7 +12872,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -12051,7 +12950,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -12129,7 +13028,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -12207,7 +13106,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -12285,7 +13184,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -12357,7 +13256,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<any>;
+        Payload?: Array<any>;
     }> {
         return this.httpRequest.request({
             method: 'GET',
@@ -13133,7 +14032,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -13219,7 +14118,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -13305,7 +14204,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -13391,7 +14290,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -13472,7 +14371,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
@@ -13976,7 +14875,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: Array<any>;
+        Payload?: Array<any>;
     }> {
         return this.httpRequest.request({
             method: 'GET',
@@ -15019,7 +15918,7 @@ export class Service {
         /**
          * 回傳內容
          */
-        payload?: any;
+        Payload?: any;
     }> {
         return this.httpRequest.request({
             method: 'POST',
