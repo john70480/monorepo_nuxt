@@ -1,7 +1,7 @@
 <template>
     <div class="market">
         <div class="tabs">
-            <TgTabs type="tg-tabs" v-model="tab">
+            <TgTabs v-model="tab">
                 <v-tab v-for="item in items" :key="item.key" hide-slider>
                     {{ item.display }}
                 </v-tab>
@@ -41,12 +41,10 @@
     </div>
 </template>
 <script setup lang="ts">
-import Announcement from '@tg/web-mobile/pages/home/announcement.vue';
 import { useDialogs } from '@tg/web-mobile/stores/dialogs';
 import { HistoryModel } from 'packages/web-mobile/core/models/HistoryModel';
 import { TabsModel } from 'packages/web-mobile/core/models/TabsModel';
-import { Ref } from 'vue';
-import { mockList } from './mock';
+import { mockHistory } from './mock';
 import { Currency } from '@tg/web-mobile/core/classes/Currenct'
 import { ICurrency } from 'packages/web-mobile/core/interfaces/ICurrency';
 definePageMeta({
@@ -70,7 +68,7 @@ const items: Array<TabsModel> = [{
     key: 'thisYear',
     display: '近一年'
 }]
-const list: Array<HistoryModel> = mockList;
+const list: Array<HistoryModel> = mockHistory;
 const sumary: HistoryModel = {
     grandTotal: 108057185,
     actual: 120000111,

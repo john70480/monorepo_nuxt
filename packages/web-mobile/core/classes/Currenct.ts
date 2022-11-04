@@ -17,7 +17,15 @@ export class Currency implements ICurrency {
         const num: string = parseFloat(payload.toString()).toFixed(roundTo).toString();
         if (num !== 'NaN')
             res = num.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-        console.log(res);
-        return ref(res);
+        return ref<string>(res);
+    }
+
+    public removeComma(payload: string): Ref<string> {
+        const res: string = payload.replace(/,/gi, '');
+        return ref<string>(res);
+    }
+    public fixed(payload: string, roundTo: number = this.defaultRoundTo): Ref<string> {
+        const res: string = parseFloat(payload).toFixed(roundTo).toString();
+        return ref<string>(res);
     }
 }

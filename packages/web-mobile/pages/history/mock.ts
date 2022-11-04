@@ -1,6 +1,6 @@
 import { HistoryModel } from "packages/web-mobile/core/models/HistoryModel";
 
-export const mockList: HistoryModel[] = [
+export const mockHistory: HistoryModel[] = [
     {
         grandTotal: 108057185,
         actual: 0,
