@@ -9,7 +9,7 @@
 import type { PropType } from 'vue';
 
 defineProps({
-	type: { type: String as PropType<typeof types[number]>, default: '' },
+	type: { type: String as PropType<typeof types[number] | string>, default: '' },
 	title: String,
 	showFilter: { type: Boolean, default: false },
 });
@@ -23,7 +23,7 @@ export const types = [
 	'event',
 	'live',
 	'sports',
-	'casino',
+	'casinos',
 	'pokers',
 	'gaming',
 	'lotteries',
@@ -71,7 +71,7 @@ export const types = [
 			background-size: contain;
 		}
 
-		&.casino::before {
+		&.casinos::before {
 			background: url('@tg/web-mobile/assets/images/icon_casino.png') center no-repeat;
 			background-size: contain;
 		}

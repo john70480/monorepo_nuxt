@@ -7,8 +7,6 @@
         </v-card-title>
       </slot>
       <v-card-text>
-        <!-- {{ iconFlag }}
-        {{ icon }} -->
         <div class="d-flex align-center justify-center pa-4 pb-6" v-if="icon">
           <span class="icon mt-auto mb-auto" :class="[`icon-${icon}`]"></span>
         </div>

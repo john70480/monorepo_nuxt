@@ -41,12 +41,14 @@
 			</Swiper>
 		</div>
 
-		<template v-for="(item, index) in platformList" :key="index">
-			<SubTitle :type="index" :title="item.title"></SubTitle>
+		<template v-for="(item, index) in siteList?.categories" :key="index">
+			<SubTitle :type="item.thirdPartyCategory" :title="item.thirdPartyCategory"></SubTitle>
 			<div class="index_box">
 				<Swiper class="swiper-container platform-swiper " slides-per-view="auto">
-					<SwiperSlide v-for="(list, index) in item.list" :key="index">
-						<PlatformCard :title="list.title" :ImageSrc="list.imageSrc"></PlatformCard>
+					<SwiperSlide v-for="(list, index) in siteList?.platform?.[item.thirdPartyType]?.[item.thirdPartyCategory]"
+						:key="index">
+						<PlatformCard :title="list.thirdPartyName" :ImageSrc="platformMap?.[list.thirdPartyCode]?.banner">
+						</PlatformCard>
 					</SwiperSlide>
 				</Swiper>
 			</div>
@@ -63,7 +65,8 @@ import SubTitle from './sub-ttitle.vue';
 import PlatformCard from './platform-card.vue';
 import MatchCard from './match-card.vue';
 import VideoCard from './video-card.vue';
-import { useHome } from '@tg/web-mobile/stores/home';
+import { useHome, platformType, categoryType, getSiteListMap } from '@tg/web-mobile/stores/home';
+
 const homeStore = useHome();
 definePageMeta({
 	hiddenHeader: true,
