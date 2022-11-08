@@ -1,56 +1,62 @@
 <template>
-	<v-card class="history-card">
-		<div class="card-title">
-			<b>{{ cardTitle }}</b>
-			<span>cardNumber</span>
+	<v-card class="history-card" elevation="0">
+		<div class="card-title px-2 pb-1">
+			<div>{{ info.title }}</div>
+			<span class="icon-notify">{{ info.num }}</span>
 		</div>
-		<div class="card-content">
-			<div class="card-subtitle">
-				{{ cardSubTitle }}</div>
-			<div class="team_name">
-				<div class="d-flex"><b>{{ cardPlayer1.name }}</b><b>{{ cardPlayer1.score }}</b></div>
-				<div class="d-flex"><b>{{ cardPlayer2.name }}</b><b>{{ cardPlayer2.score }}</b></div>
+		<div class="card-content px-2">
+			<div class="card-content--left">
+				<div class="card-subtitle pb-1">
+					{{ info.subtitle }}</div>
+				<div class="team_name">
+					<div class="d-flex pb-1">
+						<div class="icon-cycle">{{ info.player1.name }}</div>
+						<div>{{ info.player1.score }}</div>
+					</div>
+					<div class="d-flex pb-1">
+						<div class="icon-cycle">{{ info.player2.name }}</div>
+						<div>{{ info.player2.score }}</div>
+					</div>
+				</div>
+				<div class="card-footer pb-1">
+					<div>结算:</div>
+					<div>{{ info.summary }}</div>
+				</div>
+			</div>
+			<div class="card-content--right">
+				<span class="icon-arrow-down"></span>
 			</div>
 		</div>
-		<div class="card-footer">
-			<span>
-				<b>3-3</b>
-				<b>1.91</b>
-			</span>
-		</div>
+
+		<template v-if="info.dType === DetailType.RESERVE">
+			<v-divider class="mx-2"></v-divider>
+			<HistoryReserveDetail></HistoryReserveDetail>
+		</template>
+		<template v-if="info.dType === DetailType.ORDER">
+			<v-divider class="mx-2"></v-divider>
+			<HistoryOrderDetail></HistoryOrderDetail>
+		</template>
+		<v-divider></v-divider>
 	</v-card>
 </template>
-<script setup lang="ts">
-const props = defineProps<{
-	cardTitle: string,
-	cardNumber: number,
-	cardSubTitle: string,
-	cardPlayer1: PlayerInfo,
-	cardPlayer2: PlayerInfo,
+<script setup lang="ts">import { HistoryCardModel, PlayerInfo, DetailType } from '@tg/web-mobile/core/models/HistoryModel';
 
-}>();
+const props = defineProps<{ info: HistoryCardModel }>();
 </script>
 <script lang="ts">
-export type PlayerInfo = {
-	name: string;
-	score: number;
-}
+
 </script>
 <style lang="scss" scoped>
-.market-card {
+.history-card {
+	font-size: 12px;
 	color: #283763;
+	padding-top: 8px;
+	padding-bottom: 8px;
 
 	.card-title {
-		background: #eef4f8;
-
-		&::after {
-			content: '';
-			width: 12px;
-			height: 12px;
-			margin-left: 5px;
-			background: url('@tg/web-mobile/assets/images/icon_arrow.png') center no-repeat;
-			background-size: contain;
-		}
+		display: flex;
+		font-weight: bold;
+		justify-content: space-between;
 	}
 
 	.score {
@@ -76,5 +82,78 @@ export type PlayerInfo = {
 			}
 		}
 	}
+
+	.card-content {
+		display: flex;
+
+		.card-content--left {
+			flex: 1;
+			padding: 0 8px 0 4px;
+		}
+
+		.card-content--right {
+			flex: 0;
+			width: 16px;
+			height: auto;
+			padding-left: 4px;
+			padding-right: 4px;
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	.card-footer {
+		font-weight: bold;
+		display: flex;
+		justify-content: space-between;
+	}
 }
-</styl>
+
+.team_name {
+	.d-flex {
+		justify-content: space-between;
+
+	}
+}
+
+.icon-cycle {
+	display: inline-flex;
+	align-items: center;
+
+	&::before {
+		display: block;
+		content: ' ';
+		width: 8px;
+		height: 8px;
+		border-radius: 15px;
+		background: linear-gradient(#eaf5fb, #b2c9d5);
+		margin-right: 4px;
+	}
+}
+
+.icon-arrow-down {
+	&::before {
+		display: block;
+		content: ' ';
+		background: url('@tg/web-mobile/assets/images/icon-folddown.svg') center no-repeat;
+		background-size: cover;
+		width: 10px;
+		height: 6px;
+
+
+	}
+
+}
+
+.icon-notify {
+	width: 16px;
+	height: 16px;
+	background-color: #F00;
+	color: #FFF;
+	border-radius: 50%;
+	font-size: 10px;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+</style>
