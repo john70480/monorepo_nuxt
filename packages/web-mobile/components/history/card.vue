@@ -4,7 +4,7 @@
 			<div>{{ info.title }}</div>
 			<span class="icon-notify">{{ info.num }}</span>
 		</div>
-		<div class="card-content px-2">
+		<div class="card-content px-2  pb-1">
 			<div class="card-content--left">
 				<div class="card-subtitle pb-1">
 					{{ info.subtitle }}</div>
