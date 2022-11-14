@@ -94,7 +94,9 @@
 </template>
 <script setup lang="ts">
 import { useMarket } from '@tg/web-mobile/stores/market';
-
+definePageMeta({
+	title: "市场列表",
+});
 const market = useMarket();
 const tab = ref(0)
 const showTab = ref(0)
