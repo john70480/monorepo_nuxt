@@ -16,7 +16,7 @@ const footerList = computed(() => {
 		{ title: "首页", class: ["home_btn", { "active": ["index", "home"].includes(route.name as string) }], link: () => router.push('/home') },
 		{ title: "市场列表", class: ["market_btn", { "active": route.name === "market" }], link: () => router.push('/market') },
 		{ title: "分类", class: ["category_btn", { "active": route.name === "classification" }], link: () => dialog.classificationOpen = !dialog.classificationOpen },
-		{ title: "历史帐务", class: ["history_btn", { "active": route.name === "accounting" }], link: () => router.push('/accounting') },
+		{ title: "历史帐务", class: ["history_btn", { "active": route.name === "history" }], link: () => router.push('/history') },
 		{ title: "我的", class: ["my_btn", { "active": route.name === "my" }], link: () => router.push('/my') },
 	]
 })
