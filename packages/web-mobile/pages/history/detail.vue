@@ -15,12 +15,10 @@
 <script setup lang="ts">
 import Announcement from '@tg/web-mobile/pages/home/announcement.vue';
 import { useDialogs } from '@tg/web-mobile/stores/dialogs';
-import { HistoryCardModel, HistoryModel } from 'packages/web-mobile/core/models/HistoryModel';
+import { HistoryCardModel } from 'packages/web-mobile/core/models/HistoryModel';
 import { TabsModel } from 'packages/web-mobile/core/models/TabsModel';
 import { Ref } from 'vue';
 import { mockHistoryDetail } from './mock';
-import { Currency } from '@tg/web-mobile/core/classes/Currenct'
-import { ICurrency } from 'packages/web-mobile/core/interfaces/ICurrency';
 definePageMeta({
     title: "历史帐务 05-21",
     isMainPage: true

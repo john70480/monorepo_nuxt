@@ -38,6 +38,7 @@
                 }}</v-col>
             </v-row>
         </v-container>
+        <HistoryFilter :assets-open="chooseLeagueOpen"></HistoryFilter>
     </div>
 </template>
 <script setup lang="ts">
