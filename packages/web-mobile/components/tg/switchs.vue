@@ -1,5 +1,5 @@
 <template>
-    <v-switch v-model="modelValue" color="primary" :class="{'float-right': floatRight, '--active': modelValue}"
+    <v-switch v-model="modelValueProxy" color="primary" :class="{ 'float-right': floatRight, '--active': modelValue }"
         v-bind="switchBind">
     </v-switch>
 </template>
@@ -20,5 +20,4 @@ const modelValueProxy = computed({
 })
 </script>
 <style lang="scss" scoped>
-
 </style>
