@@ -52,8 +52,6 @@ definePageMeta({
     title: "历史帐务",
     isMainPage: true
 });
-const dialogs = useDialogs()
-const router = useRouter()
 const tab = ref(0);
 const chooseLeagueOpen = ref(false);
 const items: Array<TabsModel> = [{

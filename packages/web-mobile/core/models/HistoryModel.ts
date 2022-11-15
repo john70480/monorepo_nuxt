@@ -16,6 +16,7 @@ export type HistoryCardModel = {
   summary: number;
   isEnd: boolean;
   dType: DetailType;
+  detail: Array<HistoryDetailInfoModel>;
 };
 
 export enum DetailType {
@@ -28,8 +29,9 @@ export type PlayerInfo = {
   score: number;
 };
 
-export type HistoryReserveModel = {
+export type HistoryDetailInfoModel = {
   title: string;
+  style: string;
   time: string;
   orderNum: number;
   handicap: string;

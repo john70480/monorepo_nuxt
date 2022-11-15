@@ -35,6 +35,10 @@
 		<template v-if="info.dType === DetailType.ORDER">
 			<v-divider class="mx-2"></v-divider>
 			<HistoryOrderDetail></HistoryOrderDetail>
+			<template v-for="item in info.detail">
+				<v-divider></v-divider>
+				<HistoryDetailInfo :detail="item"></HistoryDetailInfo>
+			</template>
 		</template>
 		<v-divider></v-divider>
 	</v-card>
@@ -50,8 +54,8 @@ const props = defineProps<{ info: HistoryCardModel }>();
 .history-card {
 	font-size: 12px;
 	color: #283763;
-	padding-top: 8px;
-	padding-bottom: 8px;
+	padding-top: 12px;
+	padding-bottom: 0px;
 
 	.card-title {
 		display: flex;

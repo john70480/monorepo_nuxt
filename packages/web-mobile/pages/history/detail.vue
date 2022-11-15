@@ -10,23 +10,28 @@
         <v-container class="content">
             <HistoryCard v-for="item in list" :info="item"></HistoryCard>
         </v-container>
+        <div class="footer pa-2">
+            <div class="detail-row pb-1">
+                <div class="detail-col">累计流水</div>
+                <div class="detail-col">118,417,165.00</div>
+            </div>
+            <div class="detail-row pb-1">
+                <div class="detail-col">总收益</div>
+                <div class="detail-col">118,417,165.00</div>
+            </div>
+        </div>
     </div>
 </template>
 <script setup lang="ts">
-import Announcement from '@tg/web-mobile/pages/home/announcement.vue';
-import { useDialogs } from '@tg/web-mobile/stores/dialogs';
 import { HistoryCardModel } from 'packages/web-mobile/core/models/HistoryModel';
 import { TabsModel } from 'packages/web-mobile/core/models/TabsModel';
 import { Ref } from 'vue';
 import { mockHistoryDetail } from './mock';
 definePageMeta({
     title: "历史帐务 05-21",
-    isMainPage: true
+    isMainPage: false
 });
-const dialogs = useDialogs()
-const router = useRouter()
 const tab: Ref<number> = ref<number>(0);
-const chooseLeagueOpen: Ref<boolean> = ref<boolean>(false);
 const items: Array<TabsModel> = [{
     key: 'orderlist',
     display: '一般下單'
@@ -41,6 +46,7 @@ const list: Array<HistoryCardModel> = mockHistoryDetail;
     padding-left: 0px;
     padding-right: 0px;
     padding-top: 0px;
+    padding-bottom: 0;
 }
 
 .table-header {
@@ -108,6 +114,20 @@ const list: Array<HistoryCardModel> = mockHistoryDetail;
         width: 6px;
         height: 12px;
         margin-left: 8px;
+    }
+}
+
+.footer {
+    background-color: #e0f0ff;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+
+    .detail-col {
+        font-size: 14px;
+        color: #283763;
     }
 }
 </style>

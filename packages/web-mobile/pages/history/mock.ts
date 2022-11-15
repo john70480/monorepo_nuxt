@@ -2,7 +2,7 @@ import {
   DetailType,
   HistoryCardModel,
   HistoryModel,
-  HistoryReserveModel,
+  HistoryDetailInfoModel,
 } from "@tg/web-mobile/core/models/HistoryModel";
 
 export const mockHistory: HistoryModel[] = [
@@ -55,6 +55,63 @@ export const mockHistory: HistoryModel[] = [
     date: "05/13",
   },
 ];
+export const mockDetailInfo: Array<HistoryDetailInfoModel> = [
+  {
+    title: "沙巴体育.XX",
+    style: 'color: #bd81f9;',
+    time: "2022-05-21 14:00",
+    orderNum: 12345671234567123,
+    handicap: "xxx",
+    rate: 241,
+    memo: "xxxxxxx",
+    price: 1000,
+    summary: 165,
+  },
+  {
+    title: "WM真人(XXX)",
+    style: 'color: #f98383',
+    time: "2022-05-21 14:00",
+    orderNum: 12345671234567123,
+    handicap: "xxx",
+    rate: 241,
+    memo: "xxxxxxx",
+    price: 1000,
+    summary: 11865,
+  },
+  {
+    title: "OB棋牌(XXX)",
+    style: 'color: #82ce94',
+    time: "2022-05-21 14:00",
+    orderNum: 12345671234567123,
+    handicap: "xxx",
+    rate: 241,
+    memo: "xxxxxxx",
+    price: 1000,
+    summary: 118417165,
+  },
+  {
+    title: "PT电子(XXX)",
+    style: 'color: #83aef9',
+    time: "2022-05-21 14:00",
+    orderNum: 12345671234567123,
+    handicap: "xxx",
+    rate: 241,
+    memo: "xxxxxxx",
+    price: 1000,
+    summary: 118415,
+  },
+  {
+    title: "OB彩票(XXX)",
+    style: 'color: #f9ca83',
+    time: "2022-05-21 14:00",
+    orderNum: 12345671234567123,
+    handicap: "xxx",
+    rate: 241,
+    memo: "xxxxxxx",
+    price: 1000,
+    summary: 0,
+  },
+];
 
 export const mockHistoryDetail: Array<HistoryCardModel> = [
   {
@@ -71,7 +128,8 @@ export const mockHistoryDetail: Array<HistoryCardModel> = [
     },
     summary: 118417165,
     isEnd: false,
-    dType: DetailType.RESERVE,
+    dType: DetailType.ORDER,
+    detail: mockDetailInfo
   },
   {
     title: "TG平台.足球",
@@ -88,28 +146,8 @@ export const mockHistoryDetail: Array<HistoryCardModel> = [
     summary: -1000,
     isEnd: true,
     dType: DetailType.RESERVE,
+    detail: []
   },
 ];
 
-export const mockReserve: Array<HistoryReserveModel> = [
-  {
-    title: "沙巴体育.XX",
-    time: "2022-05-21 14:00",
-    orderNum: 12345671234567123,
-    handicap: "xxx",
-    rate: 241,
-    memo: "xxxxxxx",
-    price: 1000,
-    summary: 0,
-  },
-  {
-    title: "WM真人(XXX)",
-    time: "2022-05-21 14:00",
-    orderNum: 12345671234567123,
-    handicap: "xxx",
-    rate: 241,
-    memo: "xxxxxxx",
-    price: 1000,
-    summary: 0,
-  },
-];
+
