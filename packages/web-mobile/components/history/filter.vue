@@ -1,5 +1,5 @@
 <template>
-    <TgDialog v-model="props.assetsOpen" type="default">
+    <TgDialog v-model="openProxy" type="default">
         <v-card class="mx-auto">
             <v-list>
                 <v-list-item title="全部(预设)" class="text-center py-5"></v-list-item>
@@ -36,7 +36,13 @@ const router = useRouter();
 const props = defineProps<{
     assetsOpen: boolean
 }>();
-
+const emit = defineEmits<{
+    (event: 'update:assetsOpen', payload: boolean): void
+}>();
+const openProxy = computed({
+    get: () => props.assetsOpen,
+    set: (val) => emit("update:assetsOpen", val)
+});
 function handleDirection(url: string): void {
     router.push(url);
 }
