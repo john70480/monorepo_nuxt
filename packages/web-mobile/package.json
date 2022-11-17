@@ -16,7 +16,7 @@
     "@pinia/nuxt": "latest",
     "material-design-icons-iconfont": "^6.7.0",
     "node-sass": "latest",
-    "nuxt": "rc",
+    "nuxt": "latest",
     "sass-loader": "latest"
   },
   "dependencies": {
