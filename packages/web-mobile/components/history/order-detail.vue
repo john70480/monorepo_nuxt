@@ -4,7 +4,7 @@
             <div class="detail-col">单号:</div>
             <div class="detail-col">
                 <div class="detail-col--top">
-                    <v-btn elevation="0" class="btn-save bg-primary">保本</v-btn>
+                    <div class="guaranteed">保本</div>
                     <div class="px-2">12345671234567123</div>
                     <span class="icon icon-copy"></span>
                 </div>
@@ -102,16 +102,6 @@
 }
 
 .v-btn.v-btn--density-default {
-    &.btn-save {
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-left: 2px;
-        padding-right: 2px;
-        border-radius: 0px;
-        font-size: 8px;
-        height: 16px;
-    }
-
     &.btn-info {
         padding-left: 8px;
         padding-right: 8px;

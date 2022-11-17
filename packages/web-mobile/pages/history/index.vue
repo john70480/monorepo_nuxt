@@ -18,7 +18,8 @@
                 <v-col cols="3" class="text-center">总收益</v-col>
             </v-row>
             <v-row v-for="(data, index) in list" :class="{ 'table-body': true, '--even': index % 2 > 0 }">
-                <v-col cols="3">{{ data.date }}<span class="icon icon-open mt-auto mb-auto"></span></v-col>
+                <v-col cols="3" @click="router.push('/history/detail')">{{ data.date }}<span
+                        class="icon icon-open mt-auto mb-auto"></span></v-col>
                 <v-col cols="3" :class="{ 'text-green': data.grandTotal > 0, 'text-red': data.grandTotal < 0 }">{{
                         currency.addComma(data.grandTotal).value
                 }}</v-col>
@@ -42,7 +43,6 @@
     </div>
 </template>
 <script setup lang="ts">
-import { useDialogs } from '@tg/web-mobile/stores/dialogs';
 import { HistoryModel } from 'packages/web-mobile/core/models/HistoryModel';
 import { TabsModel } from 'packages/web-mobile/core/models/TabsModel';
 import { mockHistory } from './mock';
@@ -52,6 +52,7 @@ definePageMeta({
     title: "历史帐务",
     isMainPage: true
 });
+const router = useRouter()
 const tab = ref(0);
 const chooseLeagueOpen = ref(false);
 const items: Array<TabsModel> = [{

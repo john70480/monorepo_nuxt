@@ -1,51 +1,54 @@
 <template>
 	<v-card class="history-card" elevation="0">
-		<div class="card-title px-2 pb-1">
-			<div>{{ info.title }}</div>
-			<span class="icon-notify">{{ info.num }}</span>
-		</div>
-		<div class="card-content px-2  pb-1">
-			<div class="card-content--left">
-				<div class="card-subtitle pb-1">
-					{{ info.subtitle }}</div>
-				<div class="team_name">
-					<div class="d-flex pb-1">
-						<div class="icon-cycle">{{ info.player1.name }}</div>
-						<div>{{ info.player1.score }}</div>
-					</div>
-					<div class="d-flex pb-1">
-						<div class="icon-cycle">{{ info.player2.name }}</div>
-						<div>{{ info.player2.score }}</div>
-					</div>
-				</div>
-				<div class="card-footer pb-1">
-					<div>结算:</div>
-					<div>{{ info.summary }}</div>
-				</div>
-			</div>
-			<div class="card-content--right">
-				<span class="icon-arrow-down"></span>
-			</div>
-		</div>
-
 		<template v-if="info.dType === DetailType.RESERVE">
-			<v-divider class="mx-2"></v-divider>
-			<HistoryReserveDetail></HistoryReserveDetail>
+			<div class="card-title px-2 pb-1">
+				<div>{{ info.title }}</div>
+				<span class="icon-notify">{{ info.num }}</span>
+			</div>
+			<div class="card-content px-2  pb-1">
+				<div class="card-content--left">
+					<div class="card-subtitle pb-1">
+						{{ info.subtitle }}</div>
+					<div class="team_name">
+						<div class="d-flex pb-1">
+							<div class="icon-cycle">{{ info.player1.name }}</div>
+							<div>{{ info.player1.score }}</div>
+						</div>
+						<div class="d-flex pb-1">
+							<div class="icon-cycle">{{ info.player2.name }}</div>
+							<div>{{ info.player2.score }}</div>
+						</div>
+					</div>
+					<div class="card-footer pb-1">
+						<div>结算:</div>
+						<div>{{ info.summary }}</div>
+					</div>
+				</div>
+				<div class="card-content--right" @click="openDetail = !openDetail">
+					<span class="icon-arrow" :class="{ down: openDetail === true, up: openDetail === false }"></span>
+				</div>
+			</div>
+			<div class="detial" v-show="openDetail">
+				<v-divider class="mx-2"></v-divider>
+				<HistoryOrderDetail></HistoryOrderDetail>
+			</div>
 		</template>
+
+		<!-- //todo 資料格式錯誤之後調整 -->
 		<template v-if="info.dType === DetailType.ORDER">
 			<v-divider class="mx-2"></v-divider>
-			<HistoryOrderDetail></HistoryOrderDetail>
 			<template v-for="item in info.detail">
 				<v-divider></v-divider>
 				<HistoryDetailInfo :detail="item"></HistoryDetailInfo>
 			</template>
 		</template>
-		<v-divider></v-divider>
 	</v-card>
 </template>
-<script setup lang="ts">import { HistoryCardModel, PlayerInfo, DetailType } from '@tg/web-mobile/core/models/HistoryModel';
+<script setup lang="ts">
+import { HistoryCardModel, DetailType } from '@tg/web-mobile/core/models/HistoryModel';
 
-const props = defineProps<{ info: HistoryCardModel }>();
+defineProps<{ info: HistoryCardModel }>();
+const openDetail = ref(false);
 </script>
 <script lang="ts">
 
@@ -135,18 +138,20 @@ const props = defineProps<{ info: HistoryCardModel }>();
 	}
 }
 
-.icon-arrow-down {
-	&::before {
-		display: block;
-		content: ' ';
-		background: url('@tg/web-mobile/assets/images/icon-folddown.svg') center no-repeat;
+.icon-arrow {
+	display: block;
+	width: 10px;
+	height: 6px;
+
+	&.up {
+		background: url('@tg/web-mobile/assets/images/icon-foldup.svg') center no-repeat;
 		background-size: cover;
-		width: 10px;
-		height: 6px;
-
-
 	}
 
+	&.down {
+		background: url('@tg/web-mobile/assets/images/icon-folddown.svg') center no-repeat;
+		background-size: cover;
+	}
 }
 
 .icon-notify {

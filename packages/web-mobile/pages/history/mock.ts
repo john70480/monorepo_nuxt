@@ -128,8 +128,8 @@ export const mockHistoryDetail: Array<HistoryCardModel> = [
     },
     summary: 118417165,
     isEnd: false,
-    dType: DetailType.ORDER,
-    detail: mockDetailInfo
+    dType: DetailType.RESERVE,
+    detail: []
   },
   {
     title: "TG平台.足球",
@@ -145,8 +145,8 @@ export const mockHistoryDetail: Array<HistoryCardModel> = [
     },
     summary: -1000,
     isEnd: true,
-    dType: DetailType.RESERVE,
-    detail: []
+    dType: DetailType.ORDER,
+    detail: mockDetailInfo
   },
 ];
 
