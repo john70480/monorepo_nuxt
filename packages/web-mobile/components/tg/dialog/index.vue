@@ -46,6 +46,7 @@ export const types = [
 	'classification',
 	'fullscreen',
 	'fullscreen80',
+	'select-dialog'
 ] as const;
 const fullscreenBind = {
 	fullscreen: true
@@ -111,6 +112,18 @@ const fullscreenBind = {
 	.v-overlay__content {
 		margin-top: 20%;
 		height: 80%;
+	}
+}
+
+.v-dialog[type="select-dialog"] {
+	@extend [type="default"];
+
+	.close {
+		display: none;
+	}
+
+	.v-overlay__content {
+		max-width: calc(100% - 24px)
 	}
 }
 </style>

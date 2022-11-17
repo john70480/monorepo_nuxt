@@ -1,5 +1,5 @@
 <template>
-    <TgDialog v-model="openProxy" type="default">
+    <TgDialog v-model="openProxy" type="select-dialog">
         <v-card class="mx-auto">
             <v-list>
                 <v-list-item title="全部(预设)" class="text-center py-5"></v-list-item>
