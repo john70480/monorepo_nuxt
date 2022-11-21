@@ -68,6 +68,12 @@ export const defaultBind: VTextField["$props"] = {
 			align-items: center !important;
 		}
 	}
+
+	.v-field__prepend-inner,
+	.v-field__append-inner,
+	.v-field__clearable {
+		padding-top: 4px
+	}
 }
 
 .tg-text-field[type="login"] {
