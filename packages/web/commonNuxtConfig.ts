@@ -61,6 +61,13 @@ export const commonNuxtConfig: NuxtConfig = {
 		},
 		server: {
 			hmr: { overlay: false },
+			fs: {
+				// Allow serving files from one level up to the project root
+				allow: [
+					// your custom rules
+					'/home/edison/.vscode/extensions',
+				]
+			}
 		},
 		// vue: {
 		// 	/* options for vite-plugin-vue2 */
