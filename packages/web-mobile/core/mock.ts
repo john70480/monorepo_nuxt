@@ -3,7 +3,7 @@ import {
   HistoryCardModel,
   HistoryModel,
   HistoryDetailInfoModel,
-} from "@tg/web-mobile/core/models/HistoryModel";
+} from "@tg/web-mobile/core/models/HistoryModel"
 
 export const mockHistory: HistoryModel[] = [
   {

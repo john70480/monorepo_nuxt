@@ -43,11 +43,11 @@
     </div>
 </template>
 <script setup lang="ts">
-import { HistoryModel } from 'packages/web-mobile/core/models/HistoryModel';
-import { TabsModel } from 'packages/web-mobile/core/models/TabsModel';
-import { mockHistory } from './mock';
+import { HistoryModel } from '@tg/web-mobile/core/models/HistoryModel';
+import { TabsModel } from '@tg/web-mobile/core/models/TabsModel';
+import { mockHistory } from '@tg/web-mobile/core/mock';
 import { Currency } from '@tg/web-mobile/core/classes/Currenct'
-import { ICurrency } from 'packages/web-mobile/core/interfaces/ICurrency';
+import { ICurrency } from '@tg/web-mobile/core/interfaces/ICurrency';
 definePageMeta({
     title: "历史帐务",
     isMainPage: true

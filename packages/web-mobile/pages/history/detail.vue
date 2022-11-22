@@ -23,10 +23,10 @@
     </div>
 </template>
 <script setup lang="ts">
-import { HistoryCardModel } from 'packages/web-mobile/core/models/HistoryModel';
-import { TabsModel } from 'packages/web-mobile/core/models/TabsModel';
+import { HistoryCardModel } from '@tg/web-mobile/core/models/HistoryModel';
+import { TabsModel } from '@tg//web-mobile/core/models/TabsModel';
 import { Ref } from 'vue';
-import { mockHistoryDetail } from './mock';
+import { mockHistoryDetail } from '@tg/web-mobile/core/mock';
 definePageMeta({
     title: "历史帐务 05-21",
     isMainPage: false
