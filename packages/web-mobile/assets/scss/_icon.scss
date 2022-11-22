@@ -1,14 +1,77 @@
-.icon-open {
-    display: flex;
-    flex-direction: row-reverse;
+$icon-list: (
+  'success': 'icon_success.svg',
+  'warn': 'icon_warn.svg',
+  'fail': 'icon_fail.svg',
+  'wallet': 'icon_wallet.svg',
+  'tgwallet': 'icon_tgwallet.svg',
+  'lockwallet': 'icon_lockwallet.svg',
+  'experiencewallet': 'icon_experiencewallet.svg',
+  'trash': 'icon_trash.svg',
+  'copy': 'icon_copy.png',
+  'arrow-up': 'icon_foldup.svg',
+  'arrow-down': 'icon_folddown.svg',
+  'recharge': 'icon_recharge.svg',
+  'pickup': 'icon_pickup.svg',
+  'transfer': 'icon_transfer.svg',
+  'active': 'icon_active.svg',
+  'userlevel': 'icon_vipicon.svg',
+  'quota': 'icon_totalwallet.svg',
+  'maskgroup': 'icon_maskgroup.svg',
+  'questions': 'icon_questions.svg',
+  'rule': 'icon_rule.svg',
+  'announcement': 'icon_announcement.svg',
+  'bossassist': 'icon_bossassist.svg',
+  '24service': 'icon_24service.svg',
+  'setting': 'icon_setting.svg',
+  'personal': 'icon_personal.png',
+  'abouttg': 'icon_abouttg.svg',
+  'goback': 'icon_goback.svg',
+);
+%tg-icon {
+  &::before {
+    display: block;
+    content: ' ';
+    width: 15px;
+    height: 15px;
+  }
+}
+/***icon***/
+.icon-x-lg-size::before {
+  width: 40px;
+  height: 40px;
+}
 
+.icon-arrow-size::before {
+  width: 10px;
+  height: 6px;
+}
+
+.icon-my-size::before {
+  width: 18px;
+  height: 16px;
+}
+
+.icon-open {
+  display: flex;
+  flex-direction: row-reverse;
+
+  &::before {
+    background: url('@tg/web-mobile/assets/images/icon/icon_open.svg') center no-repeat;
+    background-size: cover;
+    content: ' ';
+    display: block;
+    width: 6px;
+    height: 12px;
+    margin-left: 8px;
+  }
+}
+
+@each $key, $val in $icon-list {
+  .icon-#{$key} {
+    @extend %tg-icon;
     &::before {
-        background: url('@tg/web-mobile/assets/images/my/icon_open.svg') center no-repeat;
-        background-size: cover;
-        content: ' ';
-        display: block;
-        width: 6px;
-        height: 12px;
-        margin-left: 8px;
+      background: url('@tg/web-mobile/assets/images/icon/#{$val}') center no-repeat;
+      background-size: cover;
     }
+  }
 }

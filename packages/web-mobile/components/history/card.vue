@@ -25,7 +25,8 @@
 					</div>
 				</div>
 				<div class="card-content--right" @click="openDetail = !openDetail">
-					<span class="icon-arrow" :class="{ down: openDetail === true, up: openDetail === false }"></span>
+					<span class="icon-arrow-size"
+						:class="{ 'icon-arrow-down': openDetail === true, 'icon-arrow-up': openDetail === false }"></span>
 				</div>
 			</div>
 			<div class="detial" v-show="openDetail">
@@ -138,21 +139,6 @@ const openDetail = ref(false);
 	}
 }
 
-.icon-arrow {
-	display: block;
-	width: 10px;
-	height: 6px;
-
-	&.up {
-		background: url('@tg/web-mobile/assets/images/icon-foldup.svg') center no-repeat;
-		background-size: cover;
-	}
-
-	&.down {
-		background: url('@tg/web-mobile/assets/images/icon-folddown.svg') center no-repeat;
-		background-size: cover;
-	}
-}
 
 .icon-notify {
 	width: 16px;

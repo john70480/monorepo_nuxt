@@ -48,7 +48,6 @@ const WithdrawPasswordOpen: Ref<boolean> = ref<boolean>(false);
 }
 
 $icon-list: (
-    "open": "my/icon_open.svg",
     "zh-cn": "flag_cn.jpg",
     "zh-hk": "flag_zh.jpg",
     "en-us": "flag_en.jpg",

@@ -134,19 +134,4 @@ const currency: ICurrency = new Currency(2);
         }
     }
 }
-
-.icon-open {
-    display: flex;
-    flex-direction: row-reverse;
-
-    &::before {
-        background: url('@tg/web-mobile/assets/images/my/icon_open.svg') center no-repeat;
-        background-size: cover;
-        content: ' ';
-        display: block;
-        width: 6px;
-        height: 12px;
-        margin-left: 8px;
-    }
-}
 </style>

@@ -4,7 +4,7 @@
 			<div class="d-flex px-4 pt-2 justify-space-between">
 				<div class="d-flex mt-auto mb-auto">
 					<span class="icon icon-userlevel pr-2 mt-auto mb-auto"></span>
-					<div class="text-body-2 text-white">{{memberInfo.username}}</div>
+					<div class="text-body-2 text-white">{{ memberInfo.username }}</div>
 				</div>
 				<div>
 					<LanguageSelector></LanguageSelector>
@@ -13,7 +13,7 @@
 			</div>
 			<div class="d-flex px-4 pt-2 pb-4">
 				<span class="icon icon--small icon-quota pr-2 mt-auto mb-auto"></span>
-				<div class="text-body-2 text-second">總資產: {{memberInfo.quota}}</div>
+				<div class="text-body-2 text-second">總資產: {{ memberInfo.quota }}</div>
 			</div>
 			<div class="userInfo-footer py-1">
 				<v-row justify="center" no-gutters>
@@ -73,13 +73,13 @@
 			</div>
 			<div class="block px-4 pt-3 pb-2">
 				<v-tabs class="tabs-my mb-4" height="20" hide-slider v-model="currentTab">
-					<v-tab class="text-caption d-flex" :class="{'tabs--active': currentTab === myTabs.vip}" :value="myTabs.vip">
+					<v-tab class="text-caption d-flex" :class="{ 'tabs--active': currentTab === myTabs.vip }" :value="myTabs.vip">
 						<span class="icon icon-cycle mr-2"></span>
 						<div>
 							VIP权限
 						</div>
 					</v-tab>
-					<v-tab class="text-caption d-flex" :class="{'tabs--active': currentTab === myTabs.tg}" :value="myTabs.tg">
+					<v-tab class="text-caption d-flex" :class="{ 'tabs--active': currentTab === myTabs.tg }" :value="myTabs.tg">
 						<span class="icon icon-cycle mr-2"></span>
 						<div>
 							智能权限
@@ -237,34 +237,6 @@ function handleAssetsOpen(): void {
 
 </script>
 <style lang="scss" scoped>
-$icon-list: (
-	"recharge": "recharge.svg",
-	"pickup": "pickup.svg",
-	"transfer": "transfer.svg",
-	"active": "active.svg",
-	"userlevel": "vipicon.svg",
-	"quota": "totalwallet.svg",
-	"maskgroup": "maskgroup.svg",
-	"questions": "questions.svg",
-	"rule": "rule.svg",
-	"announcement": "announcement.svg",
-	"bossassist": "bossassist.svg",
-	"24service": "24service.svg",
-	"setting": "setting.svg",
-	"personal": "personal.png",
-	"abouttg": "abouttg.svg",
-);
-
-@each $key,
-$val in $icon-list {
-	.icon-#{$key} {
-		&::before {
-			background: url('@tg/web-mobile/assets/images/my/icon_#{$val}') center no-repeat;
-			background-size: cover;
-		}
-	}
-}
-
 .banner {
 	background: url('@tg/web-mobile/assets/images/my/bg_banner/bg_banner_lg.png') center no-repeat;
 	background-size: cover;

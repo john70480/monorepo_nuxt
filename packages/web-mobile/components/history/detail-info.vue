@@ -53,34 +53,6 @@ const currency: ICurrency = new Currency(2);
     width: fit-content;
 }
 
-.icon {
-    &::before {
-        display: block;
-        content: ' ';
-        width: 15px;
-        height: 15px;
-    }
-
-    &.icon-trash {
-        &::before {
-            background: url('@tg/web-mobile/assets/images/icon-trash.svg') center no-repeat;
-
-            background-size: cover;
-        }
-
-    }
-
-    &.icon-copy {
-        &::before {
-
-            background: url('@tg/web-mobile/assets/images/icon-copy.png') center no-repeat;
-
-            background-size: cover;
-        }
-
-    }
-}
-
 .detail-col--top {
     display: flex;
     flex-direction: row;

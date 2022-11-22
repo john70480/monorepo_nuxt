@@ -8,7 +8,7 @@
       </slot>
       <v-card-text>
         <div class="d-flex align-center justify-center pa-4 pb-6" v-if="icon">
-          <span class="icon mt-auto mb-auto" :class="[`icon-${icon}`]"></span>
+          <span class="icon-x-lg-size mt-auto mb-auto" :class="[`icon-${icon}`]"></span>
         </div>
 
         <slot>
@@ -41,23 +41,5 @@ const icon = computed(() => {
 <script lang="ts" >
 </script>
 <style lang="scss" scoped>
-$icon-list: (
-  "success": "success.svg",
-  "warn": "warn.svg",
-  "fail": "fail.svg",
-);
 
-@each $key,
-$val in $icon-list {
-  .icon-#{$key} {
-    &::before {
-      width: 40px;
-      height: 40px;
-      background: url('@tg/web-mobile/assets/images/#{$val}') center no-repeat;
-      background-size: cover;
-      content: ' ';
-      display: block;
-    }
-  }
-}
 </style>

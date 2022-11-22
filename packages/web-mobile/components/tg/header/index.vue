@@ -3,7 +3,7 @@
 		<template v-slot:prepend>
 			<div class="d-flex align-center">
 				<template v-if="goBackFlag">
-					<span class="icon icon-goback" @click="goBack()"></span>
+					<span class="icon-goback" @click="goBack()"></span>
 				</template>
 				<span class="mt-auto mb-auto d-flex">{{ route.meta.title }}</span>
 			</div>
@@ -66,24 +66,15 @@ header.tg-header {
 			background-size: auto 16px;
 		}
 	}
+
 }
 
-.icon {
+header.tg-header .icon-goback {
+	flex: 0;
+
 	&::before {
 		height: 20px;
 		width: 12px;
-		content: ' ';
-		display: block;
-	}
-
-	&.icon-goback {
-		flex: 0;
-
-		&::before {
-			background: url('@tg/web-mobile/assets/images/theme/basic/icon_goback.svg') center no-repeat;
-			background-size: cover;
-
-		}
 	}
 }
 </style>

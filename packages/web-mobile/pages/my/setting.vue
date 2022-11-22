@@ -2,12 +2,13 @@
     <div class="fill-height tg-bg-primary">
         <div class="content d-flex flex-column">
             <MyItemSetting row-title="接收推播通知">
-                <TgSwitchs :switchBind="{hideDetails: true}" :modelValue="isNotify" @click="isNotify != isNotify"
+                <TgSwitchs :switchBind="{ hideDetails: true }" :modelValue="isNotify" @click="isNotify != isNotify"
                     floatRight></TgSwitchs>
             </MyItemSetting>
             <v-divider></v-divider>
             <MyItemSetting row-title="提示音效">
-                <TgSwitchs :switchBind="{hideDetails: true}" :modelValue="isVoiceOn" floatRight></TgSwitchs>
+                <TgSwitchs :switchBind="{ hideDetails: true }" :modelValue="isVoiceOn" floatRight>
+                </TgSwitchs>
             </MyItemSetting>
             <v-divider></v-divider>
             <MyItemSetting row-title="登入验证设定">
@@ -43,7 +44,6 @@ const isVoiceOn: Ref<boolean> = ref(false);
 </script>
 <style lang="scss" scoped>
 $icon-list: (
-    "open": "my/icon_open.svg",
     "zh-cn": "flag_cn.jpg",
     "zh-hk": "flag_zh.jpg",
     "en-us": "flag_en.jpg",
@@ -75,20 +75,5 @@ $val in $icon-list {
 
 .text-grey--light {
     color: #c3c3c3
-}
-
-.icon-open {
-    display: flex;
-    flex-direction: row-reverse;
-
-    &::before {
-        background: url('@tg/web-mobile/assets/images/my/icon_open.svg') center no-repeat;
-        background-size: cover;
-        content: ' ';
-        display: block;
-        width: 6px;
-        height: 12px;
-        margin-left: 8px;
-    }
 }
 </style>

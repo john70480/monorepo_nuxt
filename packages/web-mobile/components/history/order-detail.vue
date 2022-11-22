@@ -6,7 +6,7 @@
                 <div class="detail-col--top">
                     <div class="guaranteed">保本</div>
                     <div class="px-2">12345671234567123</div>
-                    <span class="icon icon-copy"></span>
+                    <span class="icon-copy"></span>
                 </div>
                 <div class="detail-col--bottom">
                     (待確認)
@@ -35,7 +35,7 @@
         </div>
         <div class="detail-footer pb-1">
             <v-btn elevation="0" class="btn-info bg-primary">预约详情</v-btn>
-            <span class="icon icon-trash"></span>
+            <span class="icon-trash"></span>
         </div>
     </div>
 </template>
@@ -60,34 +60,6 @@
 
 .btn-info {
     width: fit-content;
-}
-
-.icon {
-    &::before {
-        display: block;
-        content: ' ';
-        width: 15px;
-        height: 15px;
-    }
-
-    &.icon-trash {
-        &::before {
-            background: url('@tg/web-mobile/assets/images/icon-trash.svg') center no-repeat;
-
-            background-size: cover;
-        }
-
-    }
-
-    &.icon-copy {
-        &::before {
-
-            background: url('@tg/web-mobile/assets/images/icon-copy.png') center no-repeat;
-
-            background-size: cover;
-        }
-
-    }
 }
 
 .detail-col--top {
