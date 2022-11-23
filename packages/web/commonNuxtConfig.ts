@@ -66,6 +66,7 @@ export const commonNuxtConfig: NuxtConfig = {
 				allow: [
 					// your custom rules
 					'/home/edison/.vscode/extensions',
+					'/Users/user/.vscode/extensions',
 				]
 			}
 		},
