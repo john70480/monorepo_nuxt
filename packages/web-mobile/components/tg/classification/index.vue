@@ -34,7 +34,7 @@ const dialogsStore = useDialogs();
 const homeStore = useHome();
 const platformTab = ref<keyof typeof platformList>('sports')
 const siteList = await homeStore.getSiteList();
-const { platformMap, categoryMap } = getSiteListMap();
+const { platformMap } = getSiteListMap();
 </script>
 <style lang="scss" scoped>
 .classification-wrap {

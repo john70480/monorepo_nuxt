@@ -65,7 +65,7 @@ import SubTitle from './sub-ttitle.vue';
 import PlatformCard from './platform-card.vue';
 import MatchCard from './match-card.vue';
 import VideoCard from './video-card.vue';
-import { useHome, platformType, categoryType, getSiteListMap } from '@tg/web-mobile/stores/home';
+import { useHome, getSiteListMap } from '@tg/web-mobile/stores/home';
 
 const homeStore = useHome();
 definePageMeta({
@@ -75,6 +75,7 @@ definePageMeta({
 
 const app = useApp()
 const router = useRouter();
+const { platformMap } = getSiteListMap();
 const siteList = await homeStore.getSiteList();
 </script>
 <script  lang="ts">
