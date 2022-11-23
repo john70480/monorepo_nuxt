@@ -17,7 +17,7 @@
 			</div>
 			<div class="userInfo-footer py-1">
 				<v-row justify="center" no-gutters>
-					<v-btn color="white" variant="text" class="v-col-3" rounded="xl">
+					<v-btn color="white" variant="text" class="v-col-3" rounded="xl" @click="rechargeOpen = true">
 						<span class="icon  icon-recharge pr-2 mt-auto mb-auto"></span>
 						充值
 					</v-btn>
@@ -170,6 +170,7 @@
 			</div>
 		</div>
 		<MyTotalAssets></MyTotalAssets>
+		<Recharge v-model:open="rechargeOpen"></Recharge>
 	</div>
 </template>
 <script lang="ts">
@@ -226,7 +227,7 @@ const memberInfo: Ref<MemberInfoModel> = ref({
 	quota: '888,888,888.00'
 });
 const currentTab: Ref<myTabs> = ref(myTabs.vip)
-
+const rechargeOpen = ref(false);
 function handleDirection(url: string): void {
 	router.push(url);
 }
