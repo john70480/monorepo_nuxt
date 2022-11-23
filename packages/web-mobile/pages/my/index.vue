@@ -17,7 +17,7 @@
 			</div>
 			<div class="userInfo-footer py-1">
 				<v-row justify="center" no-gutters>
-					<v-btn color="white" variant="text" class="v-col-3" rounded="xl" @click="rechargeOpen = true">
+					<v-btn color="white" variant="text" class="v-col-3" rounded="xl" @click="handleRechargeOpen('Register')">
 						<span class="icon  icon-recharge pr-2 mt-auto mb-auto"></span>
 						充值
 					</v-btn>
@@ -170,7 +170,7 @@
 			</div>
 		</div>
 		<MyTotalAssets></MyTotalAssets>
-		<Recharge v-model:open="rechargeOpen"></Recharge>
+		<Recharge v-model:open="rechargeOpen" :target="rechargeTarget"></Recharge>
 	</div>
 </template>
 <script lang="ts">
@@ -228,6 +228,11 @@ const memberInfo: Ref<MemberInfoModel> = ref({
 });
 const currentTab: Ref<myTabs> = ref(myTabs.vip)
 const rechargeOpen = ref(false);
+const rechargeTarget = ref('');
+function handleRechargeOpen(target: string) {
+	rechargeOpen.value = true;
+	rechargeTarget.value = target;
+}
 function handleDirection(url: string): void {
 	router.push(url);
 }

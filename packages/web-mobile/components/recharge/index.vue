@@ -4,9 +4,11 @@
 	</TgDialog>
 </template>
 <script lang="ts" setup>
+import Register from "./register.vue";
 import test from "./test.vue";
 const componentList = {
 	test,
+	Register,
 }
 const props = defineProps<{
 	open: boolean,
