@@ -1,12 +1,16 @@
 <template>
-	<v-select :class="type" :type="type" v-model="modelValueProxy" :items="items" v-bind="_bind">>
-	</v-select>
+	<div class="tg-select" :type="type">
+		<label v-if="label">{{ label }}</label>
+		<v-select v-model="modelValueProxy" :items="items" v-bind="_bind">>
+		</v-select>
+	</div>
 </template>
 
 <script lang="ts" setup>
 import { VSelect } from 'vuetify/components';
 
 const props = withDefaults(defineProps<{
+	label?: string,
 	type?: typeof types[number],
 	modelValue?: any,
 	items?: unknown[]
@@ -44,30 +48,43 @@ export const types = [
 export const defaultBind: VSelect["$props"] = {
 	density: 'compact',
 	hideDetails: true,
-	variant: "solo",
+	variant: "outlined",
 	itemTitle: "text",
 	itemValue: "value"
 }
 </script>
 <style lang="scss" >
-.v-select.default,
-.v-select[type="default"] {
+.tg-select[type="default"] {
 
-	.v-input__control .v-field {
-		min-height: auto !important;
-		height: 30px;
-		display: flex !important;
-		align-items: center !important;
+	display: flex;
+	flex-direction: column;
+
+	label {
+		font-size: 0.8rem;
+		font-weight: bold;
 		color: #283763;
+		margin-bottom: 8px;
+	}
 
-		.v-field__field {
-			object-fit: contain;
-			font-size: 1rem;
-			font-weight: bold;
-		}
+	.v-select.default,
+	.v-select {
 
-		.v-field__append-inner {
-			padding-top: 0;
+		.v-input__control .v-field {
+			min-height: auto !important;
+			height: 30px;
+			display: flex !important;
+			align-items: center !important;
+			color: #283763;
+
+			.v-field__field {
+				object-fit: contain;
+				font-size: 1rem;
+				font-weight: bold;
+			}
+
+			.v-field__append-inner {
+				padding-top: 0;
+			}
 		}
 	}
 }
