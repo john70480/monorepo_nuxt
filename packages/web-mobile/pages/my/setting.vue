@@ -2,13 +2,11 @@
     <div class="fill-height tg-bg-primary">
         <div class="content d-flex flex-column">
             <MyItemSetting row-title="接收推播通知">
-                <TgSwitchs :switchBind="{ hideDetails: true }" :modelValue="isNotify" @click="isNotify != isNotify"
-                    floatRight></TgSwitchs>
+                <TgSwitchs v-model="isNotify" type="tg-right"></TgSwitchs>
             </MyItemSetting>
             <v-divider></v-divider>
             <MyItemSetting row-title="提示音效">
-                <TgSwitchs :switchBind="{ hideDetails: true }" :modelValue="isVoiceOn" floatRight>
-                </TgSwitchs>
+                <TgSwitchs v-model="isVoiceOn" type="tg-right"></TgSwitchs>
             </MyItemSetting>
             <v-divider></v-divider>
             <MyItemSetting row-title="登入验证设定">
