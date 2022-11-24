@@ -1,7 +1,11 @@
 <template>
 	<div class="tg-text-field" :type="type">
 		<label v-if="label">{{ label }}</label>
-		<v-text-field v-model="modelValueProxy" v-bind="_bind"></v-text-field>
+		<v-text-field v-model="modelValueProxy" v-bind="_bind">
+			<template v-slot:append-inner>
+				<slot name="append-inner"></slot>
+			</template>
+		</v-text-field>
 	</div>
 </template>
 <script lang="ts" setup>
