@@ -32,11 +32,12 @@ ul {
   align-items: center;
 
   &::before {
-    content: '';
+    content: "";
     width: 16px;
     height: 16px;
     margin-right: 5px;
-    background: url('@tg/web-mobile/assets/images/icon_market.png') center no-repeat;
+    background: url("@tg/web-mobile/assets/images/icon_market.png") center
+      no-repeat;
     background-size: contain;
   }
 
@@ -68,7 +69,7 @@ ul {
       align-items: center;
 
       &::before {
-        content: '';
+        content: "";
         width: 8px;
         height: 8px;
         margin-right: 5px;
@@ -93,4 +94,46 @@ ul {
 
 .tg-bg-primary {
   background: var(--tg-bg-primary) !important;
+}
+
+.rechargeProp {
+  .highColor {
+    color: #3078eb;
+  }
+  .warn-text {
+    font-size: 0.8rem;
+
+    ul {
+      list-style: decimal;
+      padding-left: 20px;
+
+      li {
+        list-style-position: outside;
+      }
+    }
+  }
+
+  .warn-color {
+    color: #283763;
+  }
+  .btn-submit {
+    height: 48px !important;
+  }
+  .warnimg {
+    width: 20px;
+  }
+  .tg-txt {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+
+    label {
+      font-weight: bold;
+      color: #283763;
+    }
+
+    div {
+      color: #707070;
+    }
+  }
 }
