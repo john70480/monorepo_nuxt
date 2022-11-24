@@ -5,6 +5,10 @@
 			<template v-slot:append-inner>
 				<slot name="append-inner"></slot>
 			</template>
+
+			<template v-slot:append>
+				<slot name="append"></slot>
+			</template>
 		</v-text-field>
 	</div>
 </template>
