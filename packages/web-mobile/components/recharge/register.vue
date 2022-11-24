@@ -1,6 +1,6 @@
 <template>
 
-	<v-card class="transaction">
+	<v-card class="rechargeProp">
 		<v-card-title>会员注册</v-card-title>
 		<v-card-text class="px-2">
 			<v-col cols="12" class="px-0 pt-0 text-center">
@@ -14,7 +14,7 @@
 				<tg-text-field v-model="pushMoney" :label="'充值金额'" :textBind="{ placeholder: '充值金额:100~49,999' }">
 				</tg-text-field>
 			</v-col>
-			<v-col cols="12" class="px-0 pt-0 text-red">
+			<v-col cols="12" class="px-0 pt-0 text-red warn-text">
 				提醒您：为保障双方帐户安全，请务必使用注册帐号时登记的真实户名进行打款，如使用注册帐号登记以外之姓名打款，将无法上分，且由此造成的损失，平台概不负责。
 			</v-col>
 
@@ -34,13 +34,5 @@ const pushMoney: Ref<string> = ref('');
 </script>
 
 <style lang="scss" scoped>
-.btn-submit {
-	height: 48px;
-}
 
-.transaction {
-	.info {
-		background: #eef4f8;
-	}
-}
 </style>
