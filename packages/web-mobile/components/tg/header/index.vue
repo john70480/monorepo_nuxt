@@ -17,8 +17,6 @@
 	</v-app-bar>
 </template>
 <script setup lang="ts">
-import { useApp } from '@tg/web-mobile/stores/app';
-
 const app = useApp()
 const route = useRoute();
 const router = useRouter();

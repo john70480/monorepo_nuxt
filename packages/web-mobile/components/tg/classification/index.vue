@@ -27,7 +27,6 @@
 </template>
 <script lang="ts" setup>
 import { platformList } from '@tg/web-mobile/pages/home/index.vue';
-import { useDialogs } from '@tg/web-mobile/stores/dialogs';
 import { useHome, getSiteListMap } from '@tg/web-mobile/stores/home';
 
 const dialogsStore = useDialogs();

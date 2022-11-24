@@ -25,8 +25,6 @@
   </TgDialog>
 </template>
 <script lang="ts" setup>
-import { useDialogs } from '@tg/web-mobile/stores/dialogs';
-
 const dialogsStore = useDialogs();
 const iconList = ["success", "warn", "fail"]
 const icon = computed(() => {

@@ -58,7 +58,6 @@
 </template>
 <script lang="ts" setup>
 import { ref, Ref } from 'vue';
-import { useDialogs } from '@tg/web-mobile/stores/dialogs';
 const router = useRouter();
 const dialogsStore = useDialogs();
 const footerClass: Ref<string> = ref('text-center text-white text-body-1 py-1');

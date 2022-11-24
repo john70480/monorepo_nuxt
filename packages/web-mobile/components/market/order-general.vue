@@ -73,7 +73,6 @@
 	</v-container>
 </template>
 <script lang="ts" setup>
-import { useMarket } from '@tg/web-mobile/stores/market';
 
 const market = useMarket();
 
