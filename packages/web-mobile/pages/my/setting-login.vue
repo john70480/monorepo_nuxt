@@ -2,15 +2,11 @@
     <div class="fill-height">
         <div class="content d-flex flex-column">
             <MyItemSetting row-title="指纹验证 登入">
-
-                <TgSwitchs :switchBind="{hideDetails: true}" :modelValue="isLogin" @click="isLogin != isLogin"
-                    floatRight></TgSwitchs>
+                <TgSwitchs v-model="isLogin" type="tg-right"></TgSwitchs>
             </MyItemSetting>
             <v-divider></v-divider>
             <MyItemSetting row-title="指纹验证 提款">
-
-                <TgSwitchs :switchBind="{hideDetails: true}" :modelValue="isWithdraw" @click="isWithdraw != isWithdraw"
-                    floatRight></TgSwitchs>
+                <TgSwitchs v-model="isWithdraw" type="tg-right"></TgSwitchs>
             </MyItemSetting>
         </div>
         <div class="d-flex footer">

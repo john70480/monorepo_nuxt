@@ -1,14 +1,13 @@
 <template>
 	<v-app>
-		<TgDialogMessage />
-		<TgClassification />
+		<LazyTgDialogMessage />
+		<LazyTgClassification />
 		<TgHeader v-if="!route.meta.hiddenHeader"></TgHeader>
 		<v-main>
 			<slot />
 		</v-main>
 		<TgFooter v-if="route.meta.isMainPage"></TgFooter>
-		<TgSideNavigation>
-		</TgSideNavigation>
+		<TgSideNavigation />
 	</v-app>
 </template>
 <script setup lang="ts">

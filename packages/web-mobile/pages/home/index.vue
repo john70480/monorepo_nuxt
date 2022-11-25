@@ -57,7 +57,6 @@
 	</div>
 </template>
 <script setup lang="ts">
-import { useApp } from '@tg/web-mobile/stores/app';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import Banner from "./banner.vue";
 import Announcement from './announcement.vue';

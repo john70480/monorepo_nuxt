@@ -11,7 +11,6 @@ export const useDialogs = defineStore('dialogs', () => {
 	const state = reactive({
 		open: false,
 		classificationOpen: false,
-		assetsOpen: false,
 		target: '',
 		title: '',
 	});

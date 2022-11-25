@@ -93,7 +93,6 @@
 	</div>
 </template>
 <script setup lang="ts">
-import { useMarket } from '@tg/web-mobile/stores/market';
 definePageMeta({
 	title: "市场列表",
 });

@@ -1,5 +1,5 @@
 <template>
-	<TgDialog v-model="dialogsStore.assetsOpen" type="classification">
+	<TgDialog v-model="openProxy" type="classification">
 		<v-card class="container">
 			<div class="content">
 				<div class="block">
@@ -57,18 +57,22 @@
 
 </template>
 <script lang="ts" setup>
-import { ref, Ref } from 'vue';
-import { useDialogs } from '@tg/web-mobile/stores/dialogs';
 const router = useRouter();
-const dialogsStore = useDialogs();
-const footerClass: Ref<string> = ref('text-center text-white text-body-1 py-1');
+const props = defineProps<{
+	open: boolean,
+}>();
+const emit = defineEmits<{
+	(event: 'update:open', payload: boolean): void
+}>();
+const openProxy = computed({
+	get: () => props.open,
+	set: (val) => emit("update:open", val)
+});
 
 function handleDirection(url: string): void {
 	router.push(url);
 }
-
 const sabaSportsLogo = new URL('../../assets/images/my/icon_sabasports_logo.png', import.meta.url).href
-
 </script>
 <style lang="scss" scoped>
 .container {

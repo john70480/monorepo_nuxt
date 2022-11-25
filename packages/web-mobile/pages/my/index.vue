@@ -17,7 +17,7 @@
 			</div>
 			<div class="userInfo-footer py-1">
 				<v-row justify="center" no-gutters>
-					<v-btn color="white" variant="text" class="v-col-3" rounded="xl" @click="handleRechargeOpen('Register')">
+					<v-btn color="white" variant="text" class="v-col-3" rounded="xl" @click="rechargeOpen = true">
 						<span class="icon  icon-recharge pr-2 mt-auto mb-auto"></span>
 						充值
 					</v-btn>
@@ -52,7 +52,7 @@
 				</div>
 			</div>
 			<div class="block-option d-flex flex-row-reverse py-2 px-4 ">
-				<span class="icon icon--small icon-maskgroup pr-2 mt-auto mb-auto" @click="handleAssetsOpen()"></span>
+				<span class="icon icon--small icon-maskgroup pr-2 mt-auto mb-auto" @click="assetsOpen = true"></span>
 			</div>
 			<div class="block px-4 pt-3 pb-2">
 				<div class="d-flex pb-1 justify-space-between">
@@ -169,8 +169,8 @@
 				</v-row>
 			</div>
 		</div>
-		<MyTotalAssets></MyTotalAssets>
-		<Recharge v-model:open="rechargeOpen" :target="rechargeTarget"></Recharge>
+		<LazyMyTotalAssets v-model:open="assetsOpen"></LazyMyTotalAssets>
+		<Recharge v-model:open="rechargeOpen"></Recharge>
 	</div>
 </template>
 <script lang="ts">
@@ -208,39 +208,28 @@ export type MemberInfoModel = {
 <script setup lang="ts">
 import LanguageSelector from '@tg/web-mobile/components/my/language-selector.vue';
 import { ref, Ref } from 'vue';
-import { useDialogs } from '@tg/web-mobile/stores/dialogs';
 
 definePageMeta({
 	title: "我的",
 	isMainPage: true
 });
 
-const dialogsStore = useDialogs();
 const router = useRouter();
 const enum myTabs {
 	'vip' = 'vip',
 	'tg' = 'tg'
 };
 
+const assetsOpen = ref(false);
 const memberInfo: Ref<MemberInfoModel> = ref({
 	username: 'PPP123',
 	quota: '888,888,888.00'
 });
 const currentTab: Ref<myTabs> = ref(myTabs.vip)
 const rechargeOpen = ref(false);
-const rechargeTarget = ref('');
-function handleRechargeOpen(target: string) {
-	rechargeOpen.value = true;
-	rechargeTarget.value = target;
-}
 function handleDirection(url: string): void {
 	router.push(url);
 }
-
-function handleAssetsOpen(): void {
-	dialogsStore.assetsOpen = true;
-}
-
 </script>
 <style lang="scss" scoped>
 .banner {

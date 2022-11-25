@@ -6,8 +6,6 @@
 	</footer>
 </template>
 <script setup lang="ts">
-import { useDialogs } from '@tg/web-mobile/stores/dialogs';
-
 const route = useRoute();
 const router = useRouter();
 const dialog = useDialogs();

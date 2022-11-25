@@ -25,8 +25,6 @@
 	</nav>
 </template>
 <script setup lang="ts">
-import { useApp } from '@tg/web-mobile/stores/app';
-
 const app = useApp()
 
 const navList = ref<{ text: string, class: string, active?: boolean, sub?: { text: string, class: string }[] }[]>([
