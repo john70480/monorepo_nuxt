@@ -170,7 +170,7 @@
 			</div>
 		</div>
 		<LazyMyTotalAssets v-model:open="assetsOpen"></LazyMyTotalAssets>
-		<Recharge></Recharge>
+		<LazyRecharge></LazyRecharge>
 	</div>
 </template>
 <script lang="ts">

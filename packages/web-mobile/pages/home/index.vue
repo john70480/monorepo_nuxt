@@ -8,7 +8,7 @@
 
 		<div class="index_box">
 			<div class="index_row">
-				<button class="recharge">充值</button>
+				<button class="recharge" @click="dialogsStore.rechargeOpen = true">充值</button>
 				<button class="withdrawal">提领</button>
 				<button class="transfer">转账</button>
 			</div>
@@ -53,7 +53,7 @@
 				</Swiper>
 			</div>
 		</template>
-
+		<LazyRecharge></LazyRecharge>
 	</div>
 </template>
 <script setup lang="ts">
@@ -74,6 +74,7 @@ definePageMeta({
 
 const app = useApp()
 const router = useRouter();
+const dialogsStore = useDialogs();
 const { platformMap } = getSiteListMap();
 const siteList = await homeStore.getSiteList();
 </script>
