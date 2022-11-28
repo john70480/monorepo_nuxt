@@ -1,17 +1,17 @@
 import { ref, reactive, computed, toRefs } from 'vue';
 import { defineStore } from 'pinia';
-
+// import type { componentListKeyType } from "@tg/web-mobile/components/recharge/index.vue";
 export const useDialogs = defineStore('dialogs', () => {
 
 	const arr = ref<{ title: string, message: string, closeText?: string, icontype?: string }[]>([]);
 	const current = computed(() => arr.value.length ? arr.value[0] : undefined);
 	let closeHandle: Function | null = null;
-
 	// state
 	const state = reactive({
 		open: false,
 		classificationOpen: false,
-		target: '',
+		rechargeOpen: false,
+		rechargeTarget: '',
 		title: '',
 	});
 
