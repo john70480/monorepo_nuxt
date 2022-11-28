@@ -1,14 +1,21 @@
 <template>
-	<v-app>
-		<LazyTgDialogMessage />
-		<LazyTgClassification />
-		<TgHeader v-if="!route.meta.hiddenHeader"></TgHeader>
-		<v-main>
-			<slot />
-		</v-main>
-		<TgFooter v-if="route.meta.isMainPage"></TgFooter>
-		<TgSideNavigation />
-	</v-app>
+	<Suspense :timeout="0">
+		<template #default>
+			<v-app>
+				<LazyTgDialogMessage />
+				<LazyTgClassification />
+				<TgHeader v-if="!route.meta.hiddenHeader"></TgHeader>
+				<v-main>
+					<slot />
+				</v-main>
+				<TgFooter v-if="route.meta.isMainPage"></TgFooter>
+				<TgSideNavigation />
+			</v-app>
+		</template>
+		<template #fallback>
+			<TgLoading></TgLoading>
+		</template>
+	</Suspense>
 </template>
 <script setup lang="ts">
 const route = useRoute();
