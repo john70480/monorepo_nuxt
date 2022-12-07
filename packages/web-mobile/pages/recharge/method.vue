@@ -1,6 +1,7 @@
 <template>
     <v-container class="px-0 pt-1 overflow-y-auto flex-1 classification-wrap">
-        <TgCard v-for=" (item, index) in list" :key="index" :title="index" class="classification-content">
+        <TgCard v-for=" (item, index) in list" :key="index" :title="index" class="classification-content"
+            :cardBind="{ variant: 'text' }">
             <div class="index_box">
                 <Swiper class="swiper-container recharge-swiper" slides-per-view="auto">
                     <SwiperSlide v-for="(list, index) in item" :key="index">
