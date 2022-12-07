@@ -2,29 +2,31 @@
 	<div class="fill-height">
 		<div class="rechargePage">
 			<TgTabs v-model="tab">
-				<v-tab v-for="item in items" :key="item" hide-slider>
-					{{ item }}
+				<v-tab v-for="(item, index) in items" :key="item" hide-slider>
+					<div>{{ item }}<img src="~/assets/images/icon/new.svg" class="newIcon" v-if="(index == 0)" /></div>
 				</v-tab>
 
 			</TgTabs>
 			<v-row class="helpHeader py-2" no-gutters>
 				<v-col class="pl-2 helpHeaderText">此标记为 「需支付手续费」</v-col>
 				<v-col class="text-right pr-2">
-					<div class="icon-warns d-inline-block mr-3" @click="rechargeOpen = true"></div>
+					<div class="icon-warns d-inline-block mr-3" @click="howOpen = true"></div>
 					<div class="icon-questions d-inline-block" @click="noticeOpen = true"></div>
 				</v-col>
 			</v-row>
-			<v-window v-model="tab" class="fill-height" v-if="!nodata">
+			<!--<v-window v-model="tab" class="fill-height" v-if="!nodata">
 				<v-window-item class="fill-height">
 					<Method :list="payload"></Method>
 				</v-window-item>
 				<v-window-item class="fill-height">
 					<Method :list="payload2"></Method>
 				</v-window-item>
-			</v-window>
+			</v-window>-->
+			<Method :list="payload" v-if="tab == 0"></Method>
+			<Method :list="payload2" v-if="(tab == 1)"></Method>
 		</div>
-		<div class="rechargeProp">
-			<v-row no-gutters class="px-2 centerRow" v-if="nodata">
+		<div class="rechargeProp" v-if="nodata">
+			<v-row no-gutters class="px-2 centerRow">
 				<v-col cols="12" class="text-center">XXXXXXXXXXXXXXX</v-col>
 				<v-col cols="12"><img src="@tg/web-mobile/assets/images/recharge/nodata.png"
 						class="nodataImg" /></v-col>
@@ -70,7 +72,6 @@ const payload = ref({
 
 definePageMeta({
 	title: "充值",
-	isMainPage: true
 });
 const tab = ref(0);
 const items = ['数字货币渠道', '常用入款渠道']
@@ -108,5 +109,11 @@ const items = ['数字货币渠道', '常用入款渠道']
 		height: 100%;
 		align-content: center
 	}
+}
+
+.newIcon {
+	height: 10px;
+	position: absolute;
+	top: 5px;
 }
 </style>
