@@ -11,7 +11,9 @@ export const useDialogs = defineStore('dialogs', () => {
 		open: false,
 		classificationOpen: false,
 		rechargeOpen: false,
+		withdrawOpen: false,
 		rechargeTarget: '',
+		withdraTarget:'',
 		title: '',
 	});
 

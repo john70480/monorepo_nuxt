@@ -17,7 +17,8 @@
 			</div>
 			<div class="userInfo-footer py-1">
 				<v-row justify="center" no-gutters>
-					<v-btn color="white" variant="text" class="v-col-3" rounded="xl" @click="dialogsStore.rechargeOpen = true">
+					<v-btn color="white" variant="text" class="v-col-3" rounded="xl"
+						@click="dialogsStore.withdrawOpen = true">
 						<span class="icon  icon-recharge pr-2 mt-auto mb-auto"></span>
 						充值
 					</v-btn>
@@ -73,13 +74,15 @@
 			</div>
 			<div class="block px-4 pt-3 pb-2">
 				<v-tabs class="tabs-my mb-4" height="20" hide-slider v-model="currentTab">
-					<v-tab class="text-caption d-flex" :class="{ 'tabs--active': currentTab === myTabs.vip }" :value="myTabs.vip">
+					<v-tab class="text-caption d-flex" :class="{ 'tabs--active': currentTab === myTabs.vip }"
+						:value="myTabs.vip">
 						<span class="icon icon-cycle mr-2"></span>
 						<div>
 							VIP权限
 						</div>
 					</v-tab>
-					<v-tab class="text-caption d-flex" :class="{ 'tabs--active': currentTab === myTabs.tg }" :value="myTabs.tg">
+					<v-tab class="text-caption d-flex" :class="{ 'tabs--active': currentTab === myTabs.tg }"
+						:value="myTabs.tg">
 						<span class="icon icon-cycle mr-2"></span>
 						<div>
 							智能权限
@@ -171,6 +174,7 @@
 		</div>
 		<LazyMyTotalAssets v-model:open="assetsOpen"></LazyMyTotalAssets>
 		<LazyRecharge></LazyRecharge>
+		<LazyWithdraw></LazyWithdraw>
 	</div>
 </template>
 <script lang="ts">
