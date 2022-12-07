@@ -33,7 +33,7 @@
 
 		</div>
 		<Notice v-model:open="noticeOpen"></Notice>
-		<Recharge v-model:open="rechargeOpen"></Recharge>
+		<Recharge v-model:open="howOpen"></Recharge>
 	</div>
 
 </template>
@@ -41,20 +41,20 @@
 import Method from "./method.vue";
 import Notice from "./notice.vue";
 import Recharge from "./howToRecharge.vue";
-const ustdLogo0 = new URL('../../assets/images/recharge/ustd0.png', import.meta.url).href
-const ustdLogo1 = new URL('../../assets/images/recharge/ustd1.png', import.meta.url).href
-const ustdLogo2 = new URL('../../assets/images/recharge/ustd2.png', import.meta.url).href
-const ustdLogo3 = new URL('../../assets/images/recharge/ustd3.png', import.meta.url).href
+const ustdLogo0 = new URL('../../assets/images/pay/ustd0.png', import.meta.url).href
+const ustdLogo1 = new URL('../../assets/images/pay/ustd1.png', import.meta.url).href
+const ustdLogo2 = new URL('../../assets/images/pay/ustd2.png', import.meta.url).href
+const ustdLogo3 = new URL('../../assets/images/pay/ustd3.png', import.meta.url).href
 
-const methodLogo0 = new URL('../../assets/images/recharge/pay0.png', import.meta.url).href
-const methodLogo1 = new URL('../../assets/images/recharge/pay1.png', import.meta.url).href
-const methodLogo2 = new URL('../../assets/images/recharge/pay2.png', import.meta.url).href
-const methodLogo3 = new URL('../../assets/images/recharge/pay3.png', import.meta.url).href
-const methodLogo4 = new URL('../../assets/images/recharge/pay4.png', import.meta.url).href
+const methodLogo0 = new URL('../../assets/images/pay/pay0.png', import.meta.url).href
+const methodLogo1 = new URL('../../assets/images/pay/pay1.png', import.meta.url).href
+const methodLogo2 = new URL('../../assets/images/pay/pay2.png', import.meta.url).href
+const methodLogo3 = new URL('../../assets/images/pay/pay3.png', import.meta.url).href
+const methodLogo4 = new URL('../../assets/images/pay/pay4.png', import.meta.url).href
 
 const nodata = ref(false)
 const noticeOpen = ref(false)
-const rechargeOpen = ref(false)
+const howOpen = ref(false)
 
 const payload2 = ref({
 	'电子支付': [{ images: methodLogo0, text: '支付宝' }, { images: methodLogo1, text: '微信支付' }],
