@@ -48,7 +48,8 @@
         <v-card-actions class="pb-8">
             <v-row>
                 <v-col cols="6">
-                    <v-btn block class="btn-submit" variant="outlined" color="#b8b8b8">上一步</v-btn>
+                    <v-btn block class="btn-submit" variant="outlined" color="#b8b8b8"
+                        @click="dialogsStore.openRechargeDialog('Transfer')">上一步</v-btn>
                 </v-col>
                 <v-col cols="6">
                     <v-btn block class="btn-submit bg-primary">充值完成-送出申请</v-btn>
@@ -60,10 +61,9 @@
     </v-card>
 
 </template>
-<script lang="ts" setup>import { Ref } from 'vue';
+<script lang="ts" setup>
 
-const collection: Ref<string> = ref('d795d4cs4vs6dhn5f3d4cs4vs6dbwxh5t');
-const fiveWord: Ref<string> = ref('');
+const dialogsStore = useDialogs();
 
 </script>
 

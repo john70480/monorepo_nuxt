@@ -27,13 +27,14 @@
 
         </v-card-text>
         <v-card-actions class="pb-8">
-            <v-btn block class="btn-submit bg-primary">下一步</v-btn>
+            <v-btn block class="btn-submit bg-primary" @click="dialogsStore.openRechargeDialog('Transfer2')">下一步</v-btn>
         </v-card-actions>
     </v-card>
 
 </template>
 <script lang="ts" setup>import { Ref } from 'vue';
 
+const dialogsStore = useDialogs();
 const account = ref<number>();
 const pushMoney: Ref<string> = ref('');
 const accountName: Ref<string> = ref('');

@@ -8,7 +8,7 @@
 
 		<div class="index_box">
 			<div class="index_row">
-				<button class="recharge" @click="dialogsStore.rechargeOpen = true">充值</button>
+				<button class="recharge" @click="dialogsStore.openRechargeDialog('Transfer')">充值</button>
 				<button class="withdrawal">提领</button>
 				<button class="transfer">转账</button>
 			</div>
