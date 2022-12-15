@@ -6,7 +6,7 @@
 					{{ item.title }}
 				</v-tab>
 			</TgTabs>
-			<v-container class="px-0 pt-1 overflow-y-auto flex-1 classification-wrap">
+			<v-container class="px-0 pt-0 overflow-y-auto flex-1 classification-wrap">
 				<TgCard v-for=" (item, index) in siteList?.categories" :key="index" :title="item.thirdPartyCategory || ''"
 					class="classification-content">
 					<v-row>

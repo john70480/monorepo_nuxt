@@ -15,6 +15,7 @@ const props = withDefaults(defineProps<{
 
 <style module lang="scss">
 .container {
+	position: absolute;
 	width: 100%;
 	height: 100%;
 	display: flex;

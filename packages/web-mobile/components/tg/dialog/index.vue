@@ -62,6 +62,11 @@ const fullscreenBind = {
 }
 
 %dialog {
+	.v-overlay__scrim {
+		opacity: 0.8;
+		background-color: #000;
+	}
+
 	.close {
 		cursor: pointer;
 		position: absolute;

@@ -1,6 +1,6 @@
 <template>
-
     <v-card class="rechargeProp">
+        <TgLoading v-if="loading"></TgLoading>
         <v-card-title>临柜汇款</v-card-title>
         <v-card-text class="px-2">
             <v-col cols="12" class="px-0 pt-0 text-center">
@@ -24,16 +24,16 @@
             <v-col cols="12" class="px-0 pt-0 text-red warn-text">
                 提醒:请严格依指定帐号汇款，否则会造成您充值掉单，本公司恕不负责。
             </v-col>
-
         </v-card-text>
         <v-card-actions class="pb-8">
-            <v-btn block class="btn-submit bg-primary">下一步</v-btn>
+            <v-btn block class="btn-submit bg-primary" @click="dialogsStore.openRechargeDialog('Transfer2')">下一步</v-btn>
         </v-card-actions>
     </v-card>
 
 </template>
 <script lang="ts" setup>import { Ref } from 'vue';
 
+const dialogsStore = useDialogs();
 const account = ref<number>();
 const pushMoney: Ref<string> = ref('');
 const accountName: Ref<string> = ref('');
@@ -47,8 +47,11 @@ const accountList = ref([
         value: 1
     }
 ]);
+const loading = ref(false);
 </script>
 
 <style lang="scss" scoped>
-
+.rechargeProp {
+    position: relative;
+}
 </style>

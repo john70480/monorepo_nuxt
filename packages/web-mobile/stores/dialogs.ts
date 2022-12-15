@@ -1,6 +1,6 @@
 import { ref, reactive, computed, toRefs } from 'vue';
 import { defineStore } from 'pinia';
-// import type { componentListKeyType } from "@tg/web-mobile/components/recharge/index.vue";
+import type { componentListKeyType } from "@tg/web-mobile/components/recharge/index.vue";
 export const useDialogs = defineStore('dialogs', () => {
 
 	const arr = ref<{ title: string, message: string, closeText?: string, icontype?: string }[]>([]);
@@ -10,10 +10,9 @@ export const useDialogs = defineStore('dialogs', () => {
 	const state = reactive({
 		open: false,
 		classificationOpen: false,
-		rechargeOpen: false,
 		withdrawOpen: false,
-		rechargeTarget: '',
-		withdraTarget:'',
+		rechargeOpen: false,
+		rechargeTarget: 'Transfer' as componentListKeyType | '',
 		title: '',
 	});
 
@@ -24,8 +23,8 @@ export const useDialogs = defineStore('dialogs', () => {
 		current,
 		closeHandle,
 		setCloseHandle,
-		openDialog,
-		closeDialog
+		openRechargeDialog,
+		closeRechargeDialog
 	};
 
 	// message-popup -----Start
@@ -48,13 +47,14 @@ export const useDialogs = defineStore('dialogs', () => {
 		closeHandle = func;
 	}
 	// message-popup -----END
-	function openDialog(target: string) {
-		closeDialog();
-		state.target = target
-		state.open = true;
+
+	function openRechargeDialog(target: componentListKeyType) {
+		closeRechargeDialog();
+		state.rechargeTarget = target
+		state.rechargeOpen = true;
 	}
-	function closeDialog() {
-		state.target = '';
-		state.open = false;
+	function closeRechargeDialog() {
+		state.rechargeTarget = '';
+		state.rechargeOpen = false;
 	}
 });
