@@ -32,6 +32,7 @@ const modelValueProxy = computed({
 export const types = [
     'default',
     'tg-right',
+    'inBar',
 ] as const;
 export const defaultBind: VSwitch["$props"] = {
     hideDetails: true,
@@ -62,6 +63,22 @@ export const defaultBind: VSwitch["$props"] = {
 
     .v-selection-control {
         justify-content: flex-end;
+    }
+}
+
+.v-switch.inBar {
+    .v-switch__track {
+        background: #c3c3c3;
+    }
+
+    .text-primary {
+        .v-switch__track {
+            background: var(--bg-primary);
+        }
+    }
+
+    .v-switch__thumb {
+        background-color: #fff;
     }
 }
 </style>
