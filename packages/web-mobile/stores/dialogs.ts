@@ -1,6 +1,7 @@
 import { ref, reactive, computed, toRefs } from 'vue';
 import { defineStore } from 'pinia';
-import type { componentListKeyType } from "@tg/web-mobile/components/recharge/index.vue";
+import type { rechargeTargetType } from "@tg/web-mobile/components/recharge/index.vue";
+import type { withdrawTargetType } from "@tg/web-mobile/components/withdraw/index.vue";
 export const useDialogs = defineStore('dialogs', () => {
 
 	const arr = ref<{ title: string, message: string, closeText?: string, icontype?: string }[]>([]);
@@ -8,11 +9,16 @@ export const useDialogs = defineStore('dialogs', () => {
 	let closeHandle: Function | null = null;
 	// state
 	const state = reactive({
-		open: false,
-		classificationOpen: false,
-		withdrawOpen: false,
-		rechargeOpen: false,
-		rechargeTarget: 'Transfer' as componentListKeyType | '',
+		target: {
+			recharge: '' as rechargeTargetType | '',
+			withdraw: '' as withdrawTargetType | '',
+		},
+		open: {
+			pop: false,
+			classification: false,
+			recharge: false,
+			withdraw: false,
+		},
 		title: '',
 	});
 
@@ -24,16 +30,18 @@ export const useDialogs = defineStore('dialogs', () => {
 		closeHandle,
 		setCloseHandle,
 		openRechargeDialog,
-		closeRechargeDialog
+		closeRechargeDialog,
+		openWithdrawDialog,
+		closeWithdrawDialog
 	};
 
 	// message-popup -----Start
 	function pop(title: string, message: string, closeText?: string, icontype?: string) {
 		arr.value.push({ title, message, closeText, icontype });
-		state.open = true;
+		state.open.pop = true;
 	}
 	function close() {
-		state.open = false;
+		state.open.pop = false;
 		if (typeof closeHandle === 'function') {
 			closeHandle();
 		}
@@ -48,13 +56,22 @@ export const useDialogs = defineStore('dialogs', () => {
 	}
 	// message-popup -----END
 
-	function openRechargeDialog(target: componentListKeyType) {
+	function openRechargeDialog(target: rechargeTargetType) {
 		closeRechargeDialog();
-		state.rechargeTarget = target
-		state.rechargeOpen = true;
+		state.target.recharge = target
+		state.open.recharge = true;
 	}
 	function closeRechargeDialog() {
-		state.rechargeTarget = '';
-		state.rechargeOpen = false;
+		state.target.recharge = '';
+		state.open.recharge = false;
+	}
+	function openWithdrawDialog(target: withdrawTargetType) {
+		closeWithdrawDialog();
+		state.target.withdraw = target
+		state.open.withdraw = true;
+	}
+	function closeWithdrawDialog() {
+		state.target.withdraw = '';
+		state.open.withdraw = false;
 	}
 });
