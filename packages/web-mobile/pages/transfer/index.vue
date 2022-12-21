@@ -7,7 +7,7 @@
 				</v-tab>
 
 			</TgTabs>
-			<v-row class="helpHeader align-center" no-gutters>
+			<v-row class="helpHeader align-center" no-gutters v-if="tab == 0">
 				<v-col class="pl-2 helpHeaderText" cols="auto">
 
 					<v-row no-gutters class="align-center">
@@ -23,20 +23,29 @@
 
 				</v-col>
 				<v-col class="text-right pr-2">
-
-					<img class="filter ma-2" src="@tg/web-mobile/assets/images/filter_btn.png">
-					<img class="filter ma-2" src="@tg/web-mobile/assets/images/function_btn.png">
+					<img class="filter ma-2" src="@tg/web-mobile/assets/images/filter_btn.png"
+						@click="chooseFilterOpen = true">
+					<img class="filter ma-2" src="@tg/web-mobile/assets/images/function_btn.png"
+						@click="service = true">
 				</v-col>
 			</v-row>
-			<Method :list="payload" v-if="tab == 0"></Method>
+			<Method :list="payload" v-if="tab == 0" :target="filterTarget"></Method>
+			<Mutual v-if="tab == 1"></Mutual>
 		</div>
 
-
+		<TransferConfirmTransfer v-model:open="confirmTransfer"></TransferConfirmTransfer>
+		<TransferFilter v-model:assets-open="chooseFilterOpen" :list="payload" v-model:listTarget="filterTarget">
+		</TransferFilter>
+		<TransferComplete v-model:open="complete"></TransferComplete>
+		<TransferConfirmContent v-model:open="confirmContent"></TransferConfirmContent>
+		<TransferService v-model:open="service"></TransferService>
 	</div>
 
 </template>
 <script setup lang="ts">
+
 import Method from "./method.vue";
+import Mutual from "./mutual.vue";
 const wallet0 = new URL('../../assets/images/transfer/tg_coin_ic.png', import.meta.url).href
 const wallet1 = new URL('../../assets/images/transfer/lockwallet_ic.png', import.meta.url).href
 
@@ -70,11 +79,13 @@ const lottery0 = new URL('../../assets/images/transfer/ob_lottery_logo_ic.png', 
 const lottery1 = new URL('../../assets/images/transfer/sgwin_lottery_logo_ic.png', import.meta.url).href
 
 
-const autoTransfer = ref(false)
-
-const moreOpen = ref(false)
-const remindOpen = ref(false)
-const router = useRouter()
+const autoTransfer = ref(false)//switch
+const confirmTransfer = ref(false)//交易頁面
+const chooseFilterOpen = ref(false)//篩選頁面
+const filterTarget = ref('all')//篩選預設
+const complete = ref(false)//交易完成
+const confirmContent = ref(false)//确认户转内容
+const service = ref(false)//聯絡客服
 
 const payload = ref({
 	'钱包金额': [{ images: wallet0, text: '888,888,888.00' }, { images: wallet1, text: '888,888,888.00' }],
@@ -85,6 +96,11 @@ const payload = ref({
 	'彩票': [{ images: lottery0, text: '888,888,888.00' }, { images: lottery1, text: '888,888,888.00' }],
 	'电竞': [{ images: '', text: '888,888,888.00' }],
 })
+
+watch(filterTarget, (nv, ov) => {
+	chooseFilterOpen.value = false
+})
+
 
 definePageMeta({
 	title: "转帐",

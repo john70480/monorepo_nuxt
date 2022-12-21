@@ -1,7 +1,7 @@
 <template>
     <v-container class="px-0 pt-1 overflow-y-auto flex-1 classification-wrap">
         <TgCard v-for=" (item, index) in list" :key="index" :title="index" class="classification-content"
-            :cardBind="{ variant: 'text' }">
+            :cardBind="{ variant: 'text' }" v-show="target == 'all' || index == target">
             <v-row class="index_box">
                 <v-col v-for="(list, index) in item" :key="index" cols="6" class="px-0">
                     <TgItemImage :imgBind="{ src: list.images }" contentClass="mx-1 pa-2" class="px-2 py-2" col="12">
@@ -17,6 +17,7 @@
 import { Swiper, SwiperSlide } from 'swiper/vue';
 const props = defineProps<{
     list: object,
+    target: string
 }>();
 </script>
 
