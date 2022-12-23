@@ -23,8 +23,7 @@
 		<div class="rechargeProp" v-if="nodata">
 			<v-row no-gutters class="px-2 centerRow">
 				<v-col cols="12" class="text-center">XXXXXXXXXXXXXXX</v-col>
-				<v-col cols="12"><img src="@tg/web-mobile/assets/images/recharge/nodata.png"
-						class="nodataImg" /></v-col>
+				<v-col cols="12"><img src="@tg/web-mobile/assets/images/recharge/nodata.png" class="nodataImg" /></v-col>
 				<v-col cols="12" class="warn-text text-center">XXXXXXXXXXXXXXX</v-col>
 			</v-row>
 
@@ -71,10 +70,10 @@ const payload = ref({
 })
 
 definePageMeta({
-	title: "充值",
+	title: "提领",
 });
 const tab = ref(0);
-const items = ['数字货币渠道', '常用入款渠道']
+const items = ['数字货币渠道', '中国银联提款']
 
 </script>
 <style lang="scss" scoped>

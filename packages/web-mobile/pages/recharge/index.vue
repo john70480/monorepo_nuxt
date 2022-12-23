@@ -28,21 +28,19 @@
 		<div class="rechargeProp" v-if="nodata">
 			<v-row no-gutters class="px-2 centerRow">
 				<v-col cols="12" class="text-center">XXXXXXXXXXXXXXX</v-col>
-				<v-col cols="12"><img src="@tg/web-mobile/assets/images/recharge/nodata.png"
-						class="nodataImg" /></v-col>
+				<v-col cols="12"><img src="@tg/web-mobile/assets/images/recharge/nodata.png" class="nodataImg" /></v-col>
 				<v-col cols="12" class="warn-text text-center">XXXXXXXXXXXXXXX</v-col>
 			</v-row>
 
 		</div>
-		<Notice v-model:open="noticeOpen"></Notice>
-		<Recharge v-model:open="howOpen"></Recharge>
+		<LazyRechargeNotice v-model:open="noticeOpen" />
+		<LazyRechargeHowTo v-model:open="howOpen" />
+		<LazyRecharge />
 	</div>
 
 </template>
 <script setup lang="ts">
 import Method from "./method.vue";
-import Notice from "./notice.vue";
-import Recharge from "./howToRecharge.vue";
 const ustdLogo0 = new URL('../../assets/images/pay/ustd0.png', import.meta.url).href
 const ustdLogo1 = new URL('../../assets/images/pay/ustd1.png', import.meta.url).href
 const ustdLogo2 = new URL('../../assets/images/pay/ustd2.png', import.meta.url).href
