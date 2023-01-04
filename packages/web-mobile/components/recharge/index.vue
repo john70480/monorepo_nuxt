@@ -1,5 +1,5 @@
 <template>
-	<TgDialog v-model="dialogsStore.rechargeOpen" type="fullscreen80">
+	<TgDialog v-model="dialogsStore.open.recharge" type="fullscreen80">
 		<Suspense :timeout="0">
 			<template #default>
 				<component :is="componentId"></component>
@@ -11,7 +11,7 @@
 	</TgDialog>
 </template>
 <script lang="ts">
-export type componentListKeyType = keyof typeof componentList
+export type rechargeTargetType = keyof typeof componentList
 
 const Register = defineAsyncComponent(() => import('./register.vue'));
 const WeChatPay = defineAsyncComponent(() => import('./wechat-pay.vue'));
@@ -43,8 +43,8 @@ const componentList = {
 const dialogsStore = useDialogs();
 
 const componentId = computed(() => {
-	if (dialogsStore.rechargeTarget in componentList) {
-		return markRaw(componentList[dialogsStore.rechargeTarget as componentListKeyType])
+	if (dialogsStore.target.recharge in componentList) {
+		return markRaw(componentList[dialogsStore.target.recharge as rechargeTargetType])
 	}
 	return markRaw(Register)
 })

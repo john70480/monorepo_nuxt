@@ -8,20 +8,15 @@
 
 			</TgTabs>
 			<v-row class="helpHeader py-2" no-gutters>
-				<v-col class="pl-2 helpHeaderText">此标记为 「需支付手续费」</v-col>
+				<v-col class="pl-2 helpHeaderText">
+					<!--<div @click="moreOpen = true" class="d-inline-block">了解更多</div>-->
+					<div @click="router.push('/withdraw/howToUsdt')" class="d-inline-block">了解更多</div>
+				</v-col>
 				<v-col class="text-right pr-2">
-					<div class="icon-warns d-inline-block mr-3" @click="howOpen = true"></div>
-					<div class="icon-questions d-inline-block" @click="noticeOpen = true"></div>
+
+					<div class="icon-questions d-inline-block" @click="remindOpen = true"></div>
 				</v-col>
 			</v-row>
-			<!--<v-window v-model="tab" class="fill-height" v-if="!nodata">
-				<v-window-item class="fill-height">
-					<Method :list="payload"></Method>
-				</v-window-item>
-				<v-window-item class="fill-height">
-					<Method :list="payload2"></Method>
-				</v-window-item>
-			</v-window>-->
 			<Method :list="payload" v-if="tab == 0"></Method>
 			<Method :list="payload2" v-if="(tab == 1)"></Method>
 		</div>
@@ -33,14 +28,19 @@
 			</v-row>
 
 		</div>
-		<LazyRechargeNotice v-model:open="noticeOpen" />
-		<LazyRechargeHowTo v-model:open="howOpen" />
-		<LazyRecharge />
+		<More v-model:open="moreOpen"></More>
+		<Remind v-model:open="remindOpen"></Remind>
 	</div>
 
 </template>
 <script setup lang="ts">
 import Method from "./method.vue";
+import More from "./more.vue";
+import Remind from "./remind.vue";
+
+
+const addIcon = new URL('../../assets/images/pay/add.png', import.meta.url).href
+
 const ustdLogo0 = new URL('../../assets/images/pay/ustd0.png', import.meta.url).href
 const ustdLogo1 = new URL('../../assets/images/pay/ustd1.png', import.meta.url).href
 const ustdLogo2 = new URL('../../assets/images/pay/ustd2.png', import.meta.url).href
@@ -53,26 +53,27 @@ const methodLogo3 = new URL('../../assets/images/pay/pay3.png', import.meta.url)
 const methodLogo4 = new URL('../../assets/images/pay/pay4.png', import.meta.url).href
 
 const nodata = ref(false)
-const noticeOpen = ref(false)
-const howOpen = ref(false)
+const moreOpen = ref(false)
+const remindOpen = ref(false)
+const router = useRouter()
 
 const payload2 = ref({
-	'电子支付': [{ images: methodLogo0, text: '支付宝' }, { images: methodLogo1, text: '微信支付' }],
-	'网路支付': [{ images: methodLogo2, text: '网上银行' }, { images: methodLogo3, text: '人民币' }],
-	'实体支付': [{ images: methodLogo4, text: '临柜汇款' }],
+	'电子支付': [{ images: addIcon, text: '添加收款地址' }, { images: methodLogo0, text: '支付宝' }, { images: methodLogo1, text: '微信支付' }],
+	'网路支付': [{ images: addIcon, text: '添加收款地址' }, { images: methodLogo2, text: '网上银行' }, { images: methodLogo3, text: '人民币' }],
+	'实体支付': [{ images: addIcon, text: '添加收款地址' }, { images: methodLogo4, text: '临柜汇款' }],
 })
 const payload = ref({
-	a: [{ images: ustdLogo0, text: '泰达币1(usdt)' }, { images: ustdLogo1, text: '泰达币2(usdt)' }, { images: ustdLogo2, text: '泰达币3(usdt)' }, { images: ustdLogo3, text: '泰达币4(usdt)' }],
-	b: [{ images: ustdLogo0, text: '泰达币1(usdt)' }, { images: ustdLogo1, text: '泰达币2(usdt)' }, { images: ustdLogo2, text: '泰达币3(usdt)' }, { images: ustdLogo3, text: '泰达币4(usdt)' }],
-	c: [{ images: ustdLogo0, text: '泰达币1(usdt)' }, { images: ustdLogo1, text: '泰达币2(usdt)' }, { images: ustdLogo2, text: '泰达币3(usdt)' }, { images: ustdLogo3, text: '泰达币4(usdt)' }],
-	d: [{ images: ustdLogo0, text: '泰达币1(usdt)' }, { images: ustdLogo1, text: '泰达币2(usdt)' }, { images: ustdLogo2, text: '泰达币3(usdt)' }, { images: ustdLogo3, text: '泰达币4(usdt)' }],
+	a: [{ images: addIcon, text: '添加收款地址' }, { images: ustdLogo0, text: '泰达币1(usdt)' }, { images: ustdLogo1, text: '泰达币2(usdt)' }, { images: ustdLogo2, text: '泰达币3(usdt)' }, { images: ustdLogo3, text: '泰达币4(usdt)' }],
+	b: [{ images: addIcon, text: '添加收款地址' }, { images: ustdLogo0, text: '泰达币1(usdt)' }, { images: ustdLogo1, text: '泰达币2(usdt)' }, { images: ustdLogo2, text: '泰达币3(usdt)' }, { images: ustdLogo3, text: '泰达币4(usdt)' }],
+	c: [{ images: addIcon, text: '添加收款地址' }, { images: ustdLogo0, text: '泰达币1(usdt)' }, { images: ustdLogo1, text: '泰达币2(usdt)' }, { images: ustdLogo2, text: '泰达币3(usdt)' }, { images: ustdLogo3, text: '泰达币4(usdt)' }],
+	d: [{ images: addIcon, text: '添加收款地址' }, { images: ustdLogo0, text: '泰达币1(usdt)' }, { images: ustdLogo1, text: '泰达币2(usdt)' }, { images: ustdLogo2, text: '泰达币3(usdt)' }, { images: ustdLogo3, text: '泰达币4(usdt)' }],
 })
 
 definePageMeta({
-	title: "充值",
+	title: "提领",
 });
 const tab = ref(0);
-const items = ['数字货币渠道', '常用入款渠道']
+const items = ['数字货币渠道', '中国银联提款']
 
 </script>
 <style lang="scss" scoped>
@@ -85,13 +86,8 @@ const items = ['数字货币渠道', '常用入款渠道']
 		font-size: 0.8rem;
 
 		&::before {
-			content: '';
-			width: 6px;
-			height: 6px;
-			margin-right: 5px;
-			border-radius: 50%;
-			background: linear-gradient(to bottom, #ea7dff, #9c5cef);
-			display: inline-block;
+			content: '? ';
+
 		}
 	}
 }

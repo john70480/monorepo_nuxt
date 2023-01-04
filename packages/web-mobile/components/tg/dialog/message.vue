@@ -1,5 +1,5 @@
 <template>
-  <TgDialog v-model="dialogsStore.open">
+  <TgDialog v-model="dialogsStore.open.pop">
     <v-card>
       <slot name="header">
         <v-card-title :ripple="{ center: true }">

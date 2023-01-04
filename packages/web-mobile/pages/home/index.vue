@@ -8,8 +8,8 @@
 
 		<div class="index_box">
 			<div class="index_row">
-				<button class="recharge" @click="dialogsStore.openRechargeDialog('Transfer')">充值</button>
-				<button class="withdrawal">提领</button>
+				<button class="recharge" @click="router.push('recharge')">充值</button>
+				<button class="withdrawal" @click="router.push('withdraw')">提领</button>
 				<button class="transfer">转账</button>
 			</div>
 		</div>
@@ -53,7 +53,6 @@
 				</Swiper>
 			</div>
 		</template>
-		<LazyRecharge></LazyRecharge>
 	</div>
 </template>
 <script setup lang="ts">

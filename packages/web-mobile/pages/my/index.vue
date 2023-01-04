@@ -17,11 +17,11 @@
 			</div>
 			<div class="userInfo-footer py-1">
 				<v-row justify="center" no-gutters>
-					<v-btn color="white" variant="text" class="v-col-3" rounded="xl" @click="dialogsStore.rechargeOpen = true">
+					<v-btn color="white" variant="text" class="v-col-3" rounded="xl" @click="router.push('recharge')">
 						<span class="icon  icon-recharge pr-2 mt-auto mb-auto"></span>
 						充值
 					</v-btn>
-					<v-btn color="white" variant="text" class="v-col-3" rounded="xl">
+					<v-btn color="white" variant="text" class="v-col-3" rounded="xl" @click="router.push('withdraw')">
 						<span class="icon icon-pickup pr-2 mt-auto mb-auto"></span>
 						提领
 					</v-btn>
@@ -171,6 +171,7 @@
 		</div>
 		<LazyMyTotalAssets v-model:open="assetsOpen"></LazyMyTotalAssets>
 		<LazyRecharge></LazyRecharge>
+		<LazyWithdraw></LazyWithdraw>
 	</div>
 </template>
 <script lang="ts">

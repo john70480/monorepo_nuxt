@@ -1,5 +1,5 @@
 <template>
-	<TgDialog v-model="dialogsStore.classificationOpen" type="classification">
+	<TgDialog v-model="dialogsStore.open.classification" type="classification">
 		<div class="fill-height d-flex flex-column">
 			<TgTabs v-model="platformTab">
 				<v-tab v-for="(item, index) in platformList" :key="index" hide-slider :value="index">
