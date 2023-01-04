@@ -1,0 +1,163 @@
+<template>
+    <div>
+
+        <v-row class="helpHeader py-2" no-gutters>
+            <v-col cols="12" class="d-flex align-center px-0 pt-0">
+                <v-btn v-for="(item, index) in transMoneyList" variant="outlined" :class="{ target: target == index }"
+                    class="btnClass" @click="target = index">{{
+        item
+}}</v-btn>
+            </v-col>
+        </v-row>
+        <v-row no-gutters class="graybg warn-text">
+
+            <div class="teamBanner">
+
+                <div class="logoImg"><img src="~/assets/images/bettle_record/logo.png" />
+                </div>
+                <div class="logoName">名称名称名称名称名称名称名称名称</div>
+
+            </div>
+
+            <v-col cols="12" class="text-center px-0 py-2">2014-2015 法甲 (正确比分统计) 380场</v-col>
+
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>日期</td>
+                        <td>赛事与队伍</td>
+                        <td>比分</td>
+                        <td>盘路</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(data, index) in list">
+                        <td>{{ data.date }}</td>
+                        <td>
+                            联盟名称{{ data.teamName }}<br>
+                            (主){{ data.team1 }}<br>
+                            (客){{ data.team2 }}
+                        </td>
+                        <td>{{ data.team1Score }}<br>{{ data.team2Score }}</td>
+                        <td :class="data.type == 0 ? 'text-red' : data.type == 1 ? 'text-green' : 'text-blue'">{{
+        data.road
+}}<br>{{ data.type }}</td>
+                    </tr>
+                </tbody>
+                <tfoot v-if="list.length <= 0">
+                    <tr>
+                        <td colspan="4">暂无资料</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </v-row>
+
+
+
+
+    </div>
+
+</template>
+<script setup lang="ts">
+const target = ref(0)
+const transMoneyList = ['同主客', '同赛事']
+const list = [
+
+]
+</script>
+<style lang="scss" scoped>
+.teamBanner {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    background-image: linear-gradient(45deg, #718db7, #527299);
+
+    .logoImg {
+        width: 100%;
+        text-align: center;
+
+        img {
+            width: 70px;
+        }
+    }
+
+    .logoName {
+        text-align: center;
+        color: #fff;
+    }
+}
+
+.graybg {
+    background-color: #eef4f8;
+}
+
+.btnClass {
+    height: 30px;
+    font-size: 0.8rem;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 10px;
+    background-color: #587eb0;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 50px;
+
+    &.target {
+        background-color: #36567f;
+        border: 1px solid #36567f;
+        color: #fff;
+    }
+}
+
+table {
+    thead {
+
+        margin: -12px;
+        margin-bottom: 4px;
+
+        td {
+            padding: 12px;
+            font-size: 14px;
+            color: #283763;
+            font-weight: bold;
+
+            &:first-child {
+                width: 60px;
+            }
+        }
+    }
+
+    tbody {
+        margin: -4px;
+
+        tr {
+            &:nth-child(odd) {
+                td {
+                    background-color: #fff;
+                }
+            }
+        }
+
+        td {
+            font-size: 12px;
+            padding: 12px;
+            color: #283763;
+            border-right: #c3c3c3 solid 1px;
+
+            &:not(:nth-child(2)) {
+                text-align: center;
+            }
+        }
+    }
+
+    tfoot {
+        td {
+            background-color: #fff;
+            text-align: center;
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+    }
+}
+</style>
