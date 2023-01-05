@@ -1,6 +1,8 @@
 <template>
 	<div class="index">
+		<div @click="router.push({ path: 'event' })">
 		<Banner></Banner>
+		</div>
 		<div class="index_header">
 			<Announcement></Announcement>
 			<button class="menu" @click="app.navSwitch = true"></button>
