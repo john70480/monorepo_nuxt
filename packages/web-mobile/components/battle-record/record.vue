@@ -5,8 +5,8 @@
 			<v-col cols="12" class="d-flex align-center px-0 pt-0">
 				<v-btn v-for="(item, index) in transMoneyList" variant="outlined" :class="{ target: target == index }"
 					class="btnClass" @click="target = index">{{
-		item
-}}</v-btn>
+						item
+					}}</v-btn>
 			</v-col>
 		</v-row>
 		<v-row no-gutters class="graybg warn-text">
@@ -33,8 +33,8 @@
 						</td>
 						<td>{{ data.team1Score }}<br>{{ data.team2Score }}</td>
 						<td :class="data.type == 0 ? 'text-red' : data.type == 1 ? 'text-green' : 'text-blue'">{{
-		data.road
-}}<br>{{ data.type }}</td>
+							data.road
+						}}<br>{{ data.type }}</td>
 					</tr>
 				</tbody>
 				<tfoot v-if="list.length <= 0">

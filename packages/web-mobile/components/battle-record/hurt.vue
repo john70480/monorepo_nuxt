@@ -5,7 +5,7 @@
             <v-row no-gutters class="justify-space-between teamHeader align-center">
                 <v-col cols="auto">
                     <v-row class="align-center" no-gutters>
-                        <v-col cols="auto" class="logoImg"><img src="~/assets/images/bettle_record/logo.png" /></v-col>
+                        <v-col cols="auto" class="logoImg"><img src="~/assets/images/battle-record/logo.png" /></v-col>
                         <v-col cols="auto" class="ml-2">名称名称名称</v-col>
                     </v-row>
                 </v-col>
@@ -16,7 +16,7 @@
                 <div class="teamBody">
                     <div class="teamPlayerImg">
                         <div>前锋</div>
-                        <div><img src="~/assets/images/bettle_record/people.png" /></div>
+                        <div><img src="~/assets/images/battle-record/people.png" /></div>
                     </div>
                     <div class="teamPlayeDetail">
                         <div>球员名字球员名字球员名字球员名字</div>
@@ -25,13 +25,13 @@
                             内容原因内容</div>
                     </div>
                     <div class="teamPlayerIcon">
-                        <div><img src="~/assets/images/bettle_record/injury.svg" /></div>
+                        <div><img src="~/assets/images/battle-record/Injury.svg" /></div>
                     </div>
                 </div>
                 <div class="teamBody">
                     <div class="teamPlayerImg">
                         <div>前锋</div>
-                        <div><img src="~/assets/images/bettle_record/people.png" /></div>
+                        <div><img src="~/assets/images/battle-record/people.png" /></div>
                     </div>
                     <div class="teamPlayeDetail">
                         <div>球员名字球员名字球员名字球员名字</div>
@@ -40,7 +40,7 @@
                             内容原因内容</div>
                     </div>
                     <div class="teamPlayerIcon">
-                        <div><img src="~/assets/images/bettle_record/injury.svg" /></div>
+                        <div><img src="~/assets/images/battle-record/Injury.svg" /></div>
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@
             <v-row no-gutters class="justify-space-between teamHeader align-center">
                 <v-col cols="auto">
                     <v-row class="align-center" no-gutters>
-                        <v-col cols="auto" class="logoImg"><img src="~/assets/images/bettle_record/logo.png" /></v-col>
+                        <v-col cols="auto" class="logoImg"><img src="~/assets/images/battle-record/logo.png" /></v-col>
                         <v-col cols="auto" class="ml-2">名称名称名称</v-col>
                     </v-row>
                 </v-col>

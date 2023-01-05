@@ -23,14 +23,18 @@
 
 				</v-col>
 				<v-col class="text-right pr-2">
-					<img class="filter ma-2" src="@tg/web-mobile/assets/images/filter_btn.png"
-						@click="chooseFilterOpen = true">
-					<img class="filter ma-2" src="@tg/web-mobile/assets/images/function_btn.png"
-						@click="service = true">
+					<img class="filter ma-2" src="@tg/web-mobile/assets/images/filter_btn.png" @click="chooseFilterOpen = true">
+					<img class="filter ma-2" src="@tg/web-mobile/assets/images/function_btn.png" @click="service = true">
 				</v-col>
 			</v-row>
-			<Method :list="payload" v-if="tab == 0" :target="filterTarget"></Method>
-			<Mutual v-if="tab == 1"></Mutual>
+			<v-window v-model="tab">
+				<v-window-item>
+					<LazyTransferMethod :list="payload" :target="filterTarget"></LazyTransferMethod>
+				</v-window-item>
+				<v-window-item>
+					<LazyTransferMutual></LazyTransferMutual>
+				</v-window-item>
+			</v-window>
 		</div>
 
 		<TransferConfirmTransfer v-model:open="confirmTransfer"></TransferConfirmTransfer>
@@ -44,8 +48,6 @@
 </template>
 <script setup lang="ts">
 
-import Method from "./method.vue";
-import Mutual from "./mutual.vue";
 const wallet0 = new URL('../../assets/images/transfer/tg_coin_ic.png', import.meta.url).href
 const wallet1 = new URL('../../assets/images/transfer/lockwallet_ic.png', import.meta.url).href
 

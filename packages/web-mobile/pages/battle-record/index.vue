@@ -11,16 +11,16 @@
 			<v-window v-model="showTab">
 				<!-- 九宮格 -->
 				<v-window-item>
-					<Record></Record>
+					<BattleRecord />
 				</v-window-item>
 				<v-window-item>
-					<Combat></Combat>
+					<BattleRecordCombat></BattleRecordCombat>
 				</v-window-item>
 				<v-window-item>
-					<Integral></Integral>
+					<BattleRecordIntegral></BattleRecordIntegral>
 				</v-window-item>
 				<v-window-item>
-					<Hurt></Hurt>
+					<BattleRecordHurt></BattleRecordHurt>
 				</v-window-item>
 			</v-window>
 		</div>
@@ -30,10 +30,6 @@
 
 </template>
 <script setup lang="ts">
-import Record from "./record.vue";
-import Combat from "./combat.vue";
-import Integral from "./integral.vue";
-import Hurt from "./hurt.vue";
 definePageMeta({
 	title: "对战記录",
 });
