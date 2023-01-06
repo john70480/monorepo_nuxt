@@ -11,7 +11,6 @@
                         </TgItemImage>
                     </SwiperSlide>
                 </Swiper>
-
             </div>
         </TgCard>
     </v-container>
@@ -20,7 +19,7 @@
 <script lang="ts" setup>
 import { Swiper, SwiperSlide } from 'swiper/vue';
 const props = defineProps<{
-    list: object,
+    list: Record<string, { images: string, text: string }[]>,
 }>();
 </script>
 
