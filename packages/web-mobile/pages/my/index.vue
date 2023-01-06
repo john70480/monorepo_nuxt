@@ -25,7 +25,7 @@
 						<span class="icon icon-pickup pr-2 mt-auto mb-auto"></span>
 						提领
 					</v-btn>
-					<v-btn color="white" variant="text" class="v-col-3" rounded="xl">
+					<v-btn color="white" variant="text" class="v-col-3" rounded="xl" @click="router.push('transfer')">
 						<span class="icon icon-transfer pr-2 mt-auto mb-auto"></span>
 						转账
 					</v-btn>

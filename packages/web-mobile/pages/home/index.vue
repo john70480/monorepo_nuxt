@@ -10,7 +10,7 @@
 			<div class="index_row">
 				<button class="recharge" @click="router.push('recharge')">充值</button>
 				<button class="withdrawal" @click="router.push('withdraw')">提领</button>
-				<button class="transfer">转账</button>
+				<button class="transfer" @click="router.push('transfer')">转账</button>
 			</div>
 		</div>
 
