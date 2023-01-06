@@ -149,3 +149,42 @@ ul {
   padding: 5px 10px;
   color: #a0c3e5;
 }
+
+/*對戰樣式table*/
+table.battleTable {
+  thead {
+    td {
+      padding: 12px;
+      font-size: 14px;
+      color: #283763;
+      font-weight: bold;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(odd) {
+        td {
+          background-color: #fff;
+        }
+      }
+    }
+
+    td {
+      font-size: 12px;
+      padding: 12px;
+      color: #283763;
+      border-right: #c3c3c3 solid 1px;
+    }
+  }
+
+  tfoot {
+    td {
+      background-color: #fff;
+      text-align: center;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+}
+/*對戰樣式table-----end*/

@@ -13,7 +13,7 @@
 
 			<v-col cols="12" class="text-center px-0 py-2">2014-2015 法甲 (正确比分统计) 380场</v-col>
 
-			<table width="100%">
+			<table width="100%" class="battleTable">
 				<thead>
 					<tr>
 						<td>日期</td>
@@ -93,20 +93,9 @@ const list = [
 	background-color: #eef4f8;
 }
 
-
-
-table {
+table.battleTable {
 	thead {
-
-		margin: -12px;
-		margin-bottom: 4px;
-
 		td {
-			padding: 12px;
-			font-size: 14px;
-			color: #283763;
-			font-weight: bold;
-
 			&:first-child {
 				width: 60px;
 			}
@@ -114,34 +103,10 @@ table {
 	}
 
 	tbody {
-		margin: -4px;
-
-		tr {
-			&:nth-child(odd) {
-				td {
-					background-color: #fff;
-				}
-			}
-		}
-
 		td {
-			font-size: 12px;
-			padding: 12px;
-			color: #283763;
-			border-right: #c3c3c3 solid 1px;
-
 			&:not(:nth-child(2)) {
 				text-align: center;
 			}
-		}
-	}
-
-	tfoot {
-		td {
-			background-color: #fff;
-			text-align: center;
-			padding-top: 24px;
-			padding-bottom: 24px;
 		}
 	}
 }
