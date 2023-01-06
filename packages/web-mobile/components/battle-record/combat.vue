@@ -3,10 +3,7 @@
 
         <v-row class="helpHeader py-2" no-gutters>
             <v-col cols="12" class="d-flex align-center px-0 pt-0">
-                <v-btn v-for="(item, index) in transMoneyList" variant="outlined" :class="{ target: target == index }"
-                    class="btnClass" @click="target = index">{{
-                        item
-                    }}</v-btn>
+                <TgItemBtn v-model="target" :list="transMoneyList"></TgItemBtn>
             </v-col>
         </v-row>
         <v-row no-gutters class="graybg warn-text">
@@ -92,23 +89,7 @@ const list = [
     background-color: #eef4f8;
 }
 
-.btnClass {
-    height: 30px;
-    font-size: 0.8rem;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: 10px;
-    background-color: #587eb0;
-    border: 1px solid #fff;
-    color: #fff;
-    border-radius: 50px;
 
-    &.target {
-        background-color: #36567f;
-        border: 1px solid #36567f;
-        color: #fff;
-    }
-}
 
 table {
     thead {
