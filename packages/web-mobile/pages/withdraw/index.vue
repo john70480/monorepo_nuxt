@@ -9,7 +9,7 @@
 			</TgTabs>
 			<v-row class="helpHeader py-2" no-gutters>
 				<v-col class="pl-2 helpHeaderText">
-					<!--<div @click="moreOpen = true" class="d-inline-block">了解更多</div>-->
+					<!-- <div @click="moreOpen = true" class="d-inline-block">了解更多</div> -->
 					<div @click="router.push('/withdraw/howToUsdt')" class="d-inline-block">了解更多</div>
 				</v-col>
 				<v-col class="text-right pr-2">
@@ -17,8 +17,8 @@
 					<div class="icon-questions d-inline-block" @click="remindOpen = true"></div>
 				</v-col>
 			</v-row>
-			<Method :list="payload" v-if="tab == 0"></Method>
-			<Method :list="payload2" v-if="(tab == 1)"></Method>
+			<TgSwiperCard :list="payload" v-if="tab == 0"></TgSwiperCard>
+			<TgSwiperCard :list="payload2" v-if="(tab == 1)"></TgSwiperCard>
 		</div>
 		<div class="rechargeProp" v-if="nodata">
 			<v-row no-gutters class="px-2 centerRow">
@@ -28,17 +28,12 @@
 			</v-row>
 
 		</div>
-		<More v-model:open="moreOpen"></More>
-		<Remind v-model:open="remindOpen"></Remind>
+		<WithdrawMoreDialog v-model:open="moreOpen"></WithdrawMoreDialog>
+		<WithdrawRemindDialog v-model:open="remindOpen"></WithdrawRemindDialog>
 	</div>
 
 </template>
 <script setup lang="ts">
-import Method from "./method.vue";
-import More from "./more.vue";
-import Remind from "./remind.vue";
-
-
 const addIcon = new URL('../../assets/images/pay/add.png', import.meta.url).href
 
 const ustdLogo0 = new URL('../../assets/images/pay/ustd0.png', import.meta.url).href

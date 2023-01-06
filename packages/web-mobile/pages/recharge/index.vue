@@ -22,8 +22,8 @@
 					<Method :list="payload2"></Method>
 				</v-window-item>
 			</v-window>-->
-			<Method :list="payload" v-if="tab == 0"></Method>
-			<Method :list="payload2" v-if="(tab == 1)"></Method>
+			<TgSwiperCard :list="payload" v-if="tab == 0"></TgSwiperCard>
+			<TgSwiperCard :list="payload2" v-if="(tab == 1)"></TgSwiperCard>
 		</div>
 		<div class="rechargeProp" v-if="nodata">
 			<v-row no-gutters class="px-2 centerRow">
@@ -40,7 +40,6 @@
 
 </template>
 <script setup lang="ts">
-import Method from "./method.vue";
 const ustdLogo0 = new URL('../../assets/images/pay/ustd0.png', import.meta.url).href
 const ustdLogo1 = new URL('../../assets/images/pay/ustd1.png', import.meta.url).href
 const ustdLogo2 = new URL('../../assets/images/pay/ustd2.png', import.meta.url).href
