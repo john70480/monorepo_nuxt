@@ -7,7 +7,11 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@volar-plugins/prettyhtml": "latest"
+    "@commitlint/cli": "^17.4.0",
+    "@commitlint/config-conventional": "^17.4.0",
+    "@volar-plugins/prettyhtml": "latest",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^4.3.0"
   },
   "scripts": {
     "setup": "yarn",
@@ -25,7 +29,8 @@
     "web-mobile-build:dev": "cd packages/web-mobile && yarn run build:dev",
     "web-mobile-build:stg": "cd packages/web-mobile && yarn run build:stg",
     "web-mobile-build:prod": "cd packages/web-mobile && yarn run build:prod",
-    "web-mobile--preview": "cd packages/web-mobile && yarn run preview"
+    "web-mobile--preview": "cd packages/web-mobile && yarn run preview",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "repository": {
     "type": "git",
@@ -40,5 +45,20 @@
     "npm": ">=7.0.0",
     "node": ">=16.0.0"
   },
-  "homepage": "https://gitlab.com/h5frontend/tg_web#readme"
+  "homepage": "https://gitlab.com/h5frontend/tg_web#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "commitlint": {
+      "extends": [
+        "@commitlint/config-conventional"
+      ]
+    },
+    "husky": {
+      "hooks": {
+        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      }
+    }
+  }
 }
