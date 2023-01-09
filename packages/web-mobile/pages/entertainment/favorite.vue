@@ -1,22 +1,12 @@
 <template>
-    <Header></Header>
-    <Swiper class="swiper-container" slides-per-view="auto">
-					<SwiperSlide v-for="(list, index) in popGameList"
-						:key="index">
-						<PopCard :title="list.title" :image-src="list.imgsrc" :times="list.times" :id="list.id"/>
-					</SwiperSlide>
-        
-				</Swiper>
-    <TgTabs v-model="tab">
-				<v-tab v-for="(item, index) in tabList" hide-slider>
-					{{ item }}
-				</v-tab>
-			</TgTabs>
-			<v-window v-model="tab" class="fill-height">
-        <div class="grid_view">
+  <EntertainmentFavHeader/>
+  <div class="favorite">
+    <template v-for="(item, index) in type" :key="index">
+      <EntertainmentFavTtitle :title="item"/>
+      <div class="grid_view">
         <v-row >
-          <v-col v-for="(list, i) in typeList?.[tab]" :key="i" cols="6">
-            <FavoriteCard
+          <v-col v-for="(list, i) in typeList?.[item]" :key="i" cols="6">
+            <EntertainmentFavoriteCard
               :id="list"
               :image-src="gameList?.[list].imgsrc"
               :title="gameList?.[list].title"
@@ -26,29 +16,24 @@
           </v-col>
         </v-row>
       </div>
-      </v-window>
+    </template>
+  </div>
 </template>
 <script setup lang="ts">
-import Header from './header.vue';
-import { ref,reactive } from "vue";
-import FavoriteCard from "./favorite-card.vue";
-import PopCard from "./pop-card.vue";
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import { reactive } from "vue";
 
 definePageMeta({
 	hiddenHeader: true,
-	title: "PG電子",
+	title: "娛樂收藏",
 })
-const tab = ref(0)
-const tabList = ['全部','使用記錄']
 
-
+const type: any = ["MG", "PG", "PT"];
 
 const typeList: any = {
-  0:["739", "748", "750","699", "700", "701","676","677","678","679"],
-  1:["699", "700", "701"],
+  MG: ["739", "748", "750"],
+  PG: ["699", "700", "701"],
+  PT: ["676","677","678","679"],
 };
-
 const gameList: {
   [key: string]: {
     imgsrc: string;
@@ -124,74 +109,13 @@ const toggleFavorite = (id: any) => {
   console.log("toggleFavorite:", gameList?.[id].title);
   gameList[id].isFavorite = !gameList[id].isFavorite;
 };
-
-
-const popGameList:any = [
-    {id:'690',
-     times: 14,
-     imgsrc:
-       "https://banner.clswjk.top/tg/third-party-gaming/zh-cn/690.jpg?v=3",
-     title: "绝地大逃杀",
-   },
-   {id:'691',
-    times: 29,
-     imgsrc:
-       "https://banner.clswjk.top/tg/third-party-gaming/zh-cn/691.jpg?v=3",
-     title: "蝶恋花",
-   },
-   {id:'692',
-    times: 50,
-     imgsrc:
-       "https://banner.clswjk.top/tg/third-party-gaming/zh-cn/692.jpg?v=3",
-     title: "虎虎生财",
-   },
-   {id:'693',
-    times: 73,
-     imgsrc:
-       "https://banner.clswjk.top/tg/third-party-gaming/zh-cn/693.jpg?v=3",
-     title: "发财鱼虾蟹",
-   },
-   {id:'695',
-    times: 35,
-     imgsrc:
-       "https://banner.clswjk.top/tg/third-party-gaming/zh-cn/695.jpg?v=3",
-     title: "巫师之书",
-   },
-  ]
 </script>
 <style lang="scss" scoped>
-  
+.favorite {
+  background: #36567f;
   .grid_view {
     padding: 16px;
     background-image: linear-gradient(to left, #426796, #6c8cbd);
-    min-height: 100vh;
   }
-  .swiper-container {
-    background: var(--tg-bg-primary);
-			position: relative;
-			overflow: hidden;
-			list-style: none;
-			padding: 15px 10px;
-			z-index: 1;
-
-			.swiper-wrapper {
-				position: relative;
-				width: 100%;
-				height: 100%;
-				z-index: 1;
-				display: flex;
-				transition-property: transform;
-				box-sizing: content-box;
-
-				.swiper-slide {
-					width: 150px;
-					margin: 0 5px;
-					flex-shrink: 0;
-					position: relative;
-					transition-property: transform;
-				}
-			}
-		}
-
-
+}
 </style>

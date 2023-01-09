@@ -7,11 +7,11 @@
 				</template>
 				<span class="mt-auto mb-auto d-flex">{{ route.meta.title }}</span>
 			</div>
+
 		</template>
 
 		<template v-slot:append>
-			<button class="search_apply" @click="()=>router.push('/apply')"></button>
-			<button class="third_party" @click="()=>router.push('/entertainment')"></button>
+			<button class="my_favorite" @click="()=>router.push('/entertainment/favorite')"></button>
 			<button class="header_menu" @click="app.navSwitch = !app.navSwitch"></button>
 		</template>
 	</v-app-bar>
@@ -26,7 +26,6 @@ const goBackFlag = computed(() => {
 function goBack() {
 	router.back();
 }
-
 </script>
 
 <style lang="scss" scoped>
@@ -55,12 +54,8 @@ header.tg-header {
 			background-size: auto 16px;
 		}
 
-		&.search_apply {
-			background: url('@tg/web-mobile/assets/images/search_apply.png') center no-repeat;
-			background-size: auto 16px;
-		}
-		&.third_party {
-			background: url('@tg/web-mobile/assets/images/head_entertainment_btn.png') center no-repeat;
+		&.my_favorite {
+			background: url('@tg/web-mobile/assets/images/head_fav_btn.png') center no-repeat;
 			background-size: auto 16px;
 		}
 

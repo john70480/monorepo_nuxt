@@ -1,5 +1,5 @@
 <template>
-  <Header></Header>
+  <EventHeader />
   <TgTabs v-model="tab">
     <v-tab v-for="(item, index) in tabList" hide-slider>
       {{ item }}
@@ -13,16 +13,14 @@
             :id="list"
             :image-src="evnetList?.[list].imgsrc"
             :title="evnetList?.[list].title"
-            @click="router.push('/event/1')"
+            @click="router.push('/event-hall/1')"
           />
         </v-col>
       </v-row>
   </v-window>
 </template>
 <script setup lang="ts">
-import Header from "./header.vue";
 import { ref } from "vue";
-import EventCard from "./event-card.vue";
 const router = useRouter();
 definePageMeta({
   hiddenHeader: true,
