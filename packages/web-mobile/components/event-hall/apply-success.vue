@@ -1,6 +1,6 @@
 <template>
 
-	<v-card class="rechargeProp">
+	<v-card>
 		<v-card-title>完成送出申請</v-card-title>
 		<v-card-text class="px-5">
 			<v-row>

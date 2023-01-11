@@ -9,7 +9,6 @@ const componentList = {
     ApplyEvent,
 	ApplySuccess,
 	ApplyFail
-
 }
 
 </script>

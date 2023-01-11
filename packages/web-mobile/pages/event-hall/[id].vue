@@ -5,7 +5,6 @@
     </v-window>
     <v-bottom-navigation class="apply_footer">
         <v-btn class="apply_btn" @click="openDialog">活動申請</v-btn>
-
     </v-bottom-navigation>
     <LazyEventHallDialog/>
   </template>
@@ -24,8 +23,7 @@
     };
   function openDialog(){
     dialogsStore.rechargeOpen = true
-    dialogsStore.rechargeTarget = 'ApplyFail'
-
+    dialogsStore.rechargeTarget = 'ApplyEvent' //ApplyEvent, ApplySuccess, ApplyFail
   } 
     
 
@@ -36,7 +34,6 @@
     padding: 0;
     background: linear-gradient(to left, #426796, #6c8cbd);
   .img_full {
-    
     width: 100%;
   }
 }
