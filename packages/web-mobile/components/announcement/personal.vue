@@ -9,13 +9,7 @@
             </v-col>
         </v-row>
 
-        <AnnouncementDetail v-for="item in 4">
-            <template v-slot:title>
-                微商审核
-            </template>
-            <template v-slot:date>
-                2022-10-15 23:30
-            </template>
+        <AnnouncementDetail v-for="(item, index) in list" :index="index" :list="item" type="left-right-detail-arrow">
             公告标题<br>公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文。
             公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文。
             <hr>
@@ -31,6 +25,7 @@
 <script setup lang="ts">
 const target = ref(0)
 const transMoneyList = ['微商审核', '上级回復']
+const list = [{ title: '微商审核', date: '2022-10-15 23:30' }, { title: '微商审核', date: '2022-10-15 23:30' }, { title: '微商审核', date: '2022-10-15 23:30' }, { title: '微商审核', date: '2022-10-15 23:30' }]
 
 </script>
 <style lang="scss" scoped>

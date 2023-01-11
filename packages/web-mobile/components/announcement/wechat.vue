@@ -21,13 +21,8 @@
             </v-col>
         </v-row>
 
-        <AnnouncementDetail v-for="item in 12">
-            <template v-slot:title>
-                微商审核
-            </template>
-            <template v-slot:date>
-                2022-10-15 23:30
-            </template>
+        <AnnouncementDetail v-for="(item, index) in list" :index="index" :list="item" type="left-right-detail-arrow">
+
             <v-row no-gutters>
                 <v-col cols="12">
                     <v-row class="justify-space-between teamDetail">
@@ -64,6 +59,7 @@
 <script setup lang="ts">
 const target = ref(0)
 const transMoneyList = ['直推/团队奖金', '贡献反馈金']
+const list = [{ title: '微商审核', date: '2022-10-15 23:31' }, { title: '微商审核', date: '2022-10-15 23:30' }, { title: '微商审核', date: '2022-10-15 23:30' }, { title: '微商审核', date: '2022-10-15 23:30' }]
 
 </script>
 <style lang="scss" scoped>
