@@ -28,7 +28,8 @@
 		<div class="rechargeProp" v-if="nodata">
 			<v-row no-gutters class="px-2 centerRow">
 				<v-col cols="12" class="text-center">XXXXXXXXXXXXXXX</v-col>
-				<v-col cols="12"><img src="@tg/web-mobile/assets/images/recharge/nodata.png" class="nodataImg" /></v-col>
+				<v-col cols="12"><img src="@tg/web-mobile/assets/images/recharge/nodata.png"
+						class="nodataImg" /></v-col>
 				<v-col cols="12" class="warn-text text-center">XXXXXXXXXXXXXXX</v-col>
 			</v-row>
 
@@ -76,24 +77,21 @@ const items = ['数字货币渠道', '常用入款渠道']
 </script>
 <style lang="scss" scoped>
 /*充值*/
-.helpHeader {
-	background-color: #587eb0;
 
-	.helpHeaderText {
-		color: #fff;
-		font-size: 0.8rem;
 
-		&::before {
-			content: '';
-			width: 6px;
-			height: 6px;
-			margin-right: 5px;
-			border-radius: 50%;
-			background: linear-gradient(to bottom, #ea7dff, #9c5cef);
-			display: inline-block;
-		}
+.helpHeaderText {
+
+	&::before {
+		content: '';
+		width: 6px;
+		height: 6px;
+		margin-right: 5px;
+		border-radius: 50%;
+		background: linear-gradient(to bottom, #ea7dff, #9c5cef);
+		display: inline-block;
 	}
 }
+
 
 .rechargeProp {
 	height: calc(100% - 100px);

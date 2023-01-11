@@ -41,18 +41,6 @@ const showTab = ref(0)
 </script>
 <style lang="scss" scoped>
 /*充值*/
-.helpHeader {
-	background-color: #587eb0;
-
-	.helpHeaderText {
-		color: #fff;
-		font-size: 0.8rem;
-	}
-}
-
-
-
-
 .rechargeProp {
 	min-height: 100%;
 	background-image: linear-gradient(45deg, #718db7, #527299);

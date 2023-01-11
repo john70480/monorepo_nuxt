@@ -23,8 +23,10 @@
 
 				</v-col>
 				<v-col class="text-right pr-2">
-					<img class="filter ma-2" src="@tg/web-mobile/assets/images/filter_btn.png" @click="chooseFilterOpen = true">
-					<img class="filter ma-2" src="@tg/web-mobile/assets/images/function_btn.png" @click="service = true">
+					<img class="filter ma-2" src="@tg/web-mobile/assets/images/filter_btn.png"
+						@click="chooseFilterOpen = true">
+					<img class="filter ma-2" src="@tg/web-mobile/assets/images/function_btn.png"
+						@click="service = true">
 				</v-col>
 			</v-row>
 			<v-window v-model="tab">
@@ -112,16 +114,6 @@ const items = ['游戏转帐', '会员互转']
 
 </script>
 <style lang="scss" scoped>
-/*充值*/
-.helpHeader {
-	background-color: #587eb0;
-
-	.helpHeaderText {
-		color: #fff;
-		font-size: 0.8rem;
-	}
-}
-
 .rechargeProp {
 	height: calc(100% - 100px);
 
