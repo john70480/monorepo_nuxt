@@ -9,7 +9,8 @@
             </v-col>
         </v-row>
 
-        <AnnouncementDetail v-for="(item, index) in list" :index="index" :list="item" type="left-right-detail-arrow">
+        <AnnouncementDetail v-for="(item, index) in list" :index="index" :title="item.title" :date="item.date"
+            type="left-right-detail110-arrow">
             公告标题<br>公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文。
             公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文，公告点击可直接展开全文。
             <hr>
