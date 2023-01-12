@@ -25,6 +25,10 @@
                       <!-- <img :src="`data:image/png;base64,${verificationImage}`" /> -->
                       <img id="pic" src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAUCAMAAADm3a4bAAAAbFBMVEWRQMH////nFRz4pCAbQMQqv9r59BV+D6W4vtcMaiucGvfj8S/KgbA3dSdkpikSL3sTzpnOPVtiiIyj94e7En+zR2CsEVOUGbtdL2VkjHcjsTtEbzzeoOYby/SmNmiuKU9bGh5NEE0ZHzNAXCRtldHCAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAq0lEQVQ4jZ3S0Q6CMAwF0FUxMTFRgjEG44PM//9H6Ma6FVpWuA+LAc9um+Bgd070yzX7dcYb755V3NmLbnLzD2O/JeMrWpiPRbyvYMpaezMWrYLvHAs7T/JYcx/3PbpzcHj8Q2x4wEBcGBOdrB2xZNMx1yulRTN9JMTy7LaxOf4mDJWxp5yXOIV2/hQP32Iz6pZfsTV2CNPDul5J4fI17sUvpFxUrA6m/PEBIwcLFLuo3rgsAAAAAElFTkSuQmCC" alt="图形验证" style="height: 35px;width: 100px"/>
               </v-col>
+              <ul class="assistant_note">
+                <li>1.请确认为信号保持可供收寻与加入好友状态,以便上级与您联系。</li>
+                <li>2.每人每日限发送十笔上级协助。</li>
+              </ul>
           </v-row>
     </v-window>
   </template>
@@ -46,6 +50,9 @@
   .assistant_view {
       padding:32px;
       min-height: 100vh;
+      .assistant_note{
+        font-size: 0.4rem;
+      }
     }
   </style>
   
