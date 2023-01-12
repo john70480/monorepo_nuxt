@@ -1,17 +1,17 @@
 <template>
-    <nav class="item-box">
-
-    
-        <div class="item-btn" :type="type">
-
-            <v-btn v-for="(item, index) in list" v-bind="_bind" :class="{ target: modelValueProxy == index }"
-                class="btnClass" @click="modelValueProxy = index">{{
-        item
-                }}</v-btn>
-        </div>
-    </nav>
+  <nav class="item-box">
+    <div class="item-btn" :type="type">
+      <v-btn
+        v-for="(item, index) in list"
+        v-bind="_bind"
+        :class="{ target: modelValueProxy == index }"
+        class="btnClass"
+        @click="modelValueProxy = index"
+        >{{ item }}</v-btn
+      >
+    </div>
+  </nav>
 </template>
-
 
 <script lang="ts" setup>
 
@@ -46,42 +46,52 @@ const _bind = computed(() => {
 </script>
 
 <script lang="ts">
-export const types = [
-    'default',
-] as const;
+export const types = ["default"] as const;
 export const defaultBind: VBtn["$props"] = {
-    variant: 'outlined',
-}
+  variant: "outlined",
+};
 </script>
 
 <style lang="scss" scoped>
-.item-box{
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    height: 54px;
-    white-space: nowrap;
-    padding: 12px;
-    background-color: #587eb0;
+.item-box {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 54px;
+  white-space: nowrap;
+  padding: 12px;
+  background-color: #587eb0;
 
-    .item-btn[type="default"] {
-        .btnClass {
-            display: inline-block;
-            height: 30px;
-            font-size: 0.8rem;
-            padding-left: 15px;
-            padding-right: 15px;
-            margin-left: 10px;
-            background-color: #587eb0;
-            border: 1px solid #fff;
-            color: #fff;
-            border-radius: 50px;
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-button {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+  }
+  .item-btn[type="default"] {
+    .btnClass {
+      display: inline-block;
+      height: 30px;
+      font-size: 0.8rem;
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: 10px;
+      background-color: #587eb0;
+      border: 1px solid #fff;
+      color: #fff;
+      border-radius: 50px;
 
-            &.target {
-                background-color: #36567f;
-                border: 1px solid #36567f;
-                color: #fff;
-            }
-        }
+      &.target {
+        background-color: #36567f;
+        border: 1px solid #36567f;
+        color: #fff;
+      }
     }
+  }
 }
 </style>
