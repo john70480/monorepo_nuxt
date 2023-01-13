@@ -3,10 +3,7 @@
 
         <v-row class="helpHeader py-2" no-gutters>
             <v-col cols="12" class="d-flex align-center px-0 pt-0">
-                <v-btn v-for="(item, index) in transMoneyList" variant="outlined" :class="{ target: target == index }"
-                    class="btnClass" @click="target = index">{{
-                        item
-                    }}</v-btn>
+                <TgItemBtn v-model="target" :list="transMoneyList"></TgItemBtn>
             </v-col>
         </v-row>
         <v-row no-gutters class="graybg warn-text">
@@ -21,7 +18,7 @@
 
             <v-col cols="12" class="text-center px-0 py-2">2014-2015 法甲 (正确比分统计) 380场</v-col>
 
-            <table width="100%">
+            <table width="100%" class="battleTable">
                 <thead>
                     <tr>
                         <td>日期</td>
@@ -92,36 +89,9 @@ const list = [
     background-color: #eef4f8;
 }
 
-.btnClass {
-    height: 30px;
-    font-size: 0.8rem;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: 10px;
-    background-color: #587eb0;
-    border: 1px solid #fff;
-    color: #fff;
-    border-radius: 50px;
-
-    &.target {
-        background-color: #36567f;
-        border: 1px solid #36567f;
-        color: #fff;
-    }
-}
-
-table {
+table.battleTable {
     thead {
-
-        margin: -12px;
-        margin-bottom: 4px;
-
         td {
-            padding: 12px;
-            font-size: 14px;
-            color: #283763;
-            font-weight: bold;
-
             &:first-child {
                 width: 60px;
             }
@@ -129,34 +99,10 @@ table {
     }
 
     tbody {
-        margin: -4px;
-
-        tr {
-            &:nth-child(odd) {
-                td {
-                    background-color: #fff;
-                }
-            }
-        }
-
         td {
-            font-size: 12px;
-            padding: 12px;
-            color: #283763;
-            border-right: #c3c3c3 solid 1px;
-
             &:not(:nth-child(2)) {
                 text-align: center;
             }
-        }
-    }
-
-    tfoot {
-        td {
-            background-color: #fff;
-            text-align: center;
-            padding-top: 24px;
-            padding-bottom: 24px;
         }
     }
 }

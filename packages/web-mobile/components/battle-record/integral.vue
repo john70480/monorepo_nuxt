@@ -5,7 +5,7 @@
         <div class="graybg warn-text overflowDiv">
 
 
-            <table>
+            <table width="100%" class="battleTable">
                 <thead>
                     <tr>
                         <td></td>
@@ -82,23 +82,14 @@ const list = [
     }
 }
 
-table {
-
+table.battleTable {
     border-spacing: 0;
-    width: 100%;
     border: 1px solid #ddd;
 
     thead {
-
-        margin: -12px;
-        margin-bottom: 4px;
-
         td {
             padding: 12px 6px 12px 6px;
             font-size: 12px;
-            color: #283763;
-            font-weight: bold;
-
 
             &:first-child {
                 width: 80px;
@@ -108,42 +99,17 @@ table {
             &:not(:first-child) {
                 text-align: center;
             }
-
-
         }
     }
 
     tbody {
-        margin: -4px;
-
-        tr {
-            &:nth-child(odd) {
-                td {
-                    background-color: #fff;
-                }
-            }
-        }
-
         td {
             font-size: 12px;
             padding: 12px 6px 12px 6px;
-            color: #283763;
-            border-right: #c3c3c3 solid 1px;
 
             &:not(:first-child) {
                 text-align: center;
             }
-
-
-        }
-    }
-
-    tfoot {
-        td {
-            background-color: #fff;
-            text-align: center;
-            padding-top: 24px;
-            padding-bottom: 24px;
         }
     }
 }

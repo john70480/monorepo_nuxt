@@ -11,16 +11,13 @@
 			<v-window v-model="showTab">
 				<!-- 九宮格 -->
 				<v-window-item>
-					<BattleRecord />
+					<AnnouncementSystem />
 				</v-window-item>
 				<v-window-item>
-					<BattleRecordCombat></BattleRecordCombat>
+					<AnnouncementPersonal />
 				</v-window-item>
 				<v-window-item>
-					<BattleRecordIntegral></BattleRecordIntegral>
-				</v-window-item>
-				<v-window-item>
-					<BattleRecordHurt></BattleRecordHurt>
+					<AnnouncementWechat />
 				</v-window-item>
 			</v-window>
 		</div>
@@ -31,16 +28,15 @@
 </template>
 <script setup lang="ts">
 definePageMeta({
-	title: "对战記录",
+	title: "公告",
 });
 
-const items = ['对战記录', '近期战绩', '联赛积分', '伤停情况']
+const items = ['系统', '个人', '微商']
 
 const showTab = ref(0)
 
 </script>
 <style lang="scss" scoped>
-/*充值*/
 .rechargeProp {
 	min-height: 100%;
 	background-image: linear-gradient(45deg, #718db7, #527299);
