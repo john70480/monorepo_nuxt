@@ -77,7 +77,7 @@ export function getSiteListMap() {
 		ob_lottery: { text: 't.c_text_50117', desc: 't.c_text_50118', logo: "platform_oblottery_logo.png", banner: getplatformPath("banner-lotteries-1.png"), class: "lotteries", new: true },
 	}
 	function getplatformPath(path: string) {
-		return new URL(`/images/platform/${path}`, import.meta.url).href
+		return new URL(`/assets/images/platform/${path}`, import.meta.url).href
 	}
 	return { platformMap, categoryMap }
 }
