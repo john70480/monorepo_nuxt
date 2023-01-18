@@ -1,20 +1,25 @@
 <template>
-	<div class="tg-select" :type="type">
+	<div class="tg-textarea" :type="type">
 		<label v-if="label">{{ label }}</label>
-		<v-select v-model="modelValueProxy" :items="items" v-bind="_bind">>
-		</v-select>
+		<v-textarea v-model="modelValueProxy" v-bind="_bind">
+			<template v-slot:append-inner>
+				<slot name="append-inner"></slot>
+			</template>
+
+			<template v-slot:append>
+				<slot name="append"></slot>
+			</template>
+		</v-textarea>
 	</div>
 </template>
-
 <script lang="ts" setup>
-import { VSelect } from 'vuetify/components';
+import type { VTextarea, VTextField } from "vuetify/components";
 
 const props = withDefaults(defineProps<{
 	label?: string,
 	type?: typeof types[number],
 	modelValue?: any,
-	items?: unknown[]
-	selectBind?: VSelect["$props"],
+	textBind?: VTextarea["$props"]
 }>(), {
 	type: 'default',
 });
@@ -23,18 +28,16 @@ const emit = defineEmits<{
 }>();
 
 const _bind = computed(() => {
-	let obj: VSelect["$props"] = {}
+	let obj: VTextarea["$props"] = {}
 	switch (props.type) {
-		// case '':
-		// 	obj = {
-		// 		...defaultBind,
-		// 	}
-		// 	break;
+		case 'login':
+			obj = { ...defaultBind, variant: "underlined" }
+			break;
 		default:
 			obj = defaultBind;
 			break;
 	}
-	return { ...obj, ...props.selectBind }
+	return { ...obj, ...props.textBind }
 })
 const modelValueProxy = computed({
 	get: () => props.modelValue,
@@ -44,18 +47,17 @@ const modelValueProxy = computed({
 <script lang="ts">
 export const types = [
 	'default',
+	'login'
 ] as const;
-export const defaultBind: VSelect["$props"] = {
-	density: 'compact',
-	hideDetails: true,
+export const defaultBind: VTextarea["$props"] = {
 	variant: "outlined",
-	itemTitle: "text",
-	itemValue: "value"
+	density: "compact",
+	hideDetails: true,
+	clearable: true
 }
 </script>
 <style lang="scss" >
-.tg-select[type="default"] {
-
+.tg-textarea[type="default"] {
 	display: flex;
 	flex-direction: column;
 
@@ -66,26 +68,19 @@ export const defaultBind: VSelect["$props"] = {
 		margin-bottom: 8px;
 	}
 
-	.v-select.default,
-	.v-select {
-		padding-right: 16px;
-		.v-input__control .v-field {
+	.v-textarea {
+		.v-input__control .v-field__field {
 			min-height: auto !important;
-			height: 30px;
 			display: flex !important;
 			align-items: center !important;
-			color: #283763;
-
-			.v-field__field {
-				object-fit: contain;
-				font-size: 1rem;
-				font-weight: bold;
-			}
-
-			.v-field__append-inner {
-				padding-top: 0;
-			}
 		}
 	}
+
+	.v-field__prepend-inner,
+	.v-field__append-inner,
+	.v-field__clearable {
+		padding-top: 4px
+	}
 }
+
 </style>
